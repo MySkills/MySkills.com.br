@@ -53,7 +53,7 @@ return array(
 	|
 	*/
 
-	'key' => 'SenhaL0ngaD0MySkillsPara0Laravel',
+	'key' => 'SenhaD0MySkillsPara0Laravel',
 
 	/*
 	|--------------------------------------------------------------------------
