@@ -81,46 +81,15 @@
                 
                 <div class="span4">
                     
-                    <h3><span class="slash">//</span> Quick Links</h3>
-                    
-                    
-                    <ul class="footer-links clearfix">
-                        <li><a href="./">Home</a></li>
-                        <li><a href="./pricing.html">Plans</a></li>
-                        <li><a href="../features.html">Features</a></li>
-                        <li><a href="./about.html">About</a></li>
-                        <li><a href="./faq.html">FAQ</a></li>
-                    </ul>
-                    
-                    <ul class="footer-links clearfix">      
-                        <li><a href="javascript:;">Support</a></li>
-                        <li><a href="javascript:;">License</a></li>
-                        <li><a href="javascript:;">Terms of Use</a></li>
-                        <li><a href="javascript:;">Privacy Policy</a></li>
-                        <li><a href="javascript:;">Something Else</a></li>
-                    </ul>
-                    
+                <!-- Removed Quick Links -->                    
+
                 </div> <!-- /span4 -->
                 
                 
                 <div class="span4">
                     
-                    <h3><span class="slash">//</span> Stay In Touch</h3>
-                    
-                    
-                    <p>There are real people behind Reboot Landing, so if you have a question or suggestion (no matter how small) please get in touch with us:</p>
-                    
-                    <ul class="social-icons-container">
+                <!-- Removed Stay in Touch -->                    
 
-                        
-                        <li>                            
-                            <a href="http://www.facebook.com/MySkills.com.br" class="social-icon social-icon-facebook">
-                                Facebook
-                            </a>
-                        </li>
-                        
-                    </ul> <!-- /extra-social -->
-                    
                 </div> <!-- /span4 -->
                 
                 <div class="span4">
@@ -128,18 +97,20 @@
                     <h3><span class="slash">//</span> Subscribe and get updates</h3>
                     
 
-                    <p>Subscribe to our newsletter and get exclusive deals you wont find anywhere else straight to your inbox!</p>
+                                                        <script type="text/javascript" language="JavaScript" src="http://myskills.us5.list-manage1.com/subscriber-count?b=28&u=00d2e3de-199f-4c91-ae5a-5433b3ea5e9f&id=30cd3f42fe"></script>
                     
-                    
-                    <form>
-                        
-                        <input type="text" name="subscribe_email" placeholder="Your Email" />
-                        
-                        <br />
-                        
-                        <button class="btn ">Subscribe</button>
-                    </form>
-                    
+             <div id="mc_embed_signup1">
+
+                                    <form action="http://myskills.us5.list-manage1.com/subscribe/post?u=c22dec5cbd87c068118755814&amp;id=30cd3f42fe" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+
+                                        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+
+                                        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+
+                                    </form>
+
+                                </div>
+
                     
                 </div> <!-- /span4 -->
                 
