@@ -37,6 +37,18 @@ Route::get('/', function()
 	return View::make('pages.home');
 });
 
+Route::get('features', function()
+{
+	return View::make('pages.features');
+});
+
+Route::get('faq', function()
+{
+	return View::make('pages.faq');
+});
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Application 404 & 500 Error Handlers

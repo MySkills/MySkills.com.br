@@ -44,9 +44,9 @@
             <div class="nav-collapse">
                 <ul class="nav pull-right">
                 @if ( Auth::guest() )            
-                    <li class="active">{{HTML::link('/', 'Home')}} </a></li>                   
-                    <li>{{HTML::link('features', 'Features')}} </a></li>                   
-                    <li>{{HTML::link('faq', 'FAQ')}} </a></li>                                       
+                    <li class="active"> {{HTML::link('/','Home')}} </a></li>                   
+                    <li>{{HTML::link('features','Features')}}</a></li>
+                    <li>{{HTML::link('faq','FAQ')}} </a></li>
                 @else                    
                     <li class="active"><a href="./">    Home        </a></li>
                     <li><a href="./features.html">      Features    </a></li>                                   
