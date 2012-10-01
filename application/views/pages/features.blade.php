@@ -60,7 +60,7 @@
 				<h3><span class="slash"></span>Developer - Present your skills</h3>
 				
 				<div class="thumbnail">
-					<img alt="Placeholder" src="assets/images/features-profile.png">
+					{{ HTML::image('img/features-profile.png', 'Profile image')}}
 				</div> <!-- /thumbnail -->
 				
 				<p>On each developer profile you can see a list of badges, locked or unlocked, depending on the developer skills. Claim more badges and stand out on MySkills community.</p>
@@ -72,7 +72,7 @@
 				<h3><span class="slash"></span>Developer - Claim Badges</h3>
 				
 				<div class="thumbnail">
-					<img alt="Thumbnail" src="assets/images/features-claim.png">
+					{{ HTML::image('img/features-claim.png', 'Claim')}}
 				</div> <!-- /thumbnail -->
 				
 				<p>Our badge ranking system is a multi-level representation of knowledge with pre-defined roles related to each concept. We have badges for web development and mobile development. We also have badges that represent course or event participation. Also badges for online tests and certifications. But we also recognize outstanding projects and Apps that you have created during your professional career.</p>
@@ -84,7 +84,7 @@
 				<h3><span class="slash"></span>Developer - Apply for a job</h3>
 				
 				<div class="thumbnail">
-					<img alt="Thumbnail" src="../assets/images/features-job.png">
+					{{ HTML::image('img/features-job.png', 'Job')}}					
 				</div> <!-- /thumbnail -->
 				
 				<p>Are you looking for a job that matches your skills? Or want to learn the skills that companies are searching for? On MySkills you can apply for a job or identify which skills you need to improve to be part of that tech company you like.</p>
