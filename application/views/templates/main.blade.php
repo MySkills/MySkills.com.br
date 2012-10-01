@@ -190,7 +190,6 @@
 $(function () {
     
     $(".screenshot").lightbox();
-    
 
 });
 
