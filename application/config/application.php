@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'url' => '',
+	'url' => 'http://myskills.pagodabox.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -53,7 +53,7 @@ return array(
 	|
 	*/
 
-	'key' => 'SenhaD0MySkillsPara0Laravel',
+	'key' => 'YourSecretKeyGoesHere!',
 
 	/*
 	|--------------------------------------------------------------------------
