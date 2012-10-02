@@ -34,7 +34,7 @@
 
 Route::get('/', function()
 {
-	return View::make('pages.home');
+	return View::make('home.index');
 });
 
 Route::get('features', function()

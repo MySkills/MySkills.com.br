@@ -1,57 +1,39 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Laravel: A Framework For Web Artisans</title>
-	<meta name="viewport" content="width=device-width">
-	{{ HTML::style('laravel/css/style.css') }}
-</head>
-<body>
-	<div class="wrapper">
-		<header>
-			<h1>Laravel</h1>
-			<h2>A Framework For Web Artisans</h2>
-
-			<p class="intro-text" style="margin-top: 45px;">
-			</p>
-		</header>
-		<div role="main" class="main">
-			<div class="home">
-				<h2>Learn the terrain.</h3>
-
-				<p>
-					You've landed yourself on our default home page. The route that
-					is generating this page lives at:
-				</p>
-
-				<pre>{{ path('app') }}routes.php</pre>
-
-				<p>And the view sitting before you can be found at:</p>
-
-				<pre>{{ path('app') }}views/home/index.php</pre>
-
-				<h2>Grow in knowledge.</h2>
-
-				<p>
-					Leaning to use Laravel is amazingly simple thanks to
-					its {{ HTML::link('docs', 'wonderful documentation') }}.
-				</p>
-
-				<h2>Create something beautiful.</h2>
-
-				<p>
-					Now that you're up and running, it's time to start creating!
-					Here are some links to help you get started:
-				</p>
-
-				<ul class="out-links">
-					<li><a href="http://laravel.com">Official Website</a></li>
-					<li><a href="http://forums.laravel.com">Laravel Forums</a></li>
-					<li><a href="http://github.com/laravel/laravel">GitHub Repository</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</body>
-</html>
+@layout('templates.main')
+@section('content')
+<div id="landing">    
+    <div class="inner">        
+        <div class="container">        
+            <div class="row">
+			 	<div class="span6 landing-text">
+				    <h1>Meet the best developers.</h1>
+				    <h2>Hire great professionals.</h2>
+					<p class="landing-actions">
+						<a href="#myModal" class="btn btn-large btn-info" data-toggle="modal">Sign-Up!</a>
+						<a href="#myModal" target="_blank" class="btn btn-large" data-toggle="modal">Sign-In</a>
+            <?php $users = User::all() ?>
+              @foreach ($users as $user)
+                 <div class="user">User.: {{ $user->nickname }}</div>
+              @endforeach              
+					</p>
+				</div> <!-- /landing-text -->
+				<div class="span6 landing-screenshot">
+					<iframe width="450" height="321" src="http://www.youtube.com/embed/nGh4Q01cwnk" frameborder="0" allowfullscreen></iframe>
+				</div>                
+            </div> <!-- .row -->
+        </div> <!-- /container -->
+    </div> <!-- /inner -->
+</div> <!-- /landing -->
+<!-- Modal -->
+<div class="modal hide" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  	<div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    	<h3 id="myModalLabel">Thank you</h3>
+  	</div>
+  	<div class="modal-body">
+    	<p>We are very glad that you are interested. We will deploy this feature really soon...</p>
+  	</div>
+  	<div class="modal-footer">
+    	<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  	</div>
+</div>
+@endsection
