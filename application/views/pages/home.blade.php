@@ -10,6 +10,10 @@
 					<p class="landing-actions">
 						<a href="#myModal" class="btn btn-large btn-info" data-toggle="modal">Sign-Up!</a>
 						<a href="#myModal" target="_blank" class="btn btn-large" data-toggle="modal">Sign-In</a>
+            <?php $users = User::all() ?>
+              @foreach ($users as $user)
+                 <div class="user">User.: {{ $user->nickname }}</div>
+              @endforeach              
 					</p>
 				</div> <!-- /landing-text -->
 				<div class="span6 landing-screenshot">
