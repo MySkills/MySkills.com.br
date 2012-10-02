@@ -36,5 +36,7 @@
 return array(
 
 	'docs' => array('handles' => 'docs'),
+	'bundocs' => array('auto' => true, 'handles' => 'bundocs'),	
+	'oneauth' => array('auto' => true),
 
 );

@@ -36,11 +36,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            
-            <a class="brand" href="./">
-                Reboot Admin                
-            </a>            
-
+            {{HTML::link('/','Reboot Admin', array('class' => 'brand'))}}
             <div class="nav-collapse">
                 <ul class="nav pull-right">
                 @if ( Auth::guest() )            
@@ -48,13 +44,10 @@
                     <li>{{HTML::link('features','Features')}}</a></li>
                     <li>{{HTML::link('faq','FAQ')}} </a></li>
                 @else                    
-                    <li class="active"><a href="./">    Home        </a></li>
-                    <li><a href="./features.html">      Features    </a></li>                                   
-                    <li><a href="./pricing.html">       Plans       </a></li>                    
-                    <li><a href="./features.html">      Features    </a></li>
-                    <li><a href="./about.html">         About Us    </a></li>
-                    <li><a href="./faq.html">           FAQ         </a></li>
-                    <li><a href="./contact.html">       Contact Us  </a></li>
+                    <li class="active"> {{HTML::link('/','Home')}} </a></li>                                   
+                    <li>{{HTML::link('features','Features')}}</a></li>
+                    <li>{{HTML::link('faq','FAQ')}} </a></li>
+                    <li>{{HTML::link('logout','Logout')}} </a></li>
                 @endif                    
                 </ul>
             </div><!--/.nav-collapse -->    
