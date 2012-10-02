@@ -69,10 +69,10 @@ return array(
 
 		'mysql' => array(
 			'driver'   => 'mysql',
-			'host'     => 'localhost',
-			'database' => 'database',
-			'username' => 'root',
-			'password' => '',
+			'host'     => 'tunnel.pagodabox.com:3306',
+			'database' => 'skillsdb',
+			'username' => 'kitty',
+			'password' => 'vmhNzH9Y',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 		),

@@ -13,14 +13,16 @@ class Create_Users {
 		Schema::create('users', function($table) {
 		    $table->increments('id');
 		    $table->string('username', 128);
-		    $table->string('nickname', 128);
+		    $table->string('firstname', 128);
+			$table->string('lastname', 128);
 		    $table->string('password', 64);
 		    $table->timestamps();
 		});
 		DB::table('users')->insert(array(
-		    'username'  => 'admin',
-		    'nickname'  => 'Admin',
-		    'password'  => Hash::make('password')
+		    'username'  => 'eduardocruz',
+		    'firstname'  => 'Eduardo',
+		    'lastname'  => 'Cruz',		    
+		    'password'  => Hash::make('kitty411')
 		));		
 	}
 
