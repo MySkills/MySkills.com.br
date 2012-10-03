@@ -17,6 +17,6 @@ Based on the Boxfile method from: http://forums.laravel.com/viewtopic.php?id=890
 ``web1:
   name: YOUR_APP_NAME``
 
-## Features
+## Features.
 
 - Laravel 3.2.5
