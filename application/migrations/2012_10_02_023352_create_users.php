@@ -18,6 +18,8 @@ class Create_Users {
 			$table->string('lastname', 128);
 			$table->string('email', 128);			
 		    $table->string('password', 64);
+		    $table->string('social_uid', 11);		    
+		    $table->string('social_provider', 64);
 		    $table->timestamps();
 		});
 		DB::table('users')->insert(array(
@@ -26,7 +28,7 @@ class Create_Users {
 		    'firstname'  => 'Eduardo',
 		    'lastname'  => 'Cruz',		    
 		    'email'  => 'eduardo@eduardocruz.com',		    		    
-		    'password'  => Hash::make('kitty411')
+		    'password'  => Hash::make('penny411')
 		));		
 	}
 
