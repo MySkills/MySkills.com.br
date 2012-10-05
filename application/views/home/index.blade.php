@@ -5,16 +5,22 @@
           <div class="inner">        
               <div class="container">        
                   <div class="row">
-      			 	<div class="span6 landing-text">
+      			 	<div class="span8 landing-text">
       				    <h1>Meet the best developers.</h1>
       				    <h2>Hire great professionals.</h2>
       					<p class="landing-actions">
-                  {{HTML::link('connect/session/facebook', 'Login with Facebook', array('class' => 'btn btn-large btn-primary'))}}          
-                  {{HTML::link('connect/session/github', 'Login with Github', array('class' => 'btn btn-large btn-primary'))}}                            
-                  {{HTML::link('connect/session/linkedin', 'Login with Linkedin', array('class' => 'btn btn-large btn-primary'))}}                                             
+                  {{HTML::link('connect/session/facebook', 
+                    'Sign-Up(Facebook)', array('class' 
+                      => 'btn btn-large'))}}          
+                  {{HTML::link('connect/session/github', 
+                    'Sign-Up(Github)', array('class' 
+                      => 'btn btn-large btn-primary'))}}                            
+                  {{HTML::link('connect/session/linkedin', 
+                    'Sign-Up(Linkedin)', array('class' 
+                      => 'btn btn-large'))}}                                             
       					</p>
       				</div> <!-- /landing-text -->
-      				<div class="span6 landing-screenshot">
+      				<div class="span4 landing-screenshot">
       					<iframe width="450" height="321" src="http://www.youtube.com/embed/nGh4Q01cwnk" frameborder="0" allowfullscreen></iframe>
       				</div>                
                   </div> <!-- .row -->
