@@ -39,14 +39,12 @@
             {{HTML::link('/','Reboot Admin', array('class' => 'brand'))}}
             <div class="nav-collapse">
                 <ul class="nav pull-right">
-                @if ( Auth::guest() )            
                     <li class="active"> {{HTML::link('/','Home')}} </a></li>                   
                     <li>{{HTML::link('features','Features')}}</a></li>
+                    <li>{{HTML::link('leaderboard','Leaderboard')}}</a></li>                    
                     <li>{{HTML::link('faq','FAQ')}} </a></li>
+                @if ( Auth::guest() )            
                 @else                    
-                    <li class="active"> {{HTML::link('/','Home')}} </a></li>                                   
-                    <li>{{HTML::link('features','Features')}}</a></li>
-                    <li>{{HTML::link('faq','FAQ')}} </a></li>
                     <li>{{HTML::link('logout','Logout')}} </a></li>
                 @endif                    
                 </ul>

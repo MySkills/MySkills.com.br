@@ -52,6 +52,11 @@ Route::get('dashboard', function()
 	return View::make('pages.dashboard');
 });
 
+Route::get('leaderboard', function()
+{
+	return View::make('pages.leaderboard');
+});
+
 Route::get('logout', function() {
     Auth::logout();
     return Redirect::to('/');
