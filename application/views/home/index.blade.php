@@ -11,6 +11,7 @@
       					<p class="landing-actions">
                   {{HTML::link('connect/session/facebook', 'Login with Facebook', array('class' => 'btn btn-large btn-primary'))}}          
                   {{HTML::link('connect/session/github', 'Login with Github', array('class' => 'btn btn-large btn-primary'))}}                            
+                  {{HTML::link('connect/session/linkedin', 'Login with Linkedin', array('class' => 'btn btn-large btn-primary'))}}                                             
       					</p>
       				</div> <!-- /landing-text -->
       				<div class="span6 landing-screenshot">

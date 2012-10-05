@@ -51,8 +51,8 @@ return array(
 		),
 
 		'linkedin' => array(
-			'key'    => '',
-			'secret' => '',
+			'key'    => 'x992lkqssxqq',
+			'secret' => 'h4fgvNZanzkTqHM5',
 		),
 
 		'paypal' => array(
