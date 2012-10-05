@@ -17,15 +17,30 @@
 						</caption>
 						<thead>
 							<tr>
-								<th>Name</th><th>From</th>
+								<th>id</th>
+								<th>Username</th>
+								<th>Nickname</th>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Name</th>
+								<th>e-mail</th>
+								<th>From</th>
+								<th>Since</th>
 							</tr>
 						</thead>
 						<tbody>
 						<?php $users = User::all() ?>
 						@foreach ($users as $user)
                  		<tr>
+                 			<td>{{$user->id}}</td>
+                 			<td>{{$user->username}}</td>
+                 			<td>{{$user->nickname}}</td>
+                 			<td>{{$user->firstname}}</td>
+                 			<td>{{$user->lastname}}</td>
                  			<td>{{$user->name}}</td>
+                 			<td>{{$user->email}}</td>
                  			<td>{{$user->social_provider}}</td>
+                 			<td>{{$user->created_atl}}</td>
                  		</tr>
               			@endforeach     
 						</tbody>
