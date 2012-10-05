@@ -5,6 +5,6 @@ return array(
 	'login'        => 'auth/login',
 	'callback'     => 'connect/callback',
 	
-	'registered'   => 'auth/account1',
+	'registered'   => '/welcome',
 	'logged_in'    => '/',
 );
