@@ -12,16 +12,17 @@ class Create_Users {
 		//
 		Schema::create('users', function($table) {
 		    $table->increments('id');
-		    $table->string('username', 128);
+		    $table->string('uid', 16);		    
+		    $table->string('provider', 32);
 		    $table->string('name', 128);		    
-		    $table->string('firstname', 128);
-			$table->string('lastname', 128);
-			$table->string('email', 128);			
-		    $table->string('password', 64);
-		    $table->string('social_uid', 11);		    
-		    $table->string('social_provider', 64);
+		    $table->string('nickname', 32);
+			$table->string('email', 64);			
+		    $table->string('password', 128);
+			$table->string('url', 255);
+		    $table->string('image', 255);		    
 		    $table->timestamps();
 		});
+		/*
 		DB::table('users')->insert(array(
 		    'username'  => 'eduardocruz',
 		    'name'  => 'Eduardo Cruz',		    
@@ -29,7 +30,8 @@ class Create_Users {
 		    'lastname'  => 'Cruz',		    
 		    'email'  => 'eduardo@eduardocruz.com',		    		    
 		    'password'  => Hash::make('penny411')
-		));		
+		));
+		*/		
 	}
 
 	/**

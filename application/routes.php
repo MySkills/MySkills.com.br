@@ -33,7 +33,7 @@
 */
 
 Route::get('/', function()
-{
+{   	
 	return View::make('home.index');
 });
 
@@ -52,6 +52,11 @@ Route::get('dashboard', function()
 	return View::make('pages.dashboard');
 });
 
+Route::get('welcome', function()
+{
+	return View::make('onboarding.welcome');
+});
+
 Route::get('leaderboard', function()
 {
 	return View::make('pages.leaderboard');
@@ -62,41 +67,13 @@ Route::get('logout', function() {
     return Redirect::to('/');
 });
 
-Route::get('auth/register', function()
-{
-	$user_data = Session::get('oneauth');
-
-	$user = new User;
-
-	//used for logging in user
-	$user->social_uid 		= $user_data['info']['uid'];
-	$user->social_provider 	= $user_data['provider'];
-
-	Log::myskills('TESTE');
-	//general info
-	$user->name = $user_data['info']['name'];
-	//$user->lastname = $user_data['info']['last_name'];
-
-	//Provider specific info
-	switch($user_data['provider']) {
-		case 'facebook' :
-			//double check email existence
-			$email_check = User::where_email($user_data['info']['email'])->count();
-			if ($email_check ==0)
-				$user->email = $user_data['info']['email'];
-		break;
-	}
-
-	//create user and log them in
-	$user->save();
-	Auth::login($user->id, true);
-
-	Session::forget('user_data');
-
+//Route::get('auth/register', function()
+//{
+	
 	//Send to Dashboard
-	Redirect::to('dashboard')->with('success', 'Welcome to MySkills.com.br');
-	return View::make('pages.dashboard');
-});
+	//Redirect::to('dashboard')->with('success', 'Welcome to MySkills.com.br');
+	//return View::make('pages.dashboard');
+//});
 
 Route::controller(Controller::detect());
 
@@ -168,7 +145,8 @@ Route::filter('csrf', function()
 	if (Request::forged()) return Response::error('500');
 });
 
-Route::filter('auth', function()
+Route::filter('connect', function()
 {
+	Log::myskills('Filter - Connect'); 
 	if (Auth::guest()) return Redirect::to('login');
 });

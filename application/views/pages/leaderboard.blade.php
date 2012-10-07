@@ -18,13 +18,11 @@
 						<thead>
 							<tr>
 								<th>id</th>
-								<th>Username</th>
-								<th>Nickname</th>
-								<th>First Name</th>
-								<th>Last Name</th>
+								<th>Provider</th>
 								<th>Name</th>
+								<th>Nickname</th>
 								<th>e-mail</th>
-								<th>From</th>
+								<th>url</th>
 								<th>Since</th>
 							</tr>
 						</thead>
@@ -33,14 +31,12 @@
 						@foreach ($users as $user)
                  		<tr>
                  			<td>{{$user->id}}</td>
-                 			<td>{{$user->username}}</td>
-                 			<td>{{$user->nickname}}</td>
-                 			<td>{{$user->firstname}}</td>
-                 			<td>{{$user->lastname}}</td>
+                 			<td>{{$user->provider}}</td>
                  			<td>{{$user->name}}</td>
-                 			<td>{{$user->email}}</td>
-                 			<td>{{$user->social_provider}}</td>
-                 			<td>{{$user->created_atl}}</td>
+                 			<td>{{$user->nickname}}</td>
+                 			<td>{{$user->email}}</td>                 			
+                 			<td>{{HTML::link($user->url, 'page')}}</td>                 			
+                 			<td>{{$user->created_at}}</td>
                  		</tr>
               			@endforeach     
 						</tbody>

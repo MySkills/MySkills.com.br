@@ -36,8 +36,8 @@ return array(
 		),
 
 		'github' => array(
-			'id'     => '216d5fa0146c563baae2',
-			'secret' => 'cf9d11b64560427f8a83dbe07f920950b1640d4f',
+			'id'     => '2e240cb41ee9c9a51604',
+			'secret' => '8c312d503dd36d934e16de6f7e618e635a4ca85f',
 		),
 
 		'google' => array(

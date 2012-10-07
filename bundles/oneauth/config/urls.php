@@ -1,10 +1,10 @@
 <?php
 
 return array(
-	'registration' => 'auth/register',
-	'login'        => 'auth/login',
+	'registration' => 'connect/register',
+	'login'        => 'connect/login',
 	'callback'     => 'connect/callback',
 	
-	'registered'   => '/welcome',
-	'logged_in'    => '/',
+	'registered'   => 'welcome',
+	'logged_in'    => 'dashboard',
 );
