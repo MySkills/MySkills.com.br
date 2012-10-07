@@ -11,12 +11,6 @@ class Connect_Controller extends OneAuth\Auth\Controller {
      */
 
  	/**
-    protected function action_error($provider, $e)
-    {
-        return View::make('auth.errors', compact('provider', 'e'));
-    }*/
-
- 	/**
      * Registration Page
      */
     public function action_register()
@@ -43,13 +37,17 @@ class Connect_Controller extends OneAuth\Auth\Controller {
 				case 'facebook' :
 					$user->email = $user_data['info']['email'];
 					$user->url = $user_data['info']['urls']['facebook'];
+          $user->image = $user_data['info']['image'];
 				break;
 				case 'github' :
+          $github = json_decode(file_get_contents('https://api.github.com/users/eduardocruz'));
+          $user->image = $github->avatar_url;
 					$user->email = $user_data['info']['email'];
 					$user->url = $user_data['info']['urls']['github'];					
 				break;
 				case 'linkedin' :
-					$user->url = $user_data['info']['urls']['linkedin'];					
+					$user->url = $user_data['info']['urls']['linkedin'];
+          $user->image = $user_data['info']['image'];
 				break;
 			} 			
 
@@ -105,7 +103,7 @@ class Connect_Controller extends OneAuth\Auth\Controller {
 
         Session::forget('user_data');
        // return OneAuth\Auth\Core::redirect('registered'); // redirect to /home
-        return View::make('onboarding.welcome');
+        return View::make('onboarding.welcome')->with('page','welcome');
     }
 
     /**

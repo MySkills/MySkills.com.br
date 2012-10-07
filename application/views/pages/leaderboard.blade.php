@@ -27,15 +27,7 @@
 						<?php $users = User::all() ?>
 						@foreach ($users as $user)
 						<tr>
-							@if ($user->provider =='facebook')
-								<td><img src="https://graph.facebook.com/{{$user->uid}}/picture&type=square"></td>
-							@elseif ($user->provider =='linkedin')
-								<td>&nbsp;</td>
-							@elseif ($user->provider =='github')
-								<td>&nbsp;</td>
-							@else
-								<td>&nbsp;</td>
-							@endif
+							<td><img src="{{$user->image}}" width="50" height="50"></td>
 							<td>{{HTML::link($user->url, $user->name)}}</td>
 							<td>
 								<div class="progress progress-success">
