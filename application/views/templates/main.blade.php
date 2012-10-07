@@ -39,12 +39,28 @@
             {{HTML::link('/','Reboot Admin', array('class' => 'brand'))}}
             <div class="nav-collapse">
                 <ul class="nav pull-right">
-                    <li class="active"> {{HTML::link('/','Home')}} </a></li>  
+                    @if ($page == 'home')
+                        <li class="active"> {{HTML::link('/','Home')}} </a></li>
+                    @else
+                        <li> {{HTML::link('/','Home')}} </a></li>
+                    @endif
                     @if ( Auth::guest() )                          
-                        <li>{{HTML::link('features','Features')}}</a></li>
-                        <li>{{HTML::link('faq','FAQ')}} </a></li>
-                    @endif                                           
-                    <li>{{HTML::link('leaderboard','Leaderboard')}}</a></li>                    
+                        @if ($page=='features' )
+                            <li class="active">{{HTML::link('features','Features')}}</a></li>
+                        @else
+                            <li>{{HTML::link('features','Features')}}</a></li>
+                        @endif
+                        @if ($page=='faq')
+                            <li class="active">{{HTML::link('faq','FAQ')}} </a></li>
+                        @else
+                            <li>{{HTML::link('faq','FAQ')}} </a></li>
+                        @endif
+                    @endif
+                    @if($page=='leaderboard')
+                        <li class="active">{{HTML::link('leaderboard','Leaderboard')}}</a></li>
+                    @else
+                        <li>{{HTML::link('leaderboard','Leaderboard')}}</a></li>
+                    @endif
                     @if ( Auth::guest() )            
                     @else                    
                         <li>{{HTML::link('logout','Logout')}} </a></li>

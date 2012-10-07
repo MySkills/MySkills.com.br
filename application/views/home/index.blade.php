@@ -1,7 +1,6 @@
 @layout('templates.main')
 @section('content')
-  @if ( Auth::guest() )   
-  
+  @if ( Auth::guest() )
       <div id="landing">    
           <div class="inner">        
               <div class="container">        

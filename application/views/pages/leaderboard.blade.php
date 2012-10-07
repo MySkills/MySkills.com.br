@@ -17,11 +17,10 @@
 						</caption>
 						<thead>
 							<tr>
-								<th>Picture</th>
-								<th>Name</th>
-								<th>External profile</th>
-								<th>Provider</th>								
-								<th>Since</th>
+								<th width="10%">Picture</th>
+								<th width="20%">Name</th>
+								<th width="40%">Skills</th>
+								<th width="30%">Since</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -37,9 +36,12 @@
 							@else
 								<td>&nbsp;</td>
 							@endif
-							<td>{{$user->name}}</td>
-							<td>{{HTML::link($user->url, $user->url)}}</td>
-							<td>{{$user->provider}}</td>
+							<td>{{HTML::link($user->url, $user->name)}}</td>
+							<td>
+								<div class="progress progress-success">
+									<div class="bar" style="width: 100%;"></div>
+								</div>
+							</td>
 							<td>{{$user->created_at}}</td>
                  		</tr>
               			@endforeach     

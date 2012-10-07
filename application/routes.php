@@ -32,29 +32,24 @@
 |
 */
 
-Route::get('/', function()
-{   	
-	return View::make('home.index');
-});
-
 Route::get('features', function()
 {
-	return View::make('pages.features');
+	return View::make('pages.features')->with('page','features');
 });
 
 Route::get('faq', function()
 {
-	return View::make('pages.faq');
+	return View::make('pages.faq')->with('page','faq');
 });
 
 Route::get('welcome', function()
 {
-	return View::make('onboarding.welcome');
+	return View::make('onboarding.welcome')->with('page','home');;
 });
 
 Route::get('leaderboard', function()
 {
-	return View::make('pages.leaderboard');
+	return View::make('pages.leaderboard')->with('page','leaderboard');;
 });
 
 Route::get('logout', function() {
