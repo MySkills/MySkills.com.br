@@ -47,11 +47,6 @@ Route::get('faq', function()
 	return View::make('pages.faq');
 });
 
-Route::get('dashboard', function()
-{
-	return View::make('pages.dashboard');
-});
-
 Route::get('welcome', function()
 {
 	return View::make('onboarding.welcome');

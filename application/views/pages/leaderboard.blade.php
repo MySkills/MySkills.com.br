@@ -17,12 +17,9 @@
 						</caption>
 						<thead>
 							<tr>
-								<th>id</th>
-								<th>Provider</th>
 								<th>Name</th>
-								<th>Nickname</th>
-								<th>e-mail</th>
-								<th>url</th>
+								<th>External profile</th>
+								<th>Provider</th>								
 								<th>Since</th>
 							</tr>
 						</thead>
@@ -30,12 +27,9 @@
 						<?php $users = User::all() ?>
 						@foreach ($users as $user)
                  		<tr>
-                 			<td>{{$user->id}}</td>
-                 			<td>{{$user->provider}}</td>
                  			<td>{{$user->name}}</td>
-                 			<td>{{$user->nickname}}</td>
-                 			<td>{{$user->email}}</td>                 			
-                 			<td>{{HTML::link($user->url, 'page')}}</td>                 			
+                 			<td>{{HTML::link($user->url, $user->url)}}</td>                 			
+                 			<td>{{$user->provider}}</td>                 			
                  			<td>{{$user->created_at}}</td>
                  		</tr>
               			@endforeach     

@@ -35,8 +35,9 @@
 
 return array(
 
-	'docs' => array('handles' => 'docs'),
-	'bundocs' => array('auto' => true, 'handles' => 'bundocs'),	
-	'oneauth' => array('auto' => true),
+	'docs' 			=> array('handles' => 'docs'),
+	'bundocs' 		=> array('auto' => true, 'handles' => 'bundocs'),	
+	'oneauth' 		=> array('auto' => true),
+	'facebook-sdk' 	=> array('auto' => true),
 
 );

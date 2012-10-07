@@ -31,7 +31,7 @@ class Connect_Controller extends OneAuth\Auth\Controller {
             $user->password = Hash::create(Input::get('password'));
             $user->email    = Input::get('email');
         } else {
-			$user_data = Session::get('oneauth');			
+			$user_data = Session::get('oneauth');	
 			//used for logging in user
 			$user->uid 		= $user_data['info']['uid'];
 			$user->provider 	= $user_data['provider'];
@@ -55,17 +55,57 @@ class Connect_Controller extends OneAuth\Auth\Controller {
 
         }
 
-		$user->save();
-		Auth::login($user->id, true);
-		Session::forget('user_data');
+        $user->save();
+        Auth::login($user->id, true);
+
         //if (Auth::attempt($login))
+        // Synced it with oneauth, this will create a relationship between
+        // `oneauth_clients` table with `users` table.
+        Event::fire('oneauth.sync', array($user->id));		
 
-		 // Synced it with oneauth, this will create a relationship between
-         // `oneauth_clients` table with `users` table.
-         Event::fire('oneauth.sync', array($user->id));
+        switch($user_data['provider']) {
+            case 'facebook' :
+                $facebook = IoC::resolve('facebook-sdk');
+                $access_token = unserialize($user_data['token']); 
+                $facebook = $facebook->setAccessToken($access_token->access_token);                
+                $user_id = $facebook->getUser();      
+                if($user_id) {
+                    Log::user_id($user_id);
+                    // We have a user ID, so probably a logged in user.
+                    // If not, we'll get an exception, which we handle below.
+                    try {
+                      $ret_obj = $facebook->api('/me/feed', 'POST',
+                                                  array(
+                                                    'link' => 'www.myskills.com.br',
+                                                    'message' => 'A comunidadede de desenvolvedores acabou de aumentar. Agora faço parte do MySkills.com.br!!! :)'
+                                               ));
+                    // echo '<pre>Post ID: ' . $ret_obj['id'] . '</pre>';
+                    } catch(FacebookApiException $e) {
+                      // If the user is logged out, you can have a 
+                      // user ID even though the access token is invalid.
+                      // In this case, we'll get an exception, so we'll
+                      // just ask the user to login again here.
+                      $login_url = $facebook->getLoginUrl( array(
+                                     'scope' => 'publish_stream'
+                                     )); 
+                    //  echo 'Please <a href="' . $login_url . '">login.</a>';
+                      error_log($e->getType());
+                      error_log($e->getMessage());
+                    }   
+                } else {
+                    // No user, so print a link for the user to login
+                    // To post to a user's wall, we need publish_stream permission
+                    // We'll use the current URL as the redirect_uri, so we don't
+                    // need to specify it here.
+                    $login_url = $facebook->getLoginUrl( array( 'scope' => 'publish_stream' ) );
+                    //echo 'Please <a href="' . $login_url . '">login.</a>';
+                } 
+            break;
+        }
 
-        return OneAuth\Auth\Core::redirect('registered'); // redirect to /home
-        //return View::make('onboarding.welcome');
+        Session::forget('user_data');
+       // return OneAuth\Auth\Core::redirect('registered'); // redirect to /home
+        return View::make('onboarding.welcome');
     }
 
     /**
