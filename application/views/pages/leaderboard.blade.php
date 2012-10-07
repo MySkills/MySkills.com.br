@@ -17,6 +17,7 @@
 						</caption>
 						<thead>
 							<tr>
+								<th>Picture</th>
 								<th>Name</th>
 								<th>External profile</th>
 								<th>Provider</th>								
@@ -26,11 +27,20 @@
 						<tbody>
 						<?php $users = User::all() ?>
 						@foreach ($users as $user)
-                 		<tr>
-                 			<td>{{$user->name}}</td>
-                 			<td>{{HTML::link($user->url, $user->url)}}</td>                 			
-                 			<td>{{$user->provider}}</td>                 			
-                 			<td>{{$user->created_at}}</td>
+						<tr>
+							@if ($user->provider =='facebook')
+								<td><img src="https://graph.facebook.com/{{$user->uid}}/picture&type=square"></td>
+							@elseif ($user->provider =='linkedin')
+								<td>&nbsp;</td>
+							@elseif ($user->provider =='github')
+								<td>&nbsp;</td>
+							@else
+								<td>&nbsp;</td>
+							@endif
+							<td>{{$user->name}}</td>
+							<td>{{HTML::link($user->url, $user->url)}}</td>
+							<td>{{$user->provider}}</td>
+							<td>{{$user->created_at}}</td>
                  		</tr>
               			@endforeach     
 						</tbody>
