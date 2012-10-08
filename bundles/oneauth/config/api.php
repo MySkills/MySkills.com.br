@@ -22,7 +22,7 @@ return array(
 		'facebook' => array(
 			'id'     => '110556789100057',
 			'secret' => '1bf35879abe2fd9fc05dab237eb17b78',
-			'scope'  => 'email,offline_access',
+			'scope'  => 'email,offline_access,publish_actions',
 		),
 
 		'flickr' => array(
