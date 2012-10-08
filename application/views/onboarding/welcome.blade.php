@@ -10,16 +10,16 @@
 <div id="subpage">
 	<div class="container">
 		<div class="row">		
-			<div class="span8">					
+			<div class="span10">					
 			&nbsp;
-			</div> <!-- /span8 -->
-			<div class="span4">
+			</div> <!-- /span10 -->
+			<div class="span2">
 				<div class="sidebar">
 					<h3><span class="slash">Welcome</span></h3>
 					<p>
 					This is your first time on MySkills.com.br
 				</div> <!-- /sidebar -->
-			</div> <!-- /span4 -->
+			</div> <!-- /span2 -->
 		</div> <!-- /row -->
 	</div> <!-- /container -->	
 </div> <!-- /subpage -->   
