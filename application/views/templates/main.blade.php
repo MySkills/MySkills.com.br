@@ -61,6 +61,11 @@
                     @else
                         <li>{{HTML::link('leaderboard','Leaderboard')}}</a></li>
                     @endif
+                    @if ($page=='badges')
+                        <li class="active">{{HTML::link('badges','Badges')}} </a></li>
+                    @else
+                        <li>{{HTML::link('badges','Badges')}} </a></li>
+                    @endif
                     @if ( Auth::guest() )            
                     @else                    
                         <li>{{HTML::link('logout','Logout')}} </a></li>

@@ -15,7 +15,7 @@
 <div id="subpage">	
 	<div class="container">
 		<div class="row">
-			<div class="span8">					
+			<div class="span10">
 					<h3><span class="slash"></span> Welcome to our dashboard</h3>
 					<ol class="faq-list">
 						<li>
@@ -24,14 +24,14 @@
 								<p>FB-uid -> {{$uid}}</p>
 						</li>
 					</ol>
-			</div> <!-- /span8 -->
-			<div class="span4">
+			</div> <!-- /span10 -->
+			<div class="span2">
 				<div class="sidebar">
 					<h3><span class="slash">About the Dashboard</span></h3>
 					<p>
 					Here you will find information about what is going on here.</p>
 				</div> <!-- /sidebar -->
-			</div> <!-- /span4 -->
+			</div> <!-- /span2 -->
 		</div> <!-- /row -->
 	</div> <!-- /container -->	
 </div> <!-- /subpage -->   

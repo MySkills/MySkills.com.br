@@ -10,7 +10,7 @@
 <div id="subpage">
 	<div class="container">
 		<div class="row">		
-			<div class="span8">					
+			<div class="span10">
 					<table class="table table-striped table-condensed">
 						<caption>
 							These are our community users.
@@ -40,7 +40,7 @@
 						</tbody>
 					</table>
 			</div> <!-- /span8 -->
-			<div class="span4">
+			<div class="span2">
 				<div class="sidebar">
 					<h3><span class="slash">About the Leaderboard</span></h3>
 					<p>

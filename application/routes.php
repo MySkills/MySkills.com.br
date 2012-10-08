@@ -52,6 +52,11 @@ Route::get('leaderboard', function()
 	return View::make('pages.leaderboard')->with('page','leaderboard');;
 });
 
+Route::get('badges', function()
+{
+	return View::make('pages.badges')->with('page','badges');;
+});
+
 Route::get('logout', function() {
     Auth::logout();
     return Redirect::to('/');

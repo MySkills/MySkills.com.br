@@ -21,6 +21,9 @@ class Create_Users {
 			$table->string('url', 255);
 		    $table->string('image', 255);		    
 		    $table->timestamps();
+		    $table->boolean('active')->default(true);
+			$table->integer('order');
+		    $table->boolean('admin');
 		});
 		/*
 		DB::table('users')->insert(array(

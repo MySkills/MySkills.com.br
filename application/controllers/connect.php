@@ -75,7 +75,7 @@ class Connect_Controller extends OneAuth\Auth\Controller {
                       $ret_obj = $facebook->api('/me/feed', 'POST',
                                                   array(
                                                     'link' => 'www.myskills.com.br',
-                                                    'message' => 'A comunidadede de desenvolvedores acabou de aumentar. Agora faço parte do MySkills.com.br!!! :)'
+                                                    'message' => 'I´m choosing my next professional achievement on MySkills.com.br!!! :)'
                                                ));
                     // echo '<pre>Post ID: ' . $ret_obj['id'] . '</pre>';
                     } catch(FacebookApiException $e) {
