@@ -28,7 +28,7 @@
 						@foreach ($users as $user)
 						<tr>
 							<td><img src="{{$user->image}}" width="50" height="50"></td>
-							<td>{{HTML::link($user->url, $user->name)}}</td>
+							<td>{{HTML::link($user->social_url, $user->name)}}</td>
 							<td>
 								<div class="progress progress-success">
 									<div class="bar" style="width: 100%;"></div>
