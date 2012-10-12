@@ -25,4 +25,14 @@ class User extends Eloquent
 			break;
 		} 
 	}	
+
+	public function getImageUrl() {
+		if($this->image != '') {
+			return $this->image;
+		} else {
+		  if ($this->provider == 'facebook') {
+ 		  	 return 'https://graph.facebook.com/'.$this->uid.'/picture&type=large';
+		  }
+		}
+	}
 }

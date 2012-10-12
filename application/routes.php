@@ -57,6 +57,11 @@ Route::get('badges', function()
 	return View::make('pages.badges')->with('page','badges');;
 });
 
+Route::get('users', function()
+{
+	return View::make('pages.users')->with('page','users');;
+});
+
 Route::get('logout', function() {
     Auth::logout();
     return Redirect::to('/');

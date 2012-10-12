@@ -21,7 +21,15 @@ class Connect_Controller extends OneAuth\Auth\Controller {
         $user->email    = Input::get('email');
     } else {
 			$user_data = Session::get('oneauth');	
-			$user->setUserData($user_data);	
+      $existing_user = User::where_uid($user_data['info']['uid'])->first();
+      if (is_object($existing_user)){
+        $user = $existing_user;
+        $user->setUserData($user_data);
+      } else {
+        $user->setUserData($user_data);
+      }
+
+//      if  ($user_data['info']['uid'] == $existing_user->uid)
     }
     $user->save();
     Auth::login($user->id, true);

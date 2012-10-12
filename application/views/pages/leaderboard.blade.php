@@ -18,22 +18,45 @@
 						<thead>
 							<tr>
 								<th width="10%">Picture</th>
-								<th width="20%">Name</th>
-								<th width="40%">Skills</th>
-								<th width="30%">Since</th>
+								<th width="10%">Name</th>
+								<th width="10%">Level</th>
+								<th width="10%">Points</th>
+								<th width="40%">Badges</th>
+								{{-- <th width="30%">Skills</th> --}}
+								<th width="20%">Since</th>
 							</tr>
 						</thead>
 						<tbody>
-						<?php $users = User::all() ?>
+						<?php $users = User::order_by('points', 'desc')->get(); ?>
 						@foreach ($users as $user)
 						<tr>
-							<td><img src="{{$user->image}}" width="50" height="50"></td>
-							<td>{{HTML::link($user->social_url, $user->name)}}</td>
+							<td><img src="{{$user->getImageUrl()}}" width="50" height="50"></td>
+							@if($user->social_url != '')
+								<td>{{HTML::link($user->social_url, $user->name)}}</td>															
+							@else
+								@if($user->provider == 'facebook')
+									<td>{{HTML::link('http://www.facebook.com/'.$user->uid, $user->name)}}</td>
+								@endif
+							@endif
+							<td>
+								<img src="img/profile/senior-male.png" width="50" height="50">
+							</td>
+							<td>{{$user->points}}</td>
+							<td>
+								<img src="img/badges/unlock100.png" width="50" height="50">
+								<img src="img/badges/unlock100.png" width="50" height="50">
+								<img src="img/badges/unlock100.png" width="50" height="50">
+								<img src="img/badges/unlock100.png" width="50" height="50">
+								<img src="img/badges/unlock100.png" width="50" height="50">
+							</td>
+							{{-- 
 							<td>
 								<div class="progress progress-success">
-									<div class="bar" style="width: 100%;"></div>
+									<?php $points = (100*$user->points)/133 ?>
+									<div class="bar" style="width: {{$points}}%"></div>
 								</div>
 							</td>
+							--}}
 							<td>{{$user->created_at}}</td>
                  		</tr>
               			@endforeach     
