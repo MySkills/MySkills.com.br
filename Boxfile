@@ -19,6 +19,7 @@ web1:
     - memcached
     - curl
   before_deploy:
+    - "php artisan migrate:reset"  
     - "php artisan migrate:install"
     - "php artisan migrate"
   after_deploy:

@@ -67,14 +67,6 @@ Route::get('logout', function() {
     return Redirect::to('/');
 });
 
-//Route::get('auth/register', function()
-//{
-	
-	//Send to Dashboard
-	//Redirect::to('dashboard')->with('success', 'Welcome to MySkills.com.br');
-	//return View::make('pages.dashboard');
-//});
-
 Route::controller(Controller::detect());
 
 /*
