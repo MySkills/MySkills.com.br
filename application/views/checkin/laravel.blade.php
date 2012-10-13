@@ -9,17 +9,17 @@
 </head>
 <body>
 <div class="row-fluid pagination-centered">
-	<div class="alert alert-success">
-		<h3>Check in Completed</h3>
-		 <p>Life is too short to write bad code!!!</p>
+	<div>
+		 <h2>Coding with Laravel</h2>
 	</div>
 	<div>
 		{{HTML::image('img/MySkills-155-100.png',  'MySkills logo', array('width' => '125'))}}
 	</div>
 </div>
 <div class="row-fluid pagination-centered">
-	<div>
-		 <h1>Coding with Laravel</h1>
+	<div class="alert alert-success">
+		<h3>Check in Completed</h3>
+		 <p>Life is too short to write bad code!!!</p>
 	</div>
 	<div>
 		{{HTML::image('img/laravel.png',  'Laravel logo', array('width' => '75'))}}
