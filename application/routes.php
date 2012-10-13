@@ -62,9 +62,30 @@ Route::get('users', function()
 	return View::make('pages.users')->with('page','users');;
 });
 
+
+Route::get('checkin/(:any)', function($technology)
+{
+	$data = array(
+        'technology'  => $technology
+    );
+	return View::make('checkin.success', $data)->with('page','checkin.success');;
+});
+
+/*
+Route::get('login', function() {
+    Auth::logout();
+    return View::make('checkin.login')->with('page','checkin.login');;
+});
+*/
+
 Route::get('logout', function() {
     Auth::logout();
     return Redirect::to('/');
+});
+
+Route::filter('auth', function()
+{
+    if (Auth::guest()) return Redirect::to('login');
 });
 
 Route::controller(Controller::detect());
