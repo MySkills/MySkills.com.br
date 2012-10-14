@@ -18,6 +18,11 @@ class Oauth2 extends Auth_Strategy
 	
 	public function authenticate()
 	{
+		echo('Libraries/auth/strategy/oauth2.autenthicate');
+		var_dump(\Config::get('oneauth::urls.logged_in'));		
+		//die('Error-Oauth2');
+
+
 		// Load the provider
 		$provider = Provider::make($this->provider, $this->config);
 		

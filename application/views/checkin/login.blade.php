@@ -19,7 +19,7 @@
 			 <p>We will not post on your wall!!!</p>
 		</div>
 		<div>
-			{{HTML::link('connect/session/facebook', 
+			{{HTML::link('connect/session/fb_checkin_laravel', 
                     'Sign-In(Facebook)', array('class' 
                       => 'btn btn-large btn-primary'))}}
 		</div>

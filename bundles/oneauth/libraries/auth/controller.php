@@ -19,10 +19,16 @@ class Controller extends \Controller
 	 */
 	public function action_session($provider = null)
 	{
+		echo('Libraries/auth/Controller.session');
+
 		// if provider data is somehow empty, it might not came from a provider.
 		if (empty($provider))
 		{
 			return \Response::error('404');
+		}
+		if ($provider == 'fb_checkin_laravel') {
+			\Config::set('oneauth::urls.logged_in', $provider);			
+			$provider = 'facebook';
 		}
 
 		try 
@@ -45,12 +51,21 @@ class Controller extends \Controller
 	 */
 	public function action_callback($provider = null)
 	{
+		echo('Libraries/auth/Controller.callback');
+		//die('Error-Controller.Callback');
+
 		// if provider data is somehow empty, it might not came from a provider.
 		if (empty($provider))
 		{
 			return \Response::error('404');
 		}
-		
+		if($provider == 'fb_checkin_laravel') {
+			//echo('funciononou');		
+			$provider = 'facebook'	;
+			\Config::set('oneauth::urls.logged_in', 'checkin/laravel');			
+		} else {
+			//echo('não funcionou');
+		}
 		try 
 		{
 			$strategy = Strategy::make($provider);

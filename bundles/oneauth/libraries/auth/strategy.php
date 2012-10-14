@@ -75,6 +75,10 @@ abstract class Strategy
 	 */
 	public static function make($provider = null)
 	{
+		echo('Libraries/auth/Strategy.make');
+		var_dump(\Config::get('oneauth::urls.logged_in'));		
+
+
 		$strategy = Config::get("oneauth::providers.{$provider}.strategy") ?: array_get(static::$providers, $provider);
 
 		if (is_null($strategy))
@@ -104,15 +108,18 @@ abstract class Strategy
 	 */
 	public static function login_or_register($strategy)
 	{
+		echo('Libraries/auth/Strategy.login_or_register');
+		var_dump(\Config::get('oneauth::urls.logged_in'));
+
 		$token     = $strategy->callback();
 		$user_info = static::get_user_info($strategy, $token);
-
 		$user_data = array(
 			'token'    => $token,
 			'info'     => $user_info,
 			'provider' => $strategy->provider->name,
 		);
-
+		var_dump($user_data);
+		//die('Error-Strategy');
 		return Core::login($user_data);
 	}
 

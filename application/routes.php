@@ -63,20 +63,23 @@ Route::get('users', function()
 });
 
 
-Route::get('checkin/(:any)', function($technology)
-{
-	$data = array(
-        'technology'  => $technology
-    );
-	return View::make('checkin.success', $data)->with('page','checkin.success');;
-});
+Route::get(
+	'checkin/(:any)', array(
+		'before' => 'auth', 
+		'do' => function($technology){
+			$data = array(
+				'technology'  => $technology
+			);
+			return View::make('checkin.success', $data)->with('page','checkin.success');
+		}
+	)
+);
 
-/*
+
 Route::get('login', function() {
-    Auth::logout();
     return View::make('checkin.login')->with('page','checkin.login');;
 });
-*/
+
 
 Route::get('logout', function() {
     Auth::logout();
@@ -156,6 +159,11 @@ Route::filter('after', function($response)
 Route::filter('csrf', function()
 {
 	if (Request::forged()) return Response::error('500');
+});
+
+Route::filter('auth', function()
+{
+    if (Auth::guest()) return Redirect::to('login');
 });
 
 Route::filter('connect', function()
