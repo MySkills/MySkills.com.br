@@ -1,16 +1,30 @@
 @layout('templates.main')
 @section('content')
 <!-- Modal -->
-<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div id="referModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h3 id="myModalLabel">Refer a user for this job position</h3>
   </div>
   <div class="modal-body">
     <p>(Coming Soon…)</p>
-    <p>Here you can add a reference for a social network profile of a developer
-    	who is not a user from MySkills. It might be a friend of yours. A colleague
-    	or even a technical speaker that you think might be the best fit for this position.</p>
+    <p>You know the right person for this job position?
+    	Here you will have the opportunity to refer a colleague
+    	or friend.</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>
+<div id="applyModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Apply for the Job</h3>
+  </div>
+  <div class="modal-body">
+    <p>(Coming Soon…)</p>
+    <p>Here you can apply for this job and describe and
+    	describe how you can use your skills to help this company.</p>
   </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -55,9 +69,12 @@
 								  </a>
 								  <ul class="dropdown-menu">
 								    <!-- dropdown menu links -->
-								    <li><a href="">Apply for this job</a></li>								    
 								    <li>
-								    	{{HTML::link('#myModal',
+								    	{{HTML::link('#applyModal',
+											'Apply for this job', array('data-toggle' => 'modal'))}}								    	
+								    </li>								    
+								    <li>
+								    	{{HTML::link('#referModal',
 											'Refer a User', array('data-toggle' => 'modal'))}}
 								    </li>								    
 								  </ul>
