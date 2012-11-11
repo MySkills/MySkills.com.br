@@ -43,11 +43,12 @@
 							</td>
 							<td>{{$user->points}}</td>
 							<td>
-								<img src="img/badges/unlock100.png" width="50" height="50">
-								<img src="img/badges/unlock100.png" width="50" height="50">
-								<img src="img/badges/unlock100.png" width="50" height="50">
-								<img src="img/badges/unlock100.png" width="50" height="50">
-								<img src="img/badges/unlock100.png" width="50" height="50">
+								@foreach ($user->badges as $badge)
+									<img src="img/badges/{{$badge->image}}" width="50" height="50">								    
+								@endforeach
+								@for ($i = 0; $i <= (6-count($user->badges)); $i++)
+									<img src="img/badges/unlock100.png" width="50" height="50">
+								@endfor								
 							</td>
 							{{-- 
 							<td>

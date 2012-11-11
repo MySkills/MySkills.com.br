@@ -109,7 +109,7 @@ abstract class Strategy
 	public static function login_or_register($strategy)
 	{
 		echo('Libraries/auth/Strategy.login_or_register');
-		var_dump(\Config::get('oneauth::urls.logged_in'));
+		//var_dump(\Config::get('oneauth::urls.logged_in'));
 
 		$token     = $strategy->callback();
 		$user_info = static::get_user_info($strategy, $token);

@@ -35,4 +35,9 @@ class User extends Eloquent
 		  }
 		}
 	}
+
+	public function badges()
+	{
+	  return $this->has_many_and_belongs_to('Badge');
+	}
 }

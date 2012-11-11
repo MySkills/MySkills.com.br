@@ -57,7 +57,12 @@
                             <li>{{HTML::link('faq','FAQ')}} </a></li>
                         @endif
                     @endif
-                        <li>{{HTML::link('https://build.phonegap.com/apps/224373/share','Mobile App')}}</a></li>                    
+                    <li>{{HTML::link('https://build.phonegap.com/apps/224373/share','Mobile App')}}</a></li>                    
+                    @if($page=='jobs')
+                        <li class="active">{{HTML::link('jobs','Jobs')}}</a></li>
+                    @else
+                        <li>{{HTML::link('jobs','Jobs')}}</a></li>
+                    @endif
                     @if($page=='leaderboard')
                         <li class="active">{{HTML::link('leaderboard','Leaderboard')}}</a></li>
                     @else

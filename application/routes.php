@@ -47,6 +47,11 @@ Route::get('welcome', function()
 	return View::make('onboarding.welcome')->with('page','home');;
 });
 
+Route::get('jobs', function()
+{
+	return View::make('pages.jobs')->with('page','jobs');;
+});
+
 Route::get('leaderboard', function()
 {
 	return View::make('pages.leaderboard')->with('page','leaderboard');;
