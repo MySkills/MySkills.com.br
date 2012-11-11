@@ -41,6 +41,16 @@
 	<div class="container">
 		<div class="row">		
 			<div class="span10">
+				@if(Session::get('status'))
+					@if(Session::get('status')=='ERROR')
+						<div class="alert alert-error">
+					@else
+						<div class="alert alert-success">
+					@endif					
+						 <button type="button" class="close" data-dismiss="alert">×</button>
+	   					<strong>{{Session::get('status')}}</strong>
+					</div>
+				@endif
 					<table class="table table-striped table-condensed">
 						<caption>
 							These are our Job Opportunities.
@@ -61,24 +71,17 @@
 							<td>{{$job->description}}</td>
 							<td>{{count($job->candidates)}}</td>							
 							<td>
-								
-								<div class="btn-group">
-								  <a class="btn btn-mini btn-info dropdown-toggle" data-toggle="dropdown" href="#">
-								    Choose Action
-								    <span class="caret"></span>
-								  </a>
-								  <ul class="dropdown-menu">
-								    <!-- dropdown menu links -->
-								    <li>
-								    	{{HTML::link('#applyModal',
-											'Apply for this job', array('data-toggle' => 'modal'))}}								    	
-								    </li>								    
-								    <li>
-								    	{{HTML::link('#referModal',
-											'Refer a User', array('data-toggle' => 'modal'))}}
-								    </li>								    
-								  </ul>
-								</div>													
+								@if( Auth::guest() )    
+									{{Form::submit('Sign-Up to Apply')}}
+								@else
+		                            @if(count($job->candidates()->where('user_id', '=', Auth::user()->id)->get()) == 0)
+										{{Form::open('jobs/'.$job->id.'/'.Auth::user()->id, 'PUT')}}
+										{{Form::submit('Apply for this job')}}
+										{{Form::close()}}	
+									@else
+										<span class="label">You Applied</span>
+									@endif
+								@endif
 							</td>							
                  		</tr>
               			@endforeach     

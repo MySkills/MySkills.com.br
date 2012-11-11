@@ -16,6 +16,7 @@ class Create_Job_User_Table {
 		    $table->foreign('user_id')->references('id')->on('users');
 		    $table->integer('job_id')->unsigned();
 		    $table->foreign('job_id')->references('id')->on('jobs');
+			$table->unique(array('user_id', 'job_id'));
 		    $table->text('message');		    
 		    $table->timestamps();
 		});	

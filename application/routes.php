@@ -44,37 +44,51 @@ Route::get('faq', function()
 
 Route::get('welcome', function()
 {
-	return View::make('onboarding.welcome')->with('page','home');;
+	return View::make('onboarding.welcome')->with('page','home');
 });
 
 Route::get('jobs', function()
 {
-	return View::make('pages.jobs')->with('page','jobs');;
+	return View::make('pages.jobs')->with('page','jobs');
 });
+
+/*
+Apply for a job. Add a user for a job position.
+*/
+Route::put('jobs/(:num)/(:num)',
+	array(
+		'before' => 'auth', 'do' => function($id, $user_id) {
+			try {
+				$job = Job::find($id);							
+				$job->candidates()->attach(Auth::user()->id);				
+			 	return Redirect::to('jobs')->with('status','SUCESS!!! You successfully applied for a job position. The recruiter will contact you soon.');
+			} catch (Exception $e) {
+				return Redirect::to('jobs')->with('status', 'ERROR');
+			}			
+		}
+	)
+);
 
 Route::get('leaderboard', function()
 {
-	return View::make('pages.leaderboard')->with('page','leaderboard');;
+	return View::make('pages.leaderboard')->with('page','leaderboard');
 });
 
 Route::get('badges', function()
 {
-	return View::make('pages.badges')->with('page','badges');;
+	return View::make('pages.badges')->with('page','badges');
 });
 
 Route::get('users', function()
 {
-	return View::make('pages.users')->with('page','users');;
+	return View::make('pages.users')->with('page','users');
 });
 
 
-Route::get(
-	'checkin/(:any)', array(
-		'before' => 'auth', 
-		'do' => function($technology){
-			$data = array(
-				'technology'  => $technology
-			);
+Route::get('checkin/(:any)', 
+	array(
+		'before' => 'auth', 'do' => function($technology){
+			$data = array('technology'  => $technology);
 			return View::make('checkin.success', $data)->with('page','checkin.success');
 		}
 	)
@@ -82,7 +96,7 @@ Route::get(
 
 
 Route::get('login', function() {
-    return View::make('checkin.login')->with('page','checkin.login');;
+    return View::make('checkin.login')->with('page','checkin.login');
 });
 
 
