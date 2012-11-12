@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://www2.myskills.com.br',
+	'url' => 'http://www.myskills.com.br',
 
 	/*
 	|--------------------------------------------------------------------------
