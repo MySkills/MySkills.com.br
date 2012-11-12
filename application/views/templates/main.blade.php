@@ -50,12 +50,13 @@
         @if(isset($user))
           <script>
             mixpanel.identify('{{$user->id}}');
-            mixpanel.people.set(
-              'name':'{{$user->name}}'
-              '$email':'{{$user->email}}'
-            );
+            mixpanel.people.set({
+                $last_login: '{{date('Y-m-d H:i:s')}}',
+                $name:'{{$user->name}}',
+                $email:'{{$user->email}}'
+            });
             mixpanel.name_tag('{{$user->name}}');
-            mixpanel.track('{{$page}}', {'name':'{{$user->name}}'});
+            mixpanel.track('{{$page}}');
           </script>
         @else
         @endif
@@ -120,12 +121,7 @@
     </div> <!-- /navbar-inner -->
     
 </div> <!-- /navbar -->
-
-
                 @yield('content')
-    
-
-            
 <div id="extra">
     
     <div class="inner">
