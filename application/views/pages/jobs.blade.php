@@ -62,31 +62,31 @@
 	   					<strong>{{Session::get('status')}}</strong>
 					</div>
 				@endif
-					<table class="table table-striped table-condensed">
-						<caption>
-							Apply for one of the Job Opportunities below.
-						</caption>
-						<thead>
-							<tr>
-								<th width="10%">Title</th>
-								<th width="65%">Description</th>
-								<th width="10%">Candidates</th>	
-								<th width="15%">Action</th>						
-							</tr>
-						</thead>
-						<tbody>
-						<?php $jobs = Job::order_by('created_at', 'desc')->get(); ?>
-						@foreach ($jobs as $job)
+				<table class="table table-striped table-condensed">
+					<caption>
+						Apply for one of the Job Opportunities below.
+					</caption>
+					<thead>
+						<tr>
+							<th width="10%">Title</th>
+							<th width="65%">Description</th>
+							<th width="10%">Candidates</th>	
+							<th width="15%">Action</th>						
+						</tr>
+					</thead>
+					<tbody>
+					<?php $jobs = Job::order_by('created_at', 'desc')->get(); ?>
+					@foreach ($jobs as $job)
 						<tr>
 							<td>{{$job->title}}</td>
 							<td>{{$job->description}}</td>
 							@if( Auth::guest() )    
-							<td>
-								{{count($job->candidates)}}
-							</td>							
-							<td>
-								{{Form::submit('Sign-Up to Apply')}}
-							</td>								
+								<td>
+									{{count($job->candidates)}}
+								</td>							
+								<td>
+									{{Form::submit('Sign-Up to Apply')}}
+								</td>								
 							@else
 								@if($job->recruiter_id == Auth::user()->id)
 									<td>
@@ -112,32 +112,33 @@
 									</td>
 								@endif
 							@endif
-							
-                 		</tr>
-						@if($job->recruiter_id == Auth::user()->id)                 		
-                     		<tr>
-                     			<td colspan=4>                     		
-                     			<div class="row-fluid">
-                   					@foreach ($job->candidates as $user)
-                     			 		<div class="span1">
-                     			 			<img src="{{$user->getImageUrl()}}" width="50" class="img-polaroid">
-	                   						@if($user->social_url != '')
-												{{HTML::link($user->social_url, $user->name)}}
-											@else
-												@if($user->provider == 'facebook')
-													{{HTML::link('http://www.facebook.com/'.$user->uid, $user->name)}}
+						
+             			</tr>
+             			@if( Auth::check() ) 
+							@if($job->recruiter_id == Auth::user()->id)                 		
+		                 		<tr>
+		                 			<td colspan=4>                     		
+		                 			<div class="row-fluid">
+		               					@foreach ($job->candidates as $user)
+		                 			 		<div class="span1">
+		                 			 			<img src="{{$user->getImageUrl()}}" width="50" class="img-polaroid">
+		                   						@if($user->social_url != '')
+													{{HTML::link($user->social_url, $user->name)}}
+												@else
+													@if($user->provider == 'facebook')
+														{{HTML::link('http://www.facebook.com/'.$user->uid, $user->name)}}
+													@endif
 												@endif
-											@endif
-										</div>
-                   					@endforeach
-                   				</div>
-								</td>                   				
-                     		</tr>                   			
-						@endif
-                 		
-              			@endforeach     
-						</tbody>
-					</table>
+											</div>
+		               					@endforeach
+		               				</div>
+									</td>                   				
+		                 		</tr>                   			
+							@endif  
+						@endif           		
+          			@endforeach     
+					</tbody>
+				</table>
 			</div> <!-- /span8 -->
 			<div class="span2">
 				<div class="sidebar">
