@@ -25,7 +25,7 @@
 			<div class="row">
 
 				<div class="span5">
-					<p>These is your first time here. We are very glad that you are now 
+					<p>This is your first time here. We are very glad that you are now 
 					part of our community.</p>
 
 					<p>The main problem we are trying to solve for you is to 

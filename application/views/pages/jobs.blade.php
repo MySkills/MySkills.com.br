@@ -1,34 +1,33 @@
 @layout('templates.main')
 @section('content')
 <!-- Modal -->
-<div id="referModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
+<div id="addJobModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Refer a user for this job position</h3>
-  </div>
-  <div class="modal-body">
-    <p>(Coming Soon…)</p>
-    <p>You know the right person for this job position?
-    	Here you will have the opportunity to refer a colleague
-    	or friend.</p>
-  </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-  </div>
+    <h3 id="myModalLabel">Add a New Job Position</h3>
 </div>
-<div id="applyModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Apply for the Job</h3>
-  </div>
-  <div class="modal-body">
-    <p>(Coming Soon…)</p>
-    <p>Here you can apply for this job and describe and
-    	describe how you can use your skills to help this company.</p>
-  </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-  </div>
+@if( Auth::check())
+	<div class="modal-body">
+	    <p>Describe the new job position for your company.</p>
+		{{Form::open('jobs/'.Auth::user()->id, 'PUT')}}
+		{{Form::label('title', 'Job Title')}}
+		{{Form::text('title', '',array('class' =>'input-xxlarge'))}}
+		{{Form::label('description', 'Job Description')}}		
+		{{Form::textarea('description','',array('class' =>'input-xxlarge'))}}
+		{{Form::submit('Submit', array('class' => 'btn-primary'))}}
+		{{Form::close()}}	
+  	</div>
+  	<div class="modal-footer">
+    	<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+  	</div>
+@else
+	<div class="modal-body">
+	    <p>You are not authenticated</p>
+  	</div>
+  	<div class="modal-footer">
+    	<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  	</div>
+@endif  
 </div>
 <div id="subheader">	
 	<div class="inner">
@@ -40,7 +39,19 @@
 <div id="subpage">
 	<div class="container">
 		<div class="row">		
-			<div class="span10">
+            <div class="span2">
+              <div class="sidebar">
+                <h3><span class="slash">Add New Job</span></h3>
+                <p>Add a new job position for your company right now.</p>
+				@if( Auth::guest() )    
+					{{Form::submit('Sign-Up to Submit')}}
+				@else
+                    <a href="#addJobModal" role="button" class="btn btn-primary" data-toggle="modal">Add a New Job</a>
+				@endif
+
+              </div> <!-- /sidebar -->
+            </div> <!-- /span2 -->			
+			<div class="span8">
 				@if(Session::get('status'))
 					@if(Session::get('status')=='ERROR')
 						<div class="alert alert-error">
@@ -53,7 +64,7 @@
 				@endif
 					<table class="table table-striped table-condensed">
 						<caption>
-							These are our Job Opportunities.
+							Apply for one of the Job Opportunities below.
 						</caption>
 						<thead>
 							<tr>
@@ -69,21 +80,61 @@
 						<tr>
 							<td>{{$job->title}}</td>
 							<td>{{$job->description}}</td>
-							<td>{{count($job->candidates)}}</td>							
+							@if( Auth::guest() )    
 							<td>
-								@if( Auth::guest() )    
-									{{Form::submit('Sign-Up to Apply')}}
-								@else
-		                            @if(count($job->candidates()->where('user_id', '=', Auth::user()->id)->get()) == 0)
-										{{Form::open('jobs/'.$job->id.'/'.Auth::user()->id, 'PUT')}}
-										{{Form::submit('Apply for this job')}}
-										{{Form::close()}}	
-									@else
-										<span class="label">You Applied</span>
-									@endif
-								@endif
+								{{count($job->candidates)}}
 							</td>							
+							<td>
+								{{Form::submit('Sign-Up to Apply')}}
+							</td>								
+							@else
+								@if($job->recruiter_id == Auth::user()->id)
+									<td>
+										{{count($job->candidates)}}
+									</td>							
+									<td>
+										{{Form::open('jobs/'.$job->id, 'DELETE')}}
+										{{Form::submit('DELETE')}}
+										{{Form::close()}}	
+									</td>									
+								@else
+									<td>
+										{{count($job->candidates)}}
+									</td>							
+									<td>
+			                            @if(count($job->candidates()->where('user_id', '=', Auth::user()->id)->get()) == 0)
+											{{Form::open('jobs/'.$job->id.'/'.Auth::user()->id, 'PUT')}}
+											{{Form::submit('Apply for this job')}}
+											{{Form::close()}}	
+										@else
+											<span class="label">You Applied</span>
+										@endif
+									</td>
+								@endif
+							@endif
+							
                  		</tr>
+						@if($job->recruiter_id == Auth::user()->id)                 		
+                     		<tr>
+                     			<td colspan=4>                     		
+                     			<div class="row-fluid">
+                   					@foreach ($job->candidates as $user)
+                     			 		<div class="span1">
+                     			 			<img src="{{$user->getImageUrl()}}" width="50" class="img-polaroid">
+	                   						@if($user->social_url != '')
+												{{HTML::link($user->social_url, $user->name)}}
+											@else
+												@if($user->provider == 'facebook')
+													{{HTML::link('http://www.facebook.com/'.$user->uid, $user->name)}}
+												@endif
+											@endif
+										</div>
+                   					@endforeach
+                   				</div>
+								</td>                   				
+                     		</tr>                   			
+						@endif
+                 		
               			@endforeach     
 						</tbody>
 					</table>
@@ -98,9 +149,9 @@
 					<p><strong>Status</strong> - Define your status 
 						for each job position.</p>
 						<ul>
-							<li><span class="label">APPLIED</span></li>
-							<li><span class="label label-info">REVIEWING</span></li>
-							<li><span class="label label-success">APPROVED</span></li>
+							<li><span class="label">You Applied</span></li>
+							<li><span class="label label-info">Recruiter Reviewing</span></li>
+							<li><span class="label label-success">Recruiter Approved</span></li>
 						</ul>
 								
 				

@@ -69,9 +69,56 @@ Route::put('jobs/(:num)/(:num)',
 	)
 );
 
-Route::get('leaderboard', function()
+/*
+Add a new job position for a company.
+*/
+Route::put('jobs/(:num)',
+	array(
+		'before' => 'auth', 'do' => function($user_id) {
+			try {
+				$job = new Job;
+				$job->title = Input::get('title');
+				$job->description = Input::get('description');
+				$job->recruiter_id = Auth::user()->id;
+				$job->save();
+			 	return Redirect::to('jobs')->with('status','SUCESS!!! You successfully created a new job position.');
+			} catch (Exception $e) {
+				return Redirect::to('jobs')->with('status', 'ERROR');
+			}			
+		}
+	)
+);
+
+
+/*
+Delete job position for a company.
+*/
+Route::delete('jobs/(:num)',
+	array(
+		'before' => 'auth', 'do' => function($id) {
+			$job = Job::find($id);
+			if($job->recruiter_id == Auth::user()->id){
+				try {
+					
+					$job->delete();
+				 	return Redirect::to('jobs')->with('status','SUCESS!!! You successfully deleted a job position.');
+				} catch (Exception $e) {
+					return Redirect::to('jobs')->with('status', 'ERROR');
+				}			
+			}
+			return Redirect::to('jobs')->with('status', 'ERROR');
+		}
+	)
+);
+
+Route::get('users', function()
 {
-	return View::make('pages.leaderboard')->with('page','leaderboard');
+	return View::make('pages.users')->with('page','users');
+});
+
+Route::get('users/candidates', function()
+{
+	return View::make('pages.users')->with('page','users');
 });
 
 Route::get('badges', function()

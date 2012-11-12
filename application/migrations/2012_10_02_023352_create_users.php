@@ -27,6 +27,7 @@ class Create_Users {
 //		    $table->integer('level_id')->unsigned();
 //		    $table->foreign('level_id')->references('id')->on('companies');
 		    $table->timestamps();
+		    $table->boolean('male')->default(true);
 		    $table->boolean('active')->default(true);
 			$table->integer('order');
 		    $table->boolean('admin');
