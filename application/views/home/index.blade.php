@@ -27,7 +27,7 @@
               </div> <!-- /container -->
           </div> <!-- /inner -->
       </div> <!-- /landing -->
-  @else  
+  @else
       <div id="subheader">
         <div class="inner">         
           <div class="container">

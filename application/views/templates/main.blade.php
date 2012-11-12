@@ -45,6 +45,22 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+    @if (Auth::check())
+      <?php $user = User::find(Auth::user()->id); ?>
+        @if(isset($user))
+          <script>
+            mixpanel.identify('{{$user->id}}');
+            mixpanel.people.set(
+              'name':'{{$user->name}}'
+              '$email':'{{$user->email}}'
+            );
+            mixpanel.name_tag('{{$user->name}}');
+            mixpanel.track('{{$page}}', {'name':'{{$user->name}}'});
+          </script>
+        @else
+        @endif
+    @endif
+
 </head>
 <body>
     <div class="navbar navbar-fixed-top">
