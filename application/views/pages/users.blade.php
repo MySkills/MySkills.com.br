@@ -3,7 +3,7 @@
 <div id="subheader">	
 	<div class="inner">
 		<div class="container">
-			<h1>Leaderboard</h1>
+			<h1>Users</h1>
 		</div> <!-- /.container -->
 	</div> <!-- /inner -->
 </div> <!-- /subheader -->
