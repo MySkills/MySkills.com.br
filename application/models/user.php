@@ -26,12 +26,12 @@ class User extends Eloquent
 		} 
 	}	
 
-	public function getImageUrl() {
+	public function getImageUrl($imageFormat) {
 		if($this->image != '') {
 			return $this->image;
 		} else {
 		  if ($this->provider == 'facebook') {
- 		  	 return 'https://graph.facebook.com/'.$this->uid.'/picture&type=large';
+ 		  	 return 'https://graph.facebook.com/'.$this->uid.'/picture&type='.$imageFormat;
 		  }
 		}
 	}

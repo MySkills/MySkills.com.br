@@ -121,7 +121,7 @@
 		                 			<div class="row-fluid">
 		               					@foreach ($job->candidates as $user)
 		                 			 		<div class="span1">
-		                 			 			<img src="{{$user->getImageUrl()}}" width="50" class="img-polaroid">
+		                 			 			<img src="{{$user->getImageUrl('square')}}" width="50" class="img-polaroid">
 		                   						@if($user->social_url != '')
 													{{HTML::link($user->social_url, $user->name)}}
 												@else

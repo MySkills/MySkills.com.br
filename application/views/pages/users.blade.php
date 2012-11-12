@@ -28,7 +28,7 @@
 					<?php $users = User::order_by('points', 'desc')->get(); ?>
 					@foreach ($users as $user)
 					<tr>
-						<td><img src="{{$user->getImageUrl()}}" width="50" height="50"></td>
+						<td><img src="{{$user->getImageUrl('square')}}" width="50" height="50"></td>
 						@if($user->social_url != '')
 							<td>{{HTML::link($user->social_url, $user->name)}}</td>															
 						@else
