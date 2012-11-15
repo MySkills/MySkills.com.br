@@ -21,7 +21,14 @@
 <head>
     <meta charset="utf-8">
     <title>MySkills.com.br - Software Developer Meritocracy</title>
-    
+<script src="//cdn.optimizely.com/js/111465504.js"></script>
+        <meta property="og:title" content="Meet the best developers"/>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://www.myskills.com.br"/>
+        <meta property="og:image" content="http://www.myskills.com.br/img/MySkills-64.png"/>
+        <meta property="og:site_name" content="MySkills.com.br"/>
+        <meta property="og:description" content="Hire the best professionals."/>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
