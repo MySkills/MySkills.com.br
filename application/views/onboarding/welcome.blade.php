@@ -1,22 +1,5 @@
 @layout('templates.main')
 @section('content')
-    @if (Auth::check())
-      <?php $user = User::find(Auth::user()->id); ?>
-        @if(isset($user))
-          <script>
-            mixpanel.identify('{{$user->id}}');
-            mixpanel.people.set({
-                $created:'{{date('Y-m-d H:i:s')}}',
-                $last_login: '{{date('Y-m-d H:i:s')}}',
-                $name:'{{$user->name}}',
-                $email:'{{$user->email}}'
-            });
-            mixpanel.name_tag('{{$user->name}}');
-            mixpanel.track('{{$page}}');
-          </script>
-        @else
-        @endif
-    @endif
 <div id="subheader">	
 	<div class="inner">
 			<div class="container">
@@ -51,17 +34,18 @@
 
 					<div class="row">
 						<div class="span1">
-							{{HTML::image('img/profile/senior-male.png','Male Senior')}}
+							{{HTML::image('img/profile/senior-female.png', 'Female Trainee')}}
 							<strong>Senior</strong>
 						</div>
 						<div class="span1">
-							{{HTML::image('img/profile/professional-male.png', 'Male Professional')}}
+							{{HTML::image('img/profile/professional-female.png', 'Female Professional')}}
 							<strong>Professional</strong>
 						</div>
 						<div class="span1">
-							{{HTML::image('img/profile/trainee-male.png','')}}
+							{{HTML::image('img/profile/trainee-female.png','Female Trainee')}}
 							<strong>Trainee</strong>
 						</div>
+						
 					</div>
 
 					<p>If you need to hire someone with technical skills, 
@@ -86,15 +70,15 @@
 
 					<div class="row">
 						<div class="span1">
-							{{HTML::image('img/profile/senior-female.png', 'Female Trainee')}}
+							{{HTML::image('img/profile/senior-male.png','Male Senior')}}
 							<strong>Senior</strong>
 						</div>
 						<div class="span1">
-							{{HTML::image('img/profile/professional-female.png', 'Female Professional')}}
+							{{HTML::image('img/profile/professional-male.png', 'Male Professional')}}
 							<strong>Professional</strong>
 						</div>
 						<div class="span1">
-							{{HTML::image('img/profile/trainee-female.png','Female Trainee')}}
+							{{HTML::image('img/profile/trainee-male.png','')}}
 							<strong>Trainee</strong>
 						</div>
 					</div>

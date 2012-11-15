@@ -27,17 +27,31 @@ class User extends Eloquent
 	}	
 
 	public function getImageUrl($imageFormat) {
-		if($this->image != '') {
+	/**	if($this->image != '') {
 			return $this->image;
-		} else {
+		} else { 
+		}
+		*/
+		
 		  if ($this->provider == 'facebook') {
  		  	 return 'https://graph.facebook.com/'.$this->uid.'/picture&type='.$imageFormat;
 		  }
-		}
 	}
 
 	public function badges()
 	{
 	  return $this->has_many_and_belongs_to('Badge');
 	}
+
+	public function active()
+	{
+	  if ($this->active == 1) {
+	  	return 'Active';	
+	  }
+	  if ($this->active == 0) {
+	  	return 'Inactive';	
+	  }
+	  
+	}
+
 }

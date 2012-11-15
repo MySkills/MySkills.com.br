@@ -40,9 +40,13 @@
           <div class="row">
             <div class="span2">
               <div class="sidebar">
-                <h3><span class="slash">About the Dashboard</span></h3>
-                <p>
-                Here you will find information about what is going on here.</p>
+                <h3><span class="slash">Menu</span></h3>
+                  <ul class="nav nav-pills nav-stacked">
+                    <li class="active">
+                      <a href="#">News</a>
+                    </li>
+                    <li><a href="#">Wall (Coming Soon)</a></li>
+                  </ul>
               </div> <!-- /sidebar -->
             </div> <!-- /span2 -->
 

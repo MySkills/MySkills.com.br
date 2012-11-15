@@ -46,7 +46,7 @@ class Connect_Controller extends OneAuth\Auth\Controller {
 
     Session::forget('user_data');
     // return OneAuth\Auth\Core::redirect('registered'); // redirect to /home
-    return View::make('onboarding.welcome')->with('page','welcome');
+    return View::make('onboarding.welcome')->with('page','register');
   }
 
     /**

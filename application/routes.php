@@ -53,7 +53,7 @@ Route::get('jobs', function()
 });
 
 /*
-Apply for a job. Add a user for a job position.
+APPLY FOR A JOB. Add a user for a job position.
 */
 Route::put('jobs/(:num)/(:num)',
 	array(
@@ -111,9 +111,20 @@ Route::delete('jobs/(:num)',
 	)
 );
 
+/*
+	LEADERBOARD - List all users
+*/
 Route::get('users', function()
 {
 	return View::make('pages.users')->with('page','users');
+});
+
+/*
+	USERPROFILE
+*/
+Route::get('users/(:any)', function($permalink)
+{
+	return View::make('pages.user')->with('page','user')->with('permalink',$permalink);
 });
 
 Route::get('users/candidates', function()

@@ -19,7 +19,8 @@ class Create_Users {
 			$table->string('email', 64);			
 		    $table->string('password', 128);
 			$table->string('social_url', 255);
-			$table->string('video_url', 255);			
+			$table->string('video_url', 255);
+			$table->string('bio', 255);
 		    $table->string('image', 255);
 			$table->integer('points');
 //		    $table->integer('company_id')->unsigned();

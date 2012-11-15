@@ -45,12 +45,16 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+
     @if (Auth::check())
       <?php $user = User::find(Auth::user()->id); ?>
         @if(isset($user))
             <script>
                 mixpanel.identify('{{$user->id}}');
                 mixpanel.people.set({
+                    @if($page == 'register')
+                    $created: '{{date('Y-m-d H:i:s')}}',
+                    @endif
                     $last_login: '{{date('Y-m-d H:i:s')}}',
                     $name:'{{$user->name}}',
                     $email:'{{$user->email}}'

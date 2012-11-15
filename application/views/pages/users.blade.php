@@ -28,21 +28,19 @@
 					<?php $users = User::order_by('points', 'desc')->get(); ?>
 					@foreach ($users as $user)
 					<tr>
-						<td><img src="{{$user->getImageUrl('square')}}" width="50" height="50"></td>
-						@if($user->social_url != '')
-							<td>{{HTML::link($user->social_url, $user->name)}}</td>															
-						@else
-							@if($user->provider == 'facebook')
-								<td>{{HTML::link('http://www.facebook.com/'.$user->uid, $user->name)}}</td>
-							@endif
-						@endif
+						<td>
+							{{HTML::image($user->getImageUrl('square'),  $user->name, array('width' => 50, 'height'=>50))}}
+						</td>
+						<td>
+							{{HTML::link('users/'.$user->id, $user->name)}}
+						</td>
 						<td>{{$user->points}}</td>
 						<td>
 							@foreach ($user->badges as $badge)
-								<img src="img/badges/{{$badge->image}}" width="50" height="50">								    
+								{{HTML::image('img/badges/'.$badge->image,  $badge->name, array('width' => 50, 'height'=>50))}}
 							@endforeach
 							@for ($i = 0; $i <= (8-count($user->badges)); $i++)
-								<img src="img/badges/unlock100.png" width="50" height="50">
+								{{HTML::image('img/badges/unlock100.png',  $badge->name, array('width' => 50, 'height'=>50))}}
 							@endfor								
 						</td>
 						{{-- 
