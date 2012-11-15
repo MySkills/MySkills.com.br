@@ -145,9 +145,15 @@ Route::get('users', function()
 
 Route::get('checkin/(:any)', 
 	array(
-		'before' => 'auth', 'do' => function($technology){
-			$data = array('technology'  => $technology);
-			return View::make('checkin.success', $data)->with('page','checkin.success');
+		'before' => 'auth', 'do' => function($skill){
+			$data = array('technology'  => $skill);
+			try {
+				$technology = Technology::find(1);
+				$technology->users()->attach(Auth::user()->id, array('checkin_at'=>date('Y-m-d')));
+			 	return View::make('checkin.success')->with('page','checkin.success')->with('status','SUCESS')->with('technology', $skill);
+			} catch (Exception $e) {
+				return View::make('checkin.success')->with('page','checkin.success')->with('status', 'ERROR')->with('technology', $skill);
+			}
 		}
 	)
 );

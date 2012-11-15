@@ -17,10 +17,19 @@
 		</div>
 	</div>
 	<div class="row-fluid pagination-centered">
-		<div class="alert alert-success">
-			<h3>Check in Completed</h3>
-			 <p>Life is too short to write bad code!!!</p>
-		</div>
+		@if($status=='SUCCESS')
+			<div class="alert alert-success">
+				<h3>Check in Completed (+1)</h3>
+				<p>Life is too short to write bad code!!!</p>
+			</div>
+		@endif
+		@if($status=='ERROR')
+			<div class="alert alert-error">
+				<h3>Checkin in Completed (+0)</h3>
+				<p>Life is too short to write bad code!!!</p>
+			</div>
+		@endif
+
 		<div>
 			{{HTML::image('img/laravel.png',  'Laravel logo', array('width' => '75'))}}
 		</div>

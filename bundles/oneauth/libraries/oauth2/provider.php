@@ -160,7 +160,8 @@ abstract class Provider
 		if (\Config::get('oneauth::urls.logged_in') == 'fb_checkin_laravel') {
 			$url = $this->url_authorize().'?'.http_build_query(array(
 				'client_id' 		=> $this->client_id,
-				'redirect_uri' 		=> 'http://www2.myskills.com.br/connect/callback/fb_checkin_laravel',
+				'redirect_uri' 		=> 'http://www.myskills.com.br/connect/callback/fb_checkin_laravel',
+				//'redirect_uri' 		=> 'http://pagodabox.local/connect/callback/fb_checkin_laravel',				
 				'state' 			=> $state,
 				'scope'     		=> is_array($this->scope) ? implode($this->scope_seperator, $this->scope) : $this->scope,
 				'response_type' 	=> 'code',
