@@ -30,6 +30,7 @@ class Create_Technology_User_Table {
 	public function down()
 	{
 		//
+		Schema::drop('technology_user');
 	}
 
 }

@@ -1,7 +1,7 @@
 <?php 
 
 class Fbk {
-	public static function postMessage(&$user_data) {
+	public static function postMessage(&$user_data, $message) {
 		$facebook = IoC::resolve('facebook-sdk');
 		$access_token = unserialize($user_data['token']); 
 		$facebook = $facebook->setAccessToken($access_token->access_token);                
@@ -13,7 +13,7 @@ class Fbk {
 			    $ret_obj = $facebook->api('/me/feed', 'POST',
 		                                array(
 		                                  'link' => 'www.myskills.com.br',
-		                                  'message' => 'Join me and choose your next professional achievements. :)'
+		                                  'message' => $message
 		                             ));
 			// echo '<pre>Post ID: ' . $ret_obj['id'] . '</pre>';
 			} catch(FacebookApiException $e) {

@@ -29,7 +29,6 @@
 				<p>Life is too short to write bad code!!!</p>
 			</div>
 		@endif
-
 		<div>
 			{{HTML::image('img/laravel.png',  'Laravel logo', array('width' => '75'))}}
 		</div>

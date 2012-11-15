@@ -148,9 +148,14 @@ Route::get('checkin/(:any)',
 		'before' => 'auth', 'do' => function($skill){
 			$data = array('technology'  => $skill);
 			try {
+				$user = User::find(Auth::user()->id);
 				$technology = Technology::find(1);
 				$technology->users()->attach(Auth::user()->id, array('checkin_at'=>date('Y-m-d')));
-			 	return View::make('checkin.success')->with('page','checkin.success')->with('status','SUCESS')->with('technology', $skill);
+				if($user->provider=='facebook') {
+					$user_data = Session::get('oneauth');
+					Fbk::postMessage($user_data, 'I just made my daily checkin with MySkills Mobile: "Coding with Laravel(PHP)"');
+				}
+			 	return View::make('checkin.success')->with('page','checkin.success')->with('status','SUCCESS')->with('technology', $skill);
 			} catch (Exception $e) {
 				return View::make('checkin.success')->with('page','checkin.success')->with('status', 'ERROR')->with('technology', $skill);
 			}
