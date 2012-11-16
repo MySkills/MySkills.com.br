@@ -40,7 +40,7 @@
 								{{HTML::image('img/badges/'.$badge->image,  $badge->name, array('width' => 50, 'height'=>50))}}
 							@endforeach
 							@for ($i = 0; $i <= (8-count($user->badges)); $i++)
-								{{HTML::image('img/badges/unlock100.png',  $badge->name, array('width' => 50, 'height'=>50))}}
+								{{HTML::image('img/badges/unlock100.png',  ' ', array('width' => 50, 'height'=>50))}}
 							@endfor								
 						</td>
 						{{-- 
