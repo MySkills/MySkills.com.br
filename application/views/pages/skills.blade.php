@@ -19,7 +19,8 @@
 					<p>
 					{{HTML::image('/img/'.$technology->image,  $technology->name, array('width' => 100, 'height'=>75))}}						
 					We are developing MySkills with a new PHP web framework called Laravel. Therefore, we are
-					inviting Laravel developers to become the first Beta Users of our Mobile App proving
+					inviting Laravel developers to become the first Beta Users of our 
+					<a href="https://build.phonegap.com/apps/224373/share" target="_blank">Mobile App</a> proving
 					feedback about who are coding with Laravel everyday. +{{$technology->checkin_at}}</p>
 				</div> <!-- /sidebar -->
 			</div> <!-- /span2 -->
@@ -27,7 +28,8 @@
 				<table class="table table-striped table-condensed">
 					<tr>
 						<td>						
-							Using out Mobile App developers can use daily checkins to provide feedback about technologies and skills
+							Using our <a href="https://build.phonegap.com/apps/224373/share" target="_blank">Mobile App</a> 
+							developers can use daily checkins to provide feedback about technologies and skills
 							that they are putting in practice. Below you have a list of developers coding with.: {{$technology->name}} - {{$technology->description}}
 						</td>
 						<td>
