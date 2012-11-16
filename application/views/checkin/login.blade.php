@@ -16,7 +16,7 @@
 	<div class="row-fluid pagination-centered">
 		<div class="alert alert-info">
 			<h3>Please Sign-In</h3>
-			 <p>We will not post on your wall!!!</p>
+			 <p>We will post a welcome message on your wall!!!</p>
 		</div>
 		<div>
 			{{HTML::link('connect/session/fb_checkin_laravel', 
