@@ -32,64 +32,6 @@
 |
 */
 
-Route::get('features', function()
-{
-	return View::make('pages.features')->with('page','features');
-});
-
-Route::get('faq', function()
-{
-	return View::make('pages.faq')->with('page','faq');
-});
-
-Route::get('welcome', function()
-{
-	return View::make('onboarding.welcome')->with('page','home');
-});
-
-Route::get('jobs', function()
-{
-	return View::make('pages.jobs')->with('page','jobs');
-});
-
-/*
-APPLY FOR A JOB. Add a user for a job position.
-*/
-Route::put('jobs/(:num)/(:num)',
-	array(
-		'before' => 'auth', 'do' => function($id, $user_id) {
-			try {
-				$job = Job::find($id);							
-				$job->candidates()->attach(Auth::user()->id);				
-			 	return Redirect::to('jobs')->with('status','SUCESS!!! You successfully applied for a job position. The recruiter will contact you soon.');
-			} catch (Exception $e) {
-				return Redirect::to('jobs')->with('status', 'ERROR');
-			}			
-		}
-	)
-);
-
-/*
-Add a new job position for a company.
-*/
-Route::put('jobs/(:num)',
-	array(
-		'before' => 'auth', 'do' => function($user_id) {
-			try {
-				$job = new Job;
-				$job->title = Input::get('title');
-				$job->description = Input::get('description');
-				$job->recruiter_id = Auth::user()->id;
-				$job->save();
-			 	return Redirect::to('jobs')->with('status','SUCESS!!! You successfully created a new job position.');
-			} catch (Exception $e) {
-				return Redirect::to('jobs')->with('status', 'ERROR');
-			}			
-		}
-	)
-);
-
-
 /*
 Delete job position for a company.
 */
@@ -111,37 +53,10 @@ Route::delete('jobs/(:num)',
 	)
 );
 
-/*
-	LEADERBOARD - List all users
-*/
-Route::get('users', function()
-{
-	return View::make('pages.users')->with('page','users');
-});
-
-/*
-	USERPROFILE
-*/
-Route::get('users/(:any)', function($permalink)
-{
-	return View::make('pages.user')->with('page','user')->with('permalink',$permalink);
-});
-
-Route::get('users/candidates', function()
-{
-	return View::make('pages.users')->with('page','users');
-});
-
 Route::get('badges', function()
 {
 	return View::make('pages.badges')->with('page','badges');
 });
-
-Route::get('users', function()
-{
-	return View::make('pages.users')->with('page','users');
-});
-
 
 Route::get('checkin/(:any)', 
 	array(
@@ -163,6 +78,20 @@ Route::get('checkin/(:any)',
 	)
 );
 
+Route::get('faq', function()
+{
+	return View::make('pages.faq')->with('page','faq');
+});
+
+Route::get('features', function()
+{
+	return View::make('pages.features')->with('page','features');
+});
+
+Route::get('jobs', function()
+{
+	return View::make('pages.jobs')->with('page','jobs');
+});
 
 Route::get('login', function() {
     return View::make('checkin.login')->with('page','checkin.login');
@@ -173,6 +102,79 @@ Route::get('logout', function() {
     Auth::logout();
     return Redirect::to('/');
 });
+
+Route::get('skills', function()
+{
+	return View::make('pages.skills')->with('page','skills');
+});
+
+/*
+	LEADERBOARD - List all users
+*/
+Route::get('users', function()
+{
+	return View::make('pages.users')->with('page','users');
+});
+
+Route::get('users/candidates', function()
+{
+	return View::make('pages.users')->with('page','users');
+});
+
+/*
+	USERPROFILE
+*/
+Route::get('users/(:any)', function($permalink)
+{
+	return View::make('pages.user')->with('page','user')->with('permalink',$permalink);
+});
+
+
+Route::get('welcome', function()
+{
+	return View::make('onboarding.welcome')->with('page','home');
+});
+
+
+
+/*
+Add a new job position for a company.
+*/
+Route::put('jobs/(:num)',
+	array(
+		'before' => 'auth', 'do' => function($user_id) {
+			try {
+				$job = new Job;
+				$job->title = Input::get('title');
+				$job->description = Input::get('description');
+				$job->recruiter_id = Auth::user()->id;
+				$job->save();
+			 	return Redirect::to('jobs')->with('status','SUCESS!!! You successfully created a new job position.');
+			} catch (Exception $e) {
+				return Redirect::to('jobs')->with('status', 'ERROR');
+			}			
+		}
+	)
+);
+
+/*
+APPLY FOR A JOB. Add a user for a job position.
+*/
+Route::put('jobs/(:num)/(:num)',
+	array(
+		'before' => 'auth', 'do' => function($id, $user_id) {
+			try {
+				$job = Job::find($id);							
+				$job->candidates()->attach(Auth::user()->id);				
+			 	return Redirect::to('jobs')->with('status','SUCESS!!! You successfully applied for a job position. The recruiter will contact you soon.');
+			} catch (Exception $e) {
+				return Redirect::to('jobs')->with('status', 'ERROR');
+			}			
+		}
+	)
+);
+
+
 
 Route::filter('auth', function()
 {

@@ -22,7 +22,7 @@ class Create_Technologies_Table {
 		});
 		DB::table('technologies')->insert(array(
 		    'name'  => 'Laravel',
-		    'description'  => 'A Framework For Web Artisans.',
+		    'description'  => 'A PHP Framework for Web Artisans.',
 		    'image'  => 'laravel.png',
 		    'points'  => '1',
 		));

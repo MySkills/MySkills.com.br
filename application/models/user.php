@@ -43,6 +43,11 @@ class User extends Eloquent
 	  return $this->has_many_and_belongs_to('Badge');
 	}
 
+	public function technologies()
+	{
+	  return $this->has_many_and_belongs_to('Technology')->with('checkin_at');
+	}
+
 	public function active()
 	{
 	  if ($this->active == 1) {
