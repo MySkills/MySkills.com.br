@@ -54,7 +54,7 @@
 
 
     @if (Auth::check())
-      <?php $user = User::find(Auth::user()->id); ?>
+        <?php $user = User::find(Auth::user()->id); ?>
         @if(isset($user))
             <script>
                 mixpanel.identify('{{$user->id}}');
@@ -69,8 +69,11 @@
                 mixpanel.name_tag('{{$user->name}}');
                 mixpanel.track('{{$page}}');
             </script>
-        @else
         @endif
+    @else
+        <script>
+            mixpanel.track('{{$page}}');
+        </script>
     @endif
 
 </head>
