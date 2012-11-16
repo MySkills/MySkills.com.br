@@ -21,7 +21,7 @@
 					We are developing MySkills with a new PHP web framework called Laravel. Therefore, we are
 					inviting Laravel developers to become the first Beta Users of our 
 					<a href="https://build.phonegap.com/apps/224373/share" target="_blank">Mobile App</a> proving
-					feedback about who are coding with Laravel everyday. +{{$technology->checkin_at}}</p>
+					feedback about who are coding with Laravel everyday.</p>
 				</div> <!-- /sidebar -->
 			</div> <!-- /span2 -->
 			<div class="span8">
@@ -48,7 +48,7 @@
 							<th width="10%">Picture</th>
 							<th width="20%">Name</th>
 							<th width="40%">Technology</th>					
-							<th width="20%">Checkin Date</th>
+							<th width="20%">Mobile Checkin</th>
 							<th width="10%">Checkins</th>
 						</tr>
 					</thead>
