@@ -117,6 +117,14 @@ class Create_Badges_Table {
 			'issuer_id'  => '4',		
 		));		
 
+		DB::table('badges')->insert(array(
+		    'name'  => 'Especializa',
+		    'description'  => '+10 points!!! You attended a course at Especializa.com.br.
+		    Therefore, your earned a new badge.',
+		    'image'  => 'especializa-badge.png',
+		    'points'  => '10',
+			'issuer_id'  => '7',
+		));
 	}
 
 	/**

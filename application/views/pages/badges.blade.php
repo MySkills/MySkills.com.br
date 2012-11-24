@@ -25,7 +25,7 @@
 							</tr>
 						</thead>
 						<tbody>
-						<?php $badges = Badge::all() ?>
+						<?php $badges = Badge::order_by('points', 'asc')->get(); ?>
 						@foreach ($badges as $badge)
 						<tr>
 							<td><img src="img/badges/{{$badge->image}}" width="75" height="75"></td>

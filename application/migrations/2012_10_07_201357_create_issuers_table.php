@@ -50,7 +50,12 @@ class Create_Issuers_Table {
 
 		DB::table('issuers')->insert(array(
 		    'name'  => 'IDS',
-		    'description'  => 'The most complete Apple referente in Brazil.',
+		    'description'  => 'The most complete Apple reference in Brazil.',
+		));
+
+		DB::table('issuers')->insert(array(
+		    'name'  => 'Especializa',
+		    'description'  => 'For all students who attended a course at Especializa. Especializa has courses related to web and mobile technology in Pernambuco, Brazil.',
 		));
 	}
 
