@@ -1,5 +1,26 @@
 @layout('templates.main')
 @section('content')
+<div id="unauthorizedModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Unauthorized Access</h3>
+  </div>
+  <div class="modal-body">
+    <p>You need to sign-up.</p>
+		{{HTML::link('connect/session/facebook',
+		'Sign-Up(Facebook)', array('class'
+		  => 'btn btn-large'))}}
+		{{HTML::link('connect/session/github',
+		'Sign-Up(Github)', array('class'
+		  => 'btn btn-large btn-primary'))}}
+		{{HTML::link('connect/session/linkedin',
+		'Sign-Up(Linkedin)', array('class'
+		  => 'btn btn-large'))}}
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>
 <!-- Modal -->
 <div id="addJobModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 <div class="modal-header">
@@ -44,7 +65,7 @@
                 <h3><span class="slash">Add New Job</span></h3>
                 <p>Add a new job position for your company right now.</p>
 				@if( Auth::guest() )    
-					{{Form::submit('Sign-Up to Submit')}}
+					<a href="#unauthorizedModal" role="button" class="btn btn-warning" data-toggle="modal">Add a New Job</a>
 				@else
                     <a href="#addJobModal" role="button" class="btn btn-primary" data-toggle="modal">Add a New Job</a>
 				@endif
@@ -85,7 +106,7 @@
 									{{count($job->candidates)}}
 								</td>							
 								<td>
-									{{Form::submit('Sign-Up to Apply')}}
+									<a href="#unauthorizedModal" role="button" class="btn btn-mini btn-warning" data-toggle="modal">Aply for this Job</a>									
 								</td>								
 							@else
 								@if($job->recruiter_id == Auth::user()->id)

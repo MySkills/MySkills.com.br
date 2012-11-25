@@ -136,6 +136,23 @@ Route::get('welcome', function()
 });
 
 
+/*
+APPLY FOR A JOB. Add a user for a job position.
+*/
+Route::put('badges/(:num)/(:num)',
+	array(
+		'before' => 'auth', 'do' => function($id, $user_id) {
+			try {
+				$badge = Badge::find($id);
+				$badge->users()->attach(Auth::user()->id);
+				return Redirect::to('badges')->with('status','SUCESS!!! You successfully applied for a job position. The recruiter will contact you soon.');
+			} catch (Exception $e) {
+				return Redirect::to('badges')->with('status', 'ERROR');
+			}
+		}
+	)
+);
+
 
 /*
 Add a new job position for a company.
@@ -164,8 +181,8 @@ Route::put('jobs/(:num)/(:num)',
 	array(
 		'before' => 'auth', 'do' => function($id, $user_id) {
 			try {
-				$job = Job::find($id);							
-				$job->candidates()->attach(Auth::user()->id);				
+				$job = Job::find($id);
+				$job->candidates()->attach(Auth::user()->id);
 			 	return Redirect::to('jobs')->with('status','SUCESS!!! You successfully applied for a job position. The recruiter will contact you soon.');
 			} catch (Exception $e) {
 				return Redirect::to('jobs')->with('status', 'ERROR');

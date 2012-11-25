@@ -34,7 +34,8 @@ class Add_Specializa_Badge {
 	public function down()
 	{
 		//
-		DB::table('badges')->where('name', '=', 'Especializa')->delete();		
+		DB::table('badge_user')->where('badge_id', '=', 11)->delete();		
+		DB::table('badges')->where('name', '=', 'Especializa')->delete();
 		DB::table('issuers')->where('name', '=', 'Especializa')->delete();
 	}
 

@@ -36,10 +36,10 @@
 						</td>
 						<td>{{$user->points}}</td>
 						<td>
-							@foreach ($user->badges as $badge)
+							@foreach ($user->activebadges as $badge)
 								{{HTML::image('img/badges/'.$badge->image,  $badge->name, array('width' => 50, 'height'=>50))}}
 							@endforeach
-							@for ($i = 0; $i <= (8-count($user->badges)); $i++)
+							@for ($i = 0; $i <= (8-count($user->activebadges)); $i++)
 								{{HTML::image('img/badges/unlock100.png',  ' ', array('width' => 50, 'height'=>50))}}
 							@endfor								
 						</td>

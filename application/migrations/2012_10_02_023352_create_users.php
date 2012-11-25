@@ -191,20 +191,7 @@ class Create_Users {
 		DB::table('users')->insert(array('uid' => '100002328937969', 'provider' => 'facebook', 'name' => 'Caio Marques', 'email' => 'caco-gordo@hotmail.com', 'points' => 1, 'created_at' => '11/10/2012 01:17'));
 		DB::table('users')->insert(array('uid' => '1748512960', 'provider' => 'facebook', 'name' => 'Ida Lindqvist', 'email' => 'idalindq@hotmail.com', 'points' => 1, 'created_at' => '11/10/2012 01:23'));
 		DB::table('users')->insert(array('uid' => '1768407802', 'provider' => 'facebook', 'name' => 'Giordano Giuliano', 'email' => 'giordanogiuliano@gmail.com', 'points' => 1, 'created_at' => '11/10/2012 14:20'));
-		DB::table('users')->insert(array('uid' => '100001583896163', 'provider' => 'facebook', 'name' => 'Hussani Oliveira', 'email' => 'tioblack07@gmail.com', 'points' => 1, 'created_at' => '11/10/2012 20:32'));
-
-		/*
-		DB::table('users')->insert(array(
-		    'username'  => 'eduardocruz',
-		    'name'  => 'Eduardo Cruz',		    
-		    'firstname'  => 'Eduardo',
-		    'lastname'  => 'Cruz',		    
-		    'email'  => 'eduardo@eduardocruz.com',		    		    
-		    'password'  => Hash::make('penny411'),
-		    'created_at' =>date('Y-m-d H:m:s'),
-		    'updated_at' =>date('Y-m-d H:m:s'),
-		));
-		*/		
+		DB::table('users')->insert(array('uid' => '100001583896163', 'provider' => 'facebook', 'name' => 'Hussani Oliveira', 'email' => 'tioblack07@gmail.com', 'points' => 1, 'created_at' => '11/10/2012 20:32'));	
 	}
 
 	/**
