@@ -27,14 +27,10 @@ class User extends Eloquent
 	}	
 
 	public function getImageUrl($imageFormat) {
-	/**	if($this->image != '') {
-			return $this->image;
-		} else { 
-		}
-		*/
-		
 		  if ($this->provider == 'facebook') {
  		  	 return 'https://graph.facebook.com/'.$this->uid.'/picture&type='.$imageFormat;
+		  } else {
+			return $this->image;
 		  }
 	}
 
