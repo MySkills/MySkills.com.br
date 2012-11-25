@@ -103,6 +103,12 @@ Route::get('logout', function() {
     return Redirect::to('/');
 });
 
+Route::get('pricing', function()
+{
+	return View::make('pages.pricing')->with('page','pricing');
+});
+
+
 Route::get('skills', function()
 {
 	return View::make('pages.skills')->with('page','skills');

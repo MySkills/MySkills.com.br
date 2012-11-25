@@ -44,6 +44,7 @@
     {{ HTML::style('css/themes/green/theme.css') }}
 
     {{ HTML::style('css/pages/homepage.css') }}
+    {{ HTML::style('css/plans.css') }}
 
     {{ HTML::style('js/lightbox/themes/default/jquery.lightbox.css') }}    
 
@@ -100,6 +101,11 @@
                             <li class="active">{{HTML::link('features','Features')}}</a></li>
                         @else
                             <li>{{HTML::link('features','Features')}}</a></li>
+                        @endif
+                        @if($page=='jobs')
+                            <li class="active">{{HTML::link('pricing','Pricing')}}</a></li>
+                        @else
+                            <li>{{HTML::link('pricing','Pricing')}}</a></li>
                         @endif
                         @if ($page=='faq')
                             <li class="active">{{HTML::link('faq','FAQ')}} </a></li>
