@@ -23,7 +23,6 @@ class Add_Specializa_Badge {
 		    'points'  => '10',
 			'issuer_id'  => '7',
 		));
-
 	}
 
 	/**
