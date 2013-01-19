@@ -20,7 +20,7 @@
     </script><!-- end Mixpanel --> 
 <head>
     <meta charset="utf-8">
-    <title>MySkills.com.br - Software Developer Meritocracy</title>
+    <title>{{__('main.title')}}</title>
 <script src="//cdn.optimizely.com/js/111465504.js"></script>
         <meta property="og:title" content="Meet the best developers"/>
         <meta property="og:type" content="website" />
@@ -52,8 +52,6 @@
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
-
     @if (Auth::check())
         <?php $user = User::find(Auth::user()->id); ?>
         @if(isset($user))
@@ -92,50 +90,50 @@
             <div class="nav-collapse">
                 <ul class="nav pull-right">
                     @if ($page == 'home')
-                        <li class="active"> {{HTML::link('/','Home')}} </a></li>
+                        <li class="active"> {{HTML::link('/', __('main.home'))}} </a></li>
                     @else
-                        <li> {{HTML::link('/','Home')}} </a></li>
+                        <li> {{HTML::link('/', __('main.home'))}} </a></li>
                     @endif
                     @if ( Auth::guest() )                          
                         @if ($page=='features' )
-                            <li class="active">{{HTML::link('features','Features')}}</a></li>
+                            <li class="active">{{HTML::link('features',__('main.features'))}}</a></li>
                         @else
-                            <li>{{HTML::link('features','Features')}}</a></li>
+                            <li>{{HTML::link('features', __('main.features'))}}</a></li>
                         @endif
                         @if($page=='jobs')
-                            <li class="active">{{HTML::link('pricing','Pricing')}}</a></li>
+                            <li class="active">{{HTML::link('pricing',__('main.pricing'))}}</a></li>
                         @else
-                            <li>{{HTML::link('pricing','Pricing')}}</a></li>
+                            <li>{{HTML::link('pricing',__('main.pricing'))}}</a></li>
                         @endif
                         @if ($page=='faq')
-                            <li class="active">{{HTML::link('faq','FAQ')}} </a></li>
+                            <li class="active">{{HTML::link('faq',__('main.faq'))}} </a></li>
                         @else
-                            <li>{{HTML::link('faq','FAQ')}} </a></li>
+                            <li>{{HTML::link('faq',__('main.faq'))}} </a></li>
                         @endif
                     @endif                    
                     @if($page=='jobs')
-                        <li class="active">{{HTML::link('jobs','Jobs')}}</a></li>
+                        <li class="active">{{HTML::link('jobs',__('main.jobs'))}}</a></li>
                     @else
-                        <li>{{HTML::link('jobs','Jobs')}}</a></li>
+                        <li>{{HTML::link('jobs',__('main.jobs'))}}</a></li>
                     @endif
                     @if($page=='users')
-                        <li class="active">{{HTML::link('users','Users')}}</a></li>
+                        <li class="active">{{HTML::link('users',__('main.users'))}}</a></li>
                     @else
-                        <li>{{HTML::link('users','Users')}}</a></li>
+                        <li>{{HTML::link('users',__('main.users'))}}</a></li>
                     @endif                    
                     @if($page=='skills')
-                        <li class="active">{{HTML::link('skills','Skills')}}</a></li>
+                        <li class="active">{{HTML::link('skills',__('main.skills'))}}</a></li>
                     @else
-                        <li>{{HTML::link('skills','Skills')}}</a></li>
+                        <li>{{HTML::link('skills',__('main.skills'))}}</a></li>
                     @endif                    
                     @if ($page=='badges')
-                        <li class="active">{{HTML::link('badges','Badges')}} </a></li>
+                        <li class="active">{{HTML::link('badges',__('main.badges'))}} </a></li>
                     @else
-                        <li>{{HTML::link('badges','Badges')}} </a></li>
+                        <li>{{HTML::link('badges',__('main.badges'))}} </a></li>
                     @endif
                     @if ( Auth::guest() )            
                     @else                    
-                        <li>{{HTML::link('logout','Logout')}} </a></li>
+                        <li>{{HTML::link('logout',__('main.logout'))}} </a></li>
                     @endif                    
                 </ul>
             </div><!--/.nav-collapse -->    
@@ -170,7 +168,7 @@
                 
                 <div class="span4">
                     
-                    <h3><span class="slash">//</span> Subscribe and get updates</h3>
+                    <h3><span class="slash">//</span>{{__('main.subscribe_update')}}</h3>
                     
 
                                                         <script type="text/javascript" language="JavaScript" src="http://myskills.us5.list-manage1.com/subscriber-count?b=28&u=00d2e3de-199f-4c91-ae5a-5433b3ea5e9f&id=30cd3f42fe"></script>
@@ -179,9 +177,9 @@
 
                                     <form action="http://myskills.us5.list-manage1.com/subscribe/post?u=c22dec5cbd87c068118755814&amp;id=30cd3f42fe" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
 
-                                        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                                        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="{{__('main.email')}}" required>
 
-                                        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                                        <div class="clear"><input type="submit" value="{{__('main.subscribe')}}" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
 
                                     </form>
 
@@ -198,9 +196,6 @@
     
 </div> <!-- /extra -->
             
-            
-            
-            
 <div id="footer">
                     
     <div class="inner">
@@ -209,7 +204,7 @@
         
             <div class="row">
                 <div id="footer-copyright" class="span4">
-                    &copy; 2012 Reboot Landing.
+                    &copy; 2012 MySkills.com.br
                 </div> <!-- /span4 -->
                 
                 <div id="footer-terms" class="span8">
