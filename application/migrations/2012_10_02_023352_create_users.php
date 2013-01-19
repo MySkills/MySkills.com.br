@@ -12,17 +12,17 @@ class Create_Users {
 		//
 		Schema::create('users', function($table) {
 		    $table->increments('id');
-		    $table->string('uid', 16);		    
+		    $table->string('uid', 16);
 		    $table->string('provider', 32);
-		    $table->string('name', 128);		    
-		    $table->string('nickname', 32);
+		    $table->string('name', 128);
+		    $table->string('nickname', 32)->nullable();
 			$table->string('email', 64);			
 		    $table->string('password', 128);
-			$table->string('social_url', 255);
-			$table->string('video_url', 255);
-			$table->string('bio', 255);
-		    $table->string('image', 255);
-			$table->integer('points');
+			$table->string('social_url', 255)->nullable();
+			$table->string('video_url', 255)->nullable();
+			$table->string('bio', 255)->nullable();
+		    $table->string('image', 255)->nullable();
+			$table->integer('points')->nullable();
 //		    $table->integer('company_id')->unsigned();
 //		    $table->foreign('company_id')->references('id')->on('companies');
 //		    $table->integer('level_id')->unsigned();
@@ -30,8 +30,8 @@ class Create_Users {
 		    $table->timestamps();
 		    $table->boolean('male')->default(true);
 		    $table->boolean('active')->default(true);
-			$table->integer('order');
-		    $table->boolean('admin');
+			$table->integer('order')->nullable();
+		    $table->boolean('admin')->nullable();
 		});
 		
 		DB::table('users')->insert(array('uid' => '124425381027624', 'provider' => 'facebook', 'name' => 'Myskills', 'email' => '', 'points' => 0, 'created_at' => '01/06/2012 00:00'));
