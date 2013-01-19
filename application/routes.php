@@ -122,6 +122,11 @@ Route::get('users', function()
 	return View::make('pages.users')->with('page','users');
 });
 
+Route::get('bolsas/usuarios', function()
+{
+	return View::make('bolsas.usuarios')->with('page','users');
+});
+
 Route::get('users/candidates', function()
 {
 	return View::make('pages.users')->with('page','users');
