@@ -20,5 +20,4 @@ return array(
 	'logout' => 'Logout',
 	'subscribe_update' => 'Subscribe and get updates',
 	'email' => 'email address',
-	'subscribe' => 'Subscribe',
 );
