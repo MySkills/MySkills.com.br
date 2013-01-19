@@ -6,17 +6,17 @@
               <div class="container">        
                   <div class="row">
       			 	<div class="span8 landing-text">
-      				    <h1>Meet the best developers.</h1>
-      				    <h2>Hire great professionals.</h2>
+      				    <h1>{{__('home.title')}}</h1>
+      				    <h2>{{__('home.subtitle')}}</h2>
       					<p class="landing-actions">
                   {{HTML::link('connect/session/facebook', 
-                    'Sign-Up(Facebook)', array('class' 
+                    __('home.sign-up').'(Facebook)', array('class' 
                       => 'btn btn-large'))}}          
                   {{HTML::link('connect/session/github', 
-                    'Sign-Up(Github)', array('class' 
+                     __('home.sign-up').'(Github)', array('class' 
                       => 'btn btn-large btn-primary'))}}                            
                   {{HTML::link('connect/session/linkedin', 
-                    'Sign-Up(Linkedin)', array('class' 
+                     __('home.sign-up').'(Linkedin)', array('class' 
                       => 'btn btn-large'))}}                                             
       					</p>
       				</div> <!-- /landing-text -->
