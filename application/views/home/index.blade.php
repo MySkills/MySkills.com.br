@@ -9,6 +9,7 @@
       				    <h1>{{__('home.title')}}</h1>
       				    <h2>{{__('home.subtitle')}}</h2>
       					<p class="landing-actions">
+                  {{__('home.sign-up')}}
                   {{HTML::link('connect/session/facebook', 
                     __('home.sign-up').'(Facebook)', array('class' 
                       => 'btn btn-large'))}}          
