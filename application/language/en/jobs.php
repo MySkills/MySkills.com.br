@@ -23,7 +23,7 @@ return array(
 	'in' => 'in',
 	'state' => "state",	
 	'responsiblefor' => 'that will be responsible for',	
-	'responsabilitilites' => 'Responsabilities',
+	'responsibilitilites' => 'Responsabilities',
 	'weprovide' => 'The company provides',	
 	'benefits' => 'Benefits',
 	'submit' => 'Submit',
@@ -32,4 +32,6 @@ return array(
 	'mobiledeveloper' => 'Mobile Developer',
 	'apps' => 'coding and testing android apps',
 	'salary' => 'US$ 60,000.00 salary',
+	'candidates' => 'Candidates',
+	'action' => 'Action',
 	);

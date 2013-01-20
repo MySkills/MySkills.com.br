@@ -131,12 +131,12 @@
 					</caption>
 					<thead>
 						<tr>
-							<th width="10%">Company</th>
-							<th width="10%">Position</th>
-							<th width="30%">Responsibilities</th>
-							<th width="30%">Benefits</th>							
-							<th width="10%">Candidates</th>	
-							<th width="10%">Action</th>						
+							<th width="10%">{{__('jobs.company')}}</th>
+							<th width="10%">{{__('jobs.jobtitle')}}</th>
+							<th width="30%">{{__('jobs.responsibilities')}}</th>
+							<th width="30%">{{__('jobs.benefits')}}</th>
+							<th width="10%">{{__('jobs.candidates')}}</th>	
+							<th width="10%">{{__('jobs.action')}}</th>						
 						</tr>
 					</thead>
 					<tbody>

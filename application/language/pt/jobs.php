@@ -32,4 +32,6 @@ return array(
 	'mobiledeveloper' => 'Desenvolvedor Mobile',
 	'apps' => 'criação de apps em iOS para o segmento turístico ',
 	'salary' => 'salário de R$ 4.500,00 e ticket restaurante',
+	'candidates' => 'Candidatos',
+	'action' => 'Ação',	
 	);
