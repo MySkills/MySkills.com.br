@@ -19,4 +19,4 @@ Based on the Boxfile method from: http://forums.laravel.com/viewtopic.php?id=890
 
 ## Features.
 
-- Laravel 3.2.5
+- Laravel 3.2.13-5
