@@ -62,7 +62,7 @@ Route::get('send', function(){
 	$response = Mandrill::request('messages/send', array(
 	    'message' => array(
 	        'html' => 'Body of the message.',
-	        'subject' => 'Subject of the message.',
+	        'subject' => '[myskills] Mandrill Test Message .',
 	        'from_email' => 'eduardo.cruz@myskills.com.br',
 	        'to' => array(array('email'=>'eduardo.cruz@rise.com.br')),
 	    ),

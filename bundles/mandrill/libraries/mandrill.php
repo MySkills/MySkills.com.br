@@ -30,7 +30,7 @@ class Mandrill
 		Log::info('endpoint.: '.$endpoint);
 		// build payload
 		$arguments['key'] = $api_key;
-		$arguments['key'] = 'fcadf45d-0aa3-4f47-a7f8-6b20abdbb09b';		
+		//$arguments['key'] = 'fcadf45d-0aa3-4f47-a7f8-6b20abdbb09b';		
 		Log::info('$arguments["key"].: '.$api_key);
 		// setup curl request
 		$ch = curl_init();
