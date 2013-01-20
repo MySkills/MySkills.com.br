@@ -10,15 +10,9 @@
       				    <h2>{{__('home.subtitle')}}</h2>
       					<p class="landing-actions">
                   {{__('home.sign-up')}}
-                  {{HTML::link('connect/session/facebook', 
-                    __('home.sign-up').'(Facebook)', array('class' 
-                      => 'btn btn-large'))}}          
-                  {{HTML::link('connect/session/github', 
-                     __('home.sign-up').'(Github)', array('class' 
-                      => 'btn btn-large btn-primary'))}}                            
-                  {{HTML::link('connect/session/linkedin', 
-                     __('home.sign-up').'(Linkedin)', array('class' 
-                      => 'btn btn-large'))}}                                             
+                  {{HTML::link('connect/session/facebook', __('home.sign-up').'(Facebook)', array('class' => 'btn btn-large'))}}
+                  {{HTML::link('connect/session/github', __('home.sign-up').'(Github)', array('class' => 'btn btn-large btn-primary'))}}
+                  {{HTML::link('connect/session/linkedin', __('home.sign-up').'(Linkedin)', array('class' => 'btn btn-large'))}}
       					</p>
       				</div> <!-- /landing-text -->
       				<div class="span4 landing-screenshot">
