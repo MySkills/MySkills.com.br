@@ -39,5 +39,6 @@ return array(
 	'bundocs' 		=> array('auto' => true, 'handles' => 'bundocs'),	
 	'oneauth' 		=> array('auto' => true),
 	'facebook-sdk' 	=> array('auto' => true),
+	'mandrill' 		=> array('auto' => true),	
 
 );
