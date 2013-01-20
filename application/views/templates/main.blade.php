@@ -94,23 +94,6 @@
                     @else
                         <li> {{HTML::link('/', __('main.home'))}} </a></li>
                     @endif
-                    @if ( Auth::guest() )                          
-                        @if ($page=='features' )
-                            <li class="active">{{HTML::link('features',__('main.features'))}}</a></li>
-                        @else
-                            <li>{{HTML::link('features', __('main.features'))}}</a></li>
-                        @endif
-                        @if($page=='jobs')
-                            <li class="active">{{HTML::link('pricing',__('main.pricing'))}}</a></li>
-                        @else
-                            <li>{{HTML::link('pricing',__('main.pricing'))}}</a></li>
-                        @endif
-                        @if ($page=='faq')
-                            <li class="active">{{HTML::link('faq',__('main.faq'))}} </a></li>
-                        @else
-                            <li>{{HTML::link('faq',__('main.faq'))}} </a></li>
-                        @endif
-                    @endif                    
                     @if($page=='jobs')
                         <li class="active">{{HTML::link('jobs',__('main.jobs'))}}</a></li>
                     @else
@@ -120,6 +103,18 @@
                         <li class="active">{{HTML::link('users',__('main.users'))}}</a></li>
                     @else
                         <li>{{HTML::link('users',__('main.users'))}}</a></li>
+                    @endif                    
+                    @if ( Auth::guest() )                          
+                        @if ($page=='features' )
+                            <li class="active">{{HTML::link('features',__('main.features'))}}</a></li>
+                        @else
+                            <li>{{HTML::link('features', __('main.features'))}}</a></li>
+                        @endif
+                        @if ($page=='faq')
+                            <li class="active">{{HTML::link('faq',__('main.faq'))}} </a></li>
+                        @else
+                            <li>{{HTML::link('faq',__('main.faq'))}} </a></li>
+                        @endif
                     @endif                    
                     @if($page=='skills')
                         <li class="active">{{HTML::link('skills',__('main.skills'))}}</a></li>
