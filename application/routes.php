@@ -59,18 +59,15 @@ Route::get('badges', function()
 });
 
 Route::get('send', function(){
-	Log::info('Send Start');
 	$response = Mandrill::request('messages/send', array(
 	    'message' => array(
-	        'html' => 'Body of the message.',
-	        'subject' => 'Subject of the message.',
+	        'html' => 'Mensagem de Testes usando o Mandrill.',
+	        'subject' => '[myskills.com.br] Mandrill Test Message',
 	        'from_email' => 'eduardo.cruz@myskills.com.br',
-	        'to' => array(array('email'=>'eduardo.cruz@rise.com.br')),
+	        'to' => array(array('email'=>'eduardo@eduardocruz.com')),
 	    ),
 	));
-	Log::info('Var_dump'.var_dump($response));	
-	echo(var_dump($response));
-	//return View::make('email.sent')->with('page','sent');	
+	return View::make('email.sent')->with('page','sent');	
 });
 
 Route::get('checkin/(:any)', 
