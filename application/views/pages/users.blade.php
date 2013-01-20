@@ -43,14 +43,6 @@
 								{{HTML::image('img/badges/unlock100.png',  ' ', array('width' => 50, 'height'=>50))}}
 							@endfor								
 						</td>
-						{{-- 
-						<td>
-							<div class="progress progress-success">
-								<?php $points = (100*$user->points)/133 ?>
-								<div class="bar" style="width: {{$points}}%"></div>
-							</div>
-						</td>
-						--}}
 						<td>{{$user->created_at}}</td>
              		</tr>
           			@endforeach     
