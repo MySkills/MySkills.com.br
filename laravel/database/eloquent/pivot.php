@@ -7,7 +7,14 @@ class Pivot extends Model {
 	 *
 	 * @var string
 	 */
-	public $pivot_table;
+	protected $pivot_table;
+
+	/**
+	 * The database connection used for this model.
+	 *
+	 * @var Laravel\Database\Connection
+	 */
+	protected $pivot_connection;
 
 	/**
 	 * Indicates if the model has update and creation timestamps.
@@ -26,7 +33,7 @@ class Pivot extends Model {
 	public function __construct($table, $connection = null)
 	{
 		$this->pivot_table = $table;
-		$this->connection = $connection;
+		$this->pivot_connection = $connection;
 
 		parent::__construct(array(), true);
 	}
@@ -48,7 +55,7 @@ class Pivot extends Model {
 	 */
 	public function connection()
 	{
-		return $this->connection;
+		return $this->pivot_connection;
 	}
 
 }

@@ -26,7 +26,7 @@ class URL {
 	 */
 	public static function current()
 	{
-		return static::to(URI::current());
+		return static::to(URI::current(), null, false, false);
 	}
 
 	/**
@@ -89,9 +89,11 @@ class URL {
 	 *
 	 * @param  string  $url
 	 * @param  bool    $https
+	 * @param  bool    $asset
+	 * @param  bool    $locale
 	 * @return string
 	 */
-	public static function to($url = '', $https = null)
+	public static function to($url = '', $https = null, $asset = false, $locale = true)
 	{
 		// If the given URL is already valid or begins with a hash, we'll just return
 		// the URL unchanged since it is already well formed. Otherwise we will add
@@ -105,7 +107,22 @@ class URL {
 		// security for any new links generated.  So https for all secure links.
 		if (is_null($https)) $https = Request::secure();
 
-		$root = static::base().'/'.Config::get('application.index');
+		$root = static::base();
+
+		if ( ! $asset)
+		{
+			$root .= '/'.Config::get('application.index');
+		}
+
+		$languages = Config::get('application.languages');
+
+		if ( ! $asset and $locale and count($languages) > 0)
+		{
+			if (in_array($default = Config::get('application.language'), $languages))
+			{
+				$root = rtrim($root, '/').'/'.$default;
+			}
+		}
 
 		// Since SSL is not often used while developing the application, we allow the
 		// developer to disable SSL on all framework generated links to make it more
@@ -222,7 +239,7 @@ class URL {
 	 */
 	public static function to_asset($url, $https = null)
 	{
-		if (static::valid($url)) return $url;
+		if (static::valid($url) or static::valid('http:'.$url)) return $url;
 
 		// If a base asset URL is defined in the configuration, use that and don't
 		// try and change the HTTP protocol. This allows the delivery of assets
@@ -232,7 +249,7 @@ class URL {
 			return rtrim($root, '/').'/'.ltrim($url, '/');
 		}
 
-		$url = static::to($url, $https);
+		$url = static::to($url, $https, true);
 
 		// Since assets are not served by Laravel, we do not need to come through
 		// the front controller. So, we'll remove the application index specified
@@ -275,6 +292,31 @@ class URL {
 		$uri = trim(static::transpose(key($route), $parameters), '/');
 
 		return static::to($uri, $https);
+	}
+
+	/**
+	 * Get the URL to switch language, keeping the current page or not
+	 *
+	 * @param  string  $language  The new language
+	 * @param  boolean $reset     Whether navigation should be reset
+	 * @return string             An URL
+	 */
+	public static function to_language($language, $reset = false)
+	{
+		// Get the url to use as base
+		$url = $reset ? URL::home() : URL::to(URI::current());
+
+		// Validate the language
+		if (!in_array($language, Config::get('application.languages')))
+		{
+			return $url;
+		}
+
+		// Get the language we're switching from and the one we're going to
+		$from = '/'.Config::get('application.language').'/';
+		$to   = '/'.$language.'/';
+
+		return str_replace($from, $to, $url);
 	}
 
 	/**
