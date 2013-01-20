@@ -175,6 +175,8 @@ Route::put('jobs/(:num)',
 				$job = new Job;
 				$job->title = Input::get('title');
 				$job->description = Input::get('description');
+				$job->company = Input::get('company');
+				$job->benefits = Input::get('benefits');								
 				$job->recruiter_id = Auth::user()->id;
 				$job->save();
 			 	return Redirect::to('jobs')->with('status','SUCESS!!! You successfully created a new job position.');

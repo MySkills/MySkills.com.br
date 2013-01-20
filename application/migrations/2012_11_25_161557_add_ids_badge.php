@@ -28,6 +28,7 @@ class Add_Ids_Badge {
 	public function down()
 	{
 		//
+		DB::table('badges')->where('name', '=', 'IDS')->delete();
 	}
 
 }
