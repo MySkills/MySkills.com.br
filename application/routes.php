@@ -62,14 +62,14 @@ Route::get('send', function(){
 	$response = Mandrill::request('messages/send', array(
 	    'message' => array(
 	        'html' => 'Body of the message.',
-	        'subject' => '[myskills] Mandrill Test Message .',
+	        'subject' => '[myskills] Mandrill Santa Message .',
 	        'from_email' => 'eduardo.cruz@myskills.com.br',
-	        'to' => array(array('email'=>'eduardo.cruz@rise.com.br')),
+	        'from_name' => 'Eduardo Cruz (MySkills)',	        
+	        'to' => array(array('email'=>'eduardo.cruz@rise.com.br',
+	        					'name'=>'Eduardo Cruz (RiSE)')),
 	    ),
 	));
-	Log::info('Var_dump'.var_dump($response));	
-	echo(var_dump($response));
-	//return View::make('email.sent')->with('page','sent');	
+	return View::make('email.sent')->with('page','sent');	
 });
 
 Route::get('checkin/(:any)', 

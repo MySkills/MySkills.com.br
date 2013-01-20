@@ -44,6 +44,24 @@ class Connect_Controller extends OneAuth\Auth\Controller {
       break;
     }      
 
+    //e-mail notification about new user
+    $response = Mandrill::request('messages/send', array(
+    'message' => array(
+        'html' => 
+        '<p><strong>We´ve got a New User!!! :D</strong></p>'.
+        '<p>New User -> '.$user->name.'</p>'.
+        '<p>e-mail -> '.$user->email.'</p>'.
+        '<p>Provider -> '.$user->provider.'</p>'.
+        '<p>User Profile -> <a href="http://pagodabox.local/users/'.$user->id.'">http://pagodabox.local/users/'.$user->id.'</a></p>'
+        ,
+        'subject' => '[myskills] Novo Usuário - '.$user->name,
+        'from_email' => 'eduardo.cruz@myskills.com.br',
+        'from_name' => 'Eduardo Cruz (MySkills)',         
+        'to' => array(array('email'=>'eduardo.cruz@myskills.com.br',
+                  'name'=>'Eduardo Cruz (MySkills)')),
+    ),
+   ));
+
     Session::forget('user_data');
     // return OneAuth\Auth\Core::redirect('registered'); // redirect to /home
     return View::make('onboarding.welcome')->with('page','register');
