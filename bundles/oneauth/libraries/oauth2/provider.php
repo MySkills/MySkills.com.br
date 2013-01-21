@@ -10,7 +10,7 @@
  * @license    http://philsturgeon.co.uk/code/dbad-license
  */
 
-use \Redirect, \Session, \URL;
+use \Redirect, \Session, \URL, \URI;
 
 abstract class Provider
 {
@@ -109,7 +109,7 @@ abstract class Provider
 		$this->client_secret = array_get($options, 'secret');
 		$this->scope         = array_get($options, 'scope', $this->scope);
 		
-		$this->redirect_uri  = URL::current();
+		$this->redirect_uri  = URL::base().'/'.URI::segment(1).'/'.URI::segment(2).'/'.URI::segment(3).'/'.URI::segment(4);//URL::current();
 	}
 
 	/**
@@ -149,14 +149,9 @@ abstract class Provider
 	*/	
 	public function authorize($options = array())
 	{
-		echo('Libraries/oauth2/provider.authorize');
-		var_dump(\Config::get('oneauth::urls.logged_in'));		
-		
-
 		$state = md5(uniqid(rand(), TRUE));
 		Session::put('state', $state);
-		var_dump($options);
-//		die('Provider.authorize');
+
 		if (\Config::get('oneauth::urls.logged_in') == 'fb_checkin_laravel') {
 			$url = $this->url_authorize().'?'.http_build_query(array(
 				'client_id' 		=> $this->client_id,
@@ -175,9 +170,6 @@ abstract class Provider
 				'response_type' 	=> 'code',
 			));
 		}
-		
-		var_dump($url);
-		//die('Error-Provider');		
 		return Redirect::to($url);
 	}
 

@@ -19,7 +19,6 @@ class Controller extends \Controller
 	 */
 	public function action_session($provider = null)
 	{
-		echo('Libraries/auth/Controller.session');
 
 		// if provider data is somehow empty, it might not came from a provider.
 		if (empty($provider))
@@ -51,8 +50,6 @@ class Controller extends \Controller
 	 */
 	public function action_callback($provider = null)
 	{
-		echo('Libraries/auth/Controller.callback');
-		//die('Error-Controller.Callback');
 
 		// if provider data is somehow empty, it might not came from a provider.
 		if (empty($provider))
@@ -64,15 +61,16 @@ class Controller extends \Controller
 			$provider = 'facebook'	;
 			\Config::set('oneauth::urls.logged_in', 'checkin/laravel');			
 		} else {
-			//echo('não funcionou');
+	//		echo('não funcionou'.$provider);
 		}
-		try 
+		try
 		{
 			$strategy = Strategy::make($provider);
 			return Strategy::login_or_register($strategy);
 		} 
 		catch (Strategy\Exception $e)
 		{
+	//		var_dump($e->getMessage());
 			return $this->action_error($provider, $e->getMessage());
 		}
 	}
