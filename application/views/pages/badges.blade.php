@@ -63,7 +63,7 @@
 					@foreach ($badges as $badge)
 					<tr>
 						<td>
-							<img src="img/badges/{{$badge->image}}" width="75" height="75">
+							{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => '75', 'height' => '75'))}}
 						</td>
 						<td>{{$badge->points}}</td>
 						<td>{{$badge->name}}</td>
