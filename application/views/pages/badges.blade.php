@@ -10,15 +10,9 @@
   </div>
   <div class="modal-body">
     <p>You need to sign-up.</p>
-		{{HTML::link('connect/session/facebook',
-		'Sign-Up(Facebook)', array('class'
-		  => 'btn btn-large'))}}
-		{{HTML::link('connect/session/github',
-		'Sign-Up(Github)', array('class'
-		  => 'btn btn-large btn-primary'))}}
-		{{HTML::link('connect/session/linkedin',
-		'Sign-Up(Linkedin)', array('class'
-		  => 'btn btn-large'))}}
+		{{HTML::link('connect/session/facebook', 'Sign-Up(Facebook)', array('class' => 'btn btn-large'))}}
+		{{HTML::link('connect/session/github', 'Sign-Up(Github)', array('class' => 'btn btn-large btn-primary'))}}
+		{{HTML::link('connect/session/linkedin', 'Sign-Up(Linkedin)', array('class' => 'btn btn-large'))}}
   </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>

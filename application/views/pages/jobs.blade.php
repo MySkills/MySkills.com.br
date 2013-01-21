@@ -7,15 +7,9 @@
   </div>
   <div class="modal-body">
     <p>{{__('security.needsign')}}</p>
-		{{HTML::link('connect/session/facebook',
-		__('security.subscribe').'(Facebook)', array('class'
-		  => 'btn btn-large'))}}
-		{{HTML::link('connect/session/github',
-		__('security.subscribe').'(Github)', array('class'
-		  => 'btn btn-large btn-primary'))}}
-		{{HTML::link('connect/session/linkedin',
-		__('security.subscribe').'(Linkedin)', array('class'
-		  => 'btn btn-large'))}}
+		{{HTML::link('connect/session/facebook', __('security.subscribe').'(Facebook)', array('class' => 'btn btn-large'))}}
+		{{HTML::link('connect/session/github', __('security.subscribe').'(Github)', array('class' => 'btn btn-large btn-primary'))}}
+		{{HTML::link('connect/session/linkedin', __('security.subscribe').'(Linkedin)', array('class' => 'btn btn-large'))}}
   </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -30,15 +24,6 @@
 @if( Auth::check())
 	<div class="modal-body">
 	    <p>{{__('jobs.describe')}}</p>
-{{--
-		{{Form::open('jobs/'.Auth::user()->id, 'PUT')}}
-		{{Form::label('title', __('jobs.jobtitle'))}}
-		{{Form::text('title', '',array('class' =>'input-xxlarge', 'placeholder' =>__('jobs.jobtitle')))}}
-		{{Form::label('description', 'Job Description')}}		
-		{{Form::textarea('description','',array('class' =>'input-xxlarge'))}}
-		{{Form::submit('Submit', array('class' => 'btn-primary'))}}
-		{{Form::close()}}	
---}}
 		{{Form::open('jobs/'.Auth::user()->id, 'PUT',array('class' =>'form-horizontal'))}}
 		<div class="control-group" >
 			<label class="control-label" for="inputEmail">{{__('jobs.the')}}</label>
@@ -107,7 +92,7 @@
                 <h3><span class="slash">{{__('jobs.addjob')}}</span></h3>
                 <p>{{__('jobs.adddescription')}}</p>
 				@if( Auth::guest() )    
-					<a href="#unauthorizedModal" role="button" class="btn btn-warning" data-toggle="modal">{{__('jobs.addjob')}}</a>
+					<a href="#unauthorizedModal" role="button" class="btn btn-warning" data-toggle="modal" data-target="#unauthorizedModal">{{__('jobs.addjob')}}</a>
 				@else
                     <a href="#addJobModal" role="button" class="btn btn-primary" data-toggle="modal">{{__('jobs.addjob')}}</a>
 				@endif
