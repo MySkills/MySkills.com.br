@@ -216,11 +216,10 @@
 
 
 
-
-<script src="./js/jquery-1.7.2.min.js"></script>    
-<script src="./js/bootstrap.js"></script>
-<script src="./js/lightbox/jquery.lightbox.min.js"></script>
-<script src="./js/jcarousellite_1.0.1.js"></script>
+{{HTML::script('js/jquery-1.7.2.min.js')}}
+{{HTML::script('js/bootstrap.js')}}
+{{HTML::script('js/lightbox/jquery.lightbox.min.js')}}
+{{HTML::script('js/jcarousellite_1.0.1.js')}}
 
 <script>
     $(function () {
