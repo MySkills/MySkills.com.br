@@ -122,6 +122,11 @@ Route::get('pricing', function()
 	return View::make('pages.pricing')->with('page','pricing');
 });
 
+Route::get('profile', function()
+{
+	return Redirect::to('users/'.Auth::user()->id)->with('page','profile');
+});
+
 
 Route::get('skills', function()
 {

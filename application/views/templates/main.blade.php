@@ -126,8 +126,12 @@
                     @else
                         <li>{{HTML::link('badges',__('main.badges'))}} </a></li>
                     @endif
-                    @if ( Auth::guest() )            
-                    @else                    
+                    @if ( Auth::check())
+                        @if ($page=='profile')
+                            <li class="active">{{HTML::link('profile',__('main.profile'))}} </a></li>
+                        @else
+                            <li>{{HTML::link('profile',__('main.profile'))}} </a></li>
+                        @endif
                         <li>{{HTML::link('logout',__('main.logout'))}} </a></li>
                     @endif                    
                 </ul>

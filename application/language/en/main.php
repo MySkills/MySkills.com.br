@@ -8,6 +8,7 @@ return array(
 	|--------------------------------------------------------------------------
 	*/
 
+	'profile' => 'Profile',
 	'title' => 'MySkills.com.br - Software Developer Meritocracy',
 	'home' => 'Home',
 	'features' => 'Features',

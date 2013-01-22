@@ -8,6 +8,7 @@ return array(
 	|--------------------------------------------------------------------------
 	*/
 
+	'profile' => 'Perfil',
 	'title' => 'MySkills.com.br - Meritocracia para Desenvolvedores',
 	'home' => 'Home',
 	'features' => 'Funcionalidades',
