@@ -52,7 +52,7 @@ class Connect_Controller extends OneAuth\Auth\Controller {
         '<p>New User -> '.$user->name.'</p>'.
         '<p>e-mail -> '.$user->email.'</p>'.
         '<p>Provider -> '.$user->provider.'</p>'.
-        '<p>User Profile -> <a href="http://pagodabox.local/users/'.$user->id.'">http://pagodabox.local/users/'.$user->id.'</a></p>'
+        '<p>User Profile -> <a href="http://www.myskills.com.br/users/'.$user->id.'">http://www.myskills.com.br/users/'.$user->id.'</a></p>'
         ,
         'subject' => '[myskills] Novo Usuário - '.$user->name,
         'from_email' => 'eduardo.cruz@myskills.com.br',
