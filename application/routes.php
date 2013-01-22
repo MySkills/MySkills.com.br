@@ -175,7 +175,25 @@ Route::put('badges/(:num)/(:num)',
 			try {
 				$badge = Badge::find($id);
 				$badge->users()->attach(Auth::user()->id);
-				return Redirect::to('badges')->with('status','SUCESS!!! You successfully applied for a job position. The recruiter will contact you soon.');
+				$badge->save();
+			    //e-mail notification about new user
+			    $response = Mandrill::request('messages/send', array(
+			    'message' => array(
+			        'html' => 
+			        '<p><strong>Eles querem Badges!!! :D</strong></p>'.
+			        '<p>Badge -> '.$badge->name.'</p>'.
+			        '<p>User Profile -> <a href="http://www.myskills.com.br/users/'.Auth::user()->id.'">http://www.myskills.com.br/users/'.Auth::user()->id.'</a></p>'
+			        ,
+			        'subject' => '[myskills] Nova solicitação de Badge - '.$badge->name,
+			        'from_email' => 'eduardo.cruz@myskills.com.br',
+			        'from_name' => 'Eduardo Cruz (MySkills)',         
+			        'to' => array(array('email'=>'eduardo.cruz@myskills.com.br',
+			                  'name'=>'Eduardo Cruz (MySkills)')),
+			    ),
+			   ));
+
+
+				return Redirect::to('badges')->with('status','SUCESS!!! You successfully applied for a new badge. We will contact you soon.');
 			} catch (Exception $e) {
 				return Redirect::to('badges')->with('status', 'ERROR');
 			}
