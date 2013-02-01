@@ -19,9 +19,7 @@
 			 <p>We will post a welcome message on your wall!!!</p>
 		</div>
 		<div>
-			{{HTML::link('connect/session/fb_checkin_laravel', 
-                    'Sign-In(Facebook)', array('class' 
-                      => 'btn btn-large btn-primary'))}}
+			{{HTML::link('connect/session/fb_checkin_laravel','Sign-In(Facebook)', array('class' => 'btn btn-large btn-primary'))}}
 		</div>
 	<div>
 </body>
