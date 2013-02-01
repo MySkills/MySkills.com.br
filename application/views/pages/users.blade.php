@@ -34,7 +34,8 @@
 						<tr>
 							<th width="10%">Picture</th>
 							<th width="10%">Name</th>
-							<th width="50%">Badges</th>
+							<th width="25%">Badges</th>
+							<th width="25%">Skills</th>
 							<th width="10%">Points</th>
 							<th width="20%">Since</th>
 						</tr>
@@ -56,10 +57,16 @@
 							@foreach ($user->activebadges as $badge)
 								{{HTML::image('img/badges/'.$badge->image,  $badge->name, array('width' => 50, 'height'=>50))}}
 							@endforeach
-							@for ($i = 0; $i <= (8-count($user->activebadges)); $i++)
+							@for ($i = 0; $i <= (3-count($user->activebadges)); $i++)
 								{{HTML::image('img/badges/unlock100.png',  ' ', array('width' => 50, 'height'=>50))}}
 							@endfor
 						</td>
+						<td>
+							@for ($i = 0; $i <= 3; $i++)
+								{{HTML::image('img/badges/unlock100.png',  ' ', array('width' => 50, 'height'=>50))}}
+							@endfor
+						</td>
+
 						<td>{{$user->getpoints()}}</td>
 						<td>{{$user->created_at}}</td>
 					</tr>
@@ -76,7 +83,8 @@
 						<tr>
 							<th width="10%">Picture</th>
 							<th width="10%">Name</th>
-							<th width="50%">Badges</th>						
+							<th width="25%">Badges</th>
+							<th width="25%">Skills</th>
 							<th width="10%">Points</th>
 							<th width="20%">Since</th>
 						</tr>
@@ -95,7 +103,12 @@
 							@foreach ($user->activebadges as $badge)
 								{{HTML::image('img/badges/'.$badge->image,  $badge->name, array('width' => 50, 'height'=>50))}}
 							@endforeach
-							@for ($i = 0; $i <= (8-count($user->activebadges)); $i++)
+							@for ($i = 0; $i <= (3-count($user->activebadges)); $i++)
+								{{HTML::image('img/badges/unlock100.png',  ' ', array('width' => 50, 'height'=>50))}}
+							@endfor								
+						</td>
+						<td>
+							@for ($i = 0; $i <= 3; $i++)
 								{{HTML::image('img/badges/unlock100.png',  ' ', array('width' => 50, 'height'=>50))}}
 							@endfor								
 						</td>
