@@ -38,21 +38,7 @@
 						</td>
 						<td>{{$user->points}}</td>
 						<td>
-							@foreach ($user->activebadges as $badge)
-								{{HTML::image('img/badges/'.$badge->image,  $badge->name, array('width' => 50, 'height'=>50))}}
-							@endforeach
-							@for ($i = 0; $i <= (8-count($user->activebadges)); $i++)
-								{{HTML::image('img/badges/unlock100.png',  ' ', array('width' => 50, 'height'=>50))}}
-							@endfor								
 						</td>
-						{{-- 
-						<td>
-							<div class="progress progress-success">
-								<?php $points = (100*$user->points)/133 ?>
-								<div class="bar" style="width: {{$points}}%"></div>
-							</div>
-						</td>
-						--}}
 						<td>{{$user->created_at}}</td>
              		</tr>
           			@endforeach     
