@@ -11,4 +11,5 @@ return array(
 	'needsign' => 'You need to sign-up.',
 	'subscribe' => 'Subscribe',
 	'unauthorized' => 'Unauthorized Access',
+	'close' => 'Close',	
 );

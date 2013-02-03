@@ -12,7 +12,7 @@
 		{{HTML::link('connect/session/linkedin', __('security.subscribe').'(Linkedin)', array('class' => 'btn btn-large'))}}
   </div>
   <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn" data-dismiss="modal" aria-hidden="true">{{__('security.close')}}</button>
   </div>
 </div>
 <!-- Modal -->
@@ -112,7 +112,7 @@
 				@endif
 				<table class="table table-striped table-condensed">
 					<caption>
-						Apply for one of the Job Opportunities below.
+						{{__('jobs.applybelow')}}
 					</caption>
 					<thead>
 						<tr>
@@ -121,7 +121,7 @@
 							<th width="30%">{{__('jobs.responsibilities')}}</th>
 							<th width="30%">{{__('jobs.benefits')}}</th>
 							<th width="10%">{{__('jobs.candidates')}}</th>	
-							<th width="10%">{{__('jobs.action')}}</th>						
+							<th width="10%">{{__('jobs.action')}}/{{__('jobs.status')}}</th>						
 						</tr>
 					</thead>
 					<tbody>
@@ -137,7 +137,7 @@
 									{{count($job->candidates)}}
 								</td>							
 								<td>
-									<a href="#unauthorizedModal" role="button" class="btn btn-mini btn-warning" data-toggle="modal">Aply for this Job</a>									
+									<a href="#unauthorizedModal" role="button" class="btn btn-mini btn-warning" data-toggle="modal">{{__('jobs.apply')}}</a>									
 								</td>								
 							@else
 								@if($job->recruiter_id == Auth::user()->id)
@@ -146,7 +146,7 @@
 									</td>							
 									<td>
 										{{Form::open('jobs/'.$job->id, 'DELETE')}}
-										{{Form::submit('DELETE')}}
+										{{Form::submit(__('jobs.delete'))}}
 										{{Form::close()}}	
 									</td>									
 								@else
@@ -156,7 +156,7 @@
 									<td>
 			                            @if(count($job->candidates()->where('user_id', '=', Auth::user()->id)->get()) == 0)
 											{{Form::open('jobs/'.$job->id.'/'.Auth::user()->id, 'PUT')}}
-											{{Form::submit('Apply for this job')}}
+											{{Form::submit(__('jobs.apply'))}}
 											{{Form::close()}}	
 										@else
 											<span class="label">You Applied</span>
@@ -194,17 +194,16 @@
 			</div> <!-- /span8 -->
 			<div class="span2">
 				<div class="sidebar">
-					<h3><span class="slash">About our Jobs</span></h3>
-					<p>
-					Here you have access to Job Opportunities.</p>
-					<p><strong>ACTION</strong> - Click the Apply button
-						to apply for the jobs you want.</p>
-					<p><strong>Status</strong> - Define your status 
-						for each job position.</p>
+					<h3><span class="slash">{{__('jobs.about')}}</span></h3>
+					<p>{{__('jobs.about1')}}</p>
+					<p><strong>{{__('jobs.action')}}</strong> - 
+						{{__('jobs.aboutdescription')}}</p>
+					<p><strong>{{__('jobs.status')}}</strong> - 
+						{{__('jobs.aboutstatus')}}</p>
 						<ul>
-							<li><span class="label">You Applied</span></li>
-							<li><span class="label label-info">Recruiter Reviewing</span></li>
-							<li><span class="label label-success">Recruiter Approved</span></li>
+							<li><span class="label">{{__('jobs.applied')}}</span></li>
+							<li><span class="label label-info">{{__('jobs.reviewing')}}</span></li>
+							<li><span class="label label-success">{{__('jobs.approved')}}</span></li>
 						</ul>
 								
 				

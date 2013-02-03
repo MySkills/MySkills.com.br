@@ -11,4 +11,5 @@ return array(
 	'needsign' => 'Você precisa se cadastrar.',
 	'subscribe' => 'Cadastre-se',
 	'unauthorized' => 'Acesso Não Autorizado',
+	'close' => 'Fechar',
 );

@@ -6,16 +6,16 @@
 <div id="unauthorizedModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Unauthorized Access</h3>
+    <h3 id="myModalLabel">{{__('security.unauthorized')}}</h3>
   </div>
   <div class="modal-body">
-    <p>You need to sign-up.</p>
-		{{HTML::link('connect/session/facebook', 'Sign-Up(Facebook)', array('class' => 'btn btn-large'))}}
-		{{HTML::link('connect/session/github', 'Sign-Up(Github)', array('class' => 'btn btn-large btn-primary'))}}
-		{{HTML::link('connect/session/linkedin', 'Sign-Up(Linkedin)', array('class' => 'btn btn-large'))}}
+    <p>{{__('security.needsign')}}</p>
+		{{HTML::link('connect/session/facebook', __('security.subscribe').'(Facebook)', array('class' => 'btn btn-large'))}}
+		{{HTML::link('connect/session/github', __('security.subscribe').'(Github)', array('class' => 'btn btn-large btn-primary'))}}
+		{{HTML::link('connect/session/linkedin', __('security.subscribe').'(Linkedin)', array('class' => 'btn btn-large'))}}
   </div>
   <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn" data-dismiss="modal" aria-hidden="true">{{__('security.close')}}</button>
   </div>
 </div>
 <div id="subheader">	
