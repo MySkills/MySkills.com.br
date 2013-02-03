@@ -116,7 +116,9 @@
 					</caption>
 					<thead>
 						<tr>
+						@if(Auth::check())
 							<th width="10%">{{__('jobs.recruiter')}}</th>
+						@endif
 							<th width="10%">{{__('jobs.company')}}</th>
 							<th width="10%">{{__('jobs.jobtitle')}}</th>
 							<th width="30%">{{__('jobs.responsibilities')}}</th>
@@ -132,10 +134,12 @@
 						$recruiter = User::find($job->recruiter_id);
 					?>
 						<tr>
+							@if(Auth::check())
 							<td>
 								{{HTML::image($recruiter->getImageUrl('square'),  $recruiter->name, array('width' => 50, 'height'=>50))}}
 								{{HTML::link('users/'.$recruiter->id, $recruiter->name)}}
 							</td>
+							@endif
 							<td>{{$job->company}}</td>
 							<td>{{$job->title}}</td>
 							<td>{{$job->description}}</td>
