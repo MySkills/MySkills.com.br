@@ -27,7 +27,7 @@
 						</tr>
 					</thead>
 					<tbody>
-					<?php $users = User::order_by('points', 'desc')->get(); ?>
+					<?php $users = User::order_by('created_at', 'desc')->get(); ?>
 					@foreach ($users as $user)
 					<tr>
 						<td>
@@ -36,7 +36,7 @@
 						<td>
 							{{HTML::link('users/'.$user->id, $user->name)}}
 						</td>
-						<td>{{$user->points}}</td>
+						<td>{{$user->getpoints()}}</td>
 						<td>
 						</td>
 						<td>{{$user->created_at}}</td>
