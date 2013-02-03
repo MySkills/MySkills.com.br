@@ -168,7 +168,7 @@
 									<td>
 			                            @if(count($job->candidates()->where('user_id', '=', Auth::user()->id)->get()) == 0)
 											{{Form::open('jobs/'.$job->id.'/'.Auth::user()->id, 'PUT')}}
-											{{Form::submit(__('jobs.apply'))}}
+											{{Form::submit(__('jobs.apply'), array('class' => 'btn btn-success'))}}
 											{{Form::close()}}	
 										@else
 											<span class="label">You Applied</span>
