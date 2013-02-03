@@ -43,7 +43,7 @@ class User extends Eloquent
 
 	public function activebadges()
 	{
-	  return $this->has_many_and_belongs_to('Badge')->where('badge_user.active','=',true);
+	  return $this->has_many_and_belongs_to('Badge')->where('badge_user.active','=',true)->order_by('points', 'desc');
 	}
 
 	public function getpoints()
