@@ -41,15 +41,15 @@
 				@endif
 				<table class="table table-striped table-condensed">
 					<caption>
-						Choose your next professional achievement!!! :)
+						{{__('badges.choose')}} :)
 					</caption>
 					<thead>
 						<tr>
 							<th width="10%">Badge</th>
-							<th width="10%">Points</th>
-							<th width="10%">Name</th>
-							<th width="60%">Description</th>
-							<th width="10%">Issuer</th>
+							<th width="10%">{{__('badges.points')}}</th>
+							<th width="10%">{{__('badges.name')}}</th>
+							<th width="60%">{{__('badges.description')}}</th>
+							<th width="10%">{{__('badges.issuer')}}</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -67,17 +67,17 @@
 		                    @if( Auth::check())
 	                            @if(count($badge->users()->where('user_id', '=', $user->id)->get()) == 0)
 									{{Form::open('badges/'.$badge->id.'/'.Auth::user()->id, 'PUT')}}
-									{{Form::submit('Apply for this badge',  array('class' => 'btn btn-small btn-success'))}}
+									{{Form::submit(__('badges.request'),  array('class' => 'btn btn-small btn-success'))}}
 									{{Form::close()}}
 								@else
 									@if(count($badge->users()->where('user_id', '=', $user->id)->where('badge_user.active','=',0)->get()) == 0)
-											<span class="label label-info">Approved</span>
+											<span class="label label-info">{{__('badges.approved')}}</span>
 									@else
-											<span class="label">Waiting for Approval</span>									
+											<span class="label">{{__('badges.approval')}}</span>									
 									@endif
 								@endif
 		                    @else
-		                       <a href="#unauthorizedModal" role="button" class="btn btn-mini btn-warning" data-toggle="modal">Apply for this badge</a>
+		                       <a href="#unauthorizedModal" role="button" class="btn btn-mini btn-warning" data-toggle="modal">{{__('badges.request')}}</a>
 		                    @endif
 						</td>
 					</tr>
@@ -87,15 +87,9 @@
 			</div> <!-- /span10 -->
 			<div class="span2">
 				<div class="sidebar">
-					<h3><span class="slash">About Badges</span></h3>
-					<p>
-					Here you not only say that you know something.
-					We prepared an achievement ranking system where you
-					can receive badges and points to improve your profile.
-					</p>
-					<p>In the near future, recruiters will use badges and
-						achievements as a pre-condition to apply for a job.
-					</p>
+					<h3><span class="slash">{{__('badges.about')}}</span></h3>
+					<p>{{__('badges.about1')}}</p>
+					<p>{{__('badges.about2')}}</p>
 				</div> <!-- /sidebar -->
 			</div> <!-- /span2 -->
 		</div> <!-- /row -->
