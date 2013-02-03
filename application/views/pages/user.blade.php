@@ -27,7 +27,7 @@
 				<div class="sidebar">
 					<h3><span class="slash">{{$user->active()}} User</span></h3>
 					<p>Badges earned</p>
-						@foreach ($user->badges as $badge)
+						@foreach ($user->activebadges as $badge)
 							{{HTML::image('img/badges/'.$badge->image,  $badge->name, array('width' => 50, 'height'=>50))}}
 						@endforeach
 						@for ($i = 0; $i <= (7-count($user->badges)); $i++)
