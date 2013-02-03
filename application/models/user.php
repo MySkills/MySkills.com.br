@@ -46,6 +46,11 @@ class User extends Eloquent
 	  return $this->has_many_and_belongs_to('Badge')->where('badge_user.active','=',true)->order_by('points', 'desc');
 	}
 
+	public function followers()
+	{
+	  return $this->has_many_and_belongs_to('Follower');
+	}
+
 	public function getpoints()
 	{
 		$total = 0;

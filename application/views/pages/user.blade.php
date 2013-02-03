@@ -12,9 +12,20 @@
 <div id="subpage">
 	<div class="container">
 		<div class="row">		
-			<div class="span2">
+			<div class="span1">
 				{{HTML::image($user->getImageUrl('large'),  $user->name)}}
-                    <a href="#" role="button" class="btn btn-warning btn-mini" data-toggle="modal"><i class="icon-envelope"></i> Message Me (Coming Soon)</a>
+             @if(count($user->followers()->where('user_id', '=', $user->id)->get()) == 0)
+				{{Form::open('followers', 'PUT')}}
+				{{Form::hidden('user_id', $user->id)}}
+				{{Form::submit(__('user.follow'), array('class' => 'btn btn-mini btn-warning'))}}
+				{{Form::close()}}
+			@else
+				{{Form::open('followers', 'DELETE')}}
+				{{Form::hidden('user_id', $user->id)}}
+				{{Form::submit(__('user.unfollow'), array('class' => 'btn btn-mini btn-primary'))}}
+				{{Form::close()}}
+
+			@endif
 			</div> <!-- /span2 -->
 			<div class="span4">
 				.
@@ -26,13 +37,18 @@
 			<div class="span2">
 				<div class="sidebar">
 					<h3><span class="slash">{{$user->active()}} User</span></h3>
-					<p>Badges earned</p>
+					<p>{{__('user.badges_earned')}}</p>
 						@foreach ($user->activebadges as $badge)
 							{{HTML::image('img/badges/'.$badge->image,  $badge->name, array('width' => 50, 'height'=>50))}}
 						@endforeach
 						@for ($i = 0; $i <= (7-count($user->badges)); $i++)
 							{{HTML::image('img/badges/unlock100.png', '', array('width' => 50, 'height'=>50))}}
 						@endfor	
+					<p>{{__('user.followers')}}</p>
+						@foreach ($user->followers as $follower)
+							{{HTML::image($follower->getImageUrl('large'),  $follower->name)}}
+						@endforeach
+
 				</div> <!-- /sidebar -->
 			</div> <!-- /span4 -->
 		</div> <!-- /row -->

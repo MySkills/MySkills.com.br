@@ -33,6 +33,28 @@
 */
 
 /*
+Unfollow User
+*/
+
+Route::delete('followers',
+	array(
+		'before' => 'auth', 'do' => function() {
+			try {
+				$follower = User::find(Auth::user()->id);
+				$user_id = Input::get('user_id');
+				$user = User::find($user_id);
+				$user->followers()->detach(Auth::user()->id);
+				$user->save();
+				return Redirect::to('users/'.$user_id)->with('status','SUCESS!!! You unfollowed this user.');
+			} catch (Exception $e) {
+				Log::exception($e);
+				return Redirect::to('users/'.$user_id)->with('status', 'ERROR');
+			}
+		}
+	)
+);
+
+/*
 Delete job position for a company.
 */
 Route::delete('jobs/(:num)',
@@ -167,7 +189,7 @@ Route::get('welcome', function()
 
 
 /*
-APPLY FOR A JOB. Add a user for a job position.
+REQUIRE A BADGE. Relate a new badge to a user.
 */
 Route::put('badges/(:num)/(:num)',
 	array(
@@ -196,6 +218,43 @@ Route::put('badges/(:num)/(:num)',
 				return Redirect::to('badges')->with('status','SUCESS!!! You successfully applied for a new badge. We will contact you soon.');
 			} catch (Exception $e) {
 				return Redirect::to('badges')->with('status', 'ERROR');
+			}
+		}
+	)
+);
+
+
+/*
+FOLLOW USER;
+*/
+Route::put('followers',
+	array(
+		'before' => 'auth', 'do' => function() {
+			try {
+				$follower = User::find(Auth::user()->id);
+				$user_id = Input::get('user_id');
+				$user = User::find($user_id);
+				$user->followers()->attach(Auth::user()->id);
+				$user->save();
+			    //e-mail notification about new user
+			    $response = Mandrill::request('messages/send', array(
+			    'message' => array(
+			        'html' => 
+			        '<p><strong>New Follower on MySkills!!!</strong></p>'.
+			        '<p>Follower -> '.$follower->name.'</p>'.
+			        '<p>User Profile -> <a href="http://www.myskills.com.br/users/'.Auth::user()->id.'">http://www.myskills.com.br/users/'.Auth::user()->id.'</a></p>'
+			        ,
+			        'subject' => '[myskills] Novo Seguidor no MySkills - '.$follower->name,
+			        'from_email' => 'eduardo.cruz@myskills.com.br',
+			        'from_name' => 'Eduardo Cruz (MySkills)',         
+			        'to' => array(array('email'=> $user->email,
+			                  'name'=> $user->name)),
+			    ),
+			   ));
+				return Redirect::to('users/'.$user_id)->with('status','SUCESS!!! You are following a new user.');
+			} catch (Exception $e) {
+				Log::exception($e);
+				return Redirect::to('users/'.$user_id)->with('status', 'ERROR');
 			}
 		}
 	)
