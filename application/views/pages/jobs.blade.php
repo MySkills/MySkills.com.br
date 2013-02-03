@@ -116,6 +116,7 @@
 					</caption>
 					<thead>
 						<tr>
+							<th width="10%">{{__('jobs.recruiter')}}</th>
 							<th width="10%">{{__('jobs.company')}}</th>
 							<th width="10%">{{__('jobs.jobtitle')}}</th>
 							<th width="30%">{{__('jobs.responsibilities')}}</th>
@@ -127,7 +128,14 @@
 					<tbody>
 					<?php $jobs = Job::order_by('created_at', 'desc')->get(); ?>
 					@foreach ($jobs as $job)
+					<?php 
+						$recruiter = User::find($job->recruiter_id);
+					?>
 						<tr>
+							<td>
+								{{HTML::image($recruiter->getImageUrl('square'),  $recruiter->name, array('width' => 50, 'height'=>50))}}
+								{{HTML::link('users/'.$recruiter->id, $recruiter->name)}}
+							</td>
 							<td>{{$job->company}}</td>
 							<td>{{$job->title}}</td>
 							<td>{{$job->description}}</td>

@@ -45,4 +45,5 @@ return array(
 	'applied' => 'Você se candidatou.',
 	'reviewing' => 'Recrutador Avaliando',
 	'approved' => 'Aprovado',
+	'recruiter' => 'Recrutador',	
 	);

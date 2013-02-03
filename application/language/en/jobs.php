@@ -42,5 +42,7 @@ return array(
 	'aboutstatus' => 'Presents you recruitment status.',
 	'applied' => 'You Applied.',
 	'reviewing' => 'Recruiter Reviewing',
-	'approved' => 'Approved',	
+	'approved' => 'Approved',
+	'recruiter' => 'Recruiter',
+
 	);
