@@ -25,21 +25,19 @@
 <div id="subpage">
 	<div class="container">
 		<div class="row">		
-			<div class="span10">
+			<div class="span5">
 
 				<!-- NEW USERS -->
-				<table class="table table-striped table-condensed">
+				<table class="table table-striped table-bordered table-condensed">
 					<caption>
-						NEW USERS.
+						<span class="label label-warning">{{__('users.new_users')}}</span>.
 					</caption>
 					<thead>
 						<tr>
-							<th width="10%">Picture</th>
-							<th width="10%">Name</th>
-							<th width="25%">Badges</th>
-							<th width="25%">Skills</th>
-							<th width="10%">Points</th>
-							<th width="20%">Since</th>
+							<th width="10%">{{__('users.picture')}}</th>
+							<th width="20%">{{__('users.name')}}</th>
+							<th width="60%">{{__('users.badges')}}</th>
+							<th width="10%">{{__('users.Points')}}</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -60,31 +58,24 @@
 								{{HTML::image('img/badges/unlock100.png', ' ', array('width' => 50, 'height'=>50))}}
 							@endfor
 						</td>
-						<td>
-							@for ($i = 0; $i <= 3; $i++)
-								{{HTML::image('img/badges/unlock100.png', ' ', array('width' => 50, 'height'=>50))}}
-							@endfor
-						</td>
 						<td>{{$user->getpoints()}}</td>
-						<td>{{$user->created_at}}</td>
 					</tr>
 					@endforeach
 					</tbody>
 				</table>
-
+			</div>
+			<div class="span5">
 				<!-- TOP USERS -->
-				<table class="table table-striped table-condensed">
+				<table class="table table-striped table-bordered table-condensed">
 					<caption>
-						TOP USERS.
+						<span class="label label-info">{{__('users.top_users')}}</span>.
 					</caption>
 					<thead>
 						<tr>
-							<th width="10%">Picture</th>
-							<th width="10%">Name</th>
-							<th width="25%">Badges</th>
-							<th width="25%">Skills</th>
-							<th width="10%">Points</th>
-							<th width="20%">Since</th>
+							<th width="10%">{{__('users.picture')}}</th>
+							<th width="20%">{{__('users.name')}}</th>
+							<th width="60%">{{__('users.badges')}}</th>
+							<th width="10%">{{__('users.Points')}}</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -108,14 +99,7 @@
 								{{HTML::image('img/badges/unlock100.png', ' ', array('width' => 50, 'height'=>50))}}
 							@endfor
 						</td>
-						<td>
-							@for ($i = 0; $i <= 3; $i++)
-								{{HTML::image('img/badges/unlock100.png', ' ', array('width' => 50, 'height'=>50))}}
-							@endfor
-						</td>
-
 						<td>{{$user->getpoints()}}</td>
-						<td>{{$user->created_at}}</td>
 					</tr>
 					@endforeach
 					</tbody>
@@ -124,9 +108,8 @@
 			</div> <!-- /span8 -->
 			<div class="span2">
 				<div class="sidebar">
-					<h3><span class="slash">About the Leaderboard</span></h3>
-					<p>
-					Here you will find a reference to users of our community.</p>
+					<h3><span class="slash">{{__('users.about')}}</span></h3>
+					<p>{{__('users.about1')}}</p>
 				</div> <!-- /sidebar -->
 			</div> <!-- /span4 -->
 		</div> <!-- /row -->
