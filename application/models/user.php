@@ -28,9 +28,7 @@ class User extends Eloquent
 
 	public function getImageUrl($imageFormat) {
 		  if ($this->provider == 'facebook') {
-		  	//{"error": {"message": "Unknown path components: /picture&type=small","type": "OAuthException","code": 2500}}
-		    //return 'https://graph.facebook.com/'.$this->uid.'/picture&type='.$imageFormat;		  	
- 		  	 return 'https://graph.facebook.com/'.$this->uid.'/picture';
+ 		  	 return 'https://graph.facebook.com/'.$this->uid.'/picture?type='.$imageFormat;
 		  } else {
 			return $this->image;
 		  }
