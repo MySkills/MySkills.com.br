@@ -26,7 +26,7 @@
 						</tr>
 					</thead>
 					<tbody>
-					<?php $jobs = Job::where('recruiter_id', '=', 2)->order_by('created_at', 'desc')->get(); ?>
+					<?php $jobs = Job::where('recruiter_id', '=', 103)->order_by('created_at', 'desc')->get(); ?>
 					@foreach ($jobs as $job)
 					<?php 
 						$recruiter = User::find($job->recruiter_id);
