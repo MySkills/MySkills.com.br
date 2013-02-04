@@ -1,12 +1,30 @@
 @layout('templates.main')
 @section('content')
+<?php
+	$recruiter = User::find($recruiter_id);
+?>
+<div id="unauthorizedModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel"> {{__('security.unauthorized')}} </h3>
+  </div>
+  <div class="modal-body">
+    <p>{{__('security.needsign')}}</p>
+		{{HTML::link('connect/session/facebook', __('security.subscribe').'(Facebook)', array('class' => 'btn btn-large'))}}
+		{{HTML::link('connect/session/github', __('security.subscribe').'(Github)', array('class' => 'btn btn-large btn-primary'))}}
+		{{HTML::link('connect/session/linkedin', __('security.subscribe').'(Linkedin)', array('class' => 'btn btn-large'))}}
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">{{__('security.close')}}</button>
+  </div>
+</div>
+
 <div id="subpage">	
 	<div class="container">
 		<div class="row">
 			<div class="span5">
-				{{HTML::image('img/companies/unasus.png', 'UNA-SUS')}}
 				{{HTML::image('img/companies/ufpe.png', 'UFPE')}}
-				<iframe width="480" height="360" src="http://www.youtube.com/embed/lQPO-oaup-c?rel=0" frameborder="0" allowfullscreen></iframe>
+				<iframe width="480" height="360" src="{{$recruiter->video_url}}" frameborder="0" allowfullscreen></iframe>
 			</div> <!-- /span10 -->
 			<div class="span7">
 
@@ -28,7 +46,7 @@
 						</tr>
 					</thead>
 					<tbody>
-					<?php $jobs = Job::where('recruiter_id', '=', 103)->order_by('created_at', 'desc')->get(); ?>
+					<?php $jobs = Job::where('recruiter_id', '=', $recruiter->id)->order_by('created_at', 'desc')->get(); ?>
 					@foreach ($jobs as $job)
 					<?php 
 						$recruiter = User::find($job->recruiter_id);

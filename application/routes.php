@@ -80,11 +80,6 @@ Route::get('badges', function()
 	return View::make('pages.badges')->with('page','badges');
 });
 
-Route::get('companies/(:any)', function()
-{
-	return View::make('pages.company')->with('page','company');
-});
-
 Route::get('send', function(){
 	$response = Mandrill::request('messages/send', array(
 	    'message' => array(
@@ -131,7 +126,12 @@ Route::get('features', function()
 
 Route::get('jobs', function()
 {
-	return View::make('pages.jobs')->with('page','jobs');
+	if (Input::get('recruiter_id')) {
+		return View::make('pages.recruiterjobs')->with('page','recruiterjobs')->with('recruiter_id', Input::get('recruiter_id'));
+	} else {
+		return View::make('pages.jobs')->with('page','jobs');
+	}
+
 });
 
 Route::get('login', function() {
@@ -191,7 +191,6 @@ Route::get('welcome', function()
 {
 	return View::make('onboarding.welcome')->with('page','home');
 });
-
 
 /*
 REQUIRE A BADGE. Relate a new badge to a user.
