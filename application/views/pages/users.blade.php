@@ -12,8 +12,10 @@
 		U.name
 	order by rank desc");
 
-	$newusers = User::order_by('created_at', 'desc')->take(10)->get();
+	$newusers = User::order_by('created_at', 'desc')->take(count($topusers))->get();
+
 ?>
+
 
 <div id="subheader">	
 	<div class="inner">
