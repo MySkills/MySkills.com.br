@@ -90,54 +90,53 @@
             <div class="nav-collapse">
                 <ul class="nav pull-right">
                     @if ($page == 'home')
-                        <li class="active"> {{HTML::link('/', __('main.home'))}} </a></li>
+                        <li class="active"> {{HTML::link('/', __('main.home'))}} </li>
                     @else
-                        <li> {{HTML::link('/', __('main.home'))}} </a></li>
+                        <li> {{HTML::link('/', __('main.home'))}} </li>
                     @endif
                     @if($page=='jobs')
-                        <li class="active">{{HTML::link('jobs',__('main.jobs'))}}</a></li>
+                        <li class="active">{{HTML::link('jobs',__('main.jobs'))}}</li>
                     @else
-                        <li>{{HTML::link('jobs',__('main.jobs'))}}</a></li>
+                        <li>{{HTML::link('jobs',__('main.jobs'))}}</li>
                     @endif
                     @if($page=='users')
-                        <li class="active">{{HTML::link('users',__('main.users'))}}</a></li>
+                        <li class="active">{{HTML::link('users',__('main.users'))}}</li>
                     @else
-                        <li>{{HTML::link('users',__('main.users'))}}</a></li>
+                        <li>{{HTML::link('users',__('main.users'))}}</li>
                     @endif                    
                     @if ( Auth::guest() )                          
                         @if ($page=='features' )
-                            <li class="active">{{HTML::link('features',__('main.features'))}}</a></li>
+                            <li class="active">{{HTML::link('features',__('main.features'))}}</li>
                         @else
-                            <li>{{HTML::link('features', __('main.features'))}}</a></li>
+                            <li>{{HTML::link('features', __('main.features'))}}</li>
                         @endif
                         @if ($page=='faq')
-                            <li class="active">{{HTML::link('faq',__('main.faq'))}} </a></li>
+                            <li class="active">{{HTML::link('faq',__('main.faq'))}}</li>
                         @else
-                            <li>{{HTML::link('faq',__('main.faq'))}} </a></li>
+                            <li>{{HTML::link('faq',__('main.faq'))}}</li>
                         @endif
                     @endif                    
                     @if($page=='skills')
-                        <li class="active">{{HTML::link('skills',__('main.skills'))}}</a></li>
+                        <li class="active">{{HTML::link('skills',__('main.skills'))}}</li>
                     @else
-                        <li>{{HTML::link('skills',__('main.skills'))}}</a></li>
+                        <li>{{HTML::link('skills',__('main.skills'))}}</li>
                     @endif                    
                     @if ($page=='badges')
-                        <li class="active">{{HTML::link('badges',__('main.badges'))}} </a></li>
+                        <li class="active">{{HTML::link('badges',__('main.badges'))}}</li>
                     @else
-                        <li>{{HTML::link('badges',__('main.badges'))}} </a></li>
+                        <li>{{HTML::link('badges',__('main.badges'))}} </li>
                     @endif
                     @if ( Auth::check())
                         @if ($page=='profile')
-                            <li class="active">{{HTML::link('profile',__('main.profile'))}} </a></li>
+                            <li class="active">{{HTML::link('profile',__('main.profile'))}}</li>
                         @else
-                            <li>{{HTML::link('profile',__('main.profile'))}} </a></li>
+                            <li>{{HTML::link('profile',__('main.profile'))}}</li>
                         @endif
-                        <li>{{HTML::link('logout',__('main.logout'))}} </a></li>
+                        <li>{{HTML::link('logout',__('main.logout'))}}</li>
                     @endif                    
                 </ul>
             </div><!--/.nav-collapse -->    
 
-    
         </div> <!-- /container -->
         
     </div> <!-- /navbar-inner -->
