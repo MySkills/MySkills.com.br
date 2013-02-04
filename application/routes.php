@@ -80,6 +80,11 @@ Route::get('badges', function()
 	return View::make('pages.badges')->with('page','badges');
 });
 
+Route::get('companies/(:any)', function()
+{
+	return View::make('pages.company')->with('page','company');
+});
+
 Route::get('send', function(){
 	$response = Mandrill::request('messages/send', array(
 	    'message' => array(
