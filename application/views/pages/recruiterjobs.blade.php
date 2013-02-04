@@ -23,7 +23,6 @@
 	<div class="container">
 		<div class="row">
 			<div class="span5">
-				{{HTML::image('img/companies/ufpe.png', 'UFPE')}}
 				<iframe width="480" height="360" src="{{$recruiter->video_url}}" frameborder="0" allowfullscreen></iframe>
 			</div> <!-- /span10 -->
 			<div class="span7">
