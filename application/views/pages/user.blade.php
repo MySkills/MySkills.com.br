@@ -46,7 +46,7 @@
 						@endfor	
 					<p>{{__('user.followers')}}</p>
 						@foreach ($user->followers as $follower)
-							{{HTML::image($follower->getImageUrl('large'),  $follower->name)}}
+							{{HTML::image($follower->getImageUrl('large'),  $follower->name, array('width' => 50, 'height'=>50))}}
 						@endforeach
 
 				</div> <!-- /sidebar -->
