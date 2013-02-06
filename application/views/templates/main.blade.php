@@ -144,11 +144,18 @@
 </div> <!-- /navbar -->
                 @yield('content')
 <div id="extra">
-    
+    <?php
+      $users = User::order_by('lastlogin', 'desc')->take(25)->get();
+    ?>
+
+    @foreach($users as $user)
+        {{HTML::image($user->getImageUrl('square'),  $user->name, array('width' => 50, 'height'=>50))}}
+    @endforeach
+
     <div class="inner">
-        
+
         <div class="container">
-            
+
             <div class="row">
                 
                 <div class="span4">
