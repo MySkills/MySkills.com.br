@@ -26,6 +26,8 @@
   $user = User::find(Auth::user()->id);
   $user->lastlogin = date('Y-m-d H:i:s');
   $user->save();
+
+  $users = User::order_by('lastlogin', 'desc')->take(25)->get();
   ?>
       <div id="subheader">
         <div class="inner">         
@@ -34,7 +36,11 @@
           </div> <!-- /.container -->
         </div> <!-- /inner -->
       </div> <!-- /subheader -->   
+      @foreach($users as $user)
+        {{HTML::image($user->getImageUrl('square'),  $user->name, array('width' => 50, 'height'=>50))}}
+      @endforeach
       <div id="subpage">  
+
         <div class="container">
           <div class="row">
             <div class="span2">
