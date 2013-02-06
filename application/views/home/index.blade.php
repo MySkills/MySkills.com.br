@@ -22,6 +22,11 @@
           </div> <!-- /inner -->
       </div> <!-- /landing -->
   @else
+  <?php
+  $user = User::find(Auth::user()->id);
+  $user->lastlogin = date('Y-m-d H:i:s');
+  $user->save();
+  ?>
       <div id="subheader">
         <div class="inner">         
           <div class="container">
