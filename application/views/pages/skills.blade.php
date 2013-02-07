@@ -24,6 +24,46 @@
 				</div> <!-- /sidebar -->
 			</div> <!-- /span2 -->
 			<div class="span8">
+			<div class="btn-toolbar">
+				<div class="btn-group">
+				  <button class="btn">Android</button>
+				  <button class="btn">BlackBerry</button>
+				  <button class="btn">iOS</button>
+				</div>
+
+				<div class="btn-group">
+				  <button class="btn">PHP</button>
+				  <button class="btn">Code Igniter</button>
+				  <button class="btn">Laravel</button>
+				  <button class="btn">Yii</button>
+				  <button class="btn">Zend</button>				  
+				</div>
+
+				<div class="btn-group">
+				  <button class="btn">Python</button>
+				  <button class="btn">Django</button>
+				</div>
+
+				<div class="btn-group">
+				  <button class="btn">Ruby</button>					
+				  <button class="btn">Rails</button>
+				</div>
+
+				<div class="btn-group">
+				  <button class="btn">Javascript</button>					
+				  <button class="btn">Node</button>
+				</div>
+
+				<div class="btn-group">
+				  <button class="btn">HTML 5</button>
+				</div>
+
+				<div class="btn-group">
+				  <button class="btn">MongoDB</button>
+				</div>
+
+			</div>
+
 				<table class="table table-striped table-condensed">
 					<tr>
 						<td>						
@@ -31,6 +71,7 @@
 							developers can use daily checkins to provide feedback about technologies and skills
 							that they are putting in practice. Below you have a list of developers coding with.: {{$technology->name}} - {{$technology->description}}<p>
 							<p> Read more about the <strong>Gamification of Laravel Learning and Use with Daily Checkins</strong> at the <a href="http://forums.laravel.com/viewtopic.php?id=3523" target="_blank">Official Laravel Forum</a></p>
+
 						</td>
 						<td>
 							
@@ -48,8 +89,7 @@
 							<th width="10%">Picture</th>
 							<th width="20%">Name</th>
 							<th width="40%">Technology</th>					
-							<th width="20%">Mobile Checkin</th>
-							<th width="10%">Checkins</th>
+							<th width="20%">Checkin</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -66,7 +106,6 @@
 						</td>
 						<?php $date = date_create($user->pivot->checkin_at); ?>
 						<td>{{date_format($date, 'jS F Y')}}</td>
-						<td>{{count($user->technologies)}}</td>						
              		</tr>
           			@endforeach     
 					</tbody>
