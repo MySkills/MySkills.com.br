@@ -53,7 +53,7 @@
 							{{HTML::link('users/'.$user->id, $user->name)}}
 						</td>
 						<td>
-							@foreach ($user->activebadges as $badge)
+							@foreach ($user->partial_badges(4) as $badge)
 								{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 50, 'height'=>50))}}
 							@endforeach
 							@for ($i = 0; $i <= (3-count($user->activebadges)); $i++)
@@ -94,7 +94,7 @@
 							{{HTML::link('users/'.$user->id, $user->name)}}
 						</td>
 						<td>
-							@foreach ($user->activebadges as $badge)
+							@foreach ($user->partial_badges(4) as $badge)
 								{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 50, 'height'=>50))}}
 							@endforeach
 							@for ($i = 0; $i <= (3-count($user->activebadges)); $i++)

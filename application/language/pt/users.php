@@ -16,4 +16,5 @@ return array(
 	'points' => 'Pontos',
 	'about' => 'Sobre o Leaderboard',
 	'about1' => 'Aqui você encontrará referências para os usuários da nossa comunidade',
+	'developers' => 'Desenvolvedores',
 	);
