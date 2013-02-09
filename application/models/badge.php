@@ -11,4 +11,10 @@ class Badge extends Eloquent
      {
 		return $this->belongs_to('Issuer');
      }
+
+	public function badgetype()
+     {
+		return $this->belongs_to('Badgetype');
+     }
+
 }
