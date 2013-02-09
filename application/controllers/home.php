@@ -32,7 +32,7 @@ class Home_Controller extends Base_Controller {
 
 	public function action_index()
 	{
-		return View::make('home.index')->with('page','home');
+		return View::make('pages.users')->with('page','users');
 	}
 
 }

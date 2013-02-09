@@ -94,32 +94,15 @@
                     @else
                         <li> {{HTML::link('/', __('main.home'))}} </li>
                     @endif
-                    @if($page=='jobs')
-                        <li class="active">{{HTML::link('jobs',__('main.jobs'))}}</li>
-                    @else
-                        <li>{{HTML::link('jobs',__('main.jobs'))}}</li>
-                    @endif
-                    @if($page=='users')
-                        <li class="active">{{HTML::link('users',__('main.users'))}}</li>
-                    @else
-                        <li>{{HTML::link('users',__('main.users'))}}</li>
-                    @endif                    
-                    @if ( Auth::guest() )                          
-                        @if ($page=='features' )
-                            <li class="active">{{HTML::link('features',__('main.features'))}}</li>
-                        @else
-                            <li>{{HTML::link('features', __('main.features'))}}</li>
-                        @endif
-                        @if ($page=='faq')
-                            <li class="active">{{HTML::link('faq',__('main.faq'))}}</li>
-                        @else
-                            <li>{{HTML::link('faq',__('main.faq'))}}</li>
-                        @endif
-                    @endif                    
                     @if ($page=='badges')
                         <li class="active">{{HTML::link('badges',__('main.badges'))}}</li>
                     @else
                         <li>{{HTML::link('badges',__('main.badges'))}} </li>
+                    @endif
+                    @if($page=='jobs')
+                        <li class="active">{{HTML::link('jobs',__('main.jobs'))}}</li>
+                    @else
+                        <li>{{HTML::link('jobs',__('main.jobs'))}}</li>
                     @endif
                     @if ( Auth::check())
                         @if ($page=='profile')
