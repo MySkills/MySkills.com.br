@@ -20,7 +20,7 @@
 <div id="subheader">	
 	<div class="inner">
 		<div class="container">
-			<h1>{{__('users.users')}}</h1>
+			<h1>{{__('users.badcode')}}</h1>
 		</div> <!-- /.container -->
 	</div> <!-- /inner -->
 </div> <!-- /subheader -->
@@ -32,7 +32,7 @@
 				<!-- NEW USERS -->
 				<table class="table table-striped table-bordered table-condensed">
 					<caption>
-						<span class="label label-warning">{{__('users.new_users')}}</span>.
+						<span class="label label-info">{{__('users.new_users')}}</span>.
 					</caption>
 					<thead>
 						<tr>
@@ -110,7 +110,12 @@
 			</div> <!-- /span8 -->
 			<div class="span2">
 				<div class="sidebar">
-					<h3><span class="slash">{{__('users.about')}}</span></h3>
+					<h3><span class="slash">{{__('users.join_us')}}</span></h3>
+  					@if ( Auth::guest() )
+						{{HTML::link('connect/session/facebook', __('home.sign-up').' (Facebook)', array('class' => 'btn btn-small btn-warning'))}}
+						{{HTML::link('connect/session/github', '&nbsp;'. __('home.sign-up').' (Github) &nbsp;&nbsp;', array('class' => 'btn btn-small btn-warning'))}}
+						{{HTML::link('connect/session/linkedin', __('home.sign-up').' (Linkedin)', array('class' => 'btn btn-small btn-warning'))}}
+					@endif
 					<p>{{__('users.about1')}}</p>
 				</div> <!-- /sidebar -->
 			</div> <!-- /span4 -->

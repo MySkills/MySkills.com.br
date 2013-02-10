@@ -17,4 +17,6 @@ return array(
 	'about' => 'About Leaderboard',
 	'about1' => 'Here you find reference to users from our community.',
 	'developers' => 'Developers',
+	'badcode'		=> 'Life is too short to write bad code',
+	'join_us'		=> 'Join Us',
 	);
