@@ -57,7 +57,7 @@
 						@else
 							<div class="tab-pane fade" id="{{$badgetype->name}}">
 						@endif
-								<?php $badges = Badge::where('badgetype_id', '=', $badgetype->id)->order_by('id', 'desc')->get(); ?>
+								<?php $badges = Badge::where('badgetype_id', '=', $badgetype->id)->where('active', '=', 1)->order_by('id', 'desc')->get(); ?>
 								<div class="row">
 									@foreach ($badges as $badge)
 										<div class="span1">
