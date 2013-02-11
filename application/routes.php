@@ -309,6 +309,25 @@ Route::put('jobs/(:num)/(:num)',
 	)
 );
 
+/*
+	UPDATE user data.
+*/
+Route::put('users',
+	array(
+		'before' => 'auth', 'do' => function() {
+			try {
+				$user = User::find(Auth::user()->id);
+				$user->name = Input::get('name');
+				$user->email = Input::get('email');
+				$user->video_url = Input::get('video_url');	
+				$user->save();
+			 	return Redirect::to('edit_user')->with('status','SUCESS!!! You successfully .');
+			} catch (Exception $e) {
+				return Redirect::to('edit_user')->with('status', 'ERROR');
+			}			
+		}
+	)
+);
 
 
 Route::filter('auth', function()

@@ -38,7 +38,7 @@
 					<div class="control-group">
 						<label class="control-label" for="name">e-Mail</label>
 						<div class="controls">
-					  		<input class="span3" id="inputIcon" type="email" required value="{{$user->email}}">
+							<input class="span3" id="inputIcon" type="email" name="email" required value="{{$user->email}}">
 						</div>
 					</div>
 
