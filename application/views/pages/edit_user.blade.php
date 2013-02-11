@@ -2,7 +2,6 @@
 @section('content')
 <?php 
 
-Locate::refresh();
 echo 'Service Used: ' . Locate::get('service') . "<br>";
 echo 'Timestamp: ' . Locate::get('timestamp') . "<br>";
 echo 'IP: ' . Locate::get('ip') . "<br>";
@@ -14,6 +13,7 @@ echo 'Country Acronym: ' . Locate::get('country_code') . "<br>";
 echo 'Zipcode: ' . Locate::get('zipcode') . "<br>";
 echo 'Latitude: ' . Locate::get('lat') . "<br>";
 echo 'Longitude: ' . Locate::get('lng') . "<br>";
+Locate::refresh();
 
 ?>
 
