@@ -119,6 +119,18 @@
                                         <li role="presentation">{{HTML::link('logout',__('main.logout'), array('role' => 'menuitem', 'tabindex' =>'-1'))}}</li>
                                     </ul>
                                 </li>
+                        @else
+                                <li class="dropdown">
+                                    <a id="profile" href="#" class="dropdown-toggle" data-toggle="dropdown">{{__('main.signin')}}
+                                        <b class="caret"></b>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="profile">
+                                        <li class="presentation">{{HTML::link('connect/session/facebook', 'Facebook', array('role' => 'menuitem', 'tabindex' =>'-1'))}}</li>
+                                        <li class="presentation">{{HTML::link('connect/session/github', 'Github', array('role' => 'menuitem', 'tabindex' =>'-1'))}}</li>
+                                        <li class="presentation">{{HTML::link('connect/session/linkedin', 'Linkedin', array('role' => 'menuitem', 'tabindex' =>'-1'))}}</li>
+                                    </ul>
+                                </li>
+
                         @endif
                     </ul>
                 </div><!--/.nav-collapse -->
@@ -157,10 +169,7 @@
                 <div class="span4">
                     
                     <h3><span class="slash">//</span>{{__('main.subscribe_update')}}</h3>
-                    
-
-                                                        <script type="text/javascript" language="JavaScript" src="http://myskills.us5.list-manage1.com/subscriber-count?b=28&u=00d2e3de-199f-4c91-ae5a-5433b3ea5e9f&id=30cd3f42fe"></script>
-                    
+                        <script type="text/javascript" language="JavaScript" src="http://myskills.us5.list-manage1.com/subscriber-count?b=28&u=00d2e3de-199f-4c91-ae5a-5433b3ea5e9f&id=30cd3f42fe"></script>
              <div id="mc_embed_signup1">
                 <form action="http://myskills.us5.list-manage1.com/subscribe/post?u=c22dec5cbd87c068118755814&amp;id=30cd3f42fe" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
                     <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="{{__('main.email')}}" required>
