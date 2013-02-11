@@ -10,7 +10,7 @@ return array(
 	'maxmind_key' => '',
 
 	// IPInfoDB API Key (http://ipinfodb.com/register.php)
-	'ipinfodb_key' => '',
+	'ipinfodb_key' => 'efb532b8923f647059b634ef1996f09cbd126fd8f3cae78b8c926453fff2846a',
 
 	// Service priority
 	// Options: 'MaxMind', 'IPInfoDB', 'FreeGeoIP'
