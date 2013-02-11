@@ -114,6 +114,11 @@ Route::get('checkin/(:any)',
 	)
 );
 
+Route::get('edit_user', function()
+{
+	return View::make('pages.edit_user')->with('page','edit_user');
+});
+
 Route::get('faq', function()
 {
 	return View::make('pages.faq')->with('page','faq');
@@ -183,7 +188,7 @@ Route::get('users/candidates', function()
 */
 Route::get('users/(:any)', function($permalink)
 {
-	return View::make('pages.user')->with('page','user')->with('permalink',$permalink);
+	return View::make('pages.user')->with('page','profile')->with('permalink',$permalink);
 });
 
 

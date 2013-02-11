@@ -21,5 +21,7 @@ return array(
 	'logout' => 'Sair',
 	'subscribe_update' => 'Inscreva-se e receba atualizações',	
 	'email' => 'endereço de email',
-	'subscribe' => 'Inscreva-se',	
+	'subscribe' => 'Inscreva-se',
+	'view'			=> 'Ver',
+	'edit'			=> 'Editar',
 );

@@ -21,4 +21,6 @@ return array(
 	'logout' => 'Logout',
 	'subscribe_update' => 'Subscribe and get updates',
 	'email' => 'email address',
+	'view'			=> 'View',
+	'edit'			=> 'Edit',	
 );

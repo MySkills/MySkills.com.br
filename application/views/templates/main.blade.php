@@ -80,48 +80,53 @@
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
-                
-         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            {{HTML::link('/','Reboot Admin', array('class' => 'brand'))}}
-            <div class="nav-collapse">
-                <ul class="nav pull-right">
-                    @if ($page == 'home')
-                        <li class="active"> {{HTML::link('/', __('main.home'))}} </li>
-                    @else
-                        <li> {{HTML::link('/', __('main.home'))}} </li>
-                    @endif
-                    @if ($page=='badges')
-                        <li class="active">{{HTML::link('badges',__('main.badges'))}}</li>
-                    @else
-                        <li>{{HTML::link('badges',__('main.badges'))}} </li>
-                    @endif
-                    @if($page=='jobs')
-                        <li class="active">{{HTML::link('jobs',__('main.jobs'))}}</li>
-                    @else
-                        <li>{{HTML::link('jobs',__('main.jobs'))}}</li>
-                    @endif
-                    @if ( Auth::check())
-                        @if ($page=='profile')
-                            <li class="active">{{HTML::link('profile',__('main.profile'))}}</li>
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                {{HTML::link('/','Reboot Admin', array('class' => 'brand'))}}
+                <div class="nav-collapse">
+                    <ul class="nav pull-right">
+                        @if ($page == 'home')
+                            <li class="active"> {{HTML::link('/', __('main.home'))}} </li>
                         @else
-                            <li>{{HTML::link('profile',__('main.profile'))}}</li>
+                            <li> {{HTML::link('/', __('main.home'))}} </li>
                         @endif
-                        <li>{{HTML::link('logout',__('main.logout'))}}</li>
-                    @endif                    
-                </ul>
-            </div><!--/.nav-collapse -->    
-
-        </div> <!-- /container -->
-        
-    </div> <!-- /navbar-inner -->
-    
-</div> <!-- /navbar -->
-                @yield('content')
-<div id="extra">
+                        @if ($page=='badges')
+                            <li class="active">{{HTML::link('badges',__('main.badges'))}}</li>
+                        @else
+                            <li>{{HTML::link('badges',__('main.badges'))}} </li>
+                        @endif
+                        @if($page=='jobs')
+                            <li class="active">{{HTML::link('jobs',__('main.jobs'))}}</li>
+                        @else
+                            <li>{{HTML::link('jobs',__('main.jobs'))}}</li>
+                        @endif
+                        @if ( Auth::check())
+                            @if ($page=='profile')
+                                <li class="dropdown active">
+                            @else
+                                <li class="dropdown">
+                            @endif
+                                    <a id="profile" href="#" class="dropdown-toggle" data-toggle="dropdown">{{__('main.profile')}}
+                                        <b class="caret"></b>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="profile">
+                                        <li class="presentation">{{HTML::link('profile',__('main.view'), array('role' => 'menuitem', 'tabindex' =>'-1'))}}</li>
+                                        <li class="presentation">{{HTML::link('edit_user',__('main.edit'), array('role' => 'menuitem', 'tabindex' =>'-1'))}}</li>
+                                        <li role="presentation" class="divider"></li>
+                                        <li role="presentation">{{HTML::link('logout',__('main.logout'), array('role' => 'menuitem', 'tabindex' =>'-1'))}}</li>
+                                    </ul>
+                                </li>
+                        @endif
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div> <!-- /container -->
+        </div> <!-- /navbar-inner -->
+    </div> <!-- /navbar -->
+    @yield('content')
+    <div id="extra">
     <?php
       $users = User::order_by('lastlogin', 'desc')->take(25)->get();
     ?>
@@ -157,26 +162,17 @@
                                                         <script type="text/javascript" language="JavaScript" src="http://myskills.us5.list-manage1.com/subscriber-count?b=28&u=00d2e3de-199f-4c91-ae5a-5433b3ea5e9f&id=30cd3f42fe"></script>
                     
              <div id="mc_embed_signup1">
-
-                                    <form action="http://myskills.us5.list-manage1.com/subscribe/post?u=c22dec5cbd87c068118755814&amp;id=30cd3f42fe" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-
-                                        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="{{__('main.email')}}" required>
-
-                                        <div class="clear"><input type="submit" value="{{__('main.subscribe')}}" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-
-                                    </form>
-
-                                </div>
-
-                    
-                </div> <!-- /span4 -->
+                <form action="http://myskills.us5.list-manage1.com/subscribe/post?u=c22dec5cbd87c068118755814&amp;id=30cd3f42fe" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="{{__('main.email')}}" required>
+                    <div class="clear"><input type="submit" value="{{__('main.subscribe')}}" name="subscribe" id="mc-embedded-subscribe" class="button">
+                    </div>
+                </form>
+            </div>
+            </div> <!-- /span4 -->
                 
             </div> <!-- /row -->
-            
         </div> <!-- /container -->
-        
     </div> <!-- /inner -->
-    
 </div> <!-- /extra -->
             
 <div id="footer">
@@ -214,25 +210,6 @@
         $(".screenshot").lightbox();
     });
 </script>
-    @if (Auth::check())
-      <?php $user = User::find(Auth::user()->id); ?>
-        @if(isset($user))
-            <!-- Begin Survey.io code for com.br -->
-            <script src="http://cdn.survey.io/embed/1.0/survey.js" type="text/javascript"></script>
-            <script type="text/javascript" charset="utf-8">
-            Surveyio.init({
-                survey_id: "92bfd",
-                token: "f76e78414a0d88e036ff1766de6305447c41fc07",
-                banner: {
-                    x: "right",
-                    y: "top",
-                    color: "orange"
-                }
-            });
-            </script>
-            <!-- /End Survey.io code -->
-        @endif
-    @endif
 <!-- begin olark code --><script data-cfasync="false" type='text/javascript'>/*{literal}<![CDATA[*/
 window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){f[z]=function(){(a.s=a.s||[]).push(arguments)};var a=f[z]._={},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={0:+new Date};a.P=function(u){a.p[u]=new Date-a.p[0]};function s(){a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{b.contentWindow[g].open()}catch(w){c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{var t=b.contentWindow[g];t.write(p());t.close()}catch(x){b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
 /* custom configuration goes here (www.olark.com/documentation) */
