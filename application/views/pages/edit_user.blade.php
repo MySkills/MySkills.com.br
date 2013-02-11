@@ -1,22 +1,5 @@
 @layout('templates.main')
 @section('content')
-<?php 
-
-echo 'Service Used: ' . Locate::get('service') . "<br>";
-echo 'Timestamp: ' . Locate::get('timestamp') . "<br>";
-echo 'IP: ' . Locate::get('ip') . "<br>";
-echo 'City: ' . Locate::get('city') . "<br>";
-echo 'State: ' . Locate::get('state') . "<br>";
-echo 'State Acronym: ' . Locate::get('state_code') . "<br>";
-echo 'Country: ' . Locate::get('country') . "<br>";
-echo 'Country Acronym: ' . Locate::get('country_code') . "<br>";
-echo 'Zipcode: ' . Locate::get('zipcode') . "<br>";
-echo 'Latitude: ' . Locate::get('lat') . "<br>";
-echo 'Longitude: ' . Locate::get('lng') . "<br>";
-Locate::refresh();
-
-?>
-
 <?php $user = User::find(Auth::user()->id) ?>
 <div id="subheader">	
 	<div class="inner">
