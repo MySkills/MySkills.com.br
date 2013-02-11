@@ -154,6 +154,11 @@ Route::get('pricing', function()
 	return View::make('pages.pricing')->with('page','pricing');
 });
 
+Route::get('privacypolicy', function()
+{
+	return View::make('pages.privacypolicy')->with('page','privacypolicy');
+});
+
 Route::get('profile', function()
 {
 	return Redirect::to('users/'.Auth::user()->id)->with('page','profile');
