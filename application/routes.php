@@ -170,6 +170,12 @@ Route::get('skills', function()
 	return View::make('pages.skills')->with('page','skills');
 });
 
+
+Route::get('termsofuse', function()
+{
+	return View::make('pages.termsofuse')->with('page','termsofuse');
+});
+
 /*
 	LEADERBOARD - List all users
 */

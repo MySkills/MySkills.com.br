@@ -154,36 +154,36 @@
             <div class="row">
                 
                 <div class="span4">
-                    
-                <!-- Removed Quick Links -->                    
-
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links clearfix">
+                        <li>{{HTML::link('termsofuse', 'Terms of Service')}}</li>
+                    </ul>
+                    <ul class="footer-links clearfix">
+                        <li>{{HTML::link('privacypolicy', 'Privacy Policy')}}</li>
+                    </ul>
                 </div> <!-- /span4 -->
-                
-                
-                <div class="span4">
-                    
-                <!-- Removed Stay in Touch -->                    
 
-                </div> <!-- /span4 -->
-                
                 <div class="span4">
-                    
                     <h3><span class="slash">//</span>{{__('main.subscribe_update')}}</h3>
                         <script type="text/javascript" language="JavaScript" src="http://myskills.us5.list-manage1.com/subscriber-count?b=28&u=00d2e3de-199f-4c91-ae5a-5433b3ea5e9f&id=30cd3f42fe"></script>
-             <div id="mc_embed_signup1">
-                <form action="http://myskills.us5.list-manage1.com/subscribe/post?u=c22dec5cbd87c068118755814&amp;id=30cd3f42fe" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="{{__('main.email')}}" required>
-                    <div class="clear"><input type="submit" value="{{__('main.subscribe')}}" name="subscribe" id="mc-embedded-subscribe" class="button">
+                        <div id="mc_embed_signup1">
+                        <form action="http://myskills.us5.list-manage1.com/subscribe/post?u=c22dec5cbd87c068118755814&amp;id=30cd3f42fe" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="{{__('main.email')}}" required>
+                        <div class="clear"><input type="submit" value="{{__('main.subscribe')}}" name="subscribe" id="mc-embedded-subscribe" class="button">
+                        </div>
+                        </form>
                     </div>
-                </form>
-            </div>
-            </div> <!-- /span4 -->
-                
+                </div> <!-- /span4 -->
+
+                <div class="span4">
+                    <a href="http://mixpanel.com/f/partner"><img src="http://mixpanel.com/site_media/images/partner/badge_blue.png" alt="Real Time Web Analytics" /></a>                
+                </div> <!-- /span4 -->
+
             </div> <!-- /row -->
         </div> <!-- /container -->
     </div> <!-- /inner -->
 </div> <!-- /extra -->
-            
+
 <div id="footer">
                     
     <div class="inner">
@@ -196,7 +196,7 @@
                 </div> <!-- /span4 -->
                 
                 <div id="footer-terms" class="span8">
-                    <a href="http://mixpanel.com/f/partner"><img src="http://mixpanel.com/site_media/images/partner/badge_blue.png" alt="Real Time Web Analytics" /></a>
+
                 </div> <!-- /span8 -->
             </div> <!-- /row -->
             
