@@ -1,6 +1,16 @@
 @layout('templates.main')
 @section('content')
 <?php $user = User::find($permalink); ?>
+
+<?php
+
+$facebook = IoC::resolve('facebook-sdk');
+var_dump($facebook);
+$uid = $facebook->getUser();
+var_dump($uid);
+
+?>
+
 <div id="subheader">	
 	<div class="inner">
 		<div class="container">
@@ -42,7 +52,7 @@
 						@foreach ($user->activebadges as $badge)
 							{{HTML::image('img/badges/'.$badge->image,  $badge->name, array('width' => 50, 'height'=>50))}}
 						@endforeach
-						@for ($i = 0; $i <= (7-count($user->badges)); $i++)
+						@for ($i = 0; $i <= (8-count($user->badges)); $i++)
 							{{HTML::image('img/badges/unlock100.png', '', array('width' => 50, 'height'=>50))}}
 						@endfor	
 					<p>{{__('user.followers')}}</p>

@@ -1,6 +1,6 @@
 <?php
 
 return array(
-    'app_id' => '477950782226332',
-    'secret' => '09fce8f93878a9f0f31e3ee49bc72f85',
+    'app_id' => '380703318658533',
+    'secret' => 'd3abe4dd8c19336241a6a8a18626dd04',
 );
