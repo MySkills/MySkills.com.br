@@ -39,19 +39,24 @@
 						@endforeach
 			</div> <!-- /span4 -->
 			<div class="span4">
-
-				@if(Auth::user()->id == $permalink)
-					<h3>{{__('user.friends')}}</h3>.
-					@if($user->provider = 'facebook')
-					<?php $friends = $user->getFriends('facebook') ?>
-						@forelse($friends as $friend) 
-							{{$friend->name}}
-						@empty
-							{{__('user.nofriends')}}
-						@endforelse
+				@if(Auth::check())
+					@if(Auth::user()->id == $permalink)
+						<h3>{{__('user.friends')}}</h3>.
+						@if($user->provider = 'facebook')
+						<?php $friends = $user->getFriends('facebook') ?>
+						<ul>
+							@forelse($friends as $friend) 
+								<li>{{$friend->name}}</li>
+							@empty
+								{{__('user.nofriends')}}
+							@endforelse
+						</ul>
+						@endif
+					@else
+						&nbsp;
 					@endif
 				@else
-					&nbsp;
+				&nbsp;
 				@endif
 			</div> <!-- /span4 -->
 

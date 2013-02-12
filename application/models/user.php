@@ -85,7 +85,7 @@ class User extends Eloquent
 					array_push($fuids, $uid['uid']);
 				}
 				if ($fuids) {
-					return $friends = User::where_in('uid', $fuids)->get();
+					return $friends = User::where_in('uid', $fuids)->order_by('name', 'asc')->get();
 				}
 			break;
 		}
