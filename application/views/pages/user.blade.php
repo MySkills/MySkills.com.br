@@ -2,11 +2,6 @@
 @section('content')
 <?php $user = User::find($permalink); ?>
 
-<?php
-	$friends = User::where_in('uid', Fbk::getMySkillsFriends());
-	dd($friends);
-?>
-
 <div id="subheader">	
 	<div class="inner">
 		<div class="container">
