@@ -44,13 +44,14 @@
 						<h3>{{__('user.friends')}}</h3>.
 						@if($user->provider = 'facebook')
 						<?php $friends = $user->getFriends('facebook') ?>
-						<ul>
 							@forelse($friends as $friend) 
-								<li>{{$friend->name}}</li>
+							<div class="span1">
+								{{HTML::image($friend->getImageUrl('square'), $user->name, array('width' => 50, 'height'=>50))}}
+								{{$friend->name}}
+							</div>
 							@empty
 								{{__('user.nofriends')}}
 							@endforelse
-						</ul>
 						@endif
 					@else
 						&nbsp;
