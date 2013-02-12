@@ -1,6 +1,7 @@
 <?php 
 
 class Fbk {
+
 	public static function postMessage(&$user_data, $message) {
 		$facebook = IoC::resolve('facebook-sdk');
 		$access_token = unserialize($user_data['token']); 
@@ -35,5 +36,24 @@ class Fbk {
 			$login_url = $facebook->getLoginUrl( array( 'scope' => 'publish_stream' ) );
 			//echo 'Please <a href="' . $login_url . '">login.</a>';
 		} 
+	}
+
+	public static function getMySkillsFriends() {
+		$facebook = IoC::resolve('facebook-sdk');
+		$user_data = Session::get('oneauth');
+		$access_token = unserialize($user_data['token']);
+		$facebook = $facebook->setAccessToken($access_token->access_token);
+		$ret = $facebook->api( array(
+                         'method' => 'fql.query',
+                         'query' => 'SELECT
+										    uid
+										FROM
+										    user
+										WHERE
+										    is_app_user
+										    AND
+										    uid IN (SELECT uid2 FROM friend WHERE uid1 = me())'));
+		return $ret;
+		//return $facebook->api('/me/friends?fields=installed');
 	}
 }
