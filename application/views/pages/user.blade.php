@@ -2,15 +2,6 @@
 @section('content')
 <?php $user = User::find($permalink); ?>
 
-<?php
-
-$facebook = IoC::resolve('facebook-sdk');
-var_dump($facebook);
-$uid = $facebook->getUser();
-var_dump($uid);
-
-?>
-
 <div id="subheader">	
 	<div class="inner">
 		<div class="container">
