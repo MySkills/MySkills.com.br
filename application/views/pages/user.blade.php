@@ -3,7 +3,8 @@
 <?php $user = User::find($permalink); ?>
 
 <?php
-	dd(Fbk::getMySkillsFriends());
+	$friends = User::where_in('uid', Fbk::getMySkillsFriends());
+	dd($friends);
 ?>
 
 <div id="subheader">	
