@@ -47,7 +47,7 @@
 							@forelse($friends as $friend) 
 							<div class="span1">
 								{{HTML::image($friend->getImageUrl('square'), $user->name, array('width' => 50, 'height'=>50))}}
-								{{$friend->name}}
+								{{HTML::link('users/'.$friend->id, $friend->name)}}
 							</div>
 							@empty
 								{{__('user.nofriends')}}
