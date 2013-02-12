@@ -1,6 +1,10 @@
 @layout('templates.main')
 @section('content')
-<?php $user = User::find($permalink); ?>
+<?php 
+	$user = User::find($permalink); 
+?>
+
+
 
 <div id="subheader">	
 	<div class="inner">
@@ -29,11 +33,26 @@
 			@endif
 			</div> <!-- /span2 -->
 			<div class="span4">
-
-				.
+				<h3>{{__('user.followers')}}</h3>
+						@foreach ($user->followers as $follower)
+							{{HTML::image($follower->getImageUrl('large'),  $follower->name, array('width' => 50, 'height'=>50))}}
+						@endforeach
 			</div> <!-- /span4 -->
 			<div class="span4">
-				<h3>Friends</h3>.
+
+				@if(Auth::user()->id == $permalink)
+					<h3>{{__('user.friends')}}</h3>.
+					@if($user->provider = 'facebook')
+					<?php $friends = $user->getFriends('facebook') ?>
+						@forelse($friends as $friend) 
+							{{$friend->name}}
+						@empty
+							{{__('user.nofriends')}}
+						@endforelse
+					@endif
+				@else
+					&nbsp;
+				@endif
 			</div> <!-- /span4 -->
 
 			<div class="span2">
@@ -46,10 +65,7 @@
 						@for ($i = 0; $i <= (8-count($user->badges)); $i++)
 							{{HTML::image('img/badges/unlock100.png', '', array('width' => 50, 'height'=>50))}}
 						@endfor	
-					<p>{{__('user.followers')}}</p>
-						@foreach ($user->followers as $follower)
-							{{HTML::image($follower->getImageUrl('large'),  $follower->name, array('width' => 50, 'height'=>50))}}
-						@endforeach
+
 
 				</div> <!-- /sidebar -->
 			</div> <!-- /span4 -->

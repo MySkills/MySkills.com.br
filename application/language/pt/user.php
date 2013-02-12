@@ -11,4 +11,6 @@ return array(
 	'unfollow' 		=> 'Parar de Seguir Usuário',
 	'badges_earned' => 'Badges conquistados',
 	'followers' 	=> 'Seguidores',
+	'friends'		=> 'Amigos',
+	'nofriends'		=> 'Sem amigos ... isso é triste :(',
 	);

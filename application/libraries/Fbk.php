@@ -54,6 +54,5 @@ class Fbk {
 										    AND
 										    uid IN (SELECT uid2 FROM friend WHERE uid1 = me())'));
 		return $ret;
-		//return $facebook->api('/me/friends?fields=installed');
 	}
 }

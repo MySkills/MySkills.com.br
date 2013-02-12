@@ -76,5 +76,18 @@ class User extends Eloquent
 	  }
 	  
 	}
-
+	public function getFriends($provider) {
+		switch($provider) {
+			case 'facebook' :
+				$uids = Fbk::getMySkillsFriends();
+				$fuids = array();
+				foreach ($uids as $uid) {
+					array_push($fuids, $uid['uid']);
+				}
+				if ($fuids) {
+					return $friends = User::where_in('uid', $fuids)->get();
+				}
+			break;
+		}
+	}
 }
