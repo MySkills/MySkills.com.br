@@ -32,13 +32,13 @@
 
 			@endif
 			</div> <!-- /span2 -->
-			<div class="span4">
+			<div class="span2">
 				<h3>{{__('user.followers')}}</h3>
 						@foreach ($user->followers as $follower)
 							{{HTML::image($follower->getImageUrl('large'),  $follower->name, array('width' => 50, 'height'=>50))}}
 						@endforeach
 			</div> <!-- /span4 -->
-			<div class="span4">
+			<div class="span6">
 				@if(Auth::check())
 					@if(Auth::user()->id == $permalink)
 						<h3>{{__('user.friends')}}</h3>.
