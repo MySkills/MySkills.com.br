@@ -72,7 +72,6 @@ class Connect_Controller extends OneAuth\Auth\Controller {
      */
     public function action_login()
     {
-		Log::myskills('action_login');    	
         if ($_POST)
         {
             // it a POST Request, you should validate the form
