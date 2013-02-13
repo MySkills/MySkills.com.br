@@ -37,7 +37,7 @@
 			</div> <!-- /span4 -->
 			<div class="span6">
 				@if(Auth::check())
-					@if(Auth::user()->id == $permalink)
+					@if(Auth::user()->id == $user_id)
 						<h3>{{__('user.friends')}}</h3>.
 						@if($user->provider = 'facebook')
 						<?php $friends = $user->getFriends('facebook') ?>
