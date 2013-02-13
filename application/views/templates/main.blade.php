@@ -93,6 +93,11 @@
                         @else
                             <li> {{HTML::link('/', __('main.home'))}} </li>
                         @endif
+                        @if ($page=='upgrade')
+                            <li class="active">{{HTML::link('upgrade',__('upgrade.professionalupgrade'))}}</li>
+                        @else
+                            <li>{{HTML::link('upgrade',__('upgrade.professionalupgrade'))}} </li>
+                        @endif
                         @if ($page=='badges')
                             <li class="active">{{HTML::link('badges',__('main.badges'))}}</li>
                         @else

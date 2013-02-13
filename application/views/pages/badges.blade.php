@@ -65,7 +65,7 @@
 										</div>
 										<div class="span2">
 											<table class="table table-striped table-condensed">
-												<tr><td>{{$badge->name}}</td></tr>
+												<tr><td>{{HTML::link('badges/'.$badge->id, $badge->name)}}</td></tr>
 												<tr><td>
 
 						                    @if( Auth::check())

@@ -80,6 +80,14 @@ Route::get('badges', function()
 	return View::make('pages.badges')->with('page','badges');
 });
 
+/*
+	USERPROFILE
+*/
+Route::get('badges/(:any)', function($badge_id)
+{
+	return View::make('pages.badge')->with('page','badge')->with('badge_id',$badge_id);
+});
+
 Route::get('send', function(){
 	$response = Mandrill::request('messages/send', array(
 	    'message' => array(
@@ -179,6 +187,14 @@ Route::get('termsofuse', function()
 /*
 	LEADERBOARD - List all users
 */
+Route::get('upgrade', function()
+{
+	return View::make('pages.upgrade')->with('page','upgrade');
+});
+
+/*
+	LEADERBOARD - List all users
+*/
 Route::get('users', function()
 {
 	return View::make('pages.users')->with('page','users');
@@ -189,17 +205,12 @@ Route::get('bolsas/usuarios', function()
 	return View::make('bolsas.usuarios')->with('page','users');
 });
 
-Route::get('users/candidates', function()
-{
-	return View::make('pages.users')->with('page','users');
-});
-
 /*
 	USERPROFILE
 */
-Route::get('users/(:any)', function($permalink)
+Route::get('users/(:any)', function($user_id)
 {
-	return View::make('pages.user')->with('page','profile')->with('permalink',$permalink);
+	return View::make('pages.user')->with('page','profile')->with('user_id',$user_id);
 });
 
 

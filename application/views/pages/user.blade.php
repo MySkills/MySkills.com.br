@@ -1,11 +1,8 @@
 @layout('templates.main')
 @section('content')
 <?php 
-	$user = User::find($permalink); 
+	$user = User::find($user_id); 
 ?>
-
-
-
 <div id="subheader">	
 	<div class="inner">
 		<div class="container">
