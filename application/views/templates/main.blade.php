@@ -114,7 +114,7 @@
                             @else
                                 <li class="dropdown">
                             @endif
-                                    <a id="profile" href="#" class="dropdown-toggle" data-toggle="dropdown">{{__('main.profile')}}
+                                    <a id="profile" href="#" class="dropdown-toggle" data-toggle="dropdown">{{$user->name}}
                                         <b class="caret"></b>
                                     </a>
                                     <ul class="dropdown-menu" role="menu" aria-labelledby="profile">
