@@ -10,7 +10,7 @@
 		B.id = BU.badge_id
 	GROUP BY
 		U.name
-	order by rank desc, U.created_at desc");
+	order by rank desc, U.lastlogin desc");
 
 	$newusers = User::order_by('created_at', 'desc')->take(count($topusers))->get();
 
