@@ -43,9 +43,9 @@
 					<?php $badgetypes = Badgetype::where('active', '=', 1)->order_by('points', 'desc')->get(); ?>
 					@foreach($badgetypes as $badgetype)
 						@if($badgetype->id==2)
-							<li class="active"><a data-toggle="tab" href="#{{$badgetype->name}}">{{$badgetype->name}} ({{$badgetype->points}} pontos)</a></li>
+							<li class="active"><a data-toggle="tab" href="#{{$badgetype->name}}">{{$badgetype->name}}</a></li>
 						@else
-							<li class><a data-toggle="tab" href="#{{$badgetype->name}}">{{$badgetype->name}} ({{$badgetype->points}} pontos)</a></li>
+							<li class><a data-toggle="tab" href="#{{$badgetype->name}}">{{$badgetype->name}}</a></li>
 						@endif
 					@endforeach
 
