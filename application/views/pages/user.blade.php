@@ -1,5 +1,20 @@
 @layout('templates.main')
 @section('content')
+<div id="unauthorizedModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel"> {{__('security.unauthorized')}} </h3>
+  </div>
+  <div class="modal-body">
+    <p>{{__('security.needsign')}}</p>
+		{{HTML::link('connect/session/facebook', __('security.subscribe').'(Facebook)', array('class' => 'btn btn-large'))}}
+		{{HTML::link('connect/session/github', __('security.subscribe').'(Github)', array('class' => 'btn btn-large btn-primary'))}}
+		{{HTML::link('connect/session/linkedin', __('security.subscribe').'(Linkedin)', array('class' => 'btn btn-large'))}}
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">{{__('security.close')}}</button>
+  </div>
+</div>
 <?php 
 	$user = User::find($user_id); 
 ?>
@@ -16,18 +31,21 @@
 		<div class="row">		
 			<div class="span2">
 				{{HTML::image($user->getImageUrl('large'),  $user->name)}}
-             @if(count($user->followers()->where('user_id', '=', $user->id)->get()) == 0)
-				{{Form::open('followers', 'PUT')}}
-				{{Form::hidden('user_id', $user->id)}}
-				{{Form::submit(__('user.follow'), array('class' => 'btn btn-mini btn-warning'))}}
-				{{Form::close()}}
-			@else
-				{{Form::open('followers', 'DELETE')}}
-				{{Form::hidden('user_id', $user->id)}}
-				{{Form::submit(__('user.unfollow'), array('class' => 'btn btn-mini btn-primary'))}}
-				{{Form::close()}}
-
-			@endif
+				@if( Auth::check())				
+					@if(count($user->followers()->where('user_id', '=', $user->id)->get()) == 0)
+						{{Form::open('followers', 'PUT')}}
+						{{Form::hidden('user_id', $user->id)}}
+						{{Form::submit(__('user.follow'), array('class' => 'btn btn-mini btn-success'))}}
+						{{Form::close()}}
+					@else
+						{{Form::open('followers', 'DELETE')}}
+						{{Form::hidden('user_id', $user->id)}}
+						{{Form::submit(__('user.unfollow'), array('class' => 'btn btn-mini btn-primary'))}}
+						{{Form::close()}}
+					@endif
+				@else
+					<a href="#unauthorizedModal" role="button" class="btn btn-warning" data-toggle="modal" data-target="#unauthorizedModal">{{__('user.follow')}}</a>
+				@endif
 			</div> <!-- /span2 -->
 			<div class="span2">
 				<h3>{{__('user.followers')}}</h3>
