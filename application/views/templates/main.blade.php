@@ -111,7 +111,7 @@
                         @if ( Auth::check())
                             <?php $count_messages = count(User::messages()); ?>
                             <li>
-                                <a href="messages"><i class="icon-envelope"></i>
+                                <a href="/messages"><i class="icon-envelope"></i>
                                     @if($count_messages > 0)
                                     <span class="badge badge-warning">{{$count_messages}}</span>
                                     @endif
