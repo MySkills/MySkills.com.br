@@ -20,9 +20,10 @@
 					</caption>
 					<thead>
 						<tr>
+							<th width="20%">{{__('messages.date')}}</th>
 							<th width="10%">{{__('messages.picture')}}</th>
 							<th width="20%">{{__('messages.sender')}}</th>
-							<th width="60%">{{__('messages.message')}}</th>
+							<th width="50%">{{__('messages.message')}}</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -30,6 +31,9 @@
 					@forelse($messages as $message)
 					<?php $sender = User::find($message->sender_id); ?>
 					<tr>
+						<td>
+							{{$message->created_at}}
+						</td>
 						<td>
 							{{HTML::image($sender->getImageUrl('square'), $sender->name, array('width' => 50, 'height'=>50))}}
 						</td>

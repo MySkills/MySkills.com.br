@@ -93,7 +93,7 @@ class User extends Eloquent
 
 	public static function messages()
 	{
-	  return Message::where('recipient_id', '=', Auth::user()->id)->get();
+	  return Message::where('recipient_id', '=', Auth::user()->id)->order_by('created_at', 'desc')->get();
 	}
 
 }

@@ -19,4 +19,5 @@ return array(
 	'yourmessages'	=> 'Your Messages',
 	'about1'		=> 'Read your private messages here.',
 	'nomessages'	=> 'No message. That´s so sad. :(',
+	'date'			=> 'Date',
 );
