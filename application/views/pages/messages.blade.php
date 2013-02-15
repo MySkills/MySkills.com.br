@@ -10,8 +10,18 @@
 </div> <!-- /subheader -->
 <div id="subpage">
 	<div class="container">
-		<div class="row">		
+		<div class="row">
 			<div class="span10">
+				@if(Session::get('status'))
+					@if(Session::get('status')=='ERROR')
+						<div class="alert alert-error">
+					@else
+						<div class="alert alert-success">
+					@endif
+						<button type="button" class="close" data-dismiss="alert">×</button>
+						<strong>{{Session::get('status')}}</strong>
+					</div>
+				@endif
 
 				<!-- NEW USERS -->
 				<table class="table table-striped table-bordered table-condensed">
@@ -50,7 +60,10 @@
 							{{$message->text}}
 						</td>
 						<td>
+							{{Form::open('messages', 'DELETE')}}
+							{{Form::hidden('message_id', $message->id)}}
 							{{Form::submit(__('messages.delete'), array('class' => 'btn btn-danger btn-mini'))}}
+							{{Form::close()}}
 						</td>
 					</tr>
 					@empty

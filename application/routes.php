@@ -75,6 +75,27 @@ Route::delete('jobs/(:num)',
 	)
 );
 
+/*
+Delete Message
+*/
+
+Route::delete('messages',
+	array(
+		'before' => 'auth', 'do' => function() {
+			try {
+				$message = Message::find(Input::get('message_id'));
+				if($message->sender_id == Auth::user()->id || $message->recipient_id == Auth::user()->id) {
+					$message->delete();
+				}
+				return Redirect::to('/messages')->with('status','SUCESSO!!! Mensagem excluída.');
+			} catch (Exception $e) {
+				Log::exception($e);
+				return Redirect::to('/messages')->with('status', 'ERRO');
+			}
+		}
+	)
+);
+
 Route::get('badges', function()
 {
 	return View::make('pages.badges')->with('page','badges');
@@ -252,8 +273,6 @@ Route::put('badges/(:num)/(:num)',
 			                  'name'=>'Eduardo Cruz (MySkills)')),
 			    ),
 			   ));
-
-
 				return Redirect::to('badges')->with('status','SUCESS!!! You successfully applied for a new badge. We will contact you soon.');
 			} catch (Exception $e) {
 				return Redirect::to('badges')->with('status', 'ERROR');
