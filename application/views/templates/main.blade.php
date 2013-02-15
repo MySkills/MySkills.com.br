@@ -109,6 +109,14 @@
                             <li>{{HTML::link('jobs',__('main.jobs'))}}</li>
                         @endif
                         @if ( Auth::check())
+                            <?php $count_messages = count(User::messages()); ?>
+                            <li>
+                                <a href="messages"><i class="icon-envelope"></i>
+                                    @if($count_messages > 0)
+                                    <span class="badge badge-warning">{{$count_messages}}</span>
+                                    @endif
+                                </a>
+                            </li>
                             @if ($page=='profile')
                                 <li class="dropdown active">
                             @else
@@ -210,9 +218,6 @@
     </div> <!-- /inner -->
     
 </div> <!-- /footer -->
-    
-
-
 
 {{HTML::script('js/jquery-1.7.2.min.js')}}
 {{HTML::script('js/bootstrap.js')}}

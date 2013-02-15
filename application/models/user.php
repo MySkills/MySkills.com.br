@@ -90,4 +90,10 @@ class User extends Eloquent
 			break;
 		}
 	}
+
+	public static function messages()
+	{
+	  return Message::where('recipient_id', '=', Auth::user()->id)->get();
+	}
+
 }

@@ -13,4 +13,7 @@ return array(
 	'followers' 	=> 'Seguidores',
 	'friends'		=> 'Amigos',
 	'nofriends'		=> 'Sem amigos ... isso é triste :(',
+	'sendmessage'	=> 'Enviar Mensagem',
+	'recipient'		=> 'Destinatário',
+	'message'		=> 'Mensagem',
 	);

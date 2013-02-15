@@ -11,4 +11,9 @@ return array(
 	'unfollow' => 'Unfollow User',
 	'badges_earned' => 'Badges earned',
 	'followers' => 'Followers',
+	'friends'		=> 'Friends',
+	'nofriends'		=> 'No friends ... that´s sad. :(',
+	'sendmessage'	=> 'Send Message',
+	'recipient'		=> 'Recipient',
+	'message'		=> 'Message',
 	);

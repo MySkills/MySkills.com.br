@@ -157,6 +157,14 @@ Route::get('logout', function() {
     return Redirect::to('/');
 });
 
+Route::get('messages', 
+	array(
+		'before' => 'auth', 'do' => function(){
+		 	return View::make('pages.messages')->with('page','messages');
+		}
+	)
+);
+
 Route::get('pricing', function()
 {
 	return View::make('pages.pricing')->with('page','pricing');
@@ -334,6 +342,43 @@ Route::put('jobs/(:num)/(:num)',
 /*
 	UPDATE user data.
 */
+Route::put('messages',
+	array(
+		'before' => 'auth', 'do' => function() {
+			try {
+				
+				$sender 	= User::find(Auth::user()->id);
+				$recipient 	= User::find(Input::get('recipient_id'));
+
+				$message = Message::create(
+					array(
+						'sender_id' 	=> $sender->id, 
+						'recipient_id' 	=> $recipient->id,
+						'text' 	=> Input::get('text')
+					)
+				);
+				$message->save();
+				Email::send(
+						'Eduardo Cruz',
+						'eduardo.cruz@myskills.com.br', 
+						$recipient->name, 
+						$recipient->email, 
+						'[myskills] Nova mensagem de '.$sender->name,
+						'Visite o MySkills.com.br para ver a sua nova mensagem.'
+				);
+
+			 	return Redirect::to('users/'.Input::get('recipient_id'))->with('status','SUCESS!!! Message Sent.');
+			} catch (Exception $e) {
+
+				return Redirect::to('users/'.Input::get('recipient_id'))->with('status', 'ERROR');
+			}			
+		}
+	)
+);
+
+/*
+	UPDATE user data.
+*/
 Route::put('users',
 	array(
 		'before' => 'auth', 'do' => function() {
@@ -429,11 +474,11 @@ Route::filter('csrf', function()
 
 Route::filter('auth', function()
 {
-    if (Auth::guest()) return Redirect::to('login');
+    if (Auth::guest()) return Redirect::to('/');
 });
 
 Route::filter('connect', function()
 {
 	Log::myskills('Filter - Connect'); 
-	if (Auth::guest()) return Redirect::to('login');
+	if (Auth::guest()) return Redirect::to('/');
 });
