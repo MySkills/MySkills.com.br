@@ -20,4 +20,5 @@ return array(
 	'about1'		=> 'Leia aqui as mensagens privadas enviadas para você',
 	'nomessages'	=> 'Sem mensagens. Isso é tão triste. :(',
 	'date'			=> 'Data',
+	'recipient'		=> 'Destinatário',
 );

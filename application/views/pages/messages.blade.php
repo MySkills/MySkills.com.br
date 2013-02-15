@@ -20,28 +20,37 @@
 					</caption>
 					<thead>
 						<tr>
-							<th width="20%">{{__('messages.date')}}</th>
-							<th width="10%">{{__('messages.picture')}}</th>
-							<th width="20%">{{__('messages.sender')}}</th>
-							<th width="50%">{{__('messages.message')}}</th>
+							<th width="10%">{{__('messages.date')}}</th>
+							<th width="10%">{{__('messages.sender')}}</th>
+							<th width="10%">{{__('messages.recipient')}}</th>
+							<th width="60%">{{__('messages.message')}}</th>
+							<th width="10%">{{__('messages.action')}}</th>
 						</tr>
 					</thead>
 					<tbody>
 
 					@forelse($messages as $message)
-					<?php $sender = User::find($message->sender_id); ?>
+					<?php
+						$sender 	= User::find($message->sender_id);
+						$recipient 	= User::find($message->recipient_id);
+						?>
 					<tr>
 						<td>
 							{{$message->created_at}}
 						</td>
 						<td>
 							{{HTML::image($sender->getImageUrl('square'), $sender->name, array('width' => 50, 'height'=>50))}}
-						</td>
-						<td>
 							{{HTML::link('users/'.$sender->id, $sender->name)}}
 						</td>
 						<td>
+							{{HTML::image($recipient->getImageUrl('square'), $recipient->name, array('width' => 50, 'height'=>50))}}
+							{{HTML::link('users/'.$recipient->id, $recipient->name)}}
+						</td>
+						<td>
 							{{$message->text}}
+						</td>
+						<td>
+							{{Form::submit(__('messages.delete'), array('class' => 'btn btn-danger btn-mini'))}}
 						</td>
 					</tr>
 					@empty
