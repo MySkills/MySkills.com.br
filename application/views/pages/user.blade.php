@@ -121,7 +121,7 @@
 				@if(Auth::check())
 					@if(Auth::user()->id == $user_id)
 						<h3>{{__('user.friends')}}</h3>.
-						@if($user->provider = 'facebook')
+						@if($user->provider == 'facebook')
 						<?php $friends = $user->getFriends('facebook') ?>
 							@forelse($friends as $friend) 
 							<div class="span1">
