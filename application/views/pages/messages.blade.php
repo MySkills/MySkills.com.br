@@ -22,7 +22,6 @@
 						<strong>{{Session::get('status')}}</strong>
 					</div>
 				@endif
-
 				<!-- NEW USERS -->
 				<table class="table table-striped table-bordered table-condensed">
 					<caption>
