@@ -35,11 +35,12 @@
 				<div class="box">
 					{{HTML::image($user->getImageUrl('large'), $user->name, array('width'=>'200', 'class'=>'dev'))}}
 					<p>{{HTML::link('/users/'.$user->id, $user->name)}}<p>
+
 					<div class="progress progress-danger">
-					  <div class="bar" style="width: 100%;">30/30</div>
+					  <div class="bar" style="width: 100%;">30/30 <i class="icon-heart"></i></div>
 					</div>
 					<div class="progress progress-info">
-					  <div class="bar" style="width: 100%;">20/20</div>
+					  <div class="bar" style="width: 100%;">20/20 <i class="icon-fire"></i></div>
 					</div>
 
 					@foreach ($user->partial_badges(6) as $badge)
