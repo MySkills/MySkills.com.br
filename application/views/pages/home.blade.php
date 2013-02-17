@@ -42,10 +42,10 @@
 					  <div class="bar" style="width: 100%;">{{__('developers.mana')}}: 100%</div>
 					</div>
 
-					@foreach ($user->partial_badges(5) as $badge)
+					@foreach ($user->partial_badges(6) as $badge)
 						{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 30, 'height'=>30))}}
 					@endforeach
-					@for ($i = 0; $i <= (4-count($user->activebadges)); $i++)
+					@for ($i = 0; $i <= (5-count($user->activebadges)); $i++)
 						{{HTML::image('img/badges/unlock100.png', ' ', array('width' => 30, 'height'=>30))}}
 					@endfor				
 				</div>
