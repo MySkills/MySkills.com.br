@@ -167,14 +167,7 @@
             <div class="row">
                 
                 <div class="span4">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links clearfix">
-                        <li>{{HTML::link('termsofuse', 'Terms of Service')}}</li>
-                    </ul>
-                    <ul class="footer-links clearfix">
-                        <li>{{HTML::link('privacypolicy', 'Privacy Policy')}}</li>
-                    </ul>
-                </div> <!-- /span4 -->
+<a href="http://smallactsmanifesto.org" title="Small Acts Manifesto"><img src="http://smallactsmanifesto.org/media/images/smallacts-badge-88x31-blue.png" style="border: none;" alt="Small Acts Manifesto" /></a>                </div> <!-- /span4 -->
 
                 <div class="span4">
                     <h3><span class="slash">//</span>{{__('main.subscribe_update')}}</h3>
@@ -209,7 +202,12 @@
                 </div> <!-- /span4 -->
                 
                 <div id="footer-terms" class="span8">
-
+                    <ul class="footer-links clearfix">
+                        <li>{{HTML::link('termsofuse', 'Terms of Service')}}</li>
+                    </ul>
+                    <ul class="footer-links clearfix">
+                        <li>{{HTML::link('privacypolicy', 'Privacy Policy')}}</li>
+                    </ul>
                 </div> <!-- /span8 -->
             </div> <!-- /row -->
             
@@ -220,6 +218,21 @@
 </div> <!-- /footer -->
 
 {{HTML::script('js/jquery-1.7.2.min.js')}}
+{{HTML::script('js/jquery.masonry.min.js')}}
+<script>
+$(function(){
+
+    var $container = $('#container');
+
+    $container.imagesLoaded( function(){
+      $container.masonry({
+        itemSelector : '.box'
+      });
+    });
+
+});
+</script>
+
 {{HTML::script('js/bootstrap.js')}}
 {{HTML::script('js/lightbox/jquery.lightbox.min.js')}}
 {{HTML::script('js/jcarousellite_1.0.1.js')}}

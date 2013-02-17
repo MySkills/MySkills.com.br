@@ -143,6 +143,22 @@ Route::get('checkin/(:any)',
 	)
 );
 
+Route::get('developers', function()
+{
+
+	$topUsers = User::topUsers();
+
+	$newUsers = User::order_by('created_at', 'desc')->take(count($topUsers))->get();
+
+	if (Auth::check()) {
+	  $user = User::find(Auth::user()->id);
+	  $user->lastlogin = date('Y-m-d H:i:s');
+	  $user->save();
+	}
+
+	return View::make('pages.home')->with('page','developers')->with('newUsers', $newUsers)->with('topUsers', $topUsers);
+});
+
 Route::get('edit_user', function()
 {
 	return View::make('pages.edit_user')->with('page','edit_user');

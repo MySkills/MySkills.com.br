@@ -96,4 +96,17 @@ class User extends Eloquent
 	  return Message::where('recipient_id', '=', Auth::user()->id)->or_where('sender_id', '=', Auth::user()->id)->order_by('created_at', 'desc')->get();
 	}
 
+	public static function topUsers() {
+			$topusers = DB::query("SELECT
+					U.id, U.name name, SUM(B.points) rank
+				FROM
+					users U, badges B, badge_user BU
+				WHERE
+					U.id = BU.user_id AND
+					B.id = BU.badge_id
+				GROUP BY
+					U.name
+				order by rank desc, U.lastlogin desc");
+			return $topusers;
+	}
 }
