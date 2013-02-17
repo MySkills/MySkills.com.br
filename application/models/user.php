@@ -27,11 +27,15 @@ class User extends Eloquent
 	}	
 
 	public function getImageUrl($imageFormat) {
-		  if ($this->provider == 'facebook') {
- 		  	 return 'https://graph.facebook.com/'.$this->uid.'/picture?type='.$imageFormat;
-		  } else {
-			return $this->image;
-		  }
+		if ($this->provider == 'facebook') {
+			return 'https://graph.facebook.com/'.$this->uid.'/picture?type='.$imageFormat;
+		} else {
+			if($this->image) {
+				return $this->image;
+			} else {
+				return '/img/profile/noavatar.png';
+			}
+		}
 	}
 
 	public function badges()
