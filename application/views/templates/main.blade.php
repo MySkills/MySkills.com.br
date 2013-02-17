@@ -94,9 +94,9 @@
                             <li> {{HTML::link('/', __('main.home'))}} </li>
                         @endif
                         @if ($page=='upgrade')
-                            <li class="active">{{HTML::link('upgrade',__('upgrade.professionalupgrade'))}}</li>
+                            <li class="active">{{HTML::link('upgrade',__('main.upgrade'))}}</li>
                         @else
-                            <li>{{HTML::link('upgrade',__('upgrade.professionalupgrade'))}} </li>
+                            <li>{{HTML::link('upgrade',__('main.upgrade'))}} </li>
                         @endif
                         @if ($page=='badges')
                             <li class="active">{{HTML::link('badges',__('main.badges'))}}</li>

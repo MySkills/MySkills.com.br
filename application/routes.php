@@ -148,7 +148,7 @@ Route::get('developers', function()
 
 	$topUsers = User::topUsers();
 
-//	$newUsers = User::order_by('created_at', 'desc')->take(count($topUsers))->get();
+	$newUsers = User::order_by('created_at', 'desc')->take(10)->get();
 
 	if (Auth::check()) {
 	  $user = User::find(Auth::user()->id);
@@ -156,7 +156,7 @@ Route::get('developers', function()
 	  $user->save();
 	}
 
-	return View::make('pages.home')->with('page','developers')->with('topUsers', $topUsers);
+	return View::make('pages.home')->with('page','developers')->with('topUsers', $topUsers)->with('newUsers', $newUsers);
 });
 
 Route::get('edit_user', function()

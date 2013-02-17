@@ -10,6 +10,23 @@
 						{{HTML::link('connect/session/linkedin', __('home.sign-up').' (Linkedin)', array('class' => 'btn btn-small btn-warning'))}}
 					@endif
 					<p>{{__('users.about1')}}</p>
+					<h4><span class="slash">{{__('users.new_users')}}</span></h4>
+					@foreach ($newUsers as $user)
+					<tr>
+						<td>
+							{{HTML::image($user->getImageUrl('square'), $user->name, array('width' => 50, 'height'=>50))}}
+						</td>
+						<td>
+							@foreach ($user->partial_badges(1) as $badge)
+								{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 50, 'height'=>50))}}
+							@endforeach
+							@for ($i = 1; $i <= (1-count($user->activebadges)); $i++)
+								{{HTML::image('img/badges/unlock100.png', ' ', array('width' => 50, 'height'=>50))}}
+							@endfor
+						</td>
+						<td>{{$user->getpoints()}}</td>
+					</tr>
+					@endforeach
 				</div> <!-- /sidebar -->
 		</div>
 		<div class="span11" id="container">
@@ -19,10 +36,10 @@
 					{{HTML::image($user->getImageUrl('large'), $user->name, array('width'=>'200', 'class'=>'dev'))}}
 					<p>{{HTML::link('/users/'.$user->id, $user->name)}}<p>
 					<div class="progress progress-success">
-					  <div class="bar" style="width: 100%;">Vida: 100%</div>
+					  <div class="bar" style="width: 100%;">{{__('developers.life')}}: 100%</div>
 					</div>
 					<div class="progress progress-info">
-					  <div class="bar" style="width: 100%;">Experiência: 100%</div>
+					  <div class="bar" style="width: 100%;">{{__('developers.mana')}}: 100%</div>
 					</div>
 
 					@foreach ($user->partial_badges(5) as $badge)

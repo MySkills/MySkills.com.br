@@ -26,4 +26,5 @@ return array(
 	'edit'				=> 'Editar',
 	'signin'			=> 'Sign-in/Sign-Up',
 	'developers'		=> 'Developers',
+	'upgrade' 			=> 'Upgrade Profissional',
 );
