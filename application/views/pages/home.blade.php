@@ -42,13 +42,15 @@
 					<div class="progress progress-info">
 					  <div class="bar" style="width: 100%;">20/20 <i class="icon-fire"></i></div>
 					</div>
-
 					@foreach ($user->partial_badges(6) as $badge)
 						{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 30, 'height'=>30))}}
 					@endforeach
 					@for ($i = 0; $i <= (5-count($user->activebadges)); $i++)
 						{{HTML::image('img/badges/unlock100.png', ' ', array('width' => 30, 'height'=>30))}}
 					@endfor				
+					<div class="pull-right">
+						0 {{HTML::image('img/coin16.png', 'Coin')}}
+					</div>
 				</div>
 			@endforeach
 		</div>
