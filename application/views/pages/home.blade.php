@@ -49,7 +49,7 @@
 						{{HTML::image('img/badges/unlock100.png', ' ', array('width' => 30, 'height'=>30))}}
 					@endfor				
 					<div class="pull-right">
-						0 {{HTML::image('img/coin16.png', 'Coin')}}
+						0 {{HTML::image('img/coin16.png', 'Coin')}} 
 					</div>
 				</div>
 			@endforeach
