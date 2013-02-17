@@ -109,20 +109,6 @@ Route::get('badges/(:any)', function($badge_id)
 	return View::make('pages.badge')->with('page','badge')->with('badge_id',$badge_id);
 });
 
-Route::get('send', function(){
-	$response = Mandrill::request('messages/send', array(
-	    'message' => array(
-	        'html' => 'Body of the message.',
-	        'subject' => '[myskills] Mandrill Santa Message .',
-	        'from_email' => 'eduardo.cruz@myskills.com.br',
-	        'from_name' => 'Eduardo Cruz (MySkills)',	        
-	        'to' => array(array('email'=>'eduardo.cruz@rise.com.br',
-	        					'name'=>'Eduardo Cruz (RiSE)')),
-	    ),
-	));
-	return View::make('email.sent')->with('page','sent');	
-});
-
 Route::get('checkin/(:any)', 
 	array(
 		'before' => 'auth', 'do' => function($skill){
@@ -144,22 +130,14 @@ Route::get('checkin/(:any)',
 );
 
 /*
+	LEADERBOARD - List all users
+*/
 Route::get('developers', function()
 {
-
-	$topUsers = User::topUsers();
-
-	$newUsers = User::order_by('created_at', 'desc')->take(10)->get();
-
-	if (Auth::check()) {
-	  $user = User::find(Auth::user()->id);
-	  $user->lastlogin = date('Y-m-d H:i:s');
-	  $user->save();
-	}
-
-	return View::make('pages.home')->with('page','developers')->with('topUsers', $topUsers)->with('newUsers', $newUsers);
+	return View::make('pages.users')->with('page','developers');
 });
-*/
+
+
 Route::get('edit_user', function()
 {
 	return View::make('pages.edit_user')->with('page','edit_user');
@@ -218,6 +196,19 @@ Route::get('profile', function()
 	return Redirect::to('users/'.Auth::user()->id)->with('page','profile');
 });
 
+Route::get('send', function(){
+	$response = Mandrill::request('messages/send', array(
+	    'message' => array(
+			'html' => 'Body of the message.',
+			'subject' => '[myskills] Mandrill Santa Message .',
+			'from_email' => 'eduardo.cruz@myskills.com.br',
+			'from_name' => 'Eduardo Cruz (MySkills)',
+			'to' => array(array('email'=>'eduardo.cruz@rise.com.br',
+								'name'=>'Eduardo Cruz (RiSE)')),
+		),
+	));
+	return View::make('email.sent')->with('page','sent');
+});
 
 Route::get('skills', function()
 {
@@ -238,13 +229,6 @@ Route::get('upgrade', function()
 	return View::make('pages.upgrade')->with('page','upgrade');
 });
 
-/*
-	LEADERBOARD - List all users
-*/
-Route::get('developers', function()
-{
-	return View::make('pages.users')->with('page','users');
-});
 
 Route::get('bolsas/usuarios', function()
 {

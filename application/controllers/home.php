@@ -43,7 +43,7 @@ class Home_Controller extends Base_Controller {
 		  $user->save();
 		}
 
-		return View::make('pages.home')->with('page','developers')->with('topUsers', $topUsers)->with('newUsers', $newUsers);
+		return View::make('pages.home')->with('page','home')->with('topUsers', $topUsers)->with('newUsers', $newUsers);
 
 	}
 
