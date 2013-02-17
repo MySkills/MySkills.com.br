@@ -32,7 +32,19 @@ class Home_Controller extends Base_Controller {
 
 	public function action_index()
 	{
-		return View::make('pages.users')->with('page','home');
+		//return View::make('pages.users')->with('page','home');
+		$topUsers = User::topUsers();
+
+		$newUsers = User::order_by('created_at', 'desc')->take(10)->get();
+
+		if (Auth::check()) {
+		  $user = User::find(Auth::user()->id);
+		  $user->lastlogin = date('Y-m-d H:i:s');
+		  $user->save();
+		}
+
+		return View::make('pages.home')->with('page','developers')->with('topUsers', $topUsers)->with('newUsers', $newUsers);
+
 	}
 
 }

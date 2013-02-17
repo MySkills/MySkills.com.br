@@ -143,6 +143,7 @@ Route::get('checkin/(:any)',
 	)
 );
 
+/*
 Route::get('developers', function()
 {
 
@@ -158,7 +159,7 @@ Route::get('developers', function()
 
 	return View::make('pages.home')->with('page','developers')->with('topUsers', $topUsers)->with('newUsers', $newUsers);
 });
-
+*/
 Route::get('edit_user', function()
 {
 	return View::make('pages.edit_user')->with('page','edit_user');
@@ -240,7 +241,7 @@ Route::get('upgrade', function()
 /*
 	LEADERBOARD - List all users
 */
-Route::get('users', function()
+Route::get('developers', function()
 {
 	return View::make('pages.users')->with('page','users');
 });
