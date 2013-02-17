@@ -4,12 +4,12 @@
 		<div class="span2">
 				<div class="sidebar">
 					<h3><span class="slash">{{__('users.join_us')}}</span></h3>
+					<p>{{__('users.about1')}}</p>
 					@if ( Auth::guest() )
 						{{HTML::link('connect/session/facebook', __('home.sign-up').' (Facebook)', array('class' => 'btn btn-small btn-warning'))}}
 						{{HTML::link('connect/session/github', '&nbsp;'. __('home.sign-up').' (Github) &nbsp;&nbsp;', array('class' => 'btn btn-small btn-warning'))}}
 						{{HTML::link('connect/session/linkedin', __('home.sign-up').' (Linkedin)', array('class' => 'btn btn-small btn-warning'))}}
 					@endif
-					<p>{{__('users.about1')}}</p>
 					<h4><span class="slash">{{__('users.new_users')}}</span></h4>
 					@foreach ($newUsers as $user)
 					<tr>

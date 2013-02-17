@@ -8,14 +8,14 @@ return array(
 	|--------------------------------------------------------------------------
 	*/
 	'users' => 'Users',
-	'new_users' => 'NEW USERS',
-	'top_users' => 'TOP USERS',
+	'new_users' => 'New Users',
+	'top_users' => 'Top Users',
 	'picture' => 'Picture',
 	'name' => 'Name',
 	'badges' => 'Badges',
 	'points' => 'Points',
 	'about' => 'About Leaderboard',
-	'about1' => 'Here you find reference to users from our community.',
+	'about1' => 'Life is too short to write bad code.',
 	'developers' => 'Developers',
 	'badcode'		=> 'Life is too short to write bad code',
 	'join_us'		=> 'Join Us',
