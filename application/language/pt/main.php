@@ -24,5 +24,6 @@ return array(
 	'subscribe' 		=> 'Inscreva-se',
 	'view'				=> 'Ver',
 	'edit'				=> 'Editar',
-	'signin'				=> 'Sign-in/Sign-Up'	
+	'signin'			=> 'Sign-in/Sign-Up',
+	'developers'		=> 'Developers',
 );

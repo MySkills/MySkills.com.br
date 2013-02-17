@@ -108,6 +108,11 @@
                         @else
                             <li>{{HTML::link('jobs',__('main.jobs'))}}</li>
                         @endif
+                        @if($page=='developers')
+                            <li class="active">{{HTML::link('developers',__('main.developers'))}}</li>
+                        @else
+                            <li>{{HTML::link('developers',__('main.developers'))}}</li>
+                        @endif
                         @if ( Auth::check())
                             <?php $count_messages = count(User::messages()); ?>
                             <li>

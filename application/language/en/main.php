@@ -23,5 +23,6 @@ return array(
 	'email' 			=> 'email address',
 	'view'				=> 'View',
 	'edit'				=> 'Edit',	
-	'signin'				=> 'Sign-in/Sign-Up'
+	'signin'			=> 'Sign-in/Sign-Up',
+	'developers'		=> 'Developers',
 );
