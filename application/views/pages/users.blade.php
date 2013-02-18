@@ -13,13 +13,6 @@
 	order by rank desc, U.lastlogin desc");
 
 	$newusers = User::order_by('created_at', 'desc')->take(count($topusers))->get();
-
-	if (Auth::check()) {
-	  $user = User::find(Auth::user()->id);
-	  $user->lastlogin = date('Y-m-d H:i:s');
-	  $user->save();
-	}
-
 ?>
 
 
