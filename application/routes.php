@@ -274,6 +274,12 @@ Route::put('badges/(:num)/(:num)',
 			                  'name'=>'Eduardo Cruz (MySkills)')),
 			    ),
 			   ));
+			    $user_data = Session::get('oneauth');
+		        switch($user_data['provider']) {
+					case 'facebook' :
+						Fbk::postMessage($user_data, 'Conquistei um novo Badge no MySkills.: '.$badge->name);
+					break;
+				}
 				return Redirect::to('badges')->with('status','SUCESS!!! You successfully applied for a new badge. We will contact you soon.');
 			} catch (Exception $e) {
 				return Redirect::to('badges')->with('status', 'ERROR');
