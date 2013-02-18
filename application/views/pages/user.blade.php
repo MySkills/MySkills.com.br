@@ -62,13 +62,6 @@
 @endif  
 </div>
 <!-- /end Modal --> 
-<div id="subheader">	
-	<div class="inner">
-		<div class="container">
-			<h1>{{$user->name}}</h1>
-		</div> <!-- /.container -->
-	</div> <!-- /inner -->
-</div> <!-- /subheader -->
 
 <div id="subpage">
 	<div class="container">
@@ -82,42 +75,35 @@
 					<strong>{{Session::get('status')}}</strong>
 			</div>
 		@endif		
-		<div class="row">		
-			<div class="span2">
-				<div>
-					{{HTML::image($user->getImageUrl('large'),  $user->name)}}
-				</div>
-				@if( Auth::check())				
-					@if(count($user->followers()->where('follower_id', '=', Auth::user()->id)->get()) == 0)
-						{{Form::open('followers', 'PUT')}}
-						{{Form::hidden('user_id', $user->id)}}
-						{{Form::submit(__('user.follow'), array('class' => 'btn btn-mini btn-success'))}}
-						{{Form::close()}}
+		<div class="row">
+			<div class="span3 pagination-centered box">
+				{{HTML::image($user->getImageUrl('large'),  $user->name)}}
+				<h1>{{$user->name}}</h1>
+				<div class="sidebar">
+					@if(Auth::check())
+						<a href="#addMessageModal" role="button" class="btn btn-success" data-toggle="modal"><i class="icon-envelope"></i> {{__('user.sendmessage')}}</a>
 					@else
-						{{Form::open('followers', 'DELETE')}}
-						{{Form::hidden('user_id', $user->id)}}
-						{{Form::submit(__('user.unfollow'), array('class' => 'btn btn-mini btn-danger'))}}
-						{{Form::close()}}
+						<a href="#unauthorizedModal" role="button" class="btn btn-warning" data-toggle="modal" data-target="#unauthorizedModal"><i class="icon-envelope"></i>{{__('user.sendmessage')}}</a>
 					@endif
-                    <a href="#addMessageModal" role="button" class="btn btn-mini btn-success" data-toggle="modal"><i class="icon-envelope"></i> {{__('user.sendmessage')}}</a>
-				@else
-				<div class="row">
-					<div class="span1">
-						<a href="#unauthorizedModal" role="button" class="btn btn-mini btn-warning" data-toggle="modal" data-target="#unauthorizedModal">{{__('user.follow')}}</a>
-					</div>
-					<div class="span1">
-						<a href="#unauthorizedModal" role="button" class="btn btn-mini btn-warning" data-toggle="modal" data-target="#unauthorizedModal">{{__('user.sendmessage')}}</a>
-					</div>
-				</div>
-				@endif
+				</div> <!-- /sidebar -->
 			</div> <!-- /span2 -->
-			<div class="span2">
-				<h3>{{__('user.followers')}}</h3>
-						@foreach ($user->followers as $follower)
-							{{HTML::image($follower->getImageUrl('large'),  $follower->name, array('width' => 50, 'height'=>50))}}
-						@endforeach
-			</div> <!-- /span4 -->
-			<div class="span6">
+			<div class="span7">
+				<div class="progress progress-danger">
+					<div class="bar" style="width: 100%;">30/30 <i class="icon-heart"></i></div>
+				</div>
+				<div class="progress progress-info">
+					<div class="bar" style="width: 100%;">20/20 <i class="icon-fire"></i></div>
+				</div>
+				<div class="sidebar pagination-centered">
+					<h3><span class="slash">{{__('user.badges_earned')}}</span></h3>
+					@foreach ($user->activebadges as $badge)
+						{{HTML::image('img/badges/'.$badge->image,  $badge->name, array('width' => 75, 'height'=>75))}}
+					@endforeach
+					@for ($i = 0; $i <= (15-count($user->activebadges)); $i++)
+						{{HTML::image('img/badges/unlock100.png', '', array('width' => 75, 'height'=>75))}}
+					@endfor
+				</div> <!-- /sidebar -->
+
 				@if(Auth::check())
 					@if(Auth::user()->id == $user_id)
 						<h3>{{__('user.friends')}}</h3>.
@@ -140,18 +126,27 @@
 				@endif
 			</div> <!-- /span4 -->
 
-			<div class="span2">
-				<div class="sidebar">
-					<h3><span class="slash">{{$user->active()}} User</span></h3>
-					<p>{{__('user.badges_earned')}}</p>
-						@foreach ($user->activebadges as $badge)
-							{{HTML::image('img/badges/'.$badge->image,  $badge->name, array('width' => 50, 'height'=>50))}}
-						@endforeach
-						@for ($i = 0; $i <= (8-count($user->badges)); $i++)
-							{{HTML::image('img/badges/unlock100.png', '', array('width' => 50, 'height'=>50))}}
-						@endfor	
-
-
+			<div class="span2 pagination-centered">
+				<div class="sidebar pagination-centered">
+					@if( Auth::check())
+						@if(count($user->followers()->where('follower_id', '=', Auth::user()->id)->get()) == 0)
+							{{Form::open('followers', 'PUT')}}
+							{{Form::hidden('user_id', $user->id)}}
+							{{Form::submit(__('user.follow'), array('class' => 'btn btn-mini btn-success'))}}
+							{{Form::close()}}
+						@else
+							{{Form::open('followers', 'DELETE')}}
+							{{Form::hidden('user_id', $user->id)}}
+							{{Form::submit(__('user.unfollow'), array('class' => 'btn btn-mini btn-danger'))}}
+							{{Form::close()}}
+						@endif
+					@else
+					<a href="#unauthorizedModal" role="button" class="btn btn-warning" data-toggle="modal" data-target="#unauthorizedModal">{{__('user.follow')}}</a>
+					@endif
+					<h3><span class="slash">{{__('user.followers')}}</span></h3>
+					@foreach ($user->followers as $follower)
+						{{HTML::image($follower->getImageUrl('large'),  $follower->name, array('width' => 50, 'height'=>50))}}
+					@endforeach
 				</div> <!-- /sidebar -->
 			</div> <!-- /span4 -->
 		</div> <!-- /row -->

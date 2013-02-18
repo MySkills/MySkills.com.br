@@ -16,4 +16,5 @@ return array(
 	'sendmessage'	=> 'Enviar Mensagem',
 	'recipient'		=> 'Destinatário',
 	'message'		=> 'Mensagem',
+	'contact'		=> 'Contato',
 	);

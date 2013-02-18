@@ -16,4 +16,5 @@ return array(
 	'sendmessage'	=> 'Send Message',
 	'recipient'		=> 'Recipient',
 	'message'		=> 'Message',
+	'contact'		=> 'Contact',
 	);
