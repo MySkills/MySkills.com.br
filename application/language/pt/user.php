@@ -17,4 +17,5 @@ return array(
 	'recipient'		=> 'Destinatário',
 	'message'		=> 'Mensagem',
 	'contact'		=> 'Contato',
+	'usedtoday'		=> 'Habilidade/Tecnologia/Técnica utilizada hoje',
 	);

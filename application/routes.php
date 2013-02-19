@@ -109,25 +109,6 @@ Route::get('badges/(:any)', function($badge_id)
 	return View::make('pages.badge')->with('page','badge')->with('badge_id',$badge_id);
 });
 
-Route::get('checkin/(:any)', 
-	array(
-		'before' => 'auth', 'do' => function($skill){
-			$data = array('technology'  => $skill);
-			try {
-				$user = User::find(Auth::user()->id);
-				$technology = Technology::find(1);
-				$technology->users()->attach(Auth::user()->id, array('checkin_at'=>date('Y-m-d')));
-				if($user->provider=='facebook') {
-					$user_data = Session::get('oneauth');
-					Fbk::postMessage($user_data, 'I just made my daily checkin with MySkills Mobile: "Coding with Laravel(PHP)"');
-				}
-			 	return View::make('checkin.success')->with('page','checkin.success')->with('status','SUCCESS')->with('technology', $skill);
-			} catch (Exception $e) {
-				return View::make('checkin.success')->with('page','checkin.success')->with('status', 'ERROR')->with('technology', $skill);
-			}
-		}
-	)
-);
 
 /*
 	LEADERBOARD - List all users
@@ -240,7 +221,8 @@ Route::get('bolsas/usuarios', function()
 */
 Route::get('users/(:any)', function($user_id)
 {
-	return View::make('pages.user')->with('page','profile')->with('user_id',$user_id);
+	$technologies = Technology::lists('name', 'id');
+	return View::make('pages.user')->with('page','profile')->with('user_id',$user_id)->with('technologies', $technologies);
 });
 
 
@@ -288,6 +270,30 @@ Route::put('badges/(:num)/(:num)',
 	)
 );
 
+Route::put('checkin', 
+	array(
+		'before' => 'auth', 'do' => function(){
+			try {
+				$technologies = Technology::lists('name', 'id');
+				$technology = Technology::find(Input::get('technology_id'));
+				$technology->users()->attach(Auth::user()->id, array('checkin_at'=>date('Y-m-d')));
+				//if($user->provider=='facebook') {
+				//	$user_data = Session::get('oneauth');
+					//Fbk::postMessage($user_data, 'I just made my daily checkin with MySkills Mobile: "Coding with Laravel(PHP)"');
+				//}
+				return Redirect::to('users/'.Auth::user()->id)->with('status','SUCESS!!! Checkin OK.');
+			} catch (Exception $e) {
+				Log::exception($e);
+				if($e->getCode() == 23000) {
+					return Redirect::to('users/'.Auth::user()->id)->with('status', 'ERROR.: Checkin já realizado hoje');
+				} else {
+					return Redirect::to('users/'.Auth::user()->id)->with('status', 'ERROR.: ');
+				}
+
+			}
+		}
+	)
+);
 
 /*
 FOLLOW USER;

@@ -31,7 +31,10 @@
 		</div>
 		<div class="span11" id="container">
 			@foreach ($topUsers as $topUser)
-			<?php $user = User::find($topUser->id); ?>
+			<?php
+				$user = User::find($topUser->id);
+				$technology_points = $user->count_user_technologies();
+				?>
 				<div class="box">
 					{{HTML::image($user->getImageUrl('large'), $user->name, array('width'=>'200', 'class'=>'dev'))}}
 					<p>{{HTML::link('/users/'.$user->id, $user->name)}}<p>
@@ -40,7 +43,7 @@
 					  <div class="bar" style="width: 100%;">30/30 <i class="icon-heart"></i></div>
 					</div>
 					<div class="progress progress-info">
-					  <div class="bar" style="width: 100%;">20/20 <i class="icon-fire"></i></div>
+					  <div class="bar" style="width: {{$technology_points*5}}%;">{{$technology_points}}/20 <i class="icon-fire"></i></div>
 					</div>
 					@foreach ($user->partial_badges(6) as $badge)
 						{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 30, 'height'=>30))}}
@@ -49,7 +52,7 @@
 						{{HTML::image('img/badges/unlock100.png', ' ', array('width' => 30, 'height'=>30))}}
 					@endfor				
 					<div class="pull-right">
-						0 {{HTML::image('img/coin16.png', 'Coin')}} 
+						{{$technology_points}} {{HTML::image('img/coin16.png', 'Coin')}}
 					</div>
 				</div>
 			@endforeach

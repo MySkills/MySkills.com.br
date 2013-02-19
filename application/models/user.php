@@ -70,6 +70,10 @@ class User extends Eloquent
 	  return $this->has_many_and_belongs_to('Technology')->with('checkin_at');
 	}
 
+	public function count_user_technologies() {
+		return count($this->technologies()->pivot()->get());
+	}
+
 	public function active()
 	{
 	  if ($this->active == 1) {
