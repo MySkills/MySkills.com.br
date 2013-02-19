@@ -150,6 +150,16 @@
                                 </li>
 
                         @endif
+                        <li class="dropdown">
+                            <a id="profile" href="#" class="dropdown-toggle" data-toggle="dropdown">{{__('main.language')}}
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="profile">
+                                <li class="presentation"><a  href="/en" role="menuitem" tabindex="-1">English</a></li>
+                                <li class="presentation"><a  href="/pt" role="menuitem" tabindex="-1">Português</a></li>
+                            </ul>
+                        </li>
+
                     </ul>
                 </div><!--/.nav-collapse -->
             </div> <!-- /container -->
