@@ -37,12 +37,6 @@ class Home_Controller extends Base_Controller {
 
 		$newUsers = User::order_by('created_at', 'desc')->take(10)->get();
 
-		if (Auth::check()) {
-		  $user = User::find(Auth::user()->id);
-		  $user->lastlogin = date('Y-m-d H:i:s');
-		  $user->save();
-		}
-
 		return View::make('pages.home')->with('page','home')->with('topUsers', $topUsers)->with('newUsers', $newUsers);
 
 	}
