@@ -10,5 +10,5 @@ return array(
 	'upgrade' 				=> 'Upgrade',
 	'openbadges' 			=> 'Open Badges',
 	'welcome_msg'			=> 'Invista no seu Upgrade Profissional contínuo',
-	'professionalupgrade'	=> 'Upgrade Profissional'
+	'professionalupgrade'	=> 'Profissional Upgrade',
 	);

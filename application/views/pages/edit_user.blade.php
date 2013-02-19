@@ -36,6 +36,9 @@ if (Auth::check()) {
 			@endif
 			</div> <!-- /span2 -->
 			<div class="span8">
+
+				<iframe width="640" height="360" src="http://www.youtube.com/embed/7pU5zuS25Gs?rel=0" frameborder="0" allowfullscreen></iframe>
+
 				{{Form::open('users', 'PUT', array('class' =>'form-horizontal'))}}
 					<div class="control-group">
 						 <label class="control-label" for="name">Name</label>

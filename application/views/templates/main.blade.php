@@ -159,7 +159,11 @@
                                 <li class="presentation"><a  href="/pt" role="menuitem" tabindex="-1">Português</a></li>
                             </ul>
                         </li>
-
+                        @if($page=='blog')
+                            <li class="active">{{HTML::link('blog','Blog')}}</li>
+                        @else
+                            <li>{{HTML::link('blog', 'Blog')}}</li>
+                        @endif
                     </ul>
                 </div><!--/.nav-collapse -->
             </div> <!-- /container -->

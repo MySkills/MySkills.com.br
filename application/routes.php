@@ -109,6 +109,13 @@ Route::get('badges/(:any)', function($badge_id)
 	return View::make('pages.badge')->with('page','badge')->with('badge_id',$badge_id);
 });
 
+/*
+	BLOG
+*/
+Route::get('blog', function()
+{
+	return View::make('pages.blog')->with('page','blog');
+});
 
 /*
 	LEADERBOARD - List all users
