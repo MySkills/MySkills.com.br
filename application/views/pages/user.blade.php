@@ -89,20 +89,32 @@
 				</div> <!-- /sidebar -->
 			</div> <!-- /span2 -->
 			<div class="span7">
-				<div class="progress progress-danger">
-					<div class="bar" style="width: 100%;">30/30 <i class="icon-heart"></i></div>
-				</div>
+				<div class="row">
+					<div class="progress progress-danger span7">
+						<div class="bar" style="width: 100%;">30/30 <i class="icon-heart"></i></div>
+					</div>
 
-				<div class="progress progress-info">
-					<div class="bar" style="width: {{$count_user_technologies*5}}%;">{{$count_user_technologies}}/20 <i class="icon-fire"></i></div>
+					<div class="progress progress-info span7">
+						<div class="bar" style="width: {{$count_user_technologies*5}}%;">{{$count_user_technologies}}/20 <i class="icon-fire"></i></div>
+					</div>
 				</div>
-
+				<div class="row">
+					<div class="progress progress-info span3">
+						<div class="bar" style="width: {{$count_user_technologies*5}}%;">{{$count_user_technologies}}/20 </div>
+					</div>
+					<div class="span3">
+						Uso diário do Framework PHP Lararavel
+					</div>
+					<div class="span1">$ {{$count_user_technologies}} {{HTML::image('img/coin16.png')}}</div>
+				</div>
+				
 				<div class="pagination-centered">
 					{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
 					{{Form::submit(__('user.usedtoday').'.: ', array('class'=>'btn btn-warning'))}}
 					{{Form::select('technology_id', $technologies)}}
 					{{Form::close()}}
 				</div>
+
 				<div class="sidebar pagination-centered">
 					<h3><span class="slash">{{__('user.badges_earned')}}</span></h3>
 					@foreach ($user->activebadges as $badge)
