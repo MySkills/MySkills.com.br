@@ -89,6 +89,9 @@
 					<div class="progress progress-danger span7">
 						<div class="bar" style="width: 100%;">30/30 <i class="icon-heart"></i></div>
 					</div>
+					<div class="progress progress-info span7">
+						<div class="bar" style="width: {{count($user->technologies)*4.5+10}}%;">{{count($user->technologies)}}/20 <i class="icon-fire"></i></div>
+					</div>
 
 				</div>
 				@foreach($user_technologies as $user_technology)
@@ -97,6 +100,8 @@
 						<div class="progress progress-info span3">
 							<div class="bar" style="width: {{$user_technology->points*5}}%;">{{$user_technology->points}}/20 </div>
 						</div>
+
+
 						<div class="span2">{{$user_technology->name}}</div>
 						<div class="span1">{{__('user.level')}}.: 1</div>
 						<div class="span1">$ {{$user_technology->points}} {{HTML::image('img/coin16.png')}}</div>
