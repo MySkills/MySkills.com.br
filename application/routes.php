@@ -148,10 +148,11 @@ Route::get('features', function()
 
 Route::get('jobs', function()
 {
+	$jobs = Job::where('active', '=', '1')->order_by('created_at', 'desc')->get();	
 	if (Input::get('recruiter_id')) {
-		return View::make('pages.recruiterjobs')->with('page','recruiterjobs')->with('recruiter_id', Input::get('recruiter_id'));
+		return View::make('pages.recruiterjobs')->with('page','recruiterjobs')->with('recruiter_id', Input::get('recruiter_id'))->with('jobs', $jobs);
 	} else {
-		return View::make('pages.jobs')->with('page','jobs');
+		return View::make('pages.jobs')->with('page','jobs')->with('jobs', $jobs);
 	}
 
 });
