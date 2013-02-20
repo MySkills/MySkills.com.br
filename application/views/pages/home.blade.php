@@ -43,7 +43,12 @@
 					  <div class="bar" style="width: 100%;">30/30 <i class="icon-heart"></i></div>
 					</div>
 					<div class="progress progress-info">
-					  <div class="bar" style="width: {{$technology_points*5}}%;">{{$technology_points}}/20 <i class="icon-fire"></i></div>
+						@if($technology_points == 0)
+							<div class="bar" style="width: 10%;">{{$technology_points}}/20 <i class="icon-fire"></i></div>						
+						@else
+							<div class="bar" style="width: {{$technology_points*4.5+10}}%;">{{$technology_points}}/20 <i class="icon-fire"></i></div>						
+						@endif
+
 					</div>
 					@foreach ($user->partial_badges(6) as $badge)
 						{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 30, 'height'=>30))}}
