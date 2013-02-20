@@ -112,10 +112,8 @@
 				@else
 					{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
 					<a href="#unauthorizedModal" role="button" class="btn btn-warning" data-toggle="modal" data-target="#unauthorizedModal"><i class="icon-envelope"></i>{{__('user.usedtoday')}}.:</a>
-					{{Form::select('technology_id', $technologies)}}
+					{{Form::select('technology_id', $technology_list)}}
 					{{Form::close()}}
-
-
 				@endif
 				</div>
 

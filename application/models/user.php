@@ -129,7 +129,7 @@ class User extends Eloquent
 				WHERE 
 					T.id = TU.technology_id AND
 					U.id = TU.user_id AND".
-				" U.id=".Auth::user()->id.
+				" U.id=".$this->id.
 				" GROUP BY T.name
 				ORDER BY points desc");
 			return $user_technologies;
