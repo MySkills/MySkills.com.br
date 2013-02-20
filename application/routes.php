@@ -109,6 +109,11 @@ Route::get('badges/(:any)', function($badge_id)
 	return View::make('pages.badge')->with('page','badge')->with('badge_id',$badge_id);
 });
 
+Route::get('bolsas/usuarios', function()
+{
+	return View::make('bolsas.usuarios')->with('page','users');
+});
+
 /*
 	BLOG
 */
@@ -209,6 +214,11 @@ Route::get('termsofuse', function()
 	return View::make('pages.termsofuse')->with('page','termsofuse');
 });
 
+Route::get('technologies', function()
+{
+	return View::make('pages.technologies')->with('page','technologies');
+});
+
 /*
 	LEADERBOARD - List all users
 */
@@ -217,19 +227,15 @@ Route::get('upgrade', function()
 	return View::make('pages.upgrade')->with('page','upgrade');
 });
 
-
-Route::get('bolsas/usuarios', function()
-{
-	return View::make('bolsas.usuarios')->with('page','users');
-});
-
 /*
 	USERPROFILE
 */
 Route::get('users/(:any)', function($user_id)
 {
-	$technologies = Technology::lists('name', 'id');
-	return View::make('pages.user')->with('page','profile')->with('user_id',$user_id)->with('technologies', $technologies);
+	$technology_list = Technology::lists('name', 'id');
+	$user = User::find($user_id);
+	$user_technologies = $user->userTechnologies();
+	return View::make('pages.user')->with('page','profile')->with('technology_list', $technology_list)->with('user_technologies', $user_technologies)->with('user', $user);
 });
 
 

@@ -1,9 +1,5 @@
 @layout('templates.main')
 @section('content')
-<?php 
-	$user = User::find($user_id); 
-	$count_user_technologies = $user->count_user_technologies();
-?>
 <!-- Unauthorized Modal -->
 <div id="unauthorizedModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
@@ -94,25 +90,33 @@
 						<div class="bar" style="width: 100%;">30/30 <i class="icon-heart"></i></div>
 					</div>
 
-					<div class="progress progress-info span7">
-						<div class="bar" style="width: {{$count_user_technologies*5}}%;">{{$count_user_technologies}}/20 <i class="icon-fire"></i></div>
-					</div>
 				</div>
-				<div class="row">
-					<div class="progress progress-info span3">
-						<div class="bar" style="width: {{$count_user_technologies*5}}%;">{{$count_user_technologies}}/20 </div>
+				@foreach($user_technologies as $user_technology)
+
+					<div class="row">
+						<div class="progress progress-info span3">
+							<div class="bar" style="width: {{$user_technology->points*5}}%;">{{$user_technology->points}}/20 </div>
+						</div>
+						<div class="span2">{{$user_technology->name}}</div>
+						<div class="span1">{{__('user.level')}}.: 1</div>
+						<div class="span1">$ {{$user_technology->points}} {{HTML::image('img/coin16.png')}}</div>
 					</div>
-					<div class="span3">
-						Uso diário do Framework PHP Lararavel
-					</div>
-					<div class="span1">$ {{$count_user_technologies}} {{HTML::image('img/coin16.png')}}</div>
-				</div>
+				@endforeach
 				
 				<div class="pagination-centered">
+				@if(Auth::check())
 					{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
 					{{Form::submit(__('user.usedtoday').'.: ', array('class'=>'btn btn-warning'))}}
+					{{Form::select('technology_id', $technology_list)}}
+					{{Form::close()}}
+				@else
+					{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
+					<a href="#unauthorizedModal" role="button" class="btn btn-warning" data-toggle="modal" data-target="#unauthorizedModal"><i class="icon-envelope"></i>{{__('user.usedtoday')}}.:</a>
 					{{Form::select('technology_id', $technologies)}}
 					{{Form::close()}}
+
+
+				@endif
 				</div>
 
 				<div class="sidebar pagination-centered">
@@ -126,7 +130,7 @@
 				</div> <!-- /sidebar -->
 
 				@if(Auth::check())
-					@if(Auth::user()->id == $user_id)
+					@if(Auth::user()->id == $user->id)
 						<h3>{{__('user.friends')}}</h3>.
 						@if($user->provider == 'facebook')
 						<?php $friends = $user->getFriends('facebook') ?>

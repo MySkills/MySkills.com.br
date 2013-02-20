@@ -117,4 +117,22 @@ class User extends Eloquent
 				order by rank desc, U.lastlogin desc");
 			return $topusers;
 	}
+
+	public function userTechnologies() {
+			$user_technologies = DB::query(
+				"SELECT 
+					T.name name, count(T.name) points
+				FROM 
+					`technologies` T,
+					`users` U,
+					`technology_user` TU
+				WHERE 
+					T.id = TU.technology_id AND
+					U.id = TU.user_id AND".
+				" U.id=".Auth::user()->id.
+				" GROUP BY T.name
+				ORDER BY points desc");
+			return $user_technologies;
+	}
+
 }

@@ -18,4 +18,6 @@ return array(
 	'message'		=> 'Message',
 	'contact'		=> 'Contact',
 	'usedtoday'		=> 'Skill/Technology/Technique used today',
+	'level'			=> 'Level',
+	'skills'		=> 'Skills',
 	);

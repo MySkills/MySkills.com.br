@@ -18,4 +18,6 @@ return array(
 	'message'		=> 'Mensagem',
 	'contact'		=> 'Contato',
 	'usedtoday'		=> 'Habilidade/Tecnologia/Técnica utilizada hoje',
+	'level'			=> 'Nível',
+	'skills'		=> 'Habilidades',
 	);
