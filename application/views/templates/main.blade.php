@@ -122,7 +122,7 @@
                             <li>{{HTML::link('developers',__('main.developers'))}}</li>
                         @endif
                         @if ( Auth::check())
-                            <?php $count_messages = count(User::mymessages()); ?>
+                            <?php $count_messages = count(User::unreadmessages()); ?>
                             <li>
                                 <a href="/messages"><i class="icon-envelope"></i>
                                     @if($count_messages > 0)

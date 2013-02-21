@@ -42,6 +42,8 @@
 					<?php
 						$sender 	= User::find($message->sender_id);
 						$recipient 	= User::find($message->recipient_id);
+						$message->unread = false;
+						$message->save();
 						?>
 					<tr>
 						<td>
