@@ -111,11 +111,6 @@
                         @else
                             <li>{{HTML::link('badges',__('main.badges'))}} </li>
                         @endif
-                        @if($page=='jobs')
-                            <li class="active">{{HTML::link('jobs',__('main.jobs'))}}</li>
-                        @else
-                            <li>{{HTML::link('jobs',__('main.jobs'))}}</li>
-                        @endif
                         @if($page=='developers')
                             <li class="active">{{HTML::link('developers',__('main.developers'))}}</li>
                         @else
