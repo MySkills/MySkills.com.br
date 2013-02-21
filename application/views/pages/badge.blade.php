@@ -18,14 +18,6 @@
 			<div class="span8">
 				<p>{{$badge->name}} - {{$badge->issuer->name}}</p>
 				<p>{{$badge->description}}</p>
-				@if(Auth::check())
-					{{Form::open('messages', 'PUT', array('class' => 'form-inline'))}}
-					{{Form::hidden('badge_id', $badge->id)}}
-					{{Form::text('message', '', array('class' => 'input-xxlarge search-query', 'placeholder' => 'Write your message'))}}
-					{{Form::submit('Enviar', array('class' => 'btn btn-primary'))}}
-					{{Form::close()}}					
-				@else
-				@endif
 			</div> <!-- /span4 -->
 
 			<div class="span2">
