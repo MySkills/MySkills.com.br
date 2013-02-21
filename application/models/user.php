@@ -104,6 +104,11 @@ class User extends Eloquent
 	  return Message::where('recipient_id', '=', Auth::user()->id)->or_where('sender_id', '=', Auth::user()->id)->order_by('created_at', 'desc')->get();
 	}
 
+	public static function mymessages()
+	{
+	  return Message::where('recipient_id', '=', Auth::user()->id)->order_by('created_at', 'desc')->get();
+	}
+
 	public static function topUsers() {
 			$topusers = DB::query("SELECT
 					U.id, U.name name, SUM(B.points) rank
