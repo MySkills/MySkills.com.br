@@ -42,8 +42,10 @@
 					<?php
 						$sender 	= User::find($message->sender_id);
 						$recipient 	= User::find($message->recipient_id);
-						$message->unread = false;
-						$message->save();
+						if ($message->recipient_id == Auth::user()->id) {
+							$message->unread = false;
+							$message->save();
+						}
 						?>
 					<tr>
 						<td>
