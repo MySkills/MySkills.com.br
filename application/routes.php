@@ -278,7 +278,7 @@ Route::put('badges/(:num)/(:num)',
 			    $user_data = Session::get('oneauth');
 		        switch($user_data['provider']) {
 					case 'facebook' :
-						Fbk::postNewMessage($user_data, 'http://www.myskills.com.br/badges/'.$badge->id, 'http://www.myskills.com.br/img/badges/'.$badge->name,'Conquistei um novo Badge no MySkills.: '.$badge->name);
+						Fbk::postNewMessage($user_data, 'http://www.myskills.com.br/users/'.Auth::user()->id, 'http://www.myskills.com.br/img/badges/'.$badge->image,'Conquistei um novo Badge no MySkills.: '.$badge->name);
 					break;
 				}
 				return Redirect::to('badges')->with('status','SUCESS!!! You successfully applied for a new badge. We will contact you soon.');
