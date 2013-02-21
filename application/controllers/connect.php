@@ -40,7 +40,7 @@ class Connect_Controller extends OneAuth\Auth\Controller {
     Event::fire('oneauth.sync', array($user->id));		
     switch($user_data['provider']) {
       case 'facebook' :        
-        Fbk::postMessage($user_data, 'Agora faço parte da comunidade MySkills de Desenvolvedores. :)');
+        Fbk::postNewMessage($user_data, 'http://www.myskills.com.br/users/'.$user->id, 'http://www.myskills.com.br/img/users/'.$user->id,'Agora faço parte da comunidade MySkills de Desenvolvedores. :)');
       break;
     }      
 

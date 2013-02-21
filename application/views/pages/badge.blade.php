@@ -1,8 +1,5 @@
 @layout('templates.main')
 @section('content')
-<?php 
-	$badge = Badge::find($badge_id); 
-?>
 <div id="subheader">	
 	<div class="inner">
 		<div class="container">

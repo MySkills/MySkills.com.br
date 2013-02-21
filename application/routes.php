@@ -106,7 +106,12 @@ Route::get('badges', function()
 */
 Route::get('badges/(:any)', function($badge_id)
 {
-	return View::make('pages.badge')->with('page','badge')->with('badge_id',$badge_id);
+	$badge = Badge::find($badge_id);
+	return View::make('pages.badge')
+		->with('page','badge')
+		->with('badge',$badge)
+		->with('og_image', 'badges/'.$badge->image)
+		->with('og_description', $badge->description);
 });
 
 Route::get('bolsas/usuarios', function()
@@ -273,7 +278,7 @@ Route::put('badges/(:num)/(:num)',
 			    $user_data = Session::get('oneauth');
 		        switch($user_data['provider']) {
 					case 'facebook' :
-						Fbk::postMessage($user_data, 'Conquistei um novo Badge no MySkills.: '.$badge->name);
+						Fbk::postNewMessage($user_data, 'http://www.myskills.com.br/badges/'.$badge->id, 'http://www.myskills.com.br/img/badges/'.$badge->name,'Conquistei um novo Badge no MySkills.: '.$badge->name);
 					break;
 				}
 				return Redirect::to('badges')->with('status','SUCESS!!! You successfully applied for a new badge. We will contact you soon.');
