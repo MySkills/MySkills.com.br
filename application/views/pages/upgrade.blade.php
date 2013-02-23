@@ -77,7 +77,7 @@
 								lhe ajudarão a conquistar os primeiros badges da sua jornada de qualificação
 								profissional.</p>
 
-								{{HTML::image('img/badges/01 - highschool-male.png', 'Undergrad',array('align'=>'left'))}} 
+								{{HTML::image('img/badges/01 - highschool-male.png', 'Undergrad',array('align'=>'left', 'width'=>'100'))}} 
 								<p><strong>Universidade</strong> - Você é estudante de graduação em algum curso de TI? Isso já pode ser o seu
 									primeiro passo. Muitas instituições possuem bolsas de pesquisa ou estão
 									buscando estagiários. Mas para lhe encontrar, elas precisam saber que você
@@ -86,7 +86,7 @@
 									utilizados por recrutadores que estão buscando profissionais em início de 
 									carreira.</p>
 
-								{{HTML::image('img/badges/trygit-badge.png', 'Try Git',array('align'=>'right'))}} 
+								{{HTML::image('img/badges/trygit-badge.png', 'Try Git',array('align'=>'right', 'width'=>'100'))}} 
 								<p><strong>Tutoriais online</strong> - É sempre bom começar com boas práticas de desenvolvimento. Você pode começar 
 									diretamente desenvolvendo sozinho no seu computador, mas caso você queira 
 									começar realmente entendendo como profissionais desenvolvem em equipe, é
@@ -96,7 +96,7 @@
 								que você escolher utilizar. Faça o tutorial online gratuito e ao finalizar, indique
 								seção de badges que você concluiu o tutorial.</p>
 
-								<p>{{HTML::image('img/badges/tryruby-badge.png', 'Try Ruby',array('align'=>'left'))}} 
+								<p>{{HTML::image('img/badges/tryruby-badge.png', 'Try Ruby',array('align'=>'left', 'width'=>'100'))}} 
 									Já deu os seus primeiros passos com o GIT?
 									Já tem um repositório de código online no Github?
 									Que tal tentar agora o <strong>TRY RUBY</strong>?
@@ -105,7 +105,7 @@
 									compartilhar com outros desenvolvedores o que você aprendeu. Seu portfolio prático
 									online já terá algo em uma tecnologia bastante procurada hoje em dia.</p>
 								</p>
-								<p>{{HTML::image('img/badges/rhok2012.png', 'RHoK 2012',array('align'=>'right'))}} 
+								<p>{{HTML::image('img/badges/rhok2012.png', 'RHoK 2012',array('align'=>'right', 'width'=>'100'))}} 
 									<strong>Eventos</strong> - Já deu os seus primeiros passos em programação? Que tal agora participar com outros
 									programadores em um projeto real? Essa foi a proposta do evento RHoK (Random Hacks)
 									of Kindness, que em 2012 reuniu programadores em várias cidades do mundo para uma maratona
@@ -114,12 +114,12 @@
 									grupos de tecnologia: Ruby, Python, Java, Front-end. Inscreva-se em maratonas de programação
 									e em DOJOs. As dicas, troca de experiência e formação de network servirão por muitos anos.
 								</p>
-								<p>{{HTML::image('img/badges/caelum-badge.png', 'Caelum',array('align'=>'left'))}} 
+								<p>{{HTML::image('img/badges/caelum-badge.png', 'Caelum',array('align'=>'left', 'width'=>'100'))}} 
 									<strong>Cursos Presenciais</strong> - Cursos presencias são outra excelente maneira de dar
 									um upgrade nos seus conhecimentos. Aqui você encontra badges de empresas parceiras como:
 									Caelum (reconhecida nacionalmente pela comunidade Java), Especializa (com bastante know-how
 									na tecnologia PHP) e IDS (Única empresa brasileira com certificados oficiais da Apple).</p>
-								<p>{{HTML::image('img/badges/tryios-badge.png', 'Try iOS',array('align'=>'right'))}} 
+								<p>{{HTML::image('img/badges/tryios-badge.png', 'Try iOS',array('align'=>'right', 'width'=>'100'))}} 
 								<strong>Cursos Online</strong> - Não tem tempo/dinheiro ou perfil para os cursos presenciais?
 									Entre as vantagens dos cursos online estão a flexibilidade de horário, custos menores e a
 									capacidade do aluno seguir o curso no seu tempo. Aqui temos badges de cursos online como: 
@@ -139,7 +139,7 @@
 									outro projeto qualquer, demandará muitos meses de atenção e você não vai querer investir meses em 
 									algo que não está relacionado com a sua realidade. Empresas como o Google chegam a patrocinar a 
 									participação de estudantes em projetos open source com programas como o "Google Summer of Code"</p>
-								<p>{{HTML::image('img/badges/pmi-acp.png', 'PMI ACP',array('align'=>'right'))}} 
+								<p>{{HTML::image('img/badges/pmi-acp.png', 'PMI ACP',array('align'=>'right', 'width'=>'100'))}} 
 									<strong>Ceritficações</strong> - Por último, na seção de badges você também encontrará badges de 
 									certificados oficiais tais como o da certificação da linguagem PHP da Zend e do Java oferecida
 									pela Oracle. Mas também de certificações ligadas a gerenciamento de projetos, tais como ACP - 
