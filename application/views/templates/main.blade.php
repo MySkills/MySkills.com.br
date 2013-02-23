@@ -24,7 +24,11 @@
 <script src="//cdn.optimizely.com/js/111465504.js"></script>
         <meta property="og:title" content="Meet the best developers"/>
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://www.myskills.com.br"/>
+        @if(isset($og_url))
+            <meta property="og:url" content="http://www.myskills.com.br/{{$og_url}}"/>
+        @else
+            <meta property="og:url" content="http://www.myskills.com.br"/>
+        @endif
         @if(isset($og_image))
             <meta property="og:image" content="http://www.myskills.com.br/img/{{$og_image}}"/>
         @else

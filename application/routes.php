@@ -110,6 +110,7 @@ Route::get('badges/(:any)', function($badge_id)
 	return View::make('pages.badge')
 		->with('page','badge')
 		->with('badge',$badge)
+		->with('og_url', 'badges/'.$badge->id)
 		->with('og_image', 'badges/'.$badge->image)
 		->with('og_description', $badge->description);
 });
