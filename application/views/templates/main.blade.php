@@ -24,7 +24,7 @@
     <script src="//cdn.optimizely.com/js/111465504.js"></script>
     <meta property="og:type" content="website" />
     @if(isset($og_title))
-        <meta property="og:title" content="{{$og_title}}}"/>
+        <meta property="og:title" content="{{$og_title}}"/>
     @else
         <meta property="og:title" content="Meet the best developers"/>
     @endif        
