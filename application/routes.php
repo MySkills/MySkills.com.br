@@ -112,6 +112,7 @@ Route::get('badges/(:any)', function($badge_id)
 		->with('badge',$badge)
 		->with('og_url', 'badges/'.$badge->id)
 		->with('og_image', 'badges/'.$badge->image)
+		->with('og_title', $badge->name)
 		->with('og_description', $badge->description);
 });
 

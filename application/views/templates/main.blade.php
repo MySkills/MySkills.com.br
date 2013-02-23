@@ -21,26 +21,29 @@
 <head>
     <meta charset="utf-8">
     <title>{{__('main.title')}}</title>
-<script src="//cdn.optimizely.com/js/111465504.js"></script>
+    <script src="//cdn.optimizely.com/js/111465504.js"></script>
+    <meta property="og:type" content="website" />
+    @if(isset($og_title))
+        <meta property="og:title" content="{{$og_title}}}"/>
+    @else
         <meta property="og:title" content="Meet the best developers"/>
-        <meta property="og:type" content="website" />
-        @if(isset($og_url))
-            <meta property="og:url" content="http://www.myskills.com.br/{{$og_url}}"/>
-        @else
-            <meta property="og:url" content="http://www.myskills.com.br"/>
-        @endif
-        @if(isset($og_image))
-            <meta property="og:image" content="http://www.myskills.com.br/img/{{$og_image}}"/>
-        @else
-            <meta property="og:image" content="http://www.myskills.com.br/img/MySkills-64.png"/>
-        @endif
-        <meta property="og:site_name" content="MySkills.com.br"/>
-        @if(isset($og_description))
-            <meta property="og:description" content="{{$og_description}}"/>
-        @else
-            <meta property="og:description" content="Hire the best professionals."/>
-        @endif
-
+    @endif        
+    @if(isset($og_url))
+        <meta property="og:url" content="http://www.myskills.com.br/{{$og_url}}"/>
+    @else
+        <meta property="og:url" content="http://www.myskills.com.br"/>
+    @endif
+    @if(isset($og_image))
+        <meta property="og:image" content="http://www.myskills.com.br/img/{{$og_image}}"/>
+    @else
+        <meta property="og:image" content="http://www.myskills.com.br/img/MySkills-64.png"/>
+    @endif
+    <meta property="og:site_name" content="MySkills.com.br"/>
+    @if(isset($og_description))
+        <meta property="og:description" content="{{$og_description}}"/>
+    @else
+        <meta property="og:description" content="Hire the best professionals."/>
+    @endif
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
