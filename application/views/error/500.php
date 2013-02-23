@@ -99,27 +99,20 @@
 <body>
 	<div class="wrapper">
 		<div class="error-spacer"></div>
-			<img src="/img/500.png" align="left">
+		<img src="/img/500.png" align="left">
 		<div role="main" class="main">
 			<center>
 				<img src="/img/myskills-395-150.png" width="350">
 			</center>
-			<?php $messages = array('Ouch.', 'Oh no!', 'Whoops!'); ?>
-
-			<h1><?php echo $messages[mt_rand(0, 2)]; ?></h1>
-
+			<h1>I Can Fix It!!!</h1>
 			<h2>Server Error: 500 (Internal Server Error)</h2>
-
 			<hr>
-
-			<h3>I Can Fix It!!!</h3>
-
+			<h3>What does this mean?</h3>
 			<p>
 				Something went wrong on our servers while we were processing your request.
 				We're really sorry about this, and will work hard to get this resolved as
 				soon as possible.
 			</p>
-
 			<p>
 				Perhaps you would like to go to our <?php echo HTML::link('/', 'home page'); ?>?
 			</p>
