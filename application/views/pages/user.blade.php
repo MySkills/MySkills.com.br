@@ -108,12 +108,15 @@
 					</div>
 				@endforeach
 				
+
 				<div class="pagination-centered">
 				@if(Auth::check())
-					{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
-					{{Form::submit(__('user.usedtoday').'.: ', array('class'=>'btn btn-success'))}}
-					{{Form::select('technology_id', $technology_list)}}
-					{{Form::close()}}
+					@if($user->id == Auth::user()->id)
+						{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
+						{{Form::submit(__('user.usedtoday').'.: ', array('class'=>'btn btn-success'))}}
+						{{Form::select('technology_id', $technology_list)}}
+						{{Form::close()}}
+					@endif
 				@else
 					{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
 					<a href="#unauthorizedModal" role="button" class="btn btn-warning" data-toggle="modal" data-target="#unauthorizedModal"><i class="icon-envelope"></i>{{__('user.usedtoday')}}.:</a>
@@ -157,16 +160,18 @@
 			<div class="span2 pagination-centered">
 				<div class="sidebar pagination-centered">
 					@if( Auth::check())
-						@if(count($user->followers()->where('follower_id', '=', Auth::user()->id)->get()) == 0)
-							{{Form::open('followers', 'PUT')}}
-							{{Form::hidden('user_id', $user->id)}}
-							{{Form::submit(__('user.follow'), array('class' => 'btn btn-mini btn-success'))}}
-							{{Form::close()}}
-						@else
-							{{Form::open('followers', 'DELETE')}}
-							{{Form::hidden('user_id', $user->id)}}
-							{{Form::submit(__('user.unfollow'), array('class' => 'btn btn-mini btn-danger'))}}
-							{{Form::close()}}
+						@if($user->id <> Auth::user()->id)
+							@if(count($user->followers()->where('follower_id', '=', Auth::user()->id)->get()) == 0)
+								{{Form::open('followers', 'PUT')}}
+								{{Form::hidden('user_id', $user->id)}}
+								{{Form::submit(__('user.follow'), array('class' => 'btn btn-mini btn-success'))}}
+								{{Form::close()}}
+							@else
+								{{Form::open('followers', 'DELETE')}}
+								{{Form::hidden('user_id', $user->id)}}
+								{{Form::submit(__('user.unfollow'), array('class' => 'btn btn-mini btn-danger'))}}
+								{{Form::close()}}
+							@endif
 						@endif
 					@else
 					<a href="#unauthorizedModal" role="button" class="btn btn-warning" data-toggle="modal" data-target="#unauthorizedModal">{{__('user.follow')}}</a>
