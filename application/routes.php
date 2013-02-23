@@ -242,7 +242,14 @@ Route::get('users/(:any)', function($user_id)
 	$technology_list = Technology::order_by('name', 'asc')->lists('name', 'id');
 	$user = User::find($user_id);
 	$user_technologies = $user->userTechnologies();
-	return View::make('pages.user')->with('page','profile')->with('technology_list', $technology_list)->with('user_technologies', $user_technologies)->with('user', $user);
+	return View::make('pages.user')
+		->with('page','profile')
+		->with('technology_list', $technology_list)
+		->with('user_technologies', $user_technologies)
+		->with('user', $user)
+		->with('og_title', $user->name)
+		->with('og_image', $user->getImageUrl('large'))
+		;
 });
 
 

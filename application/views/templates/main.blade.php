@@ -27,7 +27,7 @@
     @if(isset($og_title))
         <meta property="og:title" content="{{$og_title}}"/>
     @else
-        <meta property="og:title" content="Meet the best developers"/>
+        <meta property="og:title" content="Junte-se a nós."/>
     @endif        
     @if(isset($og_image))
         <meta property="og:image" content="http://www.myskills.com.br/img/{{$og_image}}"/>
@@ -38,7 +38,7 @@
     @if(isset($og_description))
         <meta property="og:description" content="{{$og_description}}"/>
     @else
-        <meta property="og:description" content="Hire the best professionals."/>
+        <meta property="og:description" content="A vida é muito curta para se escrever codigo ruim."/>
     @endif
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
