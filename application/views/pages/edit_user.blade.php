@@ -22,18 +22,6 @@ if (Auth::check()) {
 		<div class="row">		
 			<div class="span2">
 			{{HTML::image($user->getImageUrl('large'),  $user->name)}}
-            @if(count($user->followers()->where('user_id', '=', $user->id)->get()) == 0)
-				{{Form::open('followers', 'PUT')}}
-				{{Form::hidden('user_id', $user->id)}}
-				{{Form::submit(__('user.follow'), array('class' => 'btn btn-mini btn-warning'))}}
-				{{Form::close()}}
-			@else
-				{{Form::open('followers', 'DELETE')}}
-				{{Form::hidden('user_id', $user->id)}}
-				{{Form::submit(__('user.unfollow'), array('class' => 'btn btn-mini btn-primary'))}}
-				{{Form::close()}}
-
-			@endif
 			</div> <!-- /span2 -->
 			<div class="span8">
 
