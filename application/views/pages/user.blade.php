@@ -111,7 +111,7 @@
 				<div class="pagination-centered">
 				@if(Auth::check())
 					{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
-					{{Form::submit(__('user.usedtoday').'.: ', array('class'=>'btn btn-warning'))}}
+					{{Form::submit(__('user.usedtoday').'.: ', array('class'=>'btn btn-success'))}}
 					{{Form::select('technology_id', $technology_list)}}
 					{{Form::close()}}
 				@else
