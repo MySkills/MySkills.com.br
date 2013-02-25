@@ -90,9 +90,12 @@
 						<div class="bar" style="width: 100%;">30/30 <i class="icon-heart"></i></div>
 					</div>
 					<div class="progress progress-info span7">
+					@if(count($user->technologies) <= 20)
 						<div class="bar" style="width: {{count($user->technologies)*4.5+10}}%;">{{count($user->technologies)}}/20 <i class="icon-fire"></i></div>
+					@else
+						<div class="bar" style="width: {{(count($user->technologies)-20)*2.25+10}}%;">{{count($user->technologies)-20}}/40 <i class="icon-fire"></i></div>
+					@endif
 					</div>
-
 				</div>
 				@foreach($user_technologies as $user_technology)
 
