@@ -44,9 +44,9 @@
 					</div>
 					<div class="progress progress-info">
 						@if(count($technology_points) <= 20)
-							<div class="bar" style="width: {{count(technology_points)*4.5+10}}%;">{{count(technology_points)}}/20 <i class="icon-fire"></i></div>
+							<div class="bar" style="width: {{count($technology_points)*4.5+10}}%;">{{count($technology_points)}}/20 <i class="icon-fire"></i></div>
 						@else
-							<div class="bar" style="width: {{(count(technology_points)-20)*2.25+10}}%;">{{count(technology_points)-20}}/40 <i class="icon-fire"></i></div>
+							<div class="bar" style="width: {{(count($technology_points)-20)*2.25+10}}%;">{{count($technology_points)-20}}/40 <i class="icon-fire"></i></div>
 						@endif
 					</div>
 					@foreach ($user->partial_badges(6) as $badge)
