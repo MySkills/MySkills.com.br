@@ -3,9 +3,9 @@
 <?php
 
 if (Auth::check()) {
-	$user = User::find(Auth::user()->id);
-	$user->lastlogin = date('Y-m-d H:i:s');
-	$user->save();
+	$loggeduser = User::find(Auth::user()->id);
+	$loggeduser->lastlogin = date('Y-m-d H:i:s');
+	$loggeduser->save();
 }
 ?>
 
@@ -138,15 +138,11 @@ if (Auth::check()) {
 						<div class="progress progress-info span3">
 							<div class="bar" style="width: {{$user_technology->points*5}}%;">{{$user_technology->points}}/20 </div>
 						</div>
-
-
 						<div class="span2">{{$user_technology->name}}</div>
 						<div class="span1">{{__('user.level')}}.: 1</div>
 						<div class="span1">$ {{$user_technology->points}} {{HTML::image('img/coin16.png')}}</div>
 					</div>
 				@endforeach
-				
-
 
 				<div class="sidebar pagination-centered">
 					<h3><span class="slash">{{__('user.badges_earned')}}</span></h3>
@@ -182,6 +178,10 @@ if (Auth::check()) {
 
 			<div class="span2 pagination-centered">
 				<div class="sidebar pagination-centered">
+					<h3><span class="slash">{{__('user.items')}}</span></h3>
+					@if(count($user->technologies) > 20)
+						{{HTML::image('img/browserquest/'.'chest.png',  'user', array('width' => 48, 'height'=>48))}}
+					@endif					
 					@if( Auth::check())
 						@if($user->id <> Auth::user()->id)
 							@if(count($user->followers()->where('follower_id', '=', Auth::user()->id)->get()) == 0)
