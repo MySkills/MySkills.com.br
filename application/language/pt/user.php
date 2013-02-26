@@ -20,4 +20,6 @@ return array(
 	'usedtoday'		=> 'O que você utilizou hoje?',
 	'level'			=> 'Nível',
 	'skills'		=> 'Habilidades',
+	'items'			=> 'Ítems do usuário',
+	'level'			=> 'Nível',
 	);

@@ -98,10 +98,10 @@ if (Auth::check()) {
 					<div class="span1 sidebar pagination-centered well">
 					@if(count($user->technologies) <= 20)
 						{{HTML::image('img/browserquest/'.'level1.png',  'user', array('width' => 75, 'height'=>75))}}
-							LEVEL 1
+							{{__('user.level')}} 1
 					@else
 						{{HTML::image('img/browserquest/'.'level2.png',  'user', array('width' => 75, 'height'=>75))}}
-							LEVEL 2
+							{{__('user.level')}} 2
 					@endif
 					</div>
 					<div class="progress progress-danger span5">
@@ -138,15 +138,11 @@ if (Auth::check()) {
 						<div class="progress progress-info span3">
 							<div class="bar" style="width: {{$user_technology->points*5}}%;">{{$user_technology->points}}/20 </div>
 						</div>
-
-
 						<div class="span2">{{$user_technology->name}}</div>
 						<div class="span1">{{__('user.level')}}.: 1</div>
 						<div class="span1">$ {{$user_technology->points}} {{HTML::image('img/coin16.png')}}</div>
 					</div>
-				@endforeach
-				
-
+				@endforeach				
 
 				<div class="sidebar pagination-centered">
 					<h3><span class="slash">{{__('user.badges_earned')}}</span></h3>
@@ -181,6 +177,12 @@ if (Auth::check()) {
 			</div> <!-- /span4 -->
 
 			<div class="span2 pagination-centered">
+				<div class="sidebar pagination-centered">
+					<h3><span class="slash">{{__('user.items')}}</span></h3>
+					@if(count($user->technologies) > 20)
+						{{HTML::image('img/browserquest/'.'chest.png',  'user', array('width' => 48, 'height'=>48))}}
+					@endif
+				<div>
 				<div class="sidebar pagination-centered">
 					@if( Auth::check())
 						@if($user->id <> Auth::user()->id)
