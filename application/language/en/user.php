@@ -17,7 +17,7 @@ return array(
 	'recipient'		=> 'Recipient',
 	'message'		=> 'Message',
 	'contact'		=> 'Contact',
-	'usedtoday'		=> 'Skill/Technology/Technique used today',
+	'usedtoday'		=> 'What did you use today?',
 	'level'			=> 'Level',
 	'skills'		=> 'Skills',
 	);

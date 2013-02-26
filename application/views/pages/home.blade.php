@@ -1,5 +1,18 @@
 @layout('templates.main')
 @section('content')
+<?php
+
+/*
+SELECT count(date(created_at)), date(created_at)
+FROM skillsdb.users 
+WHERE created_at > SUBDATE(NOW(), '14 day') 
+group by date(created_at)
+order by created_at desc
+*/
+
+?>
+
+
 	<div class="row boxback">
 		<div class="span2">
 				<div class="sidebar">
@@ -49,13 +62,19 @@
 							<div class="bar" style="width: {{(count($user->technologies)-20)*2.25+10}}%;">{{count($user->technologies)-20}}/40 <i class="icon-fire"></i></div>
 						@endif
 					</div>
-					@foreach ($user->partial_badges(6) as $badge)
+					@foreach ($user->partial_badges(4) as $badge)
 						{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 30, 'height'=>30))}}
 					@endforeach
-					@for ($i = 0; $i <= (5-count($user->activebadges)); $i++)
+					@for ($i = 0; $i <= (3-count($user->activebadges)); $i++)
 						{{HTML::image('img/badges/unlock100.png', ' ', array('width' => 30, 'height'=>30))}}
 					@endfor				
 					<div class="pull-right">
+					@if(count($user->technologies) <= 20)
+						{{HTML::image('img/browserquest/'.'level1-mini.png',  'user', array('width' => 24, 'height'=>24))}}
+					@else
+						{{HTML::image('img/browserquest/'.'level2-mini.png',  'user', array('width' => 24, 'height'=>24))}}
+					@endif
+
 						{{count($user->technologies)}} {{HTML::image('img/coin16.png', 'Coin')}}
 					</div>
 				</div>

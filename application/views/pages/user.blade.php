@@ -1,5 +1,14 @@
 @layout('templates.main')
 @section('content')
+<?php
+
+if (Auth::check()) {
+	$user = User::find(Auth::user()->id);
+	$user->lastlogin = date('Y-m-d H:i:s');
+	$user->save();
+}
+?>
+
 <!-- Unauthorized Modal -->
 <div id="unauthorizedModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
@@ -86,18 +95,26 @@
 			</div> <!-- /span2 -->
 			<div class="span7">
 				<div class="row">
-					<div class="progress progress-danger span7">
+					<div class="span1 sidebar pagination-centered well">
+					@if(count($user->technologies) <= 20)
+						{{HTML::image('img/browserquest/'.'level1.png',  'user', array('width' => 75, 'height'=>75))}}
+							LEVEL 1
+					@else
+						{{HTML::image('img/browserquest/'.'level2.png',  'user', array('width' => 75, 'height'=>75))}}
+							LEVEL 2
+					@endif
+					</div>
+					<div class="progress progress-danger span5">
 						<div class="bar" style="width: 100%;">30/30 <i class="icon-heart"></i></div>
 					</div>
-					<div class="progress progress-info span7">
+					<div class="progress progress-info span5">
 					@if(count($user->technologies) <= 20)
 						<div class="bar" style="width: {{count($user->technologies)*4.5+10}}%;">{{count($user->technologies)}}/20 <i class="icon-fire"></i></div>
 					@else
 						<div class="bar" style="width: {{(count($user->technologies)-20)*2.25+10}}%;">{{count($user->technologies)-20}}/40 <i class="icon-fire"></i></div>
 					@endif
 					</div>
-				</div>
-				<div class="pagination-centered">
+				<div class="pagination-centered span5">
 				@if(Auth::check())
 					@if($user->id == Auth::user()->id)
 						{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
@@ -107,10 +124,12 @@
 					@endif
 				@else
 					{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
-					<a href="#unauthorizedModal" role="button" class="btn btn-warning" data-toggle="modal" data-target="#unauthorizedModal"><i class="icon-envelope"></i>{{__('user.usedtoday')}}.:</a>
+					<a href="#unauthorizedModal" role="button" class="btn btn-warning" data-toggle="modal" data-target="#unauthorizedModal">{{"CHECKIN.: ".__('user.usedtoday')}}.:</a>
 					{{Form::select('technology_id', $technology_list)}}
 					{{Form::close()}}
 				@endif
+				</div>
+
 				</div>
 
 				@foreach($user_technologies as $user_technology)
