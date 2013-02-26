@@ -170,7 +170,6 @@
                         @else
                             <li>{{HTML::link('blog', 'Blog')}}</li>
                         @endif
-                        <li><a href="http://hsmaker.com/harlemshake.asp?url=http://www.myskills.com.br">Harlem Shake</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div> <!-- /container -->
