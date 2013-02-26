@@ -98,10 +98,10 @@ if (Auth::check()) {
 					<div class="span1 sidebar pagination-centered well">
 					@if(count($user->technologies) <= 20)
 						{{HTML::image('img/browserquest/'.'level1.png',  'user', array('width' => 75, 'height'=>75))}}
-							LEVEL 1
+							{{__('user.level')}} 1
 					@else
 						{{HTML::image('img/browserquest/'.'level2.png',  'user', array('width' => 75, 'height'=>75))}}
-							LEVEL 2
+							{{__('user.level')}} 2
 					@endif
 					</div>
 					<div class="progress progress-danger span5">
@@ -133,7 +133,6 @@ if (Auth::check()) {
 				</div>
 
 				@foreach($user_technologies as $user_technology)
-
 					<div class="row">
 						<div class="progress progress-info span3">
 							<div class="bar" style="width: {{$user_technology->points*5}}%;">{{$user_technology->points}}/20 </div>
@@ -178,10 +177,11 @@ if (Auth::check()) {
 
 			<div class="span2 pagination-centered">
 				<div class="sidebar pagination-centered">
-					<h3><span class="slash">{{__('user.items')}}</span></h3>
 					@if(count($user->technologies) > 20)
+						<h3><span class="slash">{{__('user.items')}}</span></h3>
 						{{HTML::image('img/browserquest/'.'chest.png',  'user', array('width' => 48, 'height'=>48))}}
 					@endif					
+
 					@if( Auth::check())
 						@if($user->id <> Auth::user()->id)
 							@if(count($user->followers()->where('follower_id', '=', Auth::user()->id)->get()) == 0)

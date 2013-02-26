@@ -21,4 +21,5 @@ return array(
 	'level'			=> 'Level',
 	'skills'		=> 'Skills',
 	'items'			=> 'User Items',
+	'level'			=> 'Level',
 	);
