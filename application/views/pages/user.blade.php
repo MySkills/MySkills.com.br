@@ -97,6 +97,22 @@
 					@endif
 					</div>
 				</div>
+				<div class="pagination-centered">
+				@if(Auth::check())
+					@if($user->id == Auth::user()->id)
+						{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
+						{{Form::submit("CHECKIN.: ".__('user.usedtoday').'.: ', array('class'=>'btn btn-success'))}}
+						{{Form::select('technology_id', $technology_list)}}
+						{{Form::close()}}
+					@endif
+				@else
+					{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
+					<a href="#unauthorizedModal" role="button" class="btn btn-warning" data-toggle="modal" data-target="#unauthorizedModal"><i class="icon-envelope"></i>{{__('user.usedtoday')}}.:</a>
+					{{Form::select('technology_id', $technology_list)}}
+					{{Form::close()}}
+				@endif
+				</div>
+
 				@foreach($user_technologies as $user_technology)
 
 					<div class="row">
@@ -112,21 +128,6 @@
 				@endforeach
 				
 
-				<div class="pagination-centered">
-				@if(Auth::check())
-					@if($user->id == Auth::user()->id)
-						{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
-						{{Form::submit(__('user.usedtoday').'.: ', array('class'=>'btn btn-success'))}}
-						{{Form::select('technology_id', $technology_list)}}
-						{{Form::close()}}
-					@endif
-				@else
-					{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
-					<a href="#unauthorizedModal" role="button" class="btn btn-warning" data-toggle="modal" data-target="#unauthorizedModal"><i class="icon-envelope"></i>{{__('user.usedtoday')}}.:</a>
-					{{Form::select('technology_id', $technology_list)}}
-					{{Form::close()}}
-				@endif
-				</div>
 
 				<div class="sidebar pagination-centered">
 					<h3><span class="slash">{{__('user.badges_earned')}}</span></h3>
