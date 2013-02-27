@@ -182,7 +182,7 @@
     ?>
 
     @foreach($users as $user)
-        {{HTML::image($user->getImageUrl('square'),  $user->name, array('width' => 50, 'height'=>50))}}
+        {{HTML::image($user->getImageUrl('square'),  $user->name, array('width' => 50, 'height'=>50, 'title' => $user->name))}}
     @endforeach
 
     <div class="inner">

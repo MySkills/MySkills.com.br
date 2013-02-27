@@ -61,7 +61,7 @@
 								<div class="row">
 									@foreach ($badges as $badge)
 										<div class="span1">
-											{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => '75', 'height' => '75'))}}
+											{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => '75', 'height' => '75', 'title' => $badge->name))}}
 										</div>
 										<div class="span2">
 											<table class="table table-striped table-condensed">

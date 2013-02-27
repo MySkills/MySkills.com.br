@@ -46,17 +46,17 @@
 					@foreach ($newusers as $user)
 					<tr>
 						<td>
-							{{HTML::image($user->getImageUrl('square'), $user->name, array('width' => 50, 'height'=>50))}}
+							{{HTML::image($user->getImageUrl('square'), $user->name, array('width' => 50, 'height'=>50, 'title' => $user->name))}}
 						</td>
 						<td>
 							{{HTML::link('users/'.$user->id, $user->name)}}
 						</td>
 						<td>
 							@foreach ($user->partial_badges(4) as $badge)
-								{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 50, 'height'=>50))}}
+								{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 50, 'height'=>50, 'title' => $badge->name))}}
 							@endforeach
 							@for ($i = 0; $i <= (3-count($user->activebadges)); $i++)
-								{{HTML::image('img/badges/unlock100.png', ' ', array('width' => 50, 'height'=>50))}}
+								{{HTML::image('img/badges/unlock100.png', 'Unlock', array('width' => 50, 'height'=>50, 'title' => 'Unlock'))}}
 							@endfor
 						</td>
 						<td>{{$user->getpoints()}}</td>
@@ -87,17 +87,17 @@
 					?>
 					<tr>
 						<td>
-							{{HTML::image($user->getImageUrl('square'), $user->name, array('width' => 50, 'height'=>50))}}
+							{{HTML::image($user->getImageUrl('square'), $user->name, array('width' => 50, 'height'=>50, 'title' => $user->name))}}
 						</td>
 						<td>
 							{{HTML::link('users/'.$user->id, $user->name)}}
 						</td>
 						<td>
 							@foreach ($user->partial_badges(4) as $badge)
-								{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 50, 'height'=>50))}}
+								{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 50, 'height'=>50, 'title' => $badge->name))}}
 							@endforeach
 							@for ($i = 0; $i <= (3-count($user->activebadges)); $i++)
-								{{HTML::image('img/badges/unlock100.png', ' ', array('width' => 50, 'height'=>50))}}
+								{{HTML::image('img/badges/unlock100.png', 'Unlock', array('width' => 50, 'height'=>50, 'title' => 'Unlock'))}}
 							@endfor
 						</td>
 						<td>{{$user->getpoints()}}</td>

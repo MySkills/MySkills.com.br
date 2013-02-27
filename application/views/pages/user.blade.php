@@ -83,7 +83,7 @@ if (Auth::check()) {
 		@endif		
 		<div class="row">
 			<div class="span3 pagination-centered box">
-				{{HTML::image($user->getImageUrl('large'),  $user->name)}}
+				{{HTML::image($user->getImageUrl('large'),  $user->name, array('title' => $user->name))}}
 				<h1>{{$user->name}}</h1>
 				<div class="sidebar">
 					@if(Auth::check())
@@ -97,10 +97,10 @@ if (Auth::check()) {
 				<div class="row">
 					<div class="span1 sidebar pagination-centered well">
 					@if(count($user->technologies) <= 20)
-						{{HTML::image('img/browserquest/'.'level1.png',  'user', array('width' => 75, 'height'=>75))}}
+						{{HTML::image('img/browserquest/'.'level1.png',  __('user.level').' 1', array('width' => 75, 'height'=>75, 'title' => __('user.level').' 1'))}}
 							{{__('user.level')}} 1
 					@else
-						{{HTML::image('img/browserquest/'.'level2.png',  'user', array('width' => 75, 'height'=>75))}}
+						{{HTML::image('img/browserquest/'.'level2.png',  __('user.level').' 2', array('width' => 75, 'height'=>75, 'title' => __('user.level').' 2'))}}
 							{{__('user.level')}} 2
 					@endif
 					</div>
@@ -146,10 +146,10 @@ if (Auth::check()) {
 				<div class="sidebar pagination-centered">
 					<h3><span class="slash">{{__('user.badges_earned')}}</span></h3>
 					@foreach ($user->activebadges as $badge)
-						{{HTML::image('img/badges/'.$badge->image,  $badge->name, array('width' => 75, 'height'=>75))}}
+						{{HTML::image('img/badges/'.$badge->image,  $badge->name, array('width' => 75, 'height'=>75, 'title' => $badge->name))}}
 					@endforeach
 					@for ($i = 0; $i <= (15-count($user->activebadges)); $i++)
-						{{HTML::image('img/badges/unlock100.png', '', array('width' => 75, 'height'=>75))}}
+						{{HTML::image('img/badges/unlock100.png', 'Unlock', array('width' => 75, 'height'=>75, 'title' => 'Unlock'))}}
 					@endfor
 				</div> <!-- /sidebar -->
 
@@ -160,7 +160,7 @@ if (Auth::check()) {
 						<?php $friends = $user->getFriends('facebook') ?>
 							@forelse($friends as $friend) 
 							<div class="span1">
-								{{HTML::image($friend->getImageUrl('square'), $user->name, array('width' => 50, 'height'=>50))}}
+								{{HTML::image($friend->getImageUrl('square'), $user->name, array('width' => 50, 'height'=>50, 'title' => $user->name))}}
 								{{HTML::link('users/'.$friend->id, $friend->name)}}
 							</div>
 							@empty
@@ -179,7 +179,7 @@ if (Auth::check()) {
 				<div class="sidebar pagination-centered">
 					@if(count($user->technologies) > 20)
 						<h3><span class="slash">{{__('user.items')}}</span></h3>
-						{{HTML::image('img/browserquest/'.'chest.png',  'user', array('width' => 48, 'height'=>48))}}
+						{{HTML::image('img/browserquest/'.'chest.png',  'Chest', array('width' => 48, 'height'=>48, 'title' => 'Chest'))}}
 					@endif					
 
 					@if( Auth::check())
@@ -201,7 +201,7 @@ if (Auth::check()) {
 					@endif
 					<h3><span class="slash">{{__('user.followers')}}</span></h3>
 					@foreach ($user->followers as $follower)
-						{{HTML::image($follower->getImageUrl('large'),  $follower->name, array('width' => 50, 'height'=>50))}}
+						{{HTML::image($follower->getImageUrl('large'),  $follower->name, array('width' => 50, 'height'=>50, 'title' => $follower->name))}}
 					@endforeach
 				</div> <!-- /sidebar -->
 			</div> <!-- /span4 -->

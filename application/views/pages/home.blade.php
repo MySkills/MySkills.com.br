@@ -27,14 +27,14 @@ order by created_at desc
 					@foreach ($newUsers as $user)
 					<tr>
 						<td>
-							{{HTML::image($user->getImageUrl('square'), $user->name, array('width' => 50, 'height'=>50))}}
+							{{HTML::image($user->getImageUrl('square'), $user->name, array('width' => 50, 'height'=>50, 'title' => $user->name))}}
 						</td>
 						<td>
 							@foreach ($user->partial_badges(1) as $badge)
-								{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 50, 'height'=>50))}}
+								{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 50, 'height'=>50, 'title' => $badge->name))}}
 							@endforeach
 							@for ($i = 1; $i <= (1-count($user->activebadges)); $i++)
-								{{HTML::image('img/badges/unlock100.png', ' ', array('width' => 50, 'height'=>50))}}
+								{{HTML::image('img/badges/unlock100.png', 'Unlock', array('width' => 50, 'height'=>50, 'title' => 'Unlock'))}}
 							@endfor
 						</td>
 						<td>{{$user->getpoints()}}</td>
@@ -49,7 +49,7 @@ order by created_at desc
 				$technology_points = $user->count_user_technologies();
 				?>
 				<div class="box">
-					{{HTML::image($user->getImageUrl('large'), $user->name, array('width'=>'200', 'class'=>'dev'))}}
+					{{HTML::image($user->getImageUrl('large'), $user->name, array('width'=>'200', 'class'=>'dev', 'title' => $user->name))}}
 					<p>{{HTML::link('/users/'.$user->id, $user->name)}}<p>
 
 					<div class="progress progress-danger">
@@ -63,16 +63,16 @@ order by created_at desc
 						@endif
 					</div>
 					@foreach ($user->partial_badges(4) as $badge)
-						{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 30, 'height'=>30))}}
+						{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 30, 'height'=>30, 'title' => $badge->name))}}
 					@endforeach
 					@for ($i = 0; $i <= (3-count($user->activebadges)); $i++)
-						{{HTML::image('img/badges/unlock100.png', ' ', array('width' => 30, 'height'=>30))}}
+						{{HTML::image('img/badges/unlock100.png', 'Unlock', array('width' => 30, 'height'=>30, 'title' => 'Unlock'))}}
 					@endfor				
 					<div class="pull-right">
 					@if(count($user->technologies) <= 20)
-						{{HTML::image('img/browserquest/'.'level1-mini.png',  'user', array('width' => 24, 'height'=>24))}}
+						{{HTML::image('img/browserquest/'.'level1-mini.png',  __('user.level').' 1', array('width' => 24, 'height'=>24, 'title' =>__('user.level').' 1'))}}
 					@else
-						{{HTML::image('img/browserquest/'.'level2-mini.png',  'user', array('width' => 24, 'height'=>24))}}
+						{{HTML::image('img/browserquest/'.'level2-mini.png',  __('user.level').' 2', array('width' => 24, 'height'=>24, 'title' => __('user.level').' 2'))}}
 					@endif
 
 						{{count($user->technologies)}} {{HTML::image('img/coin16.png', 'Coin')}}
