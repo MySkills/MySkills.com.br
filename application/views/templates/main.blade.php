@@ -96,7 +96,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
-                {{HTML::link('/','Reboot Admin', array('class' => 'brand'))}}
+                {{HTML::link('/','MySkills Logo', array('class' => 'brand'))}}
                 <div class="nav-collapse">
                     <ul class="nav pull-right">
                         @if ($page == 'home')
@@ -104,10 +104,10 @@
                         @else
                             <li> {{HTML::link('/', __('main.home'))}} </li>
                         @endif
-                        @if ($page=='upgrade')
-                            <li class="active">{{HTML::link('upgrade',__('main.upgrade'))}}</li>
-                        @else
-                            <li>{{HTML::link('upgrade',__('main.upgrade'))}} </li>
+                        @if(Auth::check())
+                            @if($user->provider == 'facebook')
+                                <li><a href='#' onclick="FacebookInviteFriends();">{{__('main.invite')}}</a></li>
+                            @endif
                         @endif
                         @if ($page=='badges')
                             <li class="active">{{HTML::link('badges',__('main.badges'))}}</li>
@@ -169,6 +169,11 @@
                             <li class="active">{{HTML::link('blog','Blog')}}</li>
                         @else
                             <li>{{HTML::link('blog', 'Blog')}}</li>
+                        @endif
+                        @if ($page=='upgrade')
+                            <li class="active">{{HTML::link('upgrade',__('main.about'))}}</li>
+                        @else
+                            <li>{{HTML::link('upgrade',__('main.about'))}} </li>
                         @endif
                     </ul>
                 </div><!--/.nav-collapse -->
@@ -242,35 +247,58 @@
     
 </div> <!-- /footer -->
 
-{{HTML::script('js/jquery-1.7.2.min.js')}}
-{{HTML::script('js/jquery.masonry.min.js')}}
-<script>
-$(function(){
+        {{HTML::script('js/jquery-1.7.2.min.js')}}
+        {{HTML::script('js/jquery.masonry.min.js')}}
+        <script>
+        $(function(){
 
-    var $container = $('#container');
+            var $container = $('#container');
 
-    $container.imagesLoaded( function(){
-      $container.masonry({
-        itemSelector : '.box',
-        gutterWidth: 5
-      });
-    });
+            $container.imagesLoaded( function(){
+              $container.masonry({
+                itemSelector : '.box',
+                gutterWidth: 5
+              });
+            });
 
-});
-</script>
+        });
+        </script>
 
-{{HTML::script('js/bootstrap.js')}}
-{{HTML::script('js/lightbox/jquery.lightbox.min.js')}}
-{{HTML::script('js/jcarousellite_1.0.1.js')}}
+        {{HTML::script('js/bootstrap.js')}}
+        {{HTML::script('js/lightbox/jquery.lightbox.min.js')}}
+        {{HTML::script('js/jcarousellite_1.0.1.js')}}
 
-<script>
-    $(function () {
-        $(".screenshot").lightbox();
-    });
-</script>
-<!-- begin olark code --><script data-cfasync="false" type='text/javascript'>/*{literal}<![CDATA[*/
-window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){f[z]=function(){(a.s=a.s||[]).push(arguments)};var a=f[z]._={},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={0:+new Date};a.P=function(u){a.p[u]=new Date-a.p[0]};function s(){a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{b.contentWindow[g].open()}catch(w){c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{var t=b.contentWindow[g];t.write(p());t.close()}catch(x){b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
-/* custom configuration goes here (www.olark.com/documentation) */
-olark.identify('8338-468-10-6680');/*]]>{/literal}*/</script><noscript><a href="https://www.olark.com/site/8338-468-10-6680/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript><!-- end olark code -->    
-  </body>
+        <script>
+            $(function () {
+                $(".screenshot").lightbox();
+            });
+        </script>
+        <!-- begin olark code --><script data-cfasync="false" type='text/javascript'>/*{literal}<![CDATA[*/
+        window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){f[z]=function(){(a.s=a.s||[]).push(arguments)};var a=f[z]._={},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={0:+new Date};a.P=function(u){a.p[u]=new Date-a.p[0]};function s(){a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{b.contentWindow[g].open()}catch(w){c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{var t=b.contentWindow[g];t.write(p());t.close()}catch(x){b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
+        /* custom configuration goes here (www.olark.com/documentation) */
+        olark.identify('8338-468-10-6680');/*]]>{/literal}*/</script><noscript><a href="https://www.olark.com/site/8338-468-10-6680/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript><!-- end olark code -->    
+        @if(Auth::check())
+            @if($user->provider == 'facebook')
+                <!-- Facebook Request -->
+                <script src="http://connect.facebook.net/en_US/all.js"></script>
+                <script>
+                FB.init({
+                appId: {{Config::get('facebook-sdk::facebook.app_id')}},
+                filters: 'app_non_users',
+                cookie:true,
+                status:true,
+                xfbml:true
+                });
+
+                function FacebookInviteFriends()
+                {
+                FB.ui({
+                method: 'apprequests',
+                message: 'Junte-se a nós. MySkills.com.br gamifying coding skills.'
+                });
+                }
+                </script>
+            @endif
+        @endif
+    </body>
 </html>

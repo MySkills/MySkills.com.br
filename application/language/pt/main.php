@@ -26,6 +26,7 @@ return array(
 	'edit'				=> 'Editar',
 	'signin'			=> 'Sign-in/Sign-Up',
 	'developers'		=> 'Developers',
-	'upgrade' 			=> 'Upgrade Profissional',
-	'language'			=> 'Language',	
+	'about' 			=> 'Sobre',
+	'language'			=> 'Language',
+	'invite'			=> 'Convidar Amigos',
 );

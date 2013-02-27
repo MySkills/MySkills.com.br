@@ -538,6 +538,5 @@ Route::filter('auth', function()
 
 Route::filter('connect', function()
 {
-	Log::myskills('Filter - Connect'); 
 	if (Auth::guest()) return Redirect::to('/');
 });
