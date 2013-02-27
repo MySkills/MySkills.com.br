@@ -20,4 +20,6 @@ return array(
 		as a pre-condition to apply for some jobs.',
 	'approved' => 'Approved',
 	'approval' => 'Waiting for Approval',
+	'success_message' => 'SUCESS!!! You earned a new badge. Keep ranking up and doing daily checkins.',
+	'error_message' => 'ERROR.'
 	);

@@ -289,9 +289,9 @@ Route::put('badges/(:num)/(:num)',
 						Fbk::postNewMessage($user_data, 'http://www.myskills.com.br/users/'.Auth::user()->id, 'http://www.myskills.com.br/img/badges/'.$badge->image,'Conquistei um novo Badge no MySkills.: '.$badge->name);
 					break;
 				}
-				return Redirect::to('badges')->with('status','SUCESS!!! You successfully applied for a new badge. We will contact you soon.');
+				return Redirect::to('badges')->with('status', __('badges.success_message'));
 			} catch (Exception $e) {
-				return Redirect::to('badges')->with('status', 'ERROR');
+				return Redirect::to('badges')->with('status', __('badges.error_message'));
 			}
 		}
 	)
