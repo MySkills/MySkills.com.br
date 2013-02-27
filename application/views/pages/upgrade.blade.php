@@ -41,7 +41,7 @@
 								<p>Nós estamos criando algo diferente, onde o foco principal é em
 								fomentar e refletir a qualificação profissinal contínua e troca de experiências
 								especificamente na área de desenvolvimento de software. Queremos responder
-								muito facilmente a duas perguntas: Quem sabe o que? O que eu preciso para 
+								muito facilmente a duas perguntas: Quem sabe o que? O que eu preciso para me
 								tornar um profissional qualificado na tecnologia X?</p>
 						</li>						
 						<li>
