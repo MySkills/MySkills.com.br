@@ -294,7 +294,7 @@
                 {
                 FB.ui({
                 method: 'apprequests',
-                message: 'Junte-se a nós. MySkills.com.br gamifying coding skills.'
+                message: "{{__('main.join')}}"
                 });
                 }
                 </script>

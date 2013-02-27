@@ -27,5 +27,6 @@ return array(
 	'developers'		=> 'Developers',
 	'about'				=> 'About',
 	'language'			=> 'Idioma',
-	'invite'			=> 'Invite Friends',	
+	'invite'			=> 'Invite Friends',
+	'join'				=> 'Join us. MySkills.com.br gamifying coding skills.'
 );
