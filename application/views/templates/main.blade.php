@@ -283,7 +283,7 @@
                 <script src="http://connect.facebook.net/en_US/all.js"></script>
                 <script>
                 FB.init({
-                appId: {{Config::get('facebook-sdk::facebook.app_id')}},
+                appId: '380703318658533',
                 filters: 'app_non_users',
                 cookie:true,
                 status:true,
