@@ -284,7 +284,6 @@
                 <script>
                 FB.init({
                 appId: '380703318658533',
-                filters: 'app_non_users',
                 cookie:true,
                 status:true,
                 xfbml:true
