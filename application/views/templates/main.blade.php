@@ -30,7 +30,7 @@
         <meta property="og:title" content="Junte-se a nós."/>
     @endif        
     @if(isset($og_image))
-        <meta property="og:image" content="http://www.myskills.com.br/img/{{$og_image}}"/>
+        <meta property="og:image" content="{{$og_image}}"/>
     @else
         <meta property="og:image" content="http://www.myskills.com.br/img/MySkills-64.png"/>
     @endif
