@@ -2,15 +2,29 @@
 @section('content')
 <?php
 	$topusers = DB::query("SELECT
-		U.id, U.name name, SUM(B.points) rank
+		U.id, U.name name, UL.level level, SUM(B.points)*UL.level rank
 	FROM
-		users U, badges B, badge_user BU
+		users U, badges B, badge_user BU,
+		(
+			SELECT
+			   U.id, U.name, TRUNCATE(count(U.name)/20, 0)+1 level
+			FROM
+				technologies T,
+				technology_user TU,
+				users U
+			where
+				T.id = TU.technology_id AND
+				U.id = TU.user_id
+			group by U.name
+		) UL
 	WHERE
 		U.id = BU.user_id AND
-		B.id = BU.badge_id
+		B.id = BU.badge_id AND
+		U.id = UL.id
 	GROUP BY
 		U.name
-	order by rank desc, U.lastlogin desc");
+	order by SUM(B.points)*UL.level desc
+		");
 
 	$newusers = User::order_by('created_at', 'desc')->take(count($topusers))->get();
 ?>
@@ -74,8 +88,9 @@
 					<thead>
 						<tr>
 							<th width="10%">{{__('users.picture')}}</th>
-							<th width="20%">{{__('users.name')}}</th>
+							<th width="25%">{{__('users.name')}}</th>
 							<th width="60%">{{__('users.badges')}}</th>
+							<th width="5%">{{__('users.level')}}</th>
 							<th width="10%">{{__('users.Points')}}</th>
 						</tr>
 					</thead>
@@ -93,13 +108,14 @@
 							{{HTML::link('users/'.$user->id, $user->name)}}
 						</td>
 						<td>
-							@foreach ($user->partial_badges(4) as $badge)
+							@foreach ($user->partial_badges(3) as $badge)
 								{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 50, 'height'=>50, 'title' => $badge->name))}}
 							@endforeach
-							@for ($i = 0; $i <= (3-count($user->activebadges)); $i++)
+							@for ($i = 0; $i <= (2-count($user->activebadges)); $i++)
 								{{HTML::image('img/badges/unlock100.png', 'Unlock', array('width' => 50, 'height'=>50, 'title' => 'Unlock'))}}
 							@endfor
 						</td>
+						<td>{{$quser->level}}</td>
 						<td>{{$user->getpoints()}}</td>
 					</tr>
 					@endforeach

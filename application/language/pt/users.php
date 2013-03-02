@@ -18,5 +18,6 @@ return array(
 	'about1' 		=> 'A vida é curta demais para se escrever código ruim.',
 	'developers' 	=> 'Desenvolvedores',
 	'badcode'		=> 'A vida é curta demais para se escrever código ruim',
-	'join_us'		=> 'Junte-se a Nós'
+	'join_us'		=> 'Junte-se a Nós',
+	'level'			=> 'Nível'
 	);
