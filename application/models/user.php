@@ -144,6 +144,32 @@ class User extends Eloquent
 			return $topusers;
 	}
 
+	public static function topUsersBy($badge_id) {
+			$topusers = DB::query("SELECT
+						U.id, U.name name, COALESCE(UL.level, 1) level, SUM(B.points)*COALESCE(UL.level,1) rank
+				FROM
+						users U
+						right JOIN badge_user BU 	on 	U.id = BU.user_id
+						left JOIN badges B 		on 	B.id = BU.badge_id
+						left JOIN
+							(
+								SELECT
+								   U.id user_id, U.name, TRUNCATE(count(U.name)/20, 0)+1 level
+								FROM
+									technologies T,
+									technology_user TU,
+									users U
+								where
+									T.id = TU.technology_id AND
+									U.id = TU.user_id
+								group by U.name
+							) UL
+							on BU.user_id = UL.user_id
+				where B.id in (".$badge_id.") group by U.name
+				order by rank desc, U.lastlogin desc");
+			return $topusers;
+	}
+
 	public function userTechnologies() {
 			$user_technologies = DB::query(
 				"SELECT 

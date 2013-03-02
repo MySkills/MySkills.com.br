@@ -30,15 +30,34 @@ class Home_Controller extends Base_Controller {
 	|
 	*/
 
-	public function action_index()
+	public function action_index($badge_id=-1)
 	{
-		//return View::make('pages.users')->with('page','home');
-		$topUsers = User::topUsers();
-
+		switch ($badge_id) {
+			// Devs Certificados
+			case 1:
+				$badge_id = "41, 10, 8";
+				break;
+			// Gerentes Certificados
+			case 2:
+				$badge_id = "15";
+				break;
+			// Devs Mobile
+			case 3:
+				$badge_id = "38, 39, 40";
+				break;
+			// Acadêmicos
+			case 4:
+				$badge_id = "18, 19";
+				break;
+			default:
+				$topUsers = User::topUsers();
+				$newUsers = User::order_by('created_at', 'desc')->take(10)->get();
+				return View::make('pages.home')->with('page','home')->with('topUsers', $topUsers)->with('newUsers', $newUsers);
+				break;
+		}
+		$topUsers = User::topUsersBy($badge_id);
 		$newUsers = User::order_by('created_at', 'desc')->take(10)->get();
-
 		return View::make('pages.home')->with('page','home')->with('topUsers', $topUsers)->with('newUsers', $newUsers);
 
 	}
-
 }

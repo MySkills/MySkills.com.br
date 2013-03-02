@@ -1,7 +1,6 @@
 @layout('templates.main')
 @section('content')
 <?php
-
 /*
 SELECT count(date(created_at)), date(created_at)
 FROM skillsdb.users 
@@ -9,11 +8,20 @@ WHERE created_at > SUBDATE(NOW(), '14 day')
 group by date(created_at)
 order by created_at desc
 */
-
 ?>
-
+			<div class="row span12">
+					<div class="btn-group">
+						{{HTML::link('/', 'Listar Todos', array('class' => 'btn btn-success btn-large'))}}
+						{{HTML::link('home/index/1', 'Devs Certificados', array('class' => 'btn btn-success btn-large'))}}
+						{{HTML::link('home/index/2', 'Gerentes Certificados', array('class' => 'btn btn-success btn-large'))}}
+						{{HTML::link('home/index/3', 'Devs Mobile', array('class' => 'btn btn-success btn-large'))}}
+						{{HTML::link('home/index/4', 'Acadêmicos', array('class' => 'btn btn-success btn-large'))}}
+					</div>
+			</div>
 
 	<div class="row boxback">
+
+
 		<div class="span2">
 				<div class="sidebar">
 					<h3><span class="slash">{{__('users.join_us')}}</span></h3>
@@ -43,6 +51,7 @@ order by created_at desc
 				</div> <!-- /sidebar -->
 		</div>
 		<div class="span11" id="container">
+
 			@foreach ($topUsers as $topUser)
 			<?php
 				$user = User::find($topUser->id);
