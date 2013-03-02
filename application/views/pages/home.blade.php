@@ -11,11 +11,11 @@ order by created_at desc
 ?>
 			<div class="row span12">
 					<div class="btn-group">
-						{{HTML::link('/', 'Listar Todos', array('class' => 'btn btn-success btn-large'))}}
-						{{HTML::link('home/index/1', 'Devs Certificados', array('class' => 'btn btn-success btn-large'))}}
-						{{HTML::link('home/index/2', 'Gerentes Certificados', array('class' => 'btn btn-success btn-large'))}}
-						{{HTML::link('home/index/3', 'Devs Mobile', array('class' => 'btn btn-success btn-large'))}}
-						{{HTML::link('home/index/4', 'Acadêmicos', array('class' => 'btn btn-success btn-large'))}}
+						{{HTML::link('/', __('home.listall'), array('class' => 'btn btn-success btn-large'))}}
+						{{HTML::link('home/index/1', __('home.certified_devs'), array('class' => 'btn btn-success btn-large'))}}
+						{{HTML::link('home/index/2', __('home.certified_managers'), array('class' => 'btn btn-success btn-large'))}}
+						{{HTML::link('home/index/3', __('home.mobile_devs'), array('class' => 'btn btn-success btn-large'))}}
+						{{HTML::link('home/index/4', __('home.scholars'), array('class' => 'btn btn-success btn-large'))}}
 					</div>
 			</div>
 
