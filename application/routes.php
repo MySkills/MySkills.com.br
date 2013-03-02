@@ -133,7 +133,12 @@ Route::get('blog', function()
 */
 Route::get('developers', function()
 {
-	return View::make('pages.users')->with('page','developers');
+	$topusers = User::topUsers();
+	$newusers = User::order_by('created_at', 'desc')->take(count($topusers))->get();
+	return View::make('pages.users')
+		->with('page','developers')
+		->with('topusers', $topusers)
+		->with('newusers', $newusers);
 });
 
 
@@ -248,8 +253,7 @@ Route::get('users/(:any)', function($user_id)
 		->with('user_technologies', $user_technologies)
 		->with('user', $user)
 		->with('og_title', $user->name)
-		->with('og_image', $user->getImageUrl('large'))
-		;
+		->with('og_image', $user->getImageUrl('large'));
 });
 
 

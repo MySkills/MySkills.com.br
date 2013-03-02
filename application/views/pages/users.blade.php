@@ -1,33 +1,5 @@
 @layout('templates.main')
 @section('content')
-<?php
-	$topusers = DB::query("SELECT
-		U.id, U.name name, UL.level level, SUM(B.points)*UL.level rank
-	FROM
-		users U, badges B, badge_user BU,
-		(
-			SELECT
-			   U.id, U.name, TRUNCATE(count(U.name)/20, 0)+1 level
-			FROM
-				technologies T,
-				technology_user TU,
-				users U
-			where
-				T.id = TU.technology_id AND
-				U.id = TU.user_id
-			group by U.name
-		) UL
-	WHERE
-		U.id = BU.user_id AND
-		B.id = BU.badge_id AND
-		U.id = UL.id
-	GROUP BY
-		U.name
-	order by SUM(B.points)*UL.level desc
-		");
-
-	$newusers = User::order_by('created_at', 'desc')->take(count($topusers))->get();
-?>
 
 
 <div id="subheader">	
