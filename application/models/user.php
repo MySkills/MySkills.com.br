@@ -62,7 +62,11 @@ class User extends Eloquent
 		foreach ($this->activebadges as $badge) {
 			$total = $total + $badge->points;
 		}
-		return $total;
+		if($this->count_user_technologies() > 20) {
+			return $total * 2;
+		} else {
+			return $total;
+		}
 	}
 
 	public function technologies()
