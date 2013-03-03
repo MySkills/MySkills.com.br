@@ -10,7 +10,7 @@ order by created_at desc
 */
 ?>
 			<div class="row span12">
-					<div class="btn-group">
+					<div class="btn-group offset3">
 						{{HTML::link('/', __('home.listall'), array('class' => 'btn btn-success btn-large'))}}
 						{{HTML::link('home/index/1', __('home.certified_devs'), array('class' => 'btn btn-success btn-large'))}}
 						{{HTML::link('home/index/2', __('home.certified_managers'), array('class' => 'btn btn-success btn-large'))}}
