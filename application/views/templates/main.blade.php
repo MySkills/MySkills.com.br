@@ -282,10 +282,14 @@
         @if(Auth::check())
             <script type="text/javascript">
                 olark('api.chat.updateVisitorNickname', {
-                snippet: "{{$user->name}}"
+                snippet: "{{$user->name}}",
+                hidesDefault: false
+                });
+                olark('api.visitor.updateEmailAddress', {
+                emailAddress: "{{$user->email}}"
                 });
                 olark('api.visitor.updateFullName', {
-                emailAddress: "{{$user->name}}"
+                updateFullName: "{{$user->name}}"
                 });
             </script>
             @if($user->provider == 'facebook')
