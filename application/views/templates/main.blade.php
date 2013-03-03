@@ -285,12 +285,6 @@
                 snippet: "{{$user->name}}",
                 hidesDefault: false
                 });
-                olark('api.visitor.updateEmailAddress', {
-                emailAddress: "{{$user->email}}"
-                });
-                olark('api.visitor.updateFullName', {
-                updateFullName: "{{$user->name}}"
-                });
             </script>
             @if($user->provider == 'facebook')
                 <!-- Facebook Request -->
