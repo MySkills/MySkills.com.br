@@ -284,9 +284,6 @@
                 olark('api.chat.updateVisitorNickname', {
                 snippet: "{{$user->name}}"
                 });
-                olark('api.visitor.updateEmailAddress', {
-                emailAddress: "{{$user->email}}"
-                });
                 olark('api.visitor.updateFullName', {
                 emailAddress: "{{$user->name}}"
                 });
