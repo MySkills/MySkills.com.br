@@ -165,16 +165,17 @@
                                 <li class="presentation"><a  href="/pt" role="menuitem" tabindex="-1">Português</a></li>
                             </ul>
                         </li>
-                        @if($page=='blog')
-                            <li class="active">{{HTML::link('blog','Blog')}}</li>
-                        @else
-                            <li>{{HTML::link('blog', 'Blog')}}</li>
-                        @endif
-                        @if ($page=='upgrade')
-                            <li class="active">{{HTML::link('upgrade',__('main.about'))}}</li>
-                        @else
-                            <li>{{HTML::link('upgrade',__('main.about'))}} </li>
-                        @endif
+                        <li class="dropdown">
+                            <a id="profile" href="#" class="dropdown-toggle" data-toggle="dropdown">{{__('main.help')}}
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="profile">
+                                <li>{{HTML::link('upgrade',__('main.about'))}} </li>
+                                <li>{{HTML::link('blog', __('main.blog'))}}</li>
+                                <li>{{HTML::link('channel', __('main.channel'))}}</li>
+                            </ul>
+                        </li>
+
                     </ul>
                 </div><!--/.nav-collapse -->
             </div> <!-- /container -->

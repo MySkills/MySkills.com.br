@@ -220,6 +220,10 @@ Route::get('skills', function()
 	return View::make('pages.skills')->with('page','skills');
 });
 
+Route::get('channel', function()
+{
+	return View::make('pages.channel')->with('page','channel');
+});
 
 Route::get('termsofuse', function()
 {
