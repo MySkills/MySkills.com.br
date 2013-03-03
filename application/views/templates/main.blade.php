@@ -187,8 +187,8 @@
       $users = User::order_by('lastlogin', 'desc')->take(25)->get();
     ?>
 
-    @foreach($users as $user)
-        {{HTML::image($user->getImageUrl('square'),  $user->name, array('width' => 50, 'height'=>50, 'title' => $user->name))}}
+    @foreach($users as $lastuser)
+        {{HTML::image($lastuser->getImageUrl('square'),  $lastuser->name, array('width' => 50, 'height'=>50, 'title' => $lastuser->name))}}
     @endforeach
 
     <div class="inner">
