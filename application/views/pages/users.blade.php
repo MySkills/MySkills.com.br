@@ -45,7 +45,7 @@
 								{{HTML::image('img/badges/unlock100.png', 'Unlock', array('width' => 50, 'height'=>50, 'title' => 'Unlock'))}}
 							@endfor
 						</td>
-						<td>{{$user->getpoints()}}</td>
+						<td>{{$user->badgepoints}}</td>
 					</tr>
 					@endforeach
 					</tbody>
@@ -87,8 +87,8 @@
 								{{HTML::image('img/badges/unlock100.png', 'Unlock', array('width' => 50, 'height'=>50, 'title' => 'Unlock'))}}
 							@endfor
 						</td>
-						<td>{{$quser->level}}</td>
-						<td>{{$user->getpoints()}}</td>
+						<td>{{$user->level}}</td>
+						<td>{{$user->points}}</td>
 					</tr>
 					@endforeach
 					</tbody>

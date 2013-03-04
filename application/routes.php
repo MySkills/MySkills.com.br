@@ -178,6 +178,27 @@ Route::get('logout', function() {
     return Redirect::to('/');
 });
 
+Route::get('admin/mandrill/send', 
+	array(
+		'before' => 'auth', 'do' => function(){
+		 	return View::make('email.sent')
+		 		->with('page','sendmail')
+		 		->with('total', 0);
+		}
+	)
+);
+
+Route::get('stats', 
+	array(
+		'before' => 'auth', 'do' => function(){
+			$user = User::find(2);
+		 	return View::make('email.user_stats')
+		 		->with('page','user_stats')
+		 		->with('user', $user);
+		}
+	)
+);
+
 Route::get('messages', 
 	array(
 		'before' => 'auth', 'do' => function(){
@@ -250,11 +271,9 @@ Route::get('users/(:any)', function($user_id)
 {
 	$technology_list = Technology::order_by('name', 'asc')->lists('name', 'id');
 	$user = User::find($user_id);
-	$user_technologies = $user->userTechnologies();
 	return View::make('pages.user')
 		->with('page','profile')
 		->with('technology_list', $technology_list)
-		->with('user_technologies', $user_technologies)
 		->with('user', $user)
 		->with('og_title', $user->name)
 		->with('og_image', $user->getImageUrl('large'));

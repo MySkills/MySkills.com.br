@@ -45,7 +45,7 @@ order by created_at desc
 								{{HTML::image('img/badges/unlock100.png', 'Unlock', array('width' => 50, 'height'=>50, 'title' => 'Unlock'))}}
 							@endfor
 						</td>
-						<td>{{$user->getpoints()}}</td>
+						<td>{{$user->points}}</td>
 					</tr>
 					@endforeach
 				</div> <!-- /sidebar -->
@@ -55,7 +55,7 @@ order by created_at desc
 			@foreach ($topUsers as $topUser)
 			<?php
 				$user = User::find($topUser->id);
-				$technology_points = $user->count_user_technologies();
+				$technology_points = count($user->technologies);
 				?>
 				<div class="box">
 					{{HTML::image($user->getImageUrl('large'), $user->name, array('width'=>'200', 'class'=>'dev', 'title' => $user->name))}}

@@ -56,17 +56,14 @@ class User extends Eloquent
 	  return $this->has_many_and_belongs_to('Follower');
 	}
 
-	public function getpoints()
+	public function get_points()
 	{
 		$total = 0;
 		foreach ($this->activebadges as $badge) {
 			$total = $total + $badge->points;
 		}
-		if($this->count_user_technologies() > 20) {
-			return $total * 2;
-		} else {
-			return $total;
-		}
+
+		return $total*$this->level;
 	}
 
 	public function technologies()
@@ -74,8 +71,36 @@ class User extends Eloquent
 	  return $this->has_many_and_belongs_to('Technology')->with('checkin_at');
 	}
 
-	public function count_user_technologies() {
-		return count($this->technologies()->pivot()->get());
+	public function get_level() {
+		$checkins = count($this->technologies);
+		if($checkins > 359) {
+			return 7;
+		}
+		if($checkins > 259) {
+			return 6;
+		}
+		if($checkins > 179) {
+			return 5;
+		}
+		if($checkins > 119) {
+			return 4;
+		}
+		if($checkins > 59) {
+			return 3;
+		}
+		if($checkins > 19) {
+			return 2;
+		}
+		if($checkins < 20) {
+			return 1;
+		}
+	}
+
+	public function checkins_since($date) {
+		return $this
+				->technologies()
+				->where('checkin_at', '>', date( 'Y-m-d H:i:s', strtotime(str_replace('/', '-', $date))))
+				->order_by('checkin_at', 'desc')->get();
 	}
 
 	public function active()
@@ -170,7 +195,7 @@ class User extends Eloquent
 			return $topusers;
 	}
 
-	public function userTechnologies() {
+	public function get_checkins() {
 			$user_technologies = DB::query(
 				"SELECT 
 					T.name name, count(T.name) points
