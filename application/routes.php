@@ -183,7 +183,7 @@ Route::get('admin/mandrill/send',
 		'before' => 'auth', 'do' => function(){
 			ini_set('max_execution_time', 3000);
 			$responses = array();
-			$users = User::where('email', 'is not', 'null')->get();
+			$users = User::where_not_null('email')->get();
 			foreach ($users as $user) {
 				$email_content = View::make('email.user_stats')->with('page','user_stats')->with('user', $user)->render();			 	
 				$response = Mandrill::request('messages/send', array(
