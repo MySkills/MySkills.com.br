@@ -103,6 +103,11 @@ class User extends Eloquent
 				->order_by('checkin_at', 'desc')->get();
 	}
 
+	public static function users_since($date) {
+		return User::where('created_at', '>', date( 'Y-m-d H:i:s', strtotime(str_replace('/', '-', $date))))
+				->order_by('created_at', 'desc')->get();
+	}
+
 	public function active()
 	{
 	  if ($this->active == 1) {

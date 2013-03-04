@@ -132,14 +132,14 @@ if (Auth::check()) {
 
 				</div>
 
-				@foreach($user_technologies as $user_technology)
+				@foreach($user->checkins as $checkin)
 					<div class="row">
 						<div class="progress progress-info span3">
-							<div class="bar" style="width: {{$user_technology->points*5}}%;">{{$user_technology->points}}/20 </div>
+							<div class="bar" style="width: {{$checkin->points*5}}%;">{{$checkin->points}}/20 </div>
 						</div>
-						<div class="span2">{{$user_technology->name}}</div>
+						<div class="span2">{{$checkin->name}}</div>
 						<div class="span1">{{__('user.level')}}.: 1</div>
-						<div class="span1">$ {{$user_technology->points}} {{HTML::image('img/coin16.png')}}</div>
+						<div class="span1">$ {{$checkin->points}} {{HTML::image('img/coin16.png')}}</div>
 					</div>
 				@endforeach
 

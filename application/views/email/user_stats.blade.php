@@ -37,7 +37,11 @@
 											</td>
 											<td style="font-size:14px;font-family:'lucida grande',tahoma,verdana,arial,sans-serif;background:#ffffff;color:#000000;vertical-align:baseline;letter-spacing:-0.03em;text-align:left;padding:5px 20px">
 												<p style="font-weight:bold">Amigos</p>
-												<p>12</p>
+												@if($user->provider == 'facebook')
+													<p>{{count($user->getFriends('facebook'))}}</p>
+												@else
+													<p>0</p>
+												@endif
 											</td>
 										</tr>
 									</tbody>
@@ -65,8 +69,11 @@
 								@foreach ($user->activebadges as $badge)
 									{{HTML::image('img/badges/'.$badge->image,  $badge->name, array('height'=>75, 'title' => $badge->name))}}
 								@endforeach						
-								<p>Novos Usuários<p>
-								<p>Seus seguidores</p>
+								<h3>Novos Usuários</h3>
+									@foreach (User::users_since('01/01/2013') as $new_user)
+										{{HTML::image($new_user->getImageUrl('large'),  $new_user->name, array('width' => 50, 'height'=>50, 'title' => $new_user->name))}}
+									@endforeach							
+								<h3>Seus seguidores</h3>
 								@foreach ($user->followers as $follower)
 									{{HTML::image($follower->getImageUrl('large'),  $follower->name, array('width' => 50, 'height'=>50, 'title' => $follower->name))}}
 								@endforeach							
