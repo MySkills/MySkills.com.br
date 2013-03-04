@@ -54,6 +54,7 @@
 										<li><i>Sem checkins essa semana :(</i></li>
 									@endforelse
 								</ul>
+								<p><strong><a href="http://www.myskills.com.br">Acesse agora e comece a semana fazendo novos checkins.</a></strong></p>
 								<p><strong>Checkins</strong> - Através dos checkins você consegue registrar diariamente 
 									as tecnologias que tem utilizado para desenvolver. 
 									O seu nível é definido a partir do total de checkins feitos ao longo do tempo.
@@ -70,17 +71,11 @@
 								@endforelse
 								<h3>Novos Badges</h3> 
 								<p>Fique de olho nos novos badges.</p>
-									@forelse (Badge::since() as $new_badge)
-										{{HTML::image('img/badges/'.$new_badge->image,  $new_badge->name, array('height'=>75, 'title' => $new_badge->name))}}
-									@empty
-										<p><i>Sem novos badges essa semana.</i></p>
-									@endforelse
-								<h3>Novos Usuários</h3>
-									@forelse (User::users_since('01/01/2013') as $new_user)
-										{{HTML::image($new_user->getImageUrl('large'),  $new_user->name, array('width' => 50, 'height'=>50, 'title' => $new_user->name))}}
-									@empty
-										<p><i>Sem novos usuários essa semana. Que tal convidar alguns amigos?</i></p>
-									@endforelse
+								@forelse (Badge::since() as $new_badge)
+									{{HTML::image('img/badges/'.$new_badge->image,  $new_badge->name, array('height'=>75, 'title' => $new_badge->name))}}
+								@empty
+									<p><i>Sem novos badges essa semana.</i></p>
+								@endforelse
 								<h3>Seus seguidores</h3>
 								@forelse ($user->followers as $follower)
 									{{HTML::image($follower->getImageUrl('large'),  $follower->name, array('width' => 50, 'height'=>50, 'title' => $follower->name))}}
@@ -95,6 +90,12 @@
 										<p><i>Sem amigos? Que triste. :(</i></p>
 									@endforelse
 								@endif
+								<h3>Novos Usuários</h3>
+								@forelse (User::users_since('01/01/2013') as $new_user)
+									{{HTML::image($new_user->getImageUrl('large'),  $new_user->name, array('width' => 50, 'height'=>50, 'title' => $new_user->name))}}
+								@empty
+									<p><i>Sem novos usuários essa semana. Que tal convidar alguns amigos?</i></p>
+								@endforelse
 							</td>
 						</tr>
 					</tbody>

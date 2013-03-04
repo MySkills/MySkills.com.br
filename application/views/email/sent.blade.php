@@ -14,7 +14,8 @@
 			<div class="span10 pagination-centered">
 
 
-<h2>{{$total}} e-mails Sent</h2>
+<h2>{{count($responses)}} e-mails Sent</h2>
+{{dd($responses)}}
 			</div> <!-- /span10 -->
 			<div class="span2">
 				<div class="sidebar">

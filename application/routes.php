@@ -181,9 +181,25 @@ Route::get('logout', function() {
 Route::get('admin/mandrill/send', 
 	array(
 		'before' => 'auth', 'do' => function(){
-		 	return View::make('email.sent')
-		 		->with('page','sendmail')
-		 		->with('total', 0);
+			$responses = array();
+			$users = User::where('email', 'is not', 'null')->get();
+			foreach ($users as $user) {
+				$email_content = View::make('email.user_stats')->with('page','user_stats')->with('user', $user)->render();			 	
+				$response = Mandrill::request('messages/send', array(
+				    'message' => array(
+						'html' => $email_content,
+						'subject' => '[myskills] Atualização Semanal.',
+						'from_email' => 'eduardo.cruz@myskills.com.br',
+						'from_name' => 'Eduardo Cruz (MySkills)',
+						'to' => array(array('email'=>$user->email,
+											'name'=>$user->name)),
+					),
+				));
+				array_push($responses, $response);
+			}
+			return View::make('email.sent')
+				->with('page','sendmail')
+				->with('responses', $responses);
 		}
 	)
 );
