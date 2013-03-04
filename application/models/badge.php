@@ -17,4 +17,8 @@ class Badge extends Eloquent
 		return $this->belongs_to('Badgetype');
      }
 
+	public static function since() {
+		return Badge::where('id', '>', 14)
+				->order_by('id', 'desc')->get();
+	}
 }

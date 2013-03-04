@@ -13,7 +13,7 @@
 						<tr><td>&nbsp;</td></tr>
 						<tr>
 							<td style="font-size:14px;font-family:'lucida grande',tahoma,verdana,arial,sans-serif;background:#ffffff;color:#000000;vertical-align:baseline;letter-spacing:-0.03em;text-align:left;padding:5px 20px">
-								<p>Olá , {{$user->name}}</p>
+								<p>Olá {{$user->name}},</p>
 								<p>Essas são as informações mais recentes sobre a sua evolução profissional.</p>
 								<table border=1 cellspacing="0" cellpadding="0" style="border-collapse:collapse;width:540px">
 									<tbody>
@@ -29,7 +29,7 @@
 											</td>
 											<td style="font-size:14px;font-family:'lucida grande',tahoma,verdana,arial,sans-serif;background:#ffffff;color:#000000;vertical-align:baseline;letter-spacing:-0.03em;text-align:left;padding:5px 20px">
 												<p style="font-weight:bold">Badges</p>
-												<p>{{count($user->activebadges)}}</p>
+												<p>{{count($user->checkins_since('01/03/2013'))}}</p>
 											</td>
 											<td style="font-size:14px;font-family:'lucida grande',tahoma,verdana,arial,sans-serif;background:#ffffff;color:#000000;vertical-align:baseline;letter-spacing:-0.03em;text-align:left;padding:5px 20px">
 												<p style="font-weight:bold">Seguidores</p>
@@ -48,9 +48,11 @@
 								</table>		
 								<h3>Checkins da Semana</h3>
 								<ul>
-									@foreach($user->checkins_since('01/03/2013') as $technology)
+									@forelse($user->checkins_since('01/03/2013') as $technology)
 										<li>{{date('d/m/Y', strtotime($technology->pivot->checkin_at))}} - {{$technology->name}}</li>
-									@endforeach								
+									@empty
+										<li><i>Sem checkins essa semana :(</i></li>
+									@endforelse
 								</ul>
 								<p><strong>Checkins</strong> - Através dos checkins você consegue registrar diariamente 
 									as tecnologias que tem utilizado para desenvolver. 
@@ -61,22 +63,38 @@
 								</p>
 								<h3>Seus Badges</h3>
 								<p>Esses são os seus badge atuais.</p>								
-								@foreach ($user->activebadges as $badge)
+								@forelse ($user->activebadges as $badge)
 									{{HTML::image('img/badges/'.$badge->image,  $badge->name, array('height'=>75, 'title' => $badge->name))}}
-								@endforeach
+								@empty
+									<p><i>Já cadastramos dezenas de badges e você ainda não escolheu nenhum?</i></p>
+								@endforelse
 								<h3>Novos Badges</h3> 
 								<p>Fique de olho nos novos badges.</p>
-								@foreach ($user->activebadges as $badge)
-									{{HTML::image('img/badges/'.$badge->image,  $badge->name, array('height'=>75, 'title' => $badge->name))}}
-								@endforeach						
+									@forelse (Badge::since() as $new_badge)
+										{{HTML::image('img/badges/'.$new_badge->image,  $new_badge->name, array('height'=>75, 'title' => $new_badge->name))}}
+									@empty
+										<p><i>Sem novos badges essa semana.</i></p>
+									@endforelse
 								<h3>Novos Usuários</h3>
-									@foreach (User::users_since('01/01/2013') as $new_user)
+									@forelse (User::users_since('01/01/2013') as $new_user)
 										{{HTML::image($new_user->getImageUrl('large'),  $new_user->name, array('width' => 50, 'height'=>50, 'title' => $new_user->name))}}
-									@endforeach							
+									@empty
+										<p><i>Sem novos usuários essa semana. Que tal convidar alguns amigos?</i></p>
+									@endforelse
 								<h3>Seus seguidores</h3>
-								@foreach ($user->followers as $follower)
+								@forelse ($user->followers as $follower)
 									{{HTML::image($follower->getImageUrl('large'),  $follower->name, array('width' => 50, 'height'=>50, 'title' => $follower->name))}}
-								@endforeach							
+								@empty
+									<p><i>Sem seguidores ainda. Está na hora de começar a socializar.</i></p>								
+								@endforelse
+								@if($user->provider == 'facebook')
+									<h3>Seus Amigos</h3>	
+									@forelse ($user->getFriends('facebook') as $friend)
+										{{HTML::image($friend->getImageUrl('large'),  $friend->name, array('width' => 50, 'height'=>50, 'title' => $friend->name))}}
+									@empty
+										<p><i>Sem amigos? Que triste. :(</i></p>
+									@endforelse
+								@endif
 							</td>
 						</tr>
 					</tbody>
