@@ -181,6 +181,7 @@ Route::get('logout', function() {
 Route::get('admin/mandrill/send', 
 	array(
 		'before' => 'auth', 'do' => function(){
+			ini_set('max_execution_time', 3000);
 			$responses = array();
 			$users = User::where('email', 'is not', 'null')->get();
 			foreach ($users as $user) {
