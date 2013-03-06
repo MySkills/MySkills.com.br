@@ -122,15 +122,6 @@ Route::get('badges/(:any)', function($badge_id)
 Route::get('badges/(:any)/earn', function($badge_id)
 {
 
-	$facebook = IoC::resolve('facebook-sdk');
-	$user_data = Session::get('oneauth');
-	$access_token = unserialize($user_data['token']);
-	$facebook = $facebook->setAccessToken($access_token->access_token);
-	$response = $facebook->api(
-  		'me/myskillsapp:earn',
-  		'POST',
-  		array('badge' => 'http://www.myskills.com.br/badges/'.$badge_id)
-	);
 
 	$badge = Badge::find($badge_id);
 	return View::make('pages.badge')
@@ -357,7 +348,16 @@ Route::put('badges/(:num)/(:num)',
 			    $user_data = Session::get('oneauth');
 		        switch($user_data['provider']) {
 					case 'facebook' :
-						Fbk::postNewMessage($user_data, 'http://www.myskills.com.br/users/'.Auth::user()->id, 'http://www.myskills.com.br/img/badges/'.$badge->image,'Conquistei um novo Badge no MySkills.: '.$badge->name);
+						//Fbk::postNewMessage($user_data, 'http://www.myskills.com.br/users/'.Auth::user()->id, 'http://www.myskills.com.br/img/badges/'.$badge->image,'Conquistei um novo Badge no MySkills.: '.$badge->name);
+						$facebook = IoC::resolve('facebook-sdk');
+						$user_data = Session::get('oneauth');
+						$access_token = unserialize($user_data['token']);
+						$facebook = $facebook->setAccessToken($access_token->access_token);
+						$response = $facebook->api(
+							'me/myskillsapp:earn',
+							'POST',
+							array('badge' => 'http://www.myskills.com.br/badges/'.$badge_id)
+						);
 					break;
 				}
 				return Redirect::to('badges')->with('status', __('badges.success_message'));
