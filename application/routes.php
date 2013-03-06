@@ -122,6 +122,15 @@ Route::get('badges/(:any)', function($badge_id)
 Route::get('badges/(:any)/earn', function($badge_id)
 {
 
+	$facebook = IoC::resolve('facebook-sdk');
+	$user_data = Session::get('oneauth');
+	$access_token = unserialize($user_data['token']);
+	$facebook = $facebook->setAccessToken($access_token->access_token);
+	$response = $facebook->api(
+		'me/myskillsapp:earn',
+		'POST',
+		array('badge' => 'http://www.myskills.com.br/badges/'.$badge_id)
+	);
 
 	$badge = Badge::find($badge_id);
 	return View::make('pages.badge')
