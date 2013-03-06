@@ -28,12 +28,15 @@
     @else
         <meta property="og:type" content="website" />
     @endif
+    @if(isset($og_points))
+        <meta property="og:points"   content="{{$og_points}}" />
+    @endif
     <meta property="og:url" content="{{URL::full()}}"/>    
     @if(isset($og_title))
         <meta property="og:title" content="{{$og_title}}"/>
     @else
         <meta property="og:title" content="Junte-se a nós."/>
-    @endif        
+    @endif
     @if(isset($og_image))
         <meta property="og:image" content="{{$og_image}}"/>
     @else
