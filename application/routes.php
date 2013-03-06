@@ -332,11 +332,11 @@ Route::get('welcome', function()
 /*
 REQUIRE A BADGE. Relate a new badge to a user.
 */
-Route::put('badges/(:num)/(:num)',
+Route::put('badges',
 	array(
-		'before' => 'auth', 'do' => function($id, $user_id) {
+		'before' => 'auth', 'do' => function() {
 			try {
-				$badge = Badge::find($id);
+				$badge = Badge::find(Input::get('badge_id'));
 				$badge->users()->attach(Auth::user()->id);
 				$badge->save();
 			    //e-mail notification about new user
@@ -365,7 +365,7 @@ Route::put('badges/(:num)/(:num)',
 						$response = $facebook->api(
 							'me/myskillsapp:earn',
 							'POST',
-							array('badge' => 'http://www.myskills.com.br/badges/'.$badge_id)
+							array('badge' => 'http://www.myskills.com.br/badges/'.$badge->id)
 						);
 					break;
 				}

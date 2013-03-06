@@ -70,7 +70,8 @@
 
 						                    @if( Auth::check())
 					                            @if(count($badge->users()->where('user_id', '=', $user->id)->get()) == 0)
-													{{Form::open('badges/'.$badge->id.'/'.Auth::user()->id, 'PUT')}}
+													{{Form::open('badges', 'PUT')}}
+													{{Form::hidden('badge_id', $badge->id)}}
 													{{Form::submit(__('badges.request'),  array('class' => 'btn btn-small btn-success'))}}
 													{{Form::close()}}
 												@else
