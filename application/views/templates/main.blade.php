@@ -22,7 +22,12 @@
     <meta charset="utf-8">
     <title>{{__('main.title')}}</title>
     <script src="//cdn.optimizely.com/js/111465504.js"></script>
-    <meta property="og:type" content="website" />
+    @if(isset($og_type))
+        <meta property="fb:app_id" content="380703318658533" />
+        <meta property="og:type"   content="{{$og_type}}" />
+    @else
+        <meta property="og:type" content="website" />
+    @endif
     <meta property="og:url" content="{{URL::full()}}"/>    
     @if(isset($og_title))
         <meta property="og:title" content="{{$og_title}}"/>

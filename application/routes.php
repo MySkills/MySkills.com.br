@@ -110,6 +110,7 @@ Route::get('badges/(:any)', function($badge_id)
 	return View::make('pages.badge')
 		->with('page','badge')
 		->with('badge',$badge)
+		->with('og_type', 'myskillsapp:badge')
 		->with('og_image', 'http://www.myskills.com.br/img/badges/'.$badge->image)
 		->with('og_title', $badge->name)
 		->with('og_description', $badge->description);
