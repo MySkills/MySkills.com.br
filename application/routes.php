@@ -101,6 +101,39 @@ Route::get('badges', function()
 	return View::make('pages.badges')->with('page','badges');
 });
 
+Route::get('admin/mandrill/send', 
+	array(
+		'before' => 'auth', 'do' => function(){
+			ini_set('max_execution_time', 3000);
+			$responses = array();
+			$users = User::where_not_null('email')->get();
+			//$users = User::find(2)->first();
+			$since = '04/03/2013';
+			foreach ($users as $user) {
+				$email_content = View::make('email.20130311')
+									->with('page','user_stats')
+									->with('user', $user)
+									->with('since', $since)
+									->render();
+				$response = Mandrill::request('messages/send', array(
+				    'message' => array(
+						'html' => $email_content,
+						'subject' => '[myskills] Atualização Semanal - 11/03/2013 (Erro no Envio).',
+						'from_email' => 'eduardo.cruz@myskills.com.br',
+						'from_name' => 'Eduardo Cruz (MySkills)',
+						'to' => array(array('email'=>$user->email,
+											'name'=>$user->name)),
+					),
+				));
+				array_push($responses, $response);
+			}
+			return View::make('email.sent')
+				->with('page','sendmail')
+				->with('responses', $responses);
+		}
+	)
+);
+
 /*
 	USERPROFILE
 */
@@ -207,39 +240,13 @@ Route::get('logout', function() {
     return Redirect::to('/');
 });
 
-Route::get('admin/mandrill/send', 
-	array(
-		'before' => 'auth', 'do' => function(){
-			ini_set('max_execution_time', 3000);
-			$responses = array();
-			$users = User::where_not_null('email')->get();
-			foreach ($users as $user) {
-				$email_content = View::make('email.user_stats')->with('page','user_stats')->with('user', $user)->render();			 	
-				$response = Mandrill::request('messages/send', array(
-				    'message' => array(
-						'html' => $email_content,
-						'subject' => '[myskills] Atualização Semanal.',
-						'from_email' => 'eduardo.cruz@myskills.com.br',
-						'from_name' => 'Eduardo Cruz (MySkills)',
-						'to' => array(array('email'=>$user->email,
-											'name'=>$user->name)),
-					),
-				));
-				array_push($responses, $response);
-			}
-			return View::make('email.sent')
-				->with('page','sendmail')
-				->with('responses', $responses);
-		}
-	)
-);
-
 Route::get('stats', 
 	array(
 		'before' => 'auth', 'do' => function(){
-			$user = User::find(2);
-		 	return View::make('email.user_stats')
-		 		->with('page','user_stats')
+			$user = User::find(2)->first();
+		 	return View::make('email.20130311')
+		 		->with('page','20130311')
+		 		->with('since','04/11/2013')
 		 		->with('user', $user);
 		}
 	)
