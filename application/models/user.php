@@ -56,6 +56,11 @@ class User extends Eloquent
 	  return $this->has_many_and_belongs_to('Follower');
 	}
 
+	public function friends()
+	{
+	  return $this->has_many_and_belongs_to('Friend');
+	}
+
 	public function get_points()
 	{
 		$total = 0;
@@ -150,7 +155,7 @@ class User extends Eloquent
 
 	public static function topUsers() {
 			$topusers = DB::query("SELECT
-						U.id, U.name name, COALESCE(UL.level, 1) level, SUM(B.points)*COALESCE(UL.level,1) rank
+						U.id, U.name name, COALESCE(UL.level, 1) level, SUM(B.points)*COALESCE(UL.level,1) rank, SUM(B.points) points
 				FROM
 						users U
 						right JOIN badge_user BU 	on 	U.id = BU.user_id
@@ -170,7 +175,7 @@ class User extends Eloquent
 							) UL
 							on BU.user_id = UL.user_id
 				group by U.name
-				order by rank desc, U.lastlogin desc");
+				order by level desc, points desc, rank desc, U.lastlogin desc");
 			return $topusers;
 	}
 
@@ -215,6 +220,30 @@ class User extends Eloquent
 				" GROUP BY T.name
 				ORDER BY points desc");
 			return $user_technologies;
+	}
+
+	public function getMyFriends() {
+		$facebook = IoC::resolve('facebook-sdk');
+		$access_token = DB::query(
+			"SELECT 
+				OC.access_token access_token
+			FROM 
+				`oneauth_clients` OC
+			WHERE 
+				OC.user_id = ". $this->id);
+		//dd($access_token[0]);
+		$facebook = $facebook->setAccessToken($access_token);
+		$ret = $facebook->api( array(
+                         'method' => 'fql.query',
+                         'query' => 'SELECT
+										    uid
+										FROM
+										    user
+										WHERE
+										    is_app_user
+										    AND
+										    uid IN (SELECT uid2 FROM friend WHERE uid1 = me())'));
+		return $ret;
 	}
 
 }
