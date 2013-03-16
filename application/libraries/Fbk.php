@@ -79,20 +79,24 @@ class Fbk {
 		}
 	}
 	public static function getMySkillsFriends() {
-		$facebook = IoC::resolve('facebook-sdk');
-		$user_data = Session::get('oneauth');
-		$access_token = unserialize($user_data['token']);
-		$facebook = $facebook->setAccessToken($access_token->access_token);
-		$ret = $facebook->api( array(
-                         'method' => 'fql.query',
-                         'query' => 'SELECT
-										    uid
-										FROM
-										    user
-										WHERE
-										    is_app_user
-										    AND
-										    uid IN (SELECT uid2 FROM friend WHERE uid1 = me())'));
-		return $ret;
+		try {
+			$facebook = IoC::resolve('facebook-sdk');
+			$user_data = Session::get('oneauth');
+			$access_token = unserialize($user_data['token']);
+			$facebook = $facebook->setAccessToken($access_token->access_token);
+			$ret = $facebook->api( array(
+	                         'method' => 'fql.query',
+	                         'query' => 'SELECT
+											    uid
+											FROM
+											    user
+											WHERE
+											    is_app_user
+											    AND
+											    uid IN (SELECT uid2 FROM friend WHERE uid1 = me())'));
+			return $ret;
+		} catch(FacebookApiException $e) {
+			return null;
+		}
 	}
 }

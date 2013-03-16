@@ -152,26 +152,27 @@ if (Auth::check()) {
 						{{HTML::image('img/badges/unlock100.png', 'Unlock', array('width' => 75, 'height'=>75, 'title' => 'Unlock'))}}
 					@endfor
 				</div> <!-- /sidebar -->
-
-				@if(Auth::check())
-					@if(Auth::user()->id == $user->id)
-						<h3>{{__('user.friends')}}</h3>.
-						@if($user->provider == 'facebook')
-						<?php $friends = $user->getFriends('facebook') ?>
-							@forelse($friends as $friend) 
-							<div class="span1 well-small">
-								{{HTML::image($friend->getImageUrl('square'), $friend->name, array('width' => 50, 'height'=>50, 'title' => $friend->name))}}
-							</div>
-							@empty
-								{{__('user.nofriends')}}
-							@endforelse
+				<div class=" pagination-centered">
+					@if(Auth::check())
+						@if(Auth::user()->id == $user->id)
+							<h3>{{__('user.friends')}}</h3>.
+							@if($user->provider == 'facebook')
+							<?php $friends = $user->getFriends('facebook') ?>
+								@forelse($friends as $friend)
+								<div class="span1 well-small">
+									{{HTML::image($friend->getImageUrl('square'), $friend->name, array('width' => 50, 'height'=>50, 'title' => $friend->name, 'class' => 'img-polaroid'))}}
+								</div>
+								@empty
+									{{__('user.nofriends')}}
+								@endforelse
+							@endif
+						@else
+							&nbsp;
 						@endif
 					@else
 						&nbsp;
 					@endif
-				@else
-				&nbsp;
-				@endif
+				</div>
 			</div> <!-- /span4 -->
 
 			<div class="span2 pagination-centered">
