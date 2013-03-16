@@ -40,11 +40,7 @@
 							{{HTML::link('users/'.$user->id, $user->name)}}
 						</td>
 						<td>
-							@if($user->email)
-								{{$user->email}}
-							@else
-							oi
-							@endif
+							{{$user->email}}
 						</td>
 						<td>
 							{{$user->lastlogin}}
