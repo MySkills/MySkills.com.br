@@ -204,6 +204,18 @@ Route::get('developers', function()
 });
 
 
+/*
+	List all users
+*/
+Route::get('developers/inactive', function()
+{
+	$users = User::order_by('lastlogin', 'asc')->get();
+	return View::make('pages.users_inactive')
+		->with('page','inactive')
+		->with('users', $users);
+});
+
+
 Route::get('edit_user', function()
 {
 	return View::make('pages.edit_user')->with('page','edit_user');
