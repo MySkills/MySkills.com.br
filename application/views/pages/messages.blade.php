@@ -60,7 +60,7 @@
 							{{HTML::link('users/'.$recipient->id, $recipient->name)}}
 						</td>
 						<td>
-							{{nl2br($message->text)}}
+							{{nl2br(htmlspecialchars($message->text))}}
 						</td>
 						<td>
 							{{Form::open('messages', 'DELETE')}}
