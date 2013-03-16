@@ -159,9 +159,8 @@ if (Auth::check()) {
 						@if($user->provider == 'facebook')
 						<?php $friends = $user->getFriends('facebook') ?>
 							@forelse($friends as $friend) 
-							<div class="span1">
-								{{HTML::image($friend->getImageUrl('square'), $user->name, array('width' => 50, 'height'=>50, 'title' => $user->name))}}
-								{{HTML::link('users/'.$friend->id, $friend->name)}}
+							<div class="span1 well-small">
+								{{HTML::image($friend->getImageUrl('square'), $friend->name, array('width' => 50, 'height'=>50, 'title' => $friend->name))}}
 							</div>
 							@empty
 								{{__('user.nofriends')}}
