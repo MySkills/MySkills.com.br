@@ -22,6 +22,8 @@
 									<li><strong>CSM</strong> - Se você á Scrum Master certificado, agora o badge CSM já está disponível.
 										Não é certificado mas tem um amigo que é? Clique em "Convidar Amigos" e convide os seus amigos
 										do Facebook.</li>
+									<li><a href="https://www.facebook.com/MySkills.com.br" target="_blank"><strong>Facebook</strong></a> 
+										- Não deixe também de acompanhar as novidades na nossa página no Facebook.</li>
 								</ul>
 								<p>Abaixo as informações mais recentes sobre a sua evolução profissional na última semana.</p>
 								<table border=1 cellspacing="0" cellpadding="0" style="border-collapse:collapse;width:540px">
