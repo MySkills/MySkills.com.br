@@ -39,7 +39,7 @@ class Home_Controller extends Base_Controller {
 				break;
 			// Gerentes Certificados
 			case 2:
-				$badge_id = "15";
+				$badge_id = "15, 45";
 				break;
 			// Devs Mobile
 			case 3:
