@@ -163,7 +163,7 @@ class User extends Eloquent
 						left JOIN
 							(
 								SELECT
-								   U.id user_id, U.name, TRUNCATE(count(U.name)/20, 0)+1 level
+								   U.id user_id, U.name, ((count(U.name) > 19 ) + 1)+(count(U.name) > 59)+(count(U.name) > 119) level
 								FROM
 									technologies T,
 									technology_user TU,
@@ -189,7 +189,7 @@ class User extends Eloquent
 						left JOIN
 							(
 								SELECT
-								   U.id user_id, U.name, TRUNCATE(count(U.name)/20, 0)+1 level
+								   U.id user_id, U.name, ((count(U.name) > 19 ) + 1)+(count(U.name) > 59)+(count(U.name) > 119) level
 								FROM
 									technologies T,
 									technology_user TU,
