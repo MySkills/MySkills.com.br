@@ -135,7 +135,6 @@ if (Auth::check()) {
 				</div>
 
 				@foreach($user->checkins as $checkin)
-					Checkins {{$checkin->level}}
 					<div class="row">
 						<div class="progress progress-info span3">
 							@if($checkin->level == 1)
