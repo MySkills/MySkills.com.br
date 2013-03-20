@@ -96,10 +96,11 @@ if (Auth::check()) {
 			<div class="span7">
 				<div class="row">
 					<div class="span1 sidebar pagination-centered well">
-					@if(count($user->technologies) <= 20)
+					@if($user->level == 1)
 						{{HTML::image('img/browserquest/'.'level1.png',  __('user.level').' 1', array('width' => 75, 'height'=>75, 'title' => __('user.level').' 1'))}}
 							{{__('user.level')}} 1
-					@else
+					@endif
+					@if($user->level == 2)
 						{{HTML::image('img/browserquest/'.'level2.png',  __('user.level').' 2', array('width' => 75, 'height'=>75, 'title' => __('user.level').' 2'))}}
 							{{__('user.level')}} 2
 					@endif
@@ -108,9 +109,10 @@ if (Auth::check()) {
 						<div class="bar" style="width: 100%;">30/30 <i class="icon-heart"></i></div>
 					</div>
 					<div class="progress progress-info span5">
-					@if(count($user->technologies) <= 20)
+					@if($user->level == 1)
 						<div class="bar" style="width: {{count($user->technologies)*4.5+10}}%;">{{count($user->technologies)}}/20 <i class="icon-fire"></i></div>
-					@else
+					@endif
+					@if($user->level == 2)
 						<div class="bar" style="width: {{(count($user->technologies)-20)*2.25+10}}%;">{{count($user->technologies)-20}}/40 <i class="icon-fire"></i></div>
 					@endif
 					</div>
@@ -133,12 +135,18 @@ if (Auth::check()) {
 				</div>
 
 				@foreach($user->checkins as $checkin)
+					Checkins {{$checkin->level}}
 					<div class="row">
 						<div class="progress progress-info span3">
-							<div class="bar" style="width: {{$checkin->points*5}}%;">{{$checkin->points}}/20 </div>
+							@if($checkin->level == 1)
+								<div class="bar" style="width: {{$checkin->points*5}}%;">{{$checkin->points}}/20 </div>
+							@endif
+							@if($checkin->level == 2)
+								<div class="bar" style="width: {{($checkin->points-19)*2.5}}%;">{{$checkin->points}}/40 </div>
+							@endif
 						</div>
 						<div class="span2">{{$checkin->name}}</div>
-						<div class="span1">{{__('user.level')}}.: 1</div>
+						<div class="span1">{{__('user.level')}}.: {{$checkin->level}}</div>
 						<div class="span1">$ {{$checkin->points}} {{HTML::image('img/coin16.png')}}</div>
 					</div>
 				@endforeach
