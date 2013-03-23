@@ -1,82 +1,6 @@
-@layout('templates.main')
+@layout('templates.manguezal_main')
 @section('content')
-<div id="unauthorizedModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel"> {{__('security.unauthorized')}} </h3>
-  </div>
-  <div class="modal-body">
-    <p>{{__('security.needsign')}}</p>
-		{{HTML::link('connect/session/facebook', __('security.subscribe').'(Facebook)', array('class' => 'btn btn-large'))}}
-		{{HTML::link('connect/session/github', __('security.subscribe').'(Github)', array('class' => 'btn btn-large btn-primary'))}}
-		{{HTML::link('connect/session/linkedin', __('security.subscribe').'(Linkedin)', array('class' => 'btn btn-large'))}}
-  </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">{{__('security.close')}}</button>
-  </div>
-</div>
 <!-- Modal -->
-<div id="addJobModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-<div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">{{__('jobs.addjob')}}</h3>
-</div>
-@if( Auth::check())
-	<div class="modal-body">
-	    <p>{{__('jobs.describe')}}</p>
-		{{Form::open('jobs/'.Auth::user()->id, 'PUT',array('class' =>'form-horizontal'))}}
-		<div class="control-group" >
-			<label class="control-label" for="inputEmail">{{__('jobs.the')}}</label>
-			<div class="controls">
-				{{Form::text('company', '',array('class' =>'input-medium', 'placeholder' => __('jobs.company')))}} 
-			</div>
-		</div>
-		<div class="control-group" >
-			<label class="control-label" for="inputEmail">{{__('jobs.ishiring')}}</label>			
-			<div class="controls">				
-				{{Form::text('title', '',array('class' =>'input-medium', 'placeholder' => __('jobs.jobtitle')))}}
-			</div>
-		</div>			
-		<div class="control-group" >		
-			<label class="control-label" for="inputEmail">{{__('jobs.responsiblefor')}}</label>
-			<div class="controls">
-				{{Form::text('description', '',array('class' =>'input-xlarge', 'placeholder' => __('jobs.responsibilities')))}}
-			</div>
-		</div>			
-		<div class="control-group" >
-			<label class="control-label" for="inputEmail">{{__('jobs.weprovide')}}</label>
-			<div class="controls">								
-				{{Form::text('benefits', '',array('class' =>'input-xlarge', 'placeholder' => __('jobs.benefits')))}}	
-			</div>
-		</div>			
-		<div class="control-group" >		
-			<div class="controls">				
-				{{Form::submit(__('jobs.submit'), array('class' => 'btn-primary'))}}
-				{{Form::close()}}			
-			</div>
-		</div>
-		<span class="label label-info">{{__('jobs.example')}}:</span>
-		<i> 			
-			{{__('jobs.the')}}
-			<strong>MYSKILLS</strong> {{__('jobs.ishiring')}}
-			<strong>{{__('jobs.mobiledeveloper')}}</strong> {{__('jobs.responsiblefor')}}
-			<strong>{{__('jobs.apps')}}</strong>. {{__('jobs.weprovide')}}
-			<strong>{{__('jobs.salary')}}</strong>
-			<strong></strong>						
-		</i>
-  	</div>
-  	<div class="modal-footer">
-    	<button class="btn" data-dismiss="modal" aria-hidden="true">{{__('jobs.cancel')}}</button>
-  	</div>
-@else
-	<div class="modal-body">
-	    <p>You are not authenticated</p>
-  	</div>
-  	<div class="modal-footer">
-    	<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-  	</div>
-@endif  
-</div>
 <div id="subheader">	
 	<div class="inner">
 		<div class="container">
@@ -112,7 +36,7 @@
 				@endif
 				<table class="table table-striped table-condensed">
 					<caption>
-						{{__('jobs.applybelow')}}
+						<p class="welcome">{{__('jobs.applybelow')}}</p>
 					</caption>
 					<thead>
 						<tr>
