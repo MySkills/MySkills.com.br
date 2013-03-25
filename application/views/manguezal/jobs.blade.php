@@ -1,28 +1,28 @@
 @layout('templates.manguezal_main')
 @section('content')
-<!-- Modal -->
 <div id="subheader">	
 	<div class="inner">
 		<div class="container">
-			<h1>{{__('jobs.jobs')}}</h1>
+			<h1>{{__('manguezal.job_positions')}}</h1>
 		</div> <!-- /.container -->
 	</div> <!-- /inner -->
 </div> <!-- /subheader -->
+
+<div id="gallery">
+	<div class="item">
+		{{HTML::image('img/manguezal/ubee.png', 'UBee', array('width' => '310', 'height' => '105'))}}
+	</div>
+	<div class="item">
+		{{HTML::image('img/manguezal/opara.png', 'Opará', array('width' => '310', 'height' => '105'))}}
+	</div>
+	<div class="item">
+		{{HTML::image('img/manguezal/ubee.png', 'UBee', array('width' => '310', 'height' => '105'))}}
+	</div>
+</div>
+
 <div id="subpage">
 	<div class="container">
 		<div class="row">		
-            <div class="span2">
-              <div class="sidebar">
-                <h3><span class="slash">{{__('jobs.addjob')}}</span></h3>
-                <p>{{__('jobs.adddescription')}}</p>
-				@if( Auth::guest() )    
-					<a href="#unauthorizedModal" role="button" class="btn btn-warning" data-toggle="modal" data-target="#unauthorizedModal">{{__('jobs.addjob')}}</a>
-				@else
-                    <a href="#addJobModal" role="button" class="btn btn-primary" data-toggle="modal">{{__('jobs.addjob')}}</a>
-				@endif
-
-              </div> <!-- /sidebar -->
-            </div> <!-- /span2 -->			
 			<div class="span8">
 				@if(Session::get('status'))
 					@if(Session::get('status')=='ERROR')
@@ -127,23 +127,6 @@
 					</tbody>
 				</table>
 			</div> <!-- /span8 -->
-			<div class="span2">
-				<div class="sidebar">
-					<h3><span class="slash">{{__('jobs.about')}}</span></h3>
-					<p>{{__('jobs.about1')}}</p>
-					<p><strong>{{__('jobs.action')}}</strong> - 
-						{{__('jobs.aboutdescription')}}</p>
-					<p><strong>{{__('jobs.status')}}</strong> - 
-						{{__('jobs.aboutstatus')}}</p>
-						<ul>
-							<li><span class="label">{{__('jobs.applied')}}</span></li>
-							<li><span class="label label-info">{{__('jobs.reviewing')}}</span></li>
-							<li><span class="label label-success">{{__('jobs.approved')}}</span></li>
-						</ul>
-								
-				
-				</div> <!-- /sidebar -->
-			</div> <!-- /span4 -->
 		</div> <!-- /row -->
 	</div> <!-- /container -->	
 </div> <!-- /subpage -->   

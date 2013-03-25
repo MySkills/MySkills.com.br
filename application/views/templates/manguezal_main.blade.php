@@ -30,19 +30,18 @@
         <div id="header">     
             <nav>
                 <p style="text-align: center; margin-top: -23px;">
-                    {{HTML::image('manguez_files/logo.png', 'Logo', array('height' => '150', 'title' => 'Logo'))}}
+                    {{HTML::image('img/manguezal/logo.png', 'Logo', array('height' => '150', 'title' => 'Logo'))}}
                 </p>
             </nav>
         </div>
 
-        <h1>Job Positions</h1>
-
+<br /><br /><br /><br /><br /><br />
     @yield('content')
 
 <div id="information">
             <h2 style="text-align: center; border-top: 1px solid #d1d7cb; border-bottom: 1px solid #d1d7cb; background: #B49400;">Premiere Sponsor</h2>
             <p style="text-align: center; padding: 25px 0 25px 0; margin: 0;"><a href="http://icb.la/" target="_blank">
-                {{HTML::image('manguez_files/sponsor-icb.png')}}
+                {{HTML::image('img/manguezal/sponsor-icb.png')}}
             </a>
             </p>
         </div>
