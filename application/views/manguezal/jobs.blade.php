@@ -147,7 +147,7 @@
 		{{HTML::image('img/manguezal/mobipass.png', 'Mobi Pass', array('width' => '310', 'height' => '105'))}}
 	</div>
 	<div class="item">
-		{{HTML::image('img/manguezal/Guaraling.png', 'Guaraling', array('width' => '310', 'height' => '105'))}}
+		{{HTML::image('img/manguezal/guaraling.png', 'Guaraling', array('width' => '310', 'height' => '105'))}}
 	</div>
 
 	<div class="item">
@@ -157,7 +157,7 @@
 		{{HTML::image('img/manguezal/azklepio.png', 'Azklepio', array('width' => '310', 'height' => '105'))}}
 	</div>
 	<div class="item">
-		{{HTML::image('img/manguezal/Prodeaf.png', 'Prodeaf', array('width' => '310', 'height' => '105'))}}
+		{{HTML::image('img/manguezal/prodeaf.png', 'Prodeaf', array('width' => '310', 'height' => '105'))}}
 	</div>
 
 	<div class="item">
