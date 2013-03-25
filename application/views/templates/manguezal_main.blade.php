@@ -45,7 +45,7 @@
             </div>
         </footer> 
         {{HTML::script('js/jquery-1.7.2.min.js')}} 
-       
+        {{HTML::script('js/bootstrap.js')}}
         <script type="text/javascript">
 
           var _gaq = _gaq || [];

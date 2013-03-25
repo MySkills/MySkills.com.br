@@ -3,13 +3,15 @@
 <div id="applyNow" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel"> {{__('security.unauthorized')}} </h3>
+    <h3 id="myModalLabel"> APPLY NOW </h3>
   </div>
   <div class="modal-body">
-    <p>{{__('security.needsign')}}</p>
-		{{HTML::link('connect/session/facebook', __('security.subscribe').'(Facebook)', array('class' => 'btn btn-large'))}}
-		{{HTML::link('connect/session/github', __('security.subscribe').'(Github)', array('class' => 'btn btn-large btn-primary'))}}
-		{{HTML::link('connect/session/linkedin', __('security.subscribe').'(Linkedin)', array('class' => 'btn btn-large'))}}
+    	We are always searching for talented professionals. 
+    	Just sign-up below and we will get in touch with you soon.
+    	<p></p>
+		{{HTML::link('connect/session/facebook', 'Apply with Facebook', array('class' => 'btn btn-large'))}}
+		{{HTML::link('connect/session/github', 'Apply with Github', array('class' => 'btn btn-large'))}}
+		{{HTML::link('connect/session/linkedin', 'Apply with Linkedin', array('class' => 'btn btn-large'))}}
   </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">{{__('security.close')}}</button>
