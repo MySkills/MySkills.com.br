@@ -266,12 +266,12 @@ Route::get('stats',
 
 Route::get('manguezal', function()
 {
-	$jobs = Job::where('active', '=', '1')->order_by('created_at', 'desc')->get();
-	if (Input::get('recruiter_id')) {
-		return View::make('pages.recruiterjobs')->with('page','recruiterjobs')->with('recruiter_id', Input::get('recruiter_id'))->with('jobs', $jobs);
-	} else {
-		return View::make('manguezal.jobs')->with('page','manguezal')->with('jobs', $jobs);
-	}
+//	$jobs = Job::where('active', '=', '1')->order_by('created_at', 'desc')->get();
+//	if (Input::get('recruiter_id')) {
+//		return View::make('pages.recruiterjobs')->with('page','recruiterjobs')->with('recruiter_id', Input::get('recruiter_id'))->with('jobs', $jobs);
+//	} else {
+		return View::make('manguezal.jobs')->with('page','manguezal');
+//	}
 
 });
 
