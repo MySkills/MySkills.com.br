@@ -209,7 +209,7 @@ Route::get('developers', function()
 */
 Route::get('developers/inactive', function()
 {
-	$users = User::where('lastlogin', '=', 0)->order_by('id', 'asc')->get();
+	$users = User::where('lastlogin', '=', '0000-00-00 00:00:00')->order_by('id', 'asc')->get();
 	return View::make('pages.users_inactive')
 		->with('page','inactive')
 		->with('users', $users);
@@ -220,7 +220,7 @@ Route::get('developers/inactive', function()
 */
 Route::get('developers/active', function()
 {
-	$users = User::where('lastlogin', '>', 0)->order_by('lastlogin', 'asc')->get();
+	$users = User::where('lastlogin', '>', '0000-00-00 00:00:00')->order_by('lastlogin', 'asc')->get();
 	return View::make('pages.users_inactive')
 		->with('page','inactive')
 		->with('users', $users);
