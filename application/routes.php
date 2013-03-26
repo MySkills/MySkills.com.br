@@ -205,11 +205,22 @@ Route::get('developers', function()
 
 
 /*
-	List all users
+	List all inactive users
 */
 Route::get('developers/inactive', function()
 {
-	$users = User::order_by('lastlogin', 'asc')->get();
+	$users = User::where('lastlogin', '=', 0)->order_by('id', 'asc')->get();
+	return View::make('pages.users_inactive')
+		->with('page','inactive')
+		->with('users', $users);
+});
+
+/*
+	List all active users
+*/
+Route::get('developers/active', function()
+{
+	$users = User::where('lastlogin', '>', 0)->order_by('lastlogin', 'asc')->get();
 	return View::make('pages.users_inactive')
 		->with('page','inactive')
 		->with('users', $users);
