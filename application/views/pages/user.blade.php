@@ -152,7 +152,7 @@ if (Auth::check()) {
 								<input type="image" src="/img/add.png"> {{$checkin->name}} {{Form::hidden('technology_id', $checkin->id)}}
 							</div>
 								{{Form::close()}}
-							elseif 
+							@elseif 
 							<div class="span2">
 								{{$checkin->name}}
 							</div>
