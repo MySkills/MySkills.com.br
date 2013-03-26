@@ -135,6 +135,11 @@ if (Auth::check()) {
 				</div>
 
 				@foreach($user->checkins as $checkin)
+					@if(Auth::check())
+						@if($user->id == Auth::user()->id)
+							{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
+						@endif
+					@endif
 					<div class="row">
 						<div class="progress progress-info span3">
 							@if($checkin->level == 1)
@@ -146,11 +151,9 @@ if (Auth::check()) {
 						</div>
 						@if(Auth::check())
 							@if($user->id == Auth::user()->id)
-								{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
-							<div class="span2">
-								<input type="image" src="/img/add.png"> {{$checkin->name}} {{Form::hidden('technology_id', $checkin->id)}}
-							</div>
-								{{Form::close()}}
+								<div class="span2">
+									<input type="image" src="/img/add.png"> {{$checkin->name}} {{Form::hidden('technology_id', $checkin->id)}}
+								</div>
 							@else 
 							<div class="span2">
 								{{$checkin->name}}
@@ -166,6 +169,12 @@ if (Auth::check()) {
 						<div class="span1">{{__('user.level')}}.: {{$checkin->level}}</div>
 						<div class="span1">$ {{$checkin->points}} {{HTML::image('img/coin16.png')}}</div>
 					</div>
+					@if(Auth::check())
+						@if($user->id == Auth::user()->id)
+							{{Form::close()}}
+						@endif
+					@endif
+
 				@endforeach
 
 				<div class="sidebar pagination-centered">
