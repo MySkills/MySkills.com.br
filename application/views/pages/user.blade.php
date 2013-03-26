@@ -144,7 +144,6 @@ if (Auth::check()) {
 								<div class="bar" style="width: {{($checkin->points-19)*2.5}}%;">{{$checkin->points}}/40 </div>
 							@endif
 						</div>
-
 						@if(Auth::check())
 							@if($user->id == Auth::user()->id)
 								{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
@@ -152,7 +151,7 @@ if (Auth::check()) {
 								<input type="image" src="/img/add.png"> {{$checkin->name}} {{Form::hidden('technology_id', $checkin->id)}}
 							</div>
 								{{Form::close()}}
-							@elseif 
+							@else 
 							<div class="span2">
 								{{$checkin->name}}
 							</div>
