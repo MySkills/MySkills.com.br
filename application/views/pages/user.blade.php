@@ -144,7 +144,22 @@ if (Auth::check()) {
 								<div class="bar" style="width: {{($checkin->points-19)*2.5}}%;">{{$checkin->points}}/40 </div>
 							@endif
 						</div>
-						<div class="span2">{{$checkin->name}}</div>
+
+						@if(Auth::check())
+							@if($user->id == Auth::user()->id)
+								{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
+							<div class="span2">
+								<input type="image" src="/img/add.png"> {{$checkin->name}}{{Form::hidden('technology_id', $checkin->id)}}
+							</div>
+								{{Form::close()}}
+							@endif
+						@else
+							<div class="span2">
+								<a href="#unauthorizedModal" role="button" data-toggle="modal" data-target="#unauthorizedModal">
+									{{HTML::image('img/add.png')}} {{$checkin->name}}
+								</a>
+							</div>
+						@endif
 						<div class="span1">{{__('user.level')}}.: {{$checkin->level}}</div>
 						<div class="span1">$ {{$checkin->points}} {{HTML::image('img/coin16.png')}}</div>
 					</div>

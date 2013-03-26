@@ -211,7 +211,7 @@ class User extends Eloquent
 	public function get_checkins() {
 			$user_technologies = DB::query(
 				"SELECT 
-					T.name name, count(T.name) points, ((count(T.name) > 19 ) + 1)+(count(T.name) > 59)+(count(T.name) > 119) level
+					T.id id, T.name name, count(T.name) points, ((count(T.name) > 19 ) + 1)+(count(T.name) > 59)+(count(T.name) > 119) level
 				FROM 
 					`technologies` T,
 					`users` U,
