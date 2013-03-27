@@ -60,6 +60,9 @@ order by created_at desc
 				<div class="box">
 					{{HTML::image($user->getImageUrl('large'), $user->name, array('width'=>'200', 'class'=>'dev', 'title' => $user->name))}}
 					<p>{{HTML::link('/users/'.$user->id, $user->name)}}<p>
+					<div class="progress progress-danger">
+						<div class="bar" style="width: {{$user->life*3.33}}%;">{{$user->life}}/30 <i class="icon-heart"></i></div>
+					</div>
 
 					<div class="progress progress-info">
 						@if(count($user->technologies) <= 20)

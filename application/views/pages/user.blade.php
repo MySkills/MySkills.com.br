@@ -92,6 +92,10 @@ if (Auth::check()) {
 						<a href="#unauthorizedModal" role="button" class="btn btn-warning" data-toggle="modal" data-target="#unauthorizedModal"><i class="icon-envelope"></i>{{__('user.sendmessage')}}</a>
 					@endif
 				</div> <!-- /sidebar -->
+					<h3><span class="slash">{{__('user.lastcheckin')}}</span></h3>
+					<ul>
+
+					</ul>
 			</div> <!-- /span2 -->
 			<div class="span7">
 				<div class="row">
@@ -111,7 +115,7 @@ if (Auth::check()) {
 
 					</div>
 					<div class="progress progress-danger span5">
-						<div class="bar" style="width: 100%;">30/30 <i class="icon-heart"></i></div>
+						<div class="bar" style="width: {{$user->life*3.33}}%;">{{$user->life}}/30 <i class="icon-heart"></i></div>
 					</div>
 					<div class="progress progress-info span5">
 					@if($user->level == 1)

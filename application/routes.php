@@ -135,7 +135,7 @@ Route::get('admin/mandrill/send',
 );
 
 /*
-	USERPROFILE
+	Badge page
 */
 Route::get('badges/(:any)', function($badge_id)
 {

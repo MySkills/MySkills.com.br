@@ -225,6 +225,18 @@ class User extends Eloquent
 			return $user_technologies;
 	}
 
+	public function get_life() {
+		$now = date("Y-m-d 00:00:00");
+     	$dbdate = strtotime($this->lastlogin);
+     	$lastlogin = date("Y-m-d 00:00:00", $dbdate);
+     	$diff = (30 - (strtotime($now) - strtotime($lastlogin)) /24 /60  /60);
+     	if ( $diff > 0) {
+     		return $diff;
+		} else {
+			return 0;
+		}
+	}
+
 	public function getMyFriends() {
 		$facebook = IoC::resolve('facebook-sdk');
 		$access_token = DB::query(
