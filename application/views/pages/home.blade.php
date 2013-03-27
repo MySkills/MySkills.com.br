@@ -63,9 +63,11 @@ order by created_at desc
 
 					<div class="progress progress-info">
 						@if(count($user->technologies) <= 20)
-							<div class="bar" style="width: {{count($user->technologies)*4.5+10}}%;">{{count($user->technologies)}}/20 <i class="icon-fire"></i></div>
+							<div class="bar" style="width: {{count($user->technologies)*5}}%;">{{count($user->technologies)}}/20 <i class="icon-fire"></i></div>
+						@elseif(count($user->technologies) <= 40)
+							<div class="bar" style="width: {{(count($user->technologies)-20)*2.25}}%;">{{count($user->technologies)-20}}/40 <i class="icon-fire"></i></div>
 						@else
-							<div class="bar" style="width: {{(count($user->technologies)-20)*2.25+10}}%;">{{count($user->technologies)-20}}/40 <i class="icon-fire"></i></div>
+							<div class="bar" style="width: {{(count($user->technologies)-60)*1.67}}%;">{{count($user->technologies)-20}}/40 <i class="icon-fire"></i></div>
 						@endif
 					</div>
 					@foreach ($user->partial_badges(4) as $badge)
@@ -75,10 +77,12 @@ order by created_at desc
 						{{HTML::image('img/badges/unlock100.png', 'Unlock', array('width' => 30, 'height'=>30, 'title' => 'Unlock'))}}
 					@endfor				
 					<div class="pull-right">
-					@if(count($user->technologies) <= 20)
+					@if (count($user->technologies) <= 20)
 						{{HTML::image('img/browserquest/'.'level1-mini.png',  __('user.level').' 1', array('width' => 24, 'height'=>24, 'title' =>__('user.level').' 1'))}}
+					@elseif (count($user->technologies) <= 60)
+						{{HTML::image('img/browserquest/'.'level2-mini.png',  __('user.level').' 2', array('width' => 24, 'height'=>24, 'title' => __('user.level').' 2'))}}					
 					@else
-						{{HTML::image('img/browserquest/'.'level2-mini.png',  __('user.level').' 2', array('width' => 24, 'height'=>24, 'title' => __('user.level').' 2'))}}
+						{{HTML::image('img/browserquest/'.'level3-mini.png',  __('user.level').' 3', array('width' => 24, 'height'=>24, 'title' => __('user.level').' 3'))}}
 					@endif
 
 						{{count($user->technologies)}} {{HTML::image('img/coin16.png', 'Coin')}}

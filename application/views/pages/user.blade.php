@@ -148,6 +148,10 @@ if (Auth::check()) {
 							@if($checkin->level == 2)
 								<div class="bar" style="width: {{($checkin->points-19)*2.5}}%;">{{$checkin->points}}/40 </div>
 							@endif
+							@if($checkin->level == 2)
+								<div class="bar" style="width: {{($checkin->points-59)*1.66}}%;">{{$checkin->points}}/60 </div>
+							@endif
+
 						</div>
 						@if(Auth::check())
 							@if($user->id == Auth::user()->id)
