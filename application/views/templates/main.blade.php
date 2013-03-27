@@ -194,7 +194,9 @@
     ?>
 
     @foreach($users as $lastuser)
-        {{HTML::image($lastuser->getImageUrl('square'),  $lastuser->name, array('width' => 50, 'height'=>50, 'title' => $lastuser->name))}}
+        <a href="{{URL::to('/users/'.$lastuser->id)}}">
+            {{HTML::image($lastuser->getImageUrl('square'),  $lastuser->name, array('width' => 50, 'height'=>50, 'title' => $lastuser->name))}}
+        </a>
     @endforeach
 
     <div class="inner">
@@ -264,7 +266,7 @@
             $container.imagesLoaded( function(){
               $container.masonry({
                 itemSelector : '.box',
-                gutterWidth: 7
+                gutterWidth: 1
               });
             });
 

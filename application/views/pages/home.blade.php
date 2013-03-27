@@ -20,8 +20,6 @@ order by created_at desc
 			</div>
 
 	<div class="row boxback">
-
-
 		<div class="span2">
 				<div class="sidebar">
 					<h3><span class="slash">{{__('users.join_us')}}</span></h3>
@@ -35,11 +33,15 @@ order by created_at desc
 					@foreach ($newUsers as $user)
 					<tr>
 						<td>
-							{{HTML::image($user->getImageUrl('square'), $user->name, array('width' => 50, 'height'=>50, 'title' => $user->name))}}
+							<a href="{{URL::to('/users/'.$user->id)}}">
+								{{HTML::image($user->getImageUrl('square'), $user->name, array('width' => 50, 'height'=>50, 'title' => $user->name))}}
+							</a>
 						</td>
 						<td>
 							@foreach ($user->partial_badges(1) as $badge)
-								{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 50, 'height'=>50, 'title' => $badge->name))}}
+								<a href="{{URL::to('/badges/'.$badge->id)}}">
+									{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 50, 'height'=>50, 'title' => $badge->name))}}
+								</a>
 							@endforeach
 							@for ($i = 1; $i <= (1-count($user->activebadges)); $i++)
 								{{HTML::image('img/badges/unlock100.png', 'Unlock', array('width' => 50, 'height'=>50, 'title' => 'Unlock'))}}
@@ -50,14 +52,15 @@ order by created_at desc
 				</div> <!-- /sidebar -->
 		</div>
 		<div class="span10" id="container">
-
 			@foreach ($topUsers as $topUser)
 			<?php
 				$user = User::find($topUser->id);
 				$technology_points = count($user->technologies);
 				?>
 				<div class="box">
-					{{HTML::image($user->getImageUrl('large'), $user->name, array('width'=>'200', 'class'=>'dev', 'title' => $user->name))}}
+					<a href="{{URL::to('/users/'.$user->id)}}">
+						{{HTML::image($user->getImageUrl('large'), $user->name, array('width'=>'200', 'class'=>'dev', 'title' => $user->name))}}
+					</a>
 					<p>{{HTML::link('/users/'.$user->id, $user->name)}}<p>
 					<div class="progress progress-danger">
 						<div class="bar" style="width: {{$user->life*3.33}}%;">{{$user->life}}/30 <i class="icon-heart"></i></div>
@@ -73,7 +76,9 @@ order by created_at desc
 						@endif
 					</div>
 					@foreach ($user->partial_badges(4) as $badge)
-						{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 30, 'height'=>30, 'title' => $badge->name))}}
+						<a href="{{URL::to('/badges/'.$badge->id)}}">
+							{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 30, 'height'=>30, 'title' => $badge->name))}}
+						</a>
 					@endforeach
 					@for ($i = 0; $i <= (3-count($user->activebadges)); $i++)
 						{{HTML::image('img/badges/unlock100.png', 'Unlock', array('width' => 30, 'height'=>30, 'title' => 'Unlock'))}}
