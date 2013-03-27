@@ -545,7 +545,46 @@ textarea {
 	opacity: 0.4;
 }
 
+/*------------------------------------------------------------------
+[*. Level Ribbon]
+*/
 
+.profilepicture {  
+    background: #666;  
+    margin: auto;  
+    width: 500px;  
+    height: 700px;  
+    padding-top: 30px;  
+    font-family: helvetica, arial, sans-serif;  
+    }  
+  
+h5 {  
+     background: #e3e3e3;  
+     background: -moz-linear-gradient(top, #e3e3e3, #c8c8c8);  
+     background: -webkit-gradient(linear, left top, left bottombottom, from(#e3e3e3), to(#c8c8c8));  
+     padding: 5px 20px;  
+     margin-left: -20px;  
+     margin-top: -55px;  
+     position: absolute;  
+     width: 17%;  
+  
+    -moz-box-shadow: 1px 1px 3px #292929;  
+    -webkit-box-shadow: 1px 1px 3px #292929;  
+       box-shadow: 1px 1px 3px #292929;  
+  
+    color: #454545;  
+    text-shadow: 0 1px 0 white;  
+}  
+  
+.arrow {  
+     width: 0; height: 0;  
+     line-height: 0;  
+     border-left: 20px solid transparent;  
+     border-top: 10px solid #c8c8c8;  
+     top: 104%;  
+     left: 0;  
+     position: absolute;  
+}  
 
 /*------------------------------------------------------------------
 [*. Bootstrap Overrides]

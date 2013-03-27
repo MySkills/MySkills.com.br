@@ -59,9 +59,22 @@ order by created_at desc
 				?>
 				<div class="box">
 					<a href="{{URL::to('/users/'.$user->id)}}">
-						{{HTML::image($user->getImageUrl('large'), $user->name, array('width'=>'200', 'class'=>'dev', 'title' => $user->name))}}
+						{{HTML::image($user->getImageUrl('large'), $user->name, array('width'=>'200', 'class'=>'dev', 'title' => $user->name, 'id' => 'profilepicture'))}}
 					</a>
 					<p>{{HTML::link('/users/'.$user->id, $user->name)}}<p>
+					@if (count($user->technologies) <= 20)
+						<div id="userlevel">
+							<h5> {{__('user.level')}} 1<span class="arrow"></span> </h5>
+						</div>
+					@elseif (count($user->technologies) <= 60)
+						<div id="userlevel">
+							<h5> {{__('user.level')}} 2<span class="arrow"></span> </h5>
+						</div>
+					@else
+						<div id="userlevel">
+							<h5> {{__('user.level')}} 3<span class="arrow"></span> </h5>
+						</div>
+					@endif
 					<div class="progress progress-danger">
 						<div class="bar" style="width: {{$user->life*3.33}}%;">{{$user->life}}/30 <i class="icon-heart"></i></div>
 					</div>
@@ -91,7 +104,6 @@ order by created_at desc
 					@else
 						{{HTML::image('img/browserquest/'.'level3-mini.png',  __('user.level').' 3', array('width' => 24, 'height'=>24, 'title' => __('user.level').' 3'))}}
 					@endif
-
 						{{count($user->technologies)}} {{HTML::image('img/coin16.png', 'Coin')}}
 					</div>
 				</div>
