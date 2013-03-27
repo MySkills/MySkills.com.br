@@ -203,7 +203,6 @@ class User extends Eloquent
 							) UL
 							on BU.user_id = UL.user_id
 				where B.id in (".$badge_id.") group by U.name
-				and U.active = true
 				order by rank desc, U.lastlogin desc");
 			return $topusers;
 	}
