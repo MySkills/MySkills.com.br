@@ -67,7 +67,7 @@ order by created_at desc
 						@elseif(count($user->technologies) <= 40)
 							<div class="bar" style="width: {{(count($user->technologies)-20)*2.25}}%;">{{count($user->technologies)-20}}/40 <i class="icon-fire"></i></div>
 						@else
-							<div class="bar" style="width: {{(count($user->technologies)-60)*1.67}}%;">{{count($user->technologies)-20}}/40 <i class="icon-fire"></i></div>
+							<div class="bar" style="width: {{(count($user->technologies)-60)*1.67}}%;">{{count($user->technologies)-60}}/60 <i class="icon-fire"></i></div>
 						@endif
 					</div>
 					@foreach ($user->partial_badges(4) as $badge)

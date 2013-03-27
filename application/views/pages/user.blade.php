@@ -104,17 +104,26 @@ if (Auth::check()) {
 						{{HTML::image('img/browserquest/'.'level2.png',  __('user.level').' 2', array('width' => 75, 'height'=>75, 'title' => __('user.level').' 2'))}}
 							{{__('user.level')}} 2
 					@endif
+					@if($user->level == 3)
+						{{HTML::image('img/browserquest/'.'level3.png',  __('user.level').' 3', array('width' => 75, 'height'=>75, 'title' => __('user.level').' 3'))}}
+							{{__('user.level')}} 3
+					@endif
+
 					</div>
 					<div class="progress progress-danger span5">
 						<div class="bar" style="width: 100%;">30/30 <i class="icon-heart"></i></div>
 					</div>
 					<div class="progress progress-info span5">
 					@if($user->level == 1)
-						<div class="bar" style="width: {{count($user->technologies)*4.5+10}}%;">{{count($user->technologies)}}/20 <i class="icon-fire"></i></div>
+						<div class="bar" style="width: {{count($user->technologies)*5}}%;">{{count($user->technologies)}}/20 <i class="icon-fire"></i></div>
 					@endif
 					@if($user->level == 2)
-						<div class="bar" style="width: {{(count($user->technologies)-20)*2.25+10}}%;">{{count($user->technologies)-20}}/40 <i class="icon-fire"></i></div>
+						<div class="bar" style="width: {{(count($user->technologies)-20)*2.5}}%;">{{count($user->technologies)-20}}/40 <i class="icon-fire"></i></div>
 					@endif
+					@if($user->level == 3)
+						<div class="bar" style="width: {{(count($user->technologies)-60)*1.67}}%;">{{count($user->technologies)-60}}/60 <i class="icon-fire"></i></div>
+					@endif
+
 					</div>
 				<div class="pagination-centered span5">
 				@if(Auth::check())
@@ -148,7 +157,7 @@ if (Auth::check()) {
 							@if($checkin->level == 2)
 								<div class="bar" style="width: {{($checkin->points-19)*2.5}}%;">{{$checkin->points}}/40 </div>
 							@endif
-							@if($checkin->level == 2)
+							@if($checkin->level == 3)
 								<div class="bar" style="width: {{($checkin->points-59)*1.66}}%;">{{$checkin->points}}/60 </div>
 							@endif
 
