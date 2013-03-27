@@ -45,12 +45,11 @@ order by created_at desc
 								{{HTML::image('img/badges/unlock100.png', 'Unlock', array('width' => 50, 'height'=>50, 'title' => 'Unlock'))}}
 							@endfor
 						</td>
-						<td>{{$user->points}}</td>
 					</tr>
 					@endforeach
 				</div> <!-- /sidebar -->
 		</div>
-		<div class="span11" id="container">
+		<div class="span10" id="container">
 
 			@foreach ($topUsers as $topUser)
 			<?php

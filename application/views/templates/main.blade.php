@@ -21,7 +21,6 @@
 <head>
     <meta charset="utf-8">
     <title>{{__('main.title')}}</title>
-    <script src="//cdn.optimizely.com/js/111465504.js"></script>
     @if(isset($og_type))
         <meta property="fb:app_id" content="380703318658533" />
         <meta property="og:type"   content="{{$og_type}}" />
@@ -53,7 +52,6 @@
 
     {{ HTML::style('css/bootstrap.css') }}
     {{ HTML::style('css/bootstrap-responsive.css') }}  
-    {{ HTML::style('css/bootstrap-toggle-buttons.css') }}
 
     {{ HTML::style('http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600') }}  
     {{ HTML::style('css/font-awesome.css') }}
@@ -266,7 +264,7 @@
             $container.imagesLoaded( function(){
               $container.masonry({
                 itemSelector : '.box',
-                gutterWidth: 5
+                gutterWidth: 7
               });
             });
 
@@ -275,7 +273,6 @@
 
         {{HTML::script('js/bootstrap.js')}}
         {{HTML::script('js/lightbox/jquery.lightbox.min.js')}}
-        {{HTML::script('js/jcarousellite_1.0.1.js')}}
 
         <script>
             $(function () {

@@ -26,7 +26,11 @@
 
 @media (min-width: 1200px) {
 	
-	
+.boxback {background-color: #E8E8E8; padding-top: 55px}	
+
+.boxback > div:first-child {clear: left}
+
+.boxback > div:first-child + .span11.masonry {width: 88%}
 
 }
 
@@ -38,7 +42,12 @@
 */
 
 @media (min-width: 767px) and (max-width: 979px) {
-	
+
+.boxback {background-color: #E8E8E8; padding-top: 55px}	
+
+.boxback > div:first-child {clear: left}
+
+.boxback > div:first-child + .span11.masonry {width: 88%}
 
 }
 

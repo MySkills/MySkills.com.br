@@ -537,6 +537,10 @@ textarea {
 	background-color: #E8E8E8;
 }
 
+.boxback > div:first-child {
+	clear: left
+}
+
 #container:hover .box:not(:hover) {
 	opacity: 0.4;
 }
