@@ -62,11 +62,11 @@ order by created_at desc
 						{{HTML::image($user->getImageUrl('large'), $user->name, array('width'=>'200', 'class'=>'dev', 'title' => $user->name, 'id' => 'profilepicture'))}}
 					</a>
 					<p>{{HTML::link('/users/'.$user->id, $user->name)}}<p>
-					@if (count($user->technologies) <= 20)
+					@if (count($user->technologies) < 20)
 						<div id="userlevel">
 							<h5> {{__('user.level')}} 1<span class="arrow"></span> </h5>
 						</div>
-					@elseif (count($user->technologies) <= 60)
+					@elseif (count($user->technologies) < 60)
 						<div id="userlevel">
 							<h5> {{__('user.level')}} 2<span class="arrow"></span> </h5>
 						</div>
@@ -76,16 +76,16 @@ order by created_at desc
 						</div>
 					@endif
 					<div class="progress progress-danger">
-						<div class="bar" style="width: {{$user->life*3.33}}%;"><i class="icon-heart"></i> - {{__('home.alwayshere')}}</div>
+						<div class="bar" style="width: {{$user->life*3.33}}%;"><i class="icon-heart"></i> {{__('home.alwayshere')}}</div>
 					</div>
 
 					<div class="progress progress-info">
-						@if(count($user->technologies) <= 20)
-							<div class="bar" style="width: {{count($user->technologies)*5}}%;"> <i class="icon-fire"></i> - {{count($user->technologies)}}/20 {{__('home.nextlevel')}} </div>
-						@elseif(count($user->technologies) <= 60)
-							<div class="bar" style="width: {{(count($user->technologies)-20)*2.25}}%;"> <i class="icon-fire"></i> - {{count($user->technologies)-20}}/40 {{__('home.nextlevel')}}</div>
+						@if(count($user->technologies) < 20)
+							<div class="bar" style="width: {{count($user->technologies)*5}}%;"> <i class="icon-fire"></i> {{count($user->technologies)}}/20 {{__('home.nextlevel')}} </div>
+						@elseif(count($user->technologies) < 60)
+							<div class="bar" style="width: {{(count($user->technologies)-20)*2.25}}%;"> <i class="icon-fire"></i> {{count($user->technologies)-20}}/40 {{__('home.nextlevel')}}</div>
 						@else
-							<div class="bar" style="width: {{(count($user->technologies)-60)*1.67}}%;"> <i class="icon-fire"></i> - {{count($user->technologies)-60}}/60 {{__('home.nextlevel')}}</div>
+							<div class="bar" style="width: {{(count($user->technologies)-60)*1.67}}%;"> <i class="icon-fire"></i> {{count($user->technologies)-60}}/60 {{__('home.nextlevel')}}</div>
 						@endif
 					</div>
 					@foreach ($user->partial_badges(4) as $badge)
