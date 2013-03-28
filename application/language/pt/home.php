@@ -16,4 +16,6 @@ return array(
 	'certified_managers'	=> 'Gerentes Certificados',
 	'mobile_devs'			=> 'Devs Mobile',
 	'scholars'				=> 'Acadêmicos',
+	'alwayshere'			=> 'Estou sempre aqui',
+	'nextlevel'				=> 'Próximo nível',
 );

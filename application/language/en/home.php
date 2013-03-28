@@ -16,4 +16,6 @@ return array(
 	'certified_managers'	=> 'Certified Managers',
 	'mobile_devs'			=> 'Mobile Devs',
 	'scholars'				=> 'Scholars',
+	'alwayshere'			=> 'I´m always here',
+	'nextlevel'				=> 'Next level',
 );
