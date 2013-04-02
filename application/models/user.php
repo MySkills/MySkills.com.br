@@ -153,6 +153,17 @@ class User extends Eloquent
 	  return Message::where('recipient_id', '=', Auth::user()->id)->where('unread', '=', '1')->order_by('created_at', 'desc')->get();
 	}
 
+	public static function newUsersWeek() {
+		return DB::query("SELECT
+							count(*) total
+							from oneauth_clients
+							where 
+							month(created_at) > 1 and 
+							year(created_at) > 2013
+							group by week(created_at)
+							order by week(created_at) desc");
+	}
+
 	public static function topUsers() {
 			$topusers = DB::query("SELECT
 						U.id, U.name name, COALESCE(UL.level, 1) level, SUM(B.points)*COALESCE(UL.level,1) rank, SUM(B.points) points
@@ -170,7 +181,8 @@ class User extends Eloquent
 									users U
 								where
 									T.id = TU.technology_id AND
-									U.id = TU.user_id
+									U.id = TU.user_id AND
+									U.lastlogin > SUBDATE(NOW(), '30 day')
 								group by U.name
 							) UL
 							on BU.user_id = UL.user_id
@@ -198,7 +210,8 @@ class User extends Eloquent
 									users U
 								where
 									T.id = TU.technology_id AND
-									U.id = TU.user_id
+									U.id = TU.user_id AND 
+									U.lastlogin > SUBDATE(NOW(), '30 day')									
 								group by U.name
 							) UL
 							on BU.user_id = UL.user_id
