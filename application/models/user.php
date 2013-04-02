@@ -188,6 +188,7 @@ class User extends Eloquent
 							on BU.user_id = UL.user_id
 
 				WHERE U.active = true
+				AND U.lastlogin > SUBDATE(NOW(), '30 day')
 				group by U.name
 				order by level desc, points desc, rank desc, U.lastlogin desc");
 			return $topusers;
@@ -216,6 +217,7 @@ class User extends Eloquent
 							) UL
 							on BU.user_id = UL.user_id
 				where B.id in (".$badge_id.") group by U.name
+				and U.lastlogin > SUBDATE(NOW(), '30 day')
 				order by rank desc, U.lastlogin desc");
 			return $topusers;
 	}
