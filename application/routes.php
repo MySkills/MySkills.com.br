@@ -108,9 +108,9 @@ Route::get('admin/mandrill/send',
 			$responses = array();
 			$users = User::where_not_null('email')->get();
 			//$users = User::find(2)->first();
-			$since = '18/03/2013';
+			$since = '25/03/2013';
 			foreach ($users as $user) {
-				$email_content = View::make('email.25032013')
+				$email_content = View::make('email.02042013')
 									->with('page','user_stats')
 									->with('user', $user)
 									->with('since', $since)
@@ -118,7 +118,7 @@ Route::get('admin/mandrill/send',
 				$response = Mandrill::request('messages/send', array(
 				    'message' => array(
 						'html' => $email_content,
-						'subject' => '[myskills] Ganhador do prêmio de R$ 600,00',
+						'subject' => '[myskills] Curso patrocinado pelo Google',
 						'from_email' => 'eduardo.cruz@myskills.com.br',
 						'from_name' => 'Eduardo Cruz (MySkills)',
 						'to' => array(array('email'=>$user->email,
