@@ -190,6 +190,11 @@ Route::get('blog', function()
 	return View::make('pages.blog')->with('page','blog');
 });
 
+Route::get('channel', function()
+{
+	return View::make('pages.channel')->with('page','channel');
+});
+
 /*
 	LEADERBOARD - List all users
 */
@@ -328,9 +333,23 @@ Route::get('skills', function()
 	return View::make('pages.skills')->with('page','skills');
 });
 
-Route::get('channel', function()
+
+Route::get('technologies', function()
 {
-	return View::make('pages.channel')->with('page','channel');
+	$technologies = Technology::order_by('name', 'asc')->get();
+	return View::make('pages.technologies')
+		->with('page','technologies')
+		->with('technologies', $technologies);
+});
+
+Route::get('technology/(:any)', function($technology_id)
+{
+	$technology = Technology::find($technology_id);
+	$developers = User::topUsersByTechnology($technology->id);
+	return View::make('pages.technology')
+		->with('page','technology')	
+		->with('developers', $developers)
+		->with('technology',$technology);
 });
 
 Route::get('termsofuse', function()
@@ -338,10 +357,6 @@ Route::get('termsofuse', function()
 	return View::make('pages.termsofuse')->with('page','termsofuse');
 });
 
-Route::get('technologies', function()
-{
-	return View::make('pages.technologies')->with('page','technologies');
-});
 
 /*
 	LEADERBOARD - List all users

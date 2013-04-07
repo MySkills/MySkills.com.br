@@ -222,6 +222,23 @@ class User extends Eloquent
 			return $topusers;
 	}
 
+	public static function topUsersByTechnology($tech_id) {
+			$topusers = DB::query("SELECT
+				DISTINCT U.id id, U.name name , count(checkin_at) checkins
+			from 
+				technology_user TU,
+				users U
+			where
+				TU.technology_id = ". $tech_id ." AND
+				TU.user_id = U.id AND
+				U.lastlogin > SUBDATE(NOW(), '29 day') 
+			group by 
+				user_id
+			order by 
+				checkins desc");
+						return $topusers;
+	}
+
 	public function get_checkins() {
 			$user_technologies = DB::query(
 				"SELECT 
