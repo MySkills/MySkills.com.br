@@ -216,8 +216,9 @@ class User extends Eloquent
 								group by U.name
 							) UL
 							on BU.user_id = UL.user_id
-				where B.id in (".$badge_id.") group by U.name
+				where B.id in (".$badge_id.")
 				and U.lastlogin > SUBDATE(NOW(), '29 day')
+				group by U.name
 				order by rank desc, U.lastlogin desc");
 			return $topusers;
 	}
