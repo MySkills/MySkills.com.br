@@ -231,7 +231,8 @@ class User extends Eloquent
 			where
 				TU.technology_id = ". $tech_id ." AND
 				TU.user_id = U.id AND
-				U.lastlogin > SUBDATE(NOW(), '29 day') 
+				U.lastlogin > SUBDATE(NOW(), '29 day')  AND
+				U.active = true
 			group by 
 				user_id
 			order by 
