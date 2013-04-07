@@ -33,4 +33,5 @@ return array(
 	'help'				=> 'Ajuda',
 	'blog'				=> 'Blog',
 	'channel'			=> 'Canal de Atendimento',
+	'technologies'		=> 'Tecnologias',
 );

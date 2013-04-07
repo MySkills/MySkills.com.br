@@ -120,10 +120,10 @@
                         @else
                             <li>{{HTML::link('badges',__('main.badges'))}} </li>
                         @endif
-                        @if($page=='developers')
-                            <li class="active">{{HTML::link('developers',__('main.developers'))}}</li>
+                        @if($page=='technologies')
+                            <li class="active">{{HTML::link('technologies',__('main.technologies'))}}</li>
                         @else
-                            <li>{{HTML::link('developers',__('main.developers'))}}</li>
+                            <li>{{HTML::link('technologies',__('main.technologies'))}}</li>
                         @endif
                         @if ( Auth::check())
                             <?php $count_messages = count(User::unreadmessages()); ?>
@@ -192,7 +192,6 @@
     <?php
       $users = User::order_by('lastlogin', 'desc')->take(25)->get();
     ?>
-
     @foreach($users as $lastuser)
         <a href="{{URL::to('/users/'.$lastuser->id)}}">
             {{HTML::image($lastuser->getImageUrl('square'),  $lastuser->name, array('width' => 50, 'height'=>50, 'title' => $lastuser->name))}}
