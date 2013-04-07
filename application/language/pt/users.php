@@ -19,5 +19,6 @@ return array(
 	'developers' 	=> 'Desenvolvedores',
 	'badcode'		=> 'A vida é curta demais para se escrever código ruim',
 	'join_us'		=> 'Junte-se a Nós',
-	'level'			=> 'Nível'
+	'level'			=> 'Nível',
+	'checkins'		=>'Checkins',	
 	);

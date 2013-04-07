@@ -224,7 +224,7 @@ class User extends Eloquent
 
 	public static function topUsersByTechnology($tech_id) {
 			$topusers = DB::query("SELECT
-				DISTINCT U.id id, U.name name , count(checkin_at) checkins
+				DISTINCT U.id id, U.name name , count(checkin_at) techpoints
 			from 
 				technology_user TU,
 				users U
@@ -236,7 +236,7 @@ class User extends Eloquent
 			group by 
 				user_id
 			order by 
-				checkins desc");
+				techpoints desc");
 						return $topusers;
 	}
 

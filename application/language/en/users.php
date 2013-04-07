@@ -20,4 +20,5 @@ return array(
 	'badcode'		=> 'Life is too short to write bad code',
 	'join_us'		=> 'Join Us',
 	'level'			=> 'Level',	
+	'checkins'		=>'Checkins',
 	);

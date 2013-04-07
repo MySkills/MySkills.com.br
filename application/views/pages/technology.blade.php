@@ -30,13 +30,17 @@
 						<tr>
 							<th width="5%">{{__('users.picture')}}</th>
 							<th width="20%">{{__('users.name')}}</th>
-							<th width="75%">{{__('users.badges')}}</th>							
+							<th width="5%">{{__('users.checkins')}}</th>							
+							<th width="70%">{{__('users.badges')}}</th>							
 						</tr>
 					</thead>
 					<tbody>
 
 					@foreach ($developers as $developer)
-					<?php $developer = User::find($developer->id); ?>
+					<?php 
+					$techpoints = $developer->techpoints;
+					$developer = User::find($developer->id); 
+					?>
 					<tr>
 						<td>
 							<a href="{{URL::to('/users/'.$developer->id)}}">
@@ -47,10 +51,13 @@
 							{{HTML::link('users/'.$developer->id, $developer->name)}}
 						</td>
 						<td>
-							@foreach ($developer->partial_badges(8) as $badge)
+							{{$techpoints}}
+						</td>						
+						<td>
+							@foreach ($developer->partial_badges(7) as $badge)
 								{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 50, 'height'=>50, 'title' => $badge->name))}}
 							@endforeach
-							@for ($i = 0; $i <= (7-count($developer->activebadges)); $i++)
+							@for ($i = 0; $i <= (6-count($developer->activebadges)); $i++)
 								{{HTML::image('img/badges/unlock100.png', 'Unlock', array('width' => 50, 'height'=>50, 'title' => 'Unlock'))}}
 							@endfor
 						</td>
