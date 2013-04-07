@@ -336,19 +336,26 @@ Route::get('skills', function()
 
 Route::get('technologies', function()
 {
-	$technologies = Technology::order_by('name', 'asc')->get();
-	return View::make('pages.technologies')
-		->with('page','technologies')
-		->with('technologies', $technologies);
+
+	$technologies = Technology::topTechnologies();
+	$topTechnology = Technology::topFirstTechnology();
+	$developers = User::topUsersByTechnology($topTechnology[0]->id);
+	return View::make('pages.technology')
+		->with('page','technology')	
+		->with('developers', $developers)
+		->with('technologies', $technologies)
+		->with('technology',$topTechnology[0]);
 });
 
 Route::get('technology/(:any)', function($technology_id)
 {
+	$technologies = Technology::topTechnologies();
 	$technology = Technology::find($technology_id);
 	$developers = User::topUsersByTechnology($technology->id);
 	return View::make('pages.technology')
 		->with('page','technology')	
 		->with('developers', $developers)
+		->with('technologies', $technologies)
 		->with('technology',$technology);
 });
 

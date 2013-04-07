@@ -11,9 +11,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="span10">
-				<ul>
-					@foreach($technologies as $technology)
-						<li>{{HTML::link('technology/'.$technology->id, $technology->name)}}</li>
+				<ul class="nav nav-pills nav-stacked">
+					@foreach($technologies as $tech)
+							<li>{{HTML::link('technology/'.$tech->id, $tech->name)}}</li>
 					@endforeach
 				</ul>
 			</div> <!-- /span10 -->
