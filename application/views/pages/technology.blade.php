@@ -10,7 +10,7 @@
 <div id="subpage">	
 	<div class="container">
 		<div class="row">
-			<div class="span2">
+			<div class="span3">
 				<ul class="nav nav-pills nav-stacked">
 					@foreach($technologies as $tech)
 						@if($tech->id == $technology->id)
@@ -21,10 +21,10 @@
 					@endforeach
 				</ul>
 			</div> <!-- /span10 -->
-			<div class="span8">
+			<div class="span7">
 				<table class="table table-striped table-bordered table-condensed">
 					<caption>
-						<span class="label label-info">Usuários ativos que mais fazem checkins nessa tecnologia.</span>.
+						<span class="label label-info">{{__('technology.topactive')}}</span>.
 					</caption>
 					<thead>
 						<tr>
@@ -47,10 +47,10 @@
 							{{HTML::link('users/'.$developer->id, $developer->name)}}
 						</td>
 						<td>
-							@foreach ($developer->partial_badges(10) as $badge)
+							@foreach ($developer->partial_badges(8) as $badge)
 								{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 50, 'height'=>50, 'title' => $badge->name))}}
 							@endforeach
-							@for ($i = 0; $i <= (9-count($developer->activebadges)); $i++)
+							@for ($i = 0; $i <= (7-count($developer->activebadges)); $i++)
 								{{HTML::image('img/badges/unlock100.png', 'Unlock', array('width' => 50, 'height'=>50, 'title' => 'Unlock'))}}
 							@endfor
 						</td>
@@ -62,9 +62,8 @@
 			</div> <!-- /span10 -->
 			<div class="span2">
 				<div class="sidebar">
-					<h3><span class="slash">About Technologies</span></h3>
-					<p>
-					Here you will find information about the most frequently asked questions. Do you also have a question? Get in touch with us and we will be really glad to answer it.</p>
+					<h3>{{__('technology.about')}}</h3>
+					<p>{{__('technology.about1')}}</p>
 				</div> <!-- /sidebar -->
 			</div> <!-- /span2 -->
 		</div> <!-- /row -->
