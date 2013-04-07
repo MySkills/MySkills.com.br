@@ -140,7 +140,9 @@ Route::get('admin/mandrill/send',
 Route::get('badges/(:any)', function($badge_id)
 {
 	$badge = Badge::find($badge_id);
+	$developers = User::topUsersByTechnology($badge->id);	
 	return View::make('pages.badge')
+		->with('developers',$developers)
 		->with('page','badge')
 		->with('badge',$badge)
 		->with('og_points',$badge->points)
@@ -336,7 +338,6 @@ Route::get('skills', function()
 
 Route::get('technologies', function()
 {
-
 	$technologies = Technology::topTechnologies();
 	$topTechnology = Technology::topFirstTechnology();
 	$developers = User::topUsersByTechnology($topTechnology[0]->id);
