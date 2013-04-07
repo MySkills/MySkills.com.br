@@ -140,7 +140,7 @@ Route::get('admin/mandrill/send',
 Route::get('badges/(:any)', function($badge_id)
 {
 	$badge = Badge::find($badge_id);
-	$developers = User::topUsersByTechnology($badge->id);	
+	$developers = User::topUsersBy($badge->id);	
 	return View::make('pages.badge')
 		->with('developers',$developers)
 		->with('page','badge')
