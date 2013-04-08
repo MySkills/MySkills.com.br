@@ -212,11 +212,13 @@ class User extends Eloquent
 								where
 									T.id = TU.technology_id AND
 									U.id = TU.user_id AND 
-									U.lastlogin > SUBDATE(NOW(), '29 day')									
+									U.lastlogin > SUBDATE(NOW(), '29 day') AND
+									U.active = true
 								group by U.name
 							) UL
 							on BU.user_id = UL.user_id
 				where B.id in (".$badge_id.")
+				and U.active = true
 				and U.lastlogin > SUBDATE(NOW(), '29 day')
 				group by U.name
 				order by rank desc, U.lastlogin desc");
