@@ -44,11 +44,11 @@ class User extends Eloquent
 	}
 
 	public function activebadges() {
-		return $this->has_many_and_belongs_to('Badge')->where('badge_user.active','=',true)->order_by('points', 'desc');
+		return $this->has_many_and_belongs_to('Badge')->where('badge_user.active','=',true)->order_by('points', 'desc')->order_by('id', 'desc');
 	}
 
 	public function partial_badges($max) {
-		return $this->has_many_and_belongs_to('Badge')->where('badge_user.active','=',true)->order_by('points', 'desc')->take($max)->get();
+		return $this->has_many_and_belongs_to('Badge')->where('badge_user.active','=',true)->order_by('points', 'desc')->order_by('id', 'desc')->take($max)->get();
 	}
 
 	public function followers()
