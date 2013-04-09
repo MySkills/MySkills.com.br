@@ -169,18 +169,19 @@ if (Auth::check()) {
 						@if(Auth::check())
 							@if($user->id == Auth::user()->id)
 								<div class="span2">
-									<input type="image" src="/img/add.png"> {{$checkin->name}} {{Form::hidden('technology_id', $checkin->id)}}
+									<input type="image" src="/img/add.png"> {{HTML::link('technology/'.$checkin->id, $checkin->name)}} {{Form::hidden('technology_id', $checkin->id)}}
 								</div>
 							@else 
 							<div class="span2">
-								{{$checkin->name}}
+								{{HTML::link('technology/'.$checkin->id, $checkin->name)}}
 							</div>
 							@endif
 						@else
 							<div class="span2">
 								<a href="#unauthorizedModal" role="button" data-toggle="modal" data-target="#unauthorizedModal">
-									{{HTML::image('img/add.png')}} {{$checkin->name}}
+									{{HTML::image('img/add.png')}}
 								</a>
+								{{HTML::link('technology/'.$checkin->id, $checkin->name)}}
 							</div>
 						@endif
 						<div class="span1">{{__('user.level')}}.: {{$checkin->level}}</div>

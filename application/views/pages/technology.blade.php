@@ -23,7 +23,7 @@
 			</div> <!-- /span10 -->
 			<div class="span7">
 				<table class="table table-striped table-bordered table-condensed">
-					<caption>
+					<caption><h2>{{$technology->name}}</h2>
 						<span class="label label-info">{{__('technology.topactive')}}</span>.
 					</caption>
 					<thead>
