@@ -378,10 +378,26 @@ Route::get('upgrade', function()
 /*
 	USERPROFILE
 */
-Route::get('users/(:any)', function($user_id)
+Route::get('users/(:num)', function($user_id)
 {
 	$technology_list = Technology::order_by('name', 'asc')->lists('name', 'id');
 	$user = User::find($user_id);
+	return View::make('pages.user')
+		->with('page','profile')
+		->with('technology_list', $technology_list)
+		->with('user', $user)
+		->with('og_title', $user->name)
+		->with('og_image', $user->getImageUrl('large'));
+});
+
+
+/*
+	USERPROFILE
+*/
+Route::get('users/(:any)', function($nickname)
+{
+	$technology_list = Technology::order_by('name', 'asc')->lists('name', 'id');
+	$user = User::where('nickname', '=', $nickname)->first();
 	return View::make('pages.user')
 		->with('page','profile')
 		->with('technology_list', $technology_list)
@@ -591,6 +607,7 @@ Route::put('users',
 			try {
 				$user = User::find(Auth::user()->id);
 				$user->name = Input::get('name');
+				$user->nickname = Input::get('nickname');				
 				$user->email = Input::get('email');
 				$user->video_url = Input::get('video_url');	
 				$user->save();

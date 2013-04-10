@@ -40,6 +40,12 @@ if (Auth::check()) {
 							<input class="span3" id="inputIcon" type="email" name="email" required value="{{$user->email}}">
 						</div>
 					</div>
+					<div class="control-group">
+						 <label class="control-label" for="name">Nickname</label>
+						 <div class="controls">
+      						{{Form::text('nickname', $user->nickname, array('id' => 'inputName', 'class' => 'span3'))}}
+    					</div>
+					</div>
 
 					<div class="control-group">
 						 <label class="control-label" for="name">Video</label>
