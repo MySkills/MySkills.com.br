@@ -92,10 +92,6 @@ if (Auth::check()) {
 						<a href="#unauthorizedModal" role="button" class="btn btn-warning" data-toggle="modal" data-target="#unauthorizedModal"><i class="icon-envelope"></i>{{__('user.sendmessage')}}</a>
 					@endif
 				</div> <!-- /sidebar -->
-					<h3><span class="slash">{{__('user.lastcheckin')}}</span></h3>
-					<ul>
-
-					</ul>
 			</div> <!-- /span2 -->
 			<div class="span7">
 				<div class="row">
