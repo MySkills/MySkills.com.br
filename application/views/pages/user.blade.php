@@ -3,12 +3,13 @@
 <?php
 
 if (Auth::check()) {
-	$loggeduser = User::find(Auth::user()->id);
-	$loggeduser->lastlogin = date('Y-m-d H:i:s');
-	$loggeduser->save();
+	if($user->id == Auth::user()->id) {
+		$loggeduser = User::find(Auth::user()->id);
+		$loggeduser->lastlogin = date('Y-m-d H:i:s');
+		$loggeduser->save();		
+	}
 }
 ?>
-
 <!-- Unauthorized Modal -->
 <div id="unauthorizedModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
