@@ -1,28 +1,20 @@
 @layout('templates.main')
 @section('content')
-<?php
-/*
-SELECT count(date(created_at)), date(created_at)
-FROM skillsdb.users 
-WHERE created_at > SUBDATE(NOW(), '14 day') 
-group by date(created_at)
-order by created_at desc
-*/
-?>
-			<div class="row span12">
-					<div class="btn-group offset3">
-						{{HTML::link('/', __('home.listall'), array('class' => 'btn btn-success btn-large'))}}
-						{{HTML::link('home/index/1', __('home.certified_devs'), array('class' => 'btn btn-success btn-large'))}}
-						{{HTML::link('home/index/2', __('home.certified_managers'), array('class' => 'btn btn-success btn-large'))}}
-						{{HTML::link('home/index/3', __('home.mobile_devs'), array('class' => 'btn btn-success btn-large'))}}
-						{{HTML::link('home/index/4', __('home.scholars'), array('class' => 'btn btn-success btn-large'))}}
-					</div>
-			</div>
+<div class="row span12">
+		<div class="btn-group offset3">
+			{{HTML::link('/', __('home.listall'), array('class' => 'btn btn-success btn-large'))}}
+			{{HTML::link('home/index/1', __('home.certified_devs'), array('class' => 'btn btn-success btn-large'))}}
+			{{HTML::link('home/index/2', __('home.certified_managers'), array('class' => 'btn btn-success btn-large'))}}
+			{{HTML::link('home/index/3', __('home.mobile_devs'), array('class' => 'btn btn-success btn-large'))}}
+			{{HTML::link('home/index/4', __('home.scholars'), array('class' => 'btn btn-success btn-large'))}}
+		</div>
+</div>
 
 	<div class="row boxback">
 		<div class="span2">
 				<div class="sidebar">
 					<h3><span class="slash">{{__('users.join_us')}}</span></h3>
+					<h3><span class="slash">{{__('home.weare')}}.: {{User::count()}}</span></h3>
 					@if ( Auth::guest() )
 						{{HTML::link('connect/session/facebook', __('home.sign-up').' (Facebook)', array('class' => 'btn btn-small btn-warning'))}}
 						{{HTML::link('connect/session/github', '&nbsp;'. __('home.sign-up').' (Github) &nbsp;&nbsp;', array('class' => 'btn btn-small btn-warning'))}}
@@ -30,7 +22,9 @@ order by created_at desc
 					@endif
 					<p>{{__('users.about1')}}</p>
 					<h4><span class="slash">{{__('users.new_users')}}</span></h4>
+				<table>
 					@foreach ($newUsers as $user)
+					
 					<tr>
 						<td>
 							<a href="{{URL::to('/users/'.$user->id)}}">
@@ -49,6 +43,7 @@ order by created_at desc
 						</td>
 					</tr>
 					@endforeach
+				</table>
 				</div> <!-- /sidebar -->
 		</div>
 		<div class="span10" id="container">
