@@ -244,12 +244,6 @@
 					@else
 					<a href="#unauthorizedModal" role="button" class="btn btn-warning" data-toggle="modal" data-target="#unauthorizedModal">{{__('user.follow')}}</a>
 					@endif
-					<h3><span class="slash">{{__('user.followers')}}</span></h3>
-					@foreach ($user->followers as $follower)
-						<a href="{{URL::to('/users/'.$follower->id)}}">
-							{{HTML::image($follower->getImageUrl('large'),  $follower->name, array('width' => 50, 'height'=>50, 'title' => $follower->name))}}
-						</a>
-					@endforeach
 				</div> <!-- /sidebar -->
 			</div> <!-- /span4 -->
 		</div> <!-- /row -->
