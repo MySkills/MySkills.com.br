@@ -7,6 +7,7 @@ return array(
 	| /jobs Language Lines
 	|--------------------------------------------------------------------------
 	*/
+	'pagetitle'				=> 	'Badges - What are badges?',	
 	'choose' 			=> 'Your professional achievement list!!!',
 	'points' 			=> 'Points',
 	'name' 				=> 'Name',
@@ -21,6 +22,6 @@ return array(
 	'approved' 			=> 'Approved',
 	'approval' 			=> 'Waiting for Approval',
 	'success_message' 	=> 'SUCESS!!! You earned a new badge. Keep ranking up and doing daily checkins.',
-	'error_message' 	=> 'ERROR.'
+	'error_message' 	=> 'ERROR.',
 	'topactive'			=> 'Active users orded by points',
 	);
