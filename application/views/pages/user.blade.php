@@ -139,10 +139,10 @@
 
 				</div>
 				<ul id="BadgeTab" class="nav nav-tabs">
-					<li class="active"><a data-toggle="tab" href="#checkins">Checkins</a></li>
-					<li class><a data-toggle="tab" href="#badges">Badges Conquistados</a></li>
-					<li class><a data-toggle="tab" href="#followers">Seguidores</a></li>
-					<li class><a data-toggle="tab" href="#projects">Projetos</a></li>
+					<li class="active"><a data-toggle="tab" href="#checkins">Checkins ({{count($user->technologies)}})</a></li>
+					<li class><a data-toggle="tab" href="#badges">Badges Conquistados ({{count($user->badges)}})</a></li>
+					<li class><a data-toggle="tab" href="#followers">Seguidores ({{count($user->followers)}})</a></li>
+					<li class><a data-toggle="tab" href="#projects">Projetos (0)</a></li>
 				</ul>
 				<div id="BadgeTabContent" class="tab-content">
 					<div class="tab-pane fade in active" id="checkins">
@@ -226,7 +226,6 @@
 						<h3><span class="slash">{{__('user.items')}}</span></h3>
 						{{HTML::image('img/browserquest/'.'chest.png',  'Chest', array('width' => 48, 'height'=>48, 'title' => 'Chest'))}}
 					@endif					
-
 					@if( Auth::check())
 						@if($user->id <> Auth::user()->id)
 							@if(count($user->followers()->where('follower_id', '=', Auth::user()->id)->get()) == 0)
