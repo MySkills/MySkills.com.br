@@ -2,7 +2,6 @@
 class User extends Eloquent
 {
 	function setUserData(&$user_data) {
-		Log::myskills('setUSerData');
 		$this->uid 		= $user_data['info']['uid'];
 		$this->provider 	= $user_data['provider'];
 		$this->name = $user_data['info']['name'];
@@ -296,4 +295,10 @@ class User extends Eloquent
 		return $ret;
 	}
 
+	public function logLastAccess() {
+		if($this->id == Auth::user()->id) {
+			$this->lastlogin = date('Y-m-d H:i:s');
+			$this->save();		
+		}
+	}
 }

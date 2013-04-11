@@ -1,14 +1,9 @@
 @layout('templates.main')
 @section('content')
 <?php
-
-if (Auth::check()) {
-	if($user->id == Auth::user()->id) {
-		$loggeduser = User::find(Auth::user()->id);
-		$loggeduser->lastlogin = date('Y-m-d H:i:s');
-		$loggeduser->save();		
+	if (Auth::check()) {
+		$user->logLastAccess();
 	}
-}
 ?>
 <!-- Unauthorized Modal -->
 <div id="unauthorizedModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -143,66 +138,86 @@ if (Auth::check()) {
 				</div>
 
 				</div>
+				<ul id="BadgeTab" class="nav nav-tabs">
+					<li class="active"><a data-toggle="tab" href="#checkins">Checkins</a></li>
+					<li class><a data-toggle="tab" href="#badges">Badges Conquistados</a></li>
+					<li class><a data-toggle="tab" href="#followers">Seguidores</a></li>
+					<li class><a data-toggle="tab" href="#projects">Projetos</a></li>
+				</ul>
+				<div id="BadgeTabContent" class="tab-content">
+					<div class="tab-pane fade in active" id="checkins">
+						@foreach($user->checkins as $checkin)
+							@if(Auth::check())
+								@if($user->id == Auth::user()->id)
+									{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
+								@endif
+							@endif
+							<div class="row">
+								<div class="progress progress-info span3">
+									@if($checkin->level == 1)
+										<div class="bar" style="width: {{$checkin->points*5}}%;">{{$checkin->points}}/20 </div>
+									@endif
+									@if($checkin->level == 2)
+										<div class="bar" style="width: {{($checkin->points-19)*2.5}}%;">{{$checkin->points-20}}/40 </div>
+									@endif
+									@if($checkin->level == 3)
+										<div class="bar" style="width: {{($checkin->points-59)*1.66}}%;">{{$checkin->points-60}}/60 </div>
+									@endif
 
-				@foreach($user->checkins as $checkin)
-					@if(Auth::check())
-						@if($user->id == Auth::user()->id)
-							{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
-						@endif
-					@endif
-					<div class="row">
-						<div class="progress progress-info span3">
-							@if($checkin->level == 1)
-								<div class="bar" style="width: {{$checkin->points*5}}%;">{{$checkin->points}}/20 </div>
-							@endif
-							@if($checkin->level == 2)
-								<div class="bar" style="width: {{($checkin->points-19)*2.5}}%;">{{$checkin->points-20}}/40 </div>
-							@endif
-							@if($checkin->level == 3)
-								<div class="bar" style="width: {{($checkin->points-59)*1.66}}%;">{{$checkin->points-60}}/60 </div>
-							@endif
-
-						</div>
-						@if(Auth::check())
-							@if($user->id == Auth::user()->id)
-								<div class="span2">
-									<input type="image" src="/img/add.png"> {{HTML::link('technology/'.$checkin->id, $checkin->name)}} {{Form::hidden('technology_id', $checkin->id)}}
 								</div>
-							@else 
-							<div class="span2">
-								{{HTML::link('technology/'.$checkin->id, $checkin->name)}}
+								@if(Auth::check())
+									@if($user->id == Auth::user()->id)
+										<div class="span2">
+											<input type="image" src="/img/add.png"> {{HTML::link('technology/'.$checkin->id, $checkin->name)}} {{Form::hidden('technology_id', $checkin->id)}}
+										</div>
+									@else 
+									<div class="span2">
+										{{HTML::link('technology/'.$checkin->id, $checkin->name)}}
+									</div>
+									@endif
+								@else
+									<div class="span2">
+										<a href="#unauthorizedModal" role="button" data-toggle="modal" data-target="#unauthorizedModal">
+											{{HTML::image('img/add.png')}}
+										</a>
+										{{HTML::link('technology/'.$checkin->id, $checkin->name)}}
+									</div>
+								@endif
+								<div class="span1">{{__('user.level')}}.: {{$checkin->level}}</div>
+								<div class="span1">$ {{$checkin->points}} {{HTML::image('img/coin16.png')}}</div>
 							</div>
+							@if(Auth::check())
+								@if($user->id == Auth::user()->id)
+									{{Form::close()}}
+								@endif
 							@endif
-						@else
-							<div class="span2">
-								<a href="#unauthorizedModal" role="button" data-toggle="modal" data-target="#unauthorizedModal">
-									{{HTML::image('img/add.png')}}
-								</a>
-								{{HTML::link('technology/'.$checkin->id, $checkin->name)}}
-							</div>
-						@endif
-						<div class="span1">{{__('user.level')}}.: {{$checkin->level}}</div>
-						<div class="span1">$ {{$checkin->points}} {{HTML::image('img/coin16.png')}}</div>
+
+						@endforeach
 					</div>
-					@if(Auth::check())
-						@if($user->id == Auth::user()->id)
-							{{Form::close()}}
-						@endif
-					@endif
-
-				@endforeach
-
-				<div class="sidebar pagination-centered">
-					<h3><span class="slash">{{__('user.badges_earned')}}</span></h3>
-					@foreach ($user->activebadges as $badge)
-						<a href="{{URL::to('/badges/'.$badge->id)}}">
-							{{HTML::image('img/badges/'.$badge->image,  $badge->name, array('width' => 75, 'height'=>75, 'title' => $badge->name))}}
-						</a>
-					@endforeach
-					@for ($i = 0; $i <= (15-count($user->activebadges)); $i++)
-						{{HTML::image('img/badges/unlock100.png', 'Unlock', array('width' => 75, 'height'=>75, 'title' => 'Unlock'))}}
-					@endfor
-				</div> <!-- /sidebar -->
+					<div class="tab-pane fade" id="badges">
+						<div class="sidebar pagination-centered">
+							@foreach ($user->activebadges as $badge)
+								<a href="{{URL::to('/badges/'.$badge->id)}}">
+									{{HTML::image('img/badges/'.$badge->image,  $badge->name, array('width' => 75, 'height'=>75, 'title' => $badge->name))}}
+								</a>
+							@endforeach
+							@for ($i = 0; $i <= (15-count($user->activebadges)); $i++)
+								{{HTML::image('img/badges/unlock100.png', 'Unlock', array('width' => 75, 'height'=>75, 'title' => 'Unlock'))}}
+							@endfor
+						</div> <!-- /sidebar -->
+					</div>
+					<div class="tab-pane fade" id="followers">
+						<div class="sidebar pagination-centered">
+								@foreach ($user->followers as $follower)
+								<a href="{{URL::to('/users/'.$follower->id)}}">
+									{{HTML::image($follower->getImageUrl('large'),  $follower->name, array('width' => 50, 'height'=>50, 'title' => $follower->name))}}
+								</a>
+							@endforeach
+						</div>
+					</div>
+					<div class="tab-pane fade" id="projects">
+					</div>
+				</div>
 			</div> <!-- /span4 -->
 
 			<div class="span2 pagination-centered">
