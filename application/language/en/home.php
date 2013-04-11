@@ -7,7 +7,7 @@ return array(
 	| /home Language Lines
 	|--------------------------------------------------------------------------
 	*/
-
+	'pagetitle'				=> 'MySkills - Meet the best developers',
 	'title' 				=> 'Meet the best developers!',
 	'subtitle' 				=> 'Hire great professionals.',
 	'sign-up'				=> 'Sign-Up',
@@ -18,4 +18,5 @@ return array(
 	'scholars'				=> 'Scholars',
 	'alwayshere'			=> 'I´m always here',
 	'nextlevel'				=> 'Next level',
+	'weare'					=> 'We Are',
 );

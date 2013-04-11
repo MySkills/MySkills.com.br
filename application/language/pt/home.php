@@ -7,7 +7,7 @@ return array(
 	| /home Language Lines
 	|--------------------------------------------------------------------------
 	*/
-
+	'pagetitle'				=> 'MySkills - Encontre os melhores desenvolvedores',
 	'title' 				=> 'Encontre os melhores desenvolvedores',
 	'subtitle' 				=> 'Contrate excelentes profissionais.',
 	'sign-up' 				=> 'Cadastre-se',
@@ -18,4 +18,5 @@ return array(
 	'scholars'				=> 'Acadêmicos',
 	'alwayshere'			=> 'Estou sempre aqui',
 	'nextlevel'				=> 'Próximo nível',
+	'weare'					=> 'Somos',	
 );
