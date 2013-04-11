@@ -1,4 +1,7 @@
 @layout('templates.main')
+@section('title')
+	{{__('badges.pagetitle')}}
+@endsection
 @section('content')
 @if( Auth::check())
 	<?php $user = User::find(Auth::user()->id); ?>
@@ -65,7 +68,7 @@
 										</div>
 										<div class="span2">
 											<table class="table table-striped table-condensed">
-												<tr><td>{{HTML::link('badges/'.$badge->id, $badge->name)}}</td></tr>
+												<tr><td>{{HTML::link('badges/'.$badge->id, $badge->name. " (".count($badge->users).")")}}</td></tr>
 												<tr><td>
 
 						                    @if( Auth::check())

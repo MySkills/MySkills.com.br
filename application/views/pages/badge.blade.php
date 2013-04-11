@@ -31,13 +31,13 @@
 
 			</div> <!-- /span2 -->
 			<div class="span2">
-				<p>{{$badge->name}} - {{$badge->issuer->name}}</p>
+				<p>{{$badge->name}} - {{$badge->issuer->name}} </p>
 				<p>{{$badge->description}}</p>
 			</div> <!-- /span4 -->
 			<div class="span7">
 				<table class="table table-striped table-bordered table-condensed">
 					<caption>
-						<span class="label label-info">{{__('badges.topactive')}}</span>.
+						<span class="label label-info">{{count($badge->users)." ". __('badges.topactive')}}</span>.
 					</caption>
 					<thead>
 						<tr>
