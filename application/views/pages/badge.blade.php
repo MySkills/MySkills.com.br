@@ -84,11 +84,12 @@
 			</div> <!-- /span5 -->
 			<div class="span2">
 				<div class="sidebar">
-					<h3><span class="slash">Badge</span></h3>
+					<h3><span class="slash">Badge</span></h3>									
 	                    @if( Auth::check())
                             @if(count($badge->users()->where('user_id', '=', Auth::user()->id)->get()) == 0)
-								{{Form::open('badges/'.$badge->id.'/'.Auth::user()->id, 'PUT')}}
-								{{Form::submit(__('badges.request'),  array('class' => 'btn btn-success'))}}
+								{{Form::open('badges', 'PUT')}}
+								{{Form::hidden('badge_id', $badge->id)}}
+								{{Form::submit(__('badges.request'),  array('class' => 'btn btn-small btn-success'))}}
 								{{Form::close()}}
 							@else
 								@if(count($badge->users()->where('user_id', '=', Auth::user()->id)->where('badge_user.active','=',0)->get()) == 0)
