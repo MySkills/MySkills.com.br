@@ -12,10 +12,9 @@ class User extends Eloquent
 				$this->email = $user_data['info']['email'];
 				$this->social_url = $user_data['info']['urls']['facebook'];      			
 			break;
-			case 'github' :			
-				//$github = json_decode(file_get_contents('https://api.github.com/users/'));
-      			//$github = json_decode(file_get_contents('https://api.github.com/users/'.$this->nickname));
-      			//$this->image = $github->avatar_url;
+			case 'github' :
+      			$github = json_decode(file_get_contents('https://api.github.com/users/'.$this->nickname));
+      			$this->image = $github->avatar_url;
 				$this->email = $user_data['info']['email'];
 				$this->social_url = $user_data['info']['urls']['github'];					
 			break;
