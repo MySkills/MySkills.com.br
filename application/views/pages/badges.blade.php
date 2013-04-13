@@ -31,7 +31,7 @@
 <div id="subpage">
 	<div class="container">
 		<div class="row">		
-			<div class="span9">
+			<div class="span10">
 				@if(Session::get('status'))
 					@if(Session::get('status')=='ERROR')
 						<div class="alert alert-error">
@@ -62,12 +62,29 @@
 						@endif
 								<?php $badges = Badge::where('badgetype_id', '=', $badgetype->id)->where('active', '=', 1)->order_by('id', 'desc')->get(); ?>
 								<div class="row">
+									<div class="span10">
+										<table class="table table-striped table-condensed">
+											<thead>
+												<tr>
+													<th width="10%"><center>Badge</center></th>
+													<th width="15%"><center>Nome</center></th>
+													<th width="45%"><center>Descrição</center></th>
+													<th width="15%"><center>Emissor</center></th>
+													<th width="15%"><center>Solicite</center></th>
+												</tr>
+											</thead>
+											<tbody>
+
 									@foreach ($badges as $badge)
-										<div class="span2">
-											<table class="table table-striped table-condensed">
-												<tr><td><center>{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => '75', 'height' => '75', 'title' => $badge->name))}}</center></td></tr>
-												<tr><td><center>{{HTML::link('badges/'.$badge->id, $badge->name. " (".count($badge->users).")")}}</center></td></tr>
-												<tr><td><center>
+												<tr>
+													<td><center>
+														<a href="{{URL::to('/badges/'.$badge->id)}}">
+															{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => '75', 'height' => '75', 'title' => $badge->name))}}</a></center></td>
+
+													<td><center>{{HTML::link('badges/'.$badge->id, $badge->name. " (".count($badge->users).")")}}</center></td>
+												<td>{{$badge->description}}</td>
+												<td>{{$badge->issuer->name}}</td>									
+													<td><center>
 						                    @if( Auth::check())
 					                            @if(count($badge->users()->where('user_id', '=', $user->id)->get()) == 0)
 													{{Form::open('badges', 'PUT')}}
@@ -84,18 +101,17 @@
 						                    @else
 						                       <a href="#unauthorizedModal" role="button" class="btn btn-mini btn-warning" data-toggle="modal">{{__('badges.request')}}</a>
 						                    @endif</center>
-												</td></tr>
-												<tr><td>{{$badge->description}}</td></tr>
-												<tr><td>{{__('badges.issuer')}}.: {{$badge->issuer->name}}</td></tr>
-											</table>
-										</div>										
+												</td>
 									@endforeach											
+										</tr>
+									</table>
+									</div>	
 								</div>
 						    </div>
 					@endforeach
 				</div>
 			</div> <!-- /span10 -->
-			<div class="span3">
+			<div class="span2">
 				<div class="sidebar">
 					<h3><span class="slash">{{__('badges.about')}}</span></h3>
 					<p>{{__('badges.about1')}}</p>
