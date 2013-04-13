@@ -14,6 +14,7 @@ return array(
 	'description' 		=> 'Description',
 	'issuer' 			=> 'Issuer',
 	'request' 			=> 'Request this badge',
+	'remove' 			=> 'Delete your badge',	
 	'about' 			=> 'About Badges',
 	'about1' 			=> 'Here you present you professional achievements. 
 		Badges give you points to improve your profile.',

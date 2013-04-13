@@ -75,7 +75,8 @@
 												</tr>
 											</thead>
 											<tbody>
-									@foreach ($badgetype->newbadges() as $badge)
+									@foreach ($badgetype->newbadges() as $badgez)
+									<?php $badge = Badge::find($badgez->id); ?>
 												<tr>
 													<td><center>
 														<a href="{{URL::to('/badges/'.$badge->id)}}">
@@ -88,11 +89,14 @@
 					                            @if(count($badge->users()->where('user_id', '=', $user->id)->get()) == 0)
 													{{Form::open('badges', 'PUT')}}
 													{{Form::hidden('badge_id', $badge->id)}}
-													{{Form::submit(__('badges.request'),  array('class' => 'btn btn-small btn-success'))}}
+													{{Form::submit(__('badges.request'),  array('class' => 'btn btn-mini btn-success'))}}
 													{{Form::close()}}
 												@else
 													@if(count($badge->users()->where('user_id', '=', $user->id)->where('badge_user.active','=',0)->get()) == 0)
-															<span class="label label-info">{{__('badges.approved')}}</span>
+														{{Form::open('badges', 'DELETE')}}
+														{{Form::hidden('badge_id', $badge->id)}}
+														{{Form::submit(__('badges.remove'),  array('class' => 'btn btn-mini btn-danger'))}}
+														{{Form::close()}}
 													@else
 															<span class="label">{{__('badges.approval')}}</span>									
 													@endif
@@ -137,7 +141,10 @@
 													{{Form::close()}}
 												@else
 													@if(count($badge->users()->where('user_id', '=', $user->id)->where('badge_user.active','=',0)->get()) == 0)
-															<span class="label label-info">{{__('badges.approved')}}</span>
+														{{Form::open('badges', 'DELETE')}}
+														{{Form::hidden('badge_id', $badge->id)}}
+														{{Form::submit(__('badges.remove'),  array('class' => 'btn btn-mini btn-danger'))}}
+														{{Form::close()}}
 													@else
 															<span class="label">{{__('badges.approval')}}</span>									
 													@endif

@@ -33,6 +33,28 @@
 */
 
 /*
+Remove a Badge from the User list
+*/
+
+Route::delete('badges',
+	array(
+		'before' => 'auth', 'do' => function() {
+			try {
+				$user = User::find(Auth::user()->id);
+				$badge_id = Input::get('badge_id');
+				$badge = Badge::find($badge_id);
+				$user->badges()->detach($badge->id);
+				$user->save();
+				return Redirect::to('badges')->with('status','SUCESS!!! You removed your badge.');
+			} catch (Exception $e) {
+				Log::exception($e);
+				return Redirect::to('users/'.$user_id)->with('status', 'ERROR');
+			}
+		}
+	)
+);
+
+/*
 Unfollow User
 */
 

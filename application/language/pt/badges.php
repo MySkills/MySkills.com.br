@@ -7,12 +7,14 @@ return array(
 	| /jobs Language Lines
 	|--------------------------------------------------------------------------
 	*/
+	'pagetitle'				=> 	'Badges - O que são badges?',
 	'choose' 			=> 'Sua lista de conquistas profissionais!!!',
 	'points' 			=> 'Pontos',
 	'name' 				=> 'Nome',
 	'description' 		=> 'Descrição',
 	'issuer' 			=> 'Emissor',
 	'request' 			=> 'Solicite esse badge',
+	'remove' 			=> 'Exclua o seu badge',
 	'about' 			=> 'Sobre os Badges',
 	'about1' 			=> 'Aqui você demonstra as suas conquistas profissionais. 
 		Os badges lhe dão pontos para subir no nosso ranking de especialistas.',
