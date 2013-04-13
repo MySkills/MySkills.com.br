@@ -137,7 +137,7 @@
 					                            @if(count($badge->users()->where('user_id', '=', $user->id)->get()) == 0)
 													{{Form::open('badges', 'PUT')}}
 													{{Form::hidden('badge_id', $badge->id)}}
-													{{Form::submit(__('badges.request'),  array('class' => 'btn btn-small btn-success'))}}
+													{{Form::submit(__('badges.request'),  array('class' => 'btn btn-mini btn-success'))}}
 													{{Form::close()}}
 												@else
 													@if(count($badge->users()->where('user_id', '=', $user->id)->where('badge_user.active','=',0)->get()) == 0)

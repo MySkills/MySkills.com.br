@@ -93,13 +93,16 @@
 								{{Form::close()}}
 							@else
 								@if(count($badge->users()->where('user_id', '=', Auth::user()->id)->where('badge_user.active','=',0)->get()) == 0)
-										<span class="label label-info">{{__('badges.approved')}}</span>
+									{{Form::open('badges', 'DELETE')}}
+									{{Form::hidden('badge_id', $badge->id)}}
+									{{Form::submit(__('badges.remove'),  array('class' => 'btn btn-small btn-danger'))}}
+									{{Form::close()}}
 								@else
 										<span class="label">{{__('badges.approval')}}</span>									
 								@endif
 							@endif
 	                    @else
-	                       <a href="#unauthorizedModal" role="button" class="btn btn-warning" data-toggle="modal">{{__('badges.request')}}</a>
+	                       <a href="#unauthorizedModal" role="button" class="btn btn-small btn-warning" data-toggle="modal">{{__('badges.request')}}</a>
 	                    @endif							
 				</div> <!-- /sidebar -->
 			</div> <!-- /span4 -->
