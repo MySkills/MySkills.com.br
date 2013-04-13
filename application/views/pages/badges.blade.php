@@ -118,8 +118,9 @@
 													<th width="15%"><center>Solicite</center></th>
 												</tr>
 											</thead>
-											<tbody>
-									@foreach ($badgetype->newbadges() as $badge)
+											<tbody>											
+									@foreach (Badgetype::topBadges($badgetype->id) as $badgez)
+									<?php $badge = Badge::find($badgez->id); ?>
 												<tr>
 													<td><center>
 														<a href="{{URL::to('/badges/'.$badge->id)}}">
