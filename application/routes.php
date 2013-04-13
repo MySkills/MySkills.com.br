@@ -131,7 +131,8 @@ Route::get('admin/mandrill/send',
 
 Route::get('badges', function()
 {
-	return View::make('pages.badges')->with('page','badges');
+	$badgetypes = Badgetype::where('active', '=', 1)->order_by('points', 'desc')->get();
+	return View::make('pages.badges')->with('page','badges')->with('badgetypes',$badgetypes);
 });
 
 
@@ -285,14 +286,17 @@ Route::get('stats',
 
 Route::get('manguezal', function()
 {
-//	$jobs = Job::where('active', '=', '1')->order_by('created_at', 'desc')->get();
-//	if (Input::get('recruiter_id')) {
-//		return View::make('pages.recruiterjobs')->with('page','recruiterjobs')->with('recruiter_id', Input::get('recruiter_id'))->with('jobs', $jobs);
-//	} else {
 		return View::make('manguezal.jobs')->with('page','manguezal');
-//	}
+});
+
+Route::get('marketplace', function()
+{
+	$topUsers = User::topUsers();
+	return View::make('pages.marketplace')->with('page','marketplace')->with('topUsers', $topUsers);
 
 });
+
+
 
 Route::get('messages', 
 	array(

@@ -43,7 +43,7 @@
 					</div>
 				@endif
 				<ul id="BadgeTab" class="nav nav-tabs">
-					<?php $badgetypes = Badgetype::where('active', '=', 1)->order_by('points', 'desc')->get(); ?>
+					
 					@foreach($badgetypes as $badgetype)
 						@if($badgetype->id==2)
 							<li class="active"><a data-toggle="tab" href="#{{$badgetype->name}}">{{$badgetype->name}}</a></li>
@@ -54,36 +54,35 @@
 
 				</ul>
 				<div id="BadgeTabContent" class="tab-content">
-					@foreach($badgetypes as $badgetype)					
+					@foreach($badgetypes as $badgetype)
 						@if($badgetype->id==2)
 							<div class="tab-pane fade in active" id="{{$badgetype->name}}">
 						@else
 							<div class="tab-pane fade" id="{{$badgetype->name}}">
 						@endif
-								<?php $badges = Badge::where('badgetype_id', '=', $badgetype->id)->where('active', '=', 1)->order_by('id', 'desc')->get(); ?>
 								<div class="row">
-									<div class="span10">
+									<div class="span5">
 										<table class="table table-striped table-condensed">
+											<caption>
+												<span class="label label-info">Os mais novos</span>.
+											</caption>
 											<thead>
 												<tr>
 													<th width="10%"><center>Badge</center></th>
 													<th width="15%"><center>Nome</center></th>
 													<th width="45%"><center>Descrição</center></th>
-													<th width="15%"><center>Emissor</center></th>
 													<th width="15%"><center>Solicite</center></th>
 												</tr>
 											</thead>
 											<tbody>
-
-									@foreach ($badges as $badge)
+									@foreach ($badgetype->newbadges() as $badge)
 												<tr>
 													<td><center>
 														<a href="{{URL::to('/badges/'.$badge->id)}}">
 															{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => '75', 'height' => '75', 'title' => $badge->name))}}</a></center></td>
 
 													<td><center>{{HTML::link('badges/'.$badge->id, $badge->name. " (".count($badge->users).")")}}</center></td>
-												<td>{{$badge->description}}</td>
-												<td>{{$badge->issuer->name}}</td>									
+												<td>{{$badge->description}}</td>				
 													<td><center>
 						                    @if( Auth::check())
 					                            @if(count($badge->users()->where('user_id', '=', $user->id)->get()) == 0)
@@ -106,6 +105,51 @@
 										</tr>
 									</table>
 									</div>	
+									<div class="span5">
+										<table class="table table-striped table-condensed">
+											<caption>
+												<span class="label label-info">Os mais usados</span>.
+											</caption>
+											<thead>
+												<tr>
+													<th width="10%"><center>Badge</center></th>
+													<th width="15%"><center>Nome</center></th>
+													<th width="45%"><center>Descrição</center></th>
+													<th width="15%"><center>Solicite</center></th>
+												</tr>
+											</thead>
+											<tbody>
+									@foreach ($badgetype->newbadges() as $badge)
+												<tr>
+													<td><center>
+														<a href="{{URL::to('/badges/'.$badge->id)}}">
+															{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => '75', 'height' => '75', 'title' => $badge->name))}}</a></center></td>
+
+													<td><center>{{HTML::link('badges/'.$badge->id, $badge->name. " (".count($badge->users).")")}}</center></td>
+												<td>{{$badge->description}}</td>				
+													<td><center>
+						                    @if( Auth::check())
+					                            @if(count($badge->users()->where('user_id', '=', $user->id)->get()) == 0)
+													{{Form::open('badges', 'PUT')}}
+													{{Form::hidden('badge_id', $badge->id)}}
+													{{Form::submit(__('badges.request'),  array('class' => 'btn btn-small btn-success'))}}
+													{{Form::close()}}
+												@else
+													@if(count($badge->users()->where('user_id', '=', $user->id)->where('badge_user.active','=',0)->get()) == 0)
+															<span class="label label-info">{{__('badges.approved')}}</span>
+													@else
+															<span class="label">{{__('badges.approval')}}</span>									
+													@endif
+												@endif
+						                    @else
+						                       <a href="#unauthorizedModal" role="button" class="btn btn-mini btn-warning" data-toggle="modal">{{__('badges.request')}}</a>
+						                    @endif</center>
+												</td>
+									@endforeach											
+										</tr>
+									</table>
+									</div>	
+
 								</div>
 						    </div>
 					@endforeach
