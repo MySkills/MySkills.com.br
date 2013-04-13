@@ -42,6 +42,11 @@ class User extends Eloquent
 	  return $this->has_many_and_belongs_to('Badge');
 	}
 
+	public function projects()
+	{
+	  return $this->has_many_and_belongs_to('Project');
+	}
+
 	public function activebadges() {
 		return $this->has_many_and_belongs_to('Badge')->where('badge_user.active','=',true)->order_by('points', 'desc')->order_by('id', 'desc');
 	}
@@ -194,7 +199,8 @@ class User extends Eloquent
 	}
 
 	public static function topUsersBy($badge_id) {
-			$topusers = DB::query("SELECT
+			$topusers = DB::query("select Q.* from 
+(SELECT
 						U.id, U.name name, COALESCE(UL.level, 1) level, SUM(B.points)*COALESCE(UL.level,1) rank
 				FROM
 						users U
@@ -216,11 +222,13 @@ class User extends Eloquent
 								group by U.name
 							) UL
 							on BU.user_id = UL.user_id
-				where B.id in (".$badge_id.")
 				and U.active = true
 				and U.lastlogin > SUBDATE(NOW(), '29 day')
 				group by U.name
-				order by rank desc, U.lastlogin desc");
+				order by rank desc, U.lastlogin desc) Q,
+				badge_user BU
+				where BU.user_id = Q.id and 
+					BU.badge_id = ".$badge_id);
 			return $topusers;
 	}
 
