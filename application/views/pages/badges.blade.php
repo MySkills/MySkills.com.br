@@ -63,14 +63,11 @@
 								<?php $badges = Badge::where('badgetype_id', '=', $badgetype->id)->where('active', '=', 1)->order_by('id', 'desc')->get(); ?>
 								<div class="row">
 									@foreach ($badges as $badge)
-										<div class="span1">
-											{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => '75', 'height' => '75', 'title' => $badge->name))}}
-										</div>
 										<div class="span2">
 											<table class="table table-striped table-condensed">
-												<tr><td>{{HTML::link('badges/'.$badge->id, $badge->name. " (".count($badge->users).")")}}</td></tr>
-												<tr><td>
-
+												<tr><td><center>{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => '75', 'height' => '75', 'title' => $badge->name))}}</center></td></tr>
+												<tr><td><center>{{HTML::link('badges/'.$badge->id, $badge->name. " (".count($badge->users).")")}}</center></td></tr>
+												<tr><td><center>
 						                    @if( Auth::check())
 					                            @if(count($badge->users()->where('user_id', '=', $user->id)->get()) == 0)
 													{{Form::open('badges', 'PUT')}}
@@ -86,7 +83,7 @@
 												@endif
 						                    @else
 						                       <a href="#unauthorizedModal" role="button" class="btn btn-mini btn-warning" data-toggle="modal">{{__('badges.request')}}</a>
-						                    @endif													
+						                    @endif</center>
 												</td></tr>
 												<tr><td>{{$badge->description}}</td></tr>
 												<tr><td>{{__('badges.issuer')}}.: {{$badge->issuer->name}}</td></tr>
