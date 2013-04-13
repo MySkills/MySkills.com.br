@@ -19,7 +19,7 @@ class Badgetype extends Eloquent {
 							BT.id = B.badgetype_id and
 							B.id = BU.badge_id and
 							U.id = BU.user_id and
-							b.active = true and
+							B.active = true and
 							BT.id = ".$badgetype_id." group by BU.badge_id
 						order by 
 						count(BU.badge_id) desc");
