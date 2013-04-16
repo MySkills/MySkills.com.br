@@ -125,9 +125,9 @@ Route::get('admin/mandrill/send',
 			$responses = array();
 			$users = User::where_not_null('email')->get();
 			//$users = User::find(2)->first();
-			$since = '01/04/2013';
+			$since = '08/04/2013';
 			foreach ($users as $user) {
-				$email_content = View::make('email.08042013')
+				$email_content = View::make('email.16042013')
 									->with('page','user_stats')
 									->with('user', $user)
 									->with('since', $since)
@@ -135,7 +135,7 @@ Route::get('admin/mandrill/send',
 				$response = Mandrill::request('messages/send', array(
 				    'message' => array(
 						'html' => $email_content,
-						'subject' => '[myskills] Listagem de Devs por Badge e Checkin/Tecnologia',
+						'subject' => '[myskills] Descubra os badges mais usados pelos desenvolvedores',
 						'from_email' => 'eduardo.cruz@myskills.com.br',
 						'from_name' => 'Eduardo Cruz (MySkills)',
 						'to' => array(array('email'=>$user->email,

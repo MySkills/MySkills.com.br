@@ -18,7 +18,7 @@ class Badge extends Eloquent
      }
 
 	public static function since() {
-		return Badge::where('id', '>', 49)
+		return Badge::where('id', '>', 51)
 				->order_by('id', 'desc')->get();
 	}
 }
