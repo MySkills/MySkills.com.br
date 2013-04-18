@@ -25,4 +25,5 @@ return array(
 	'success_message' 	=> 'SUCESS!!! You earned a new badge. Keep ranking up and doing daily checkins.',
 	'error_message' 	=> 'ERROR.',
 	'topactive'			=> 'Active users orded by points',
+	'new_badges'		=> 'New Badges',
 	);

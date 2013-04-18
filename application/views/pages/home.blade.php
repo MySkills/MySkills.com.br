@@ -44,6 +44,21 @@
 					</tr>
 					@endforeach
 				</table>
+
+				<h4><span class="slash">{{__('badges.new_badges')}}</span></h4>
+				<table>
+					@foreach ($newBadges as $badge)
+					
+					<tr>
+						<td>
+							<a href="{{URL::to('/badges/'.$badge->id)}}">
+								{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 75, 'height'=>75, 'title' => $badge->name))}}
+							</a>
+						</td>
+					</tr>
+					@endforeach
+				</table>
+
 				</div> <!-- /sidebar -->
 		</div>
 		<div class="span10" id="container">

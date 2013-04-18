@@ -52,12 +52,20 @@ class Home_Controller extends Base_Controller {
 			default:
 				$topUsers = User::topUsers();
 				$newUsers = User::order_by('created_at', 'desc')->take(10)->get();
-				return View::make('pages.home')->with('page','home')->with('topUsers', $topUsers)->with('newUsers', $newUsers);
+				$newBadges = Badge::order_by('id', 'desc')->take(10)->get();				
+				return View::make('pages.home')
+					->with('page','home')
+					->with('topUsers', $topUsers)
+					->with('newUsers', $newUsers)
+					->with('newBadges', $newBadges);
 				break;
 		}
 		$topUsers = User::topUsersBy($badge_id);
 		$newUsers = User::order_by('created_at', 'desc')->take(10)->get();
-		return View::make('pages.home')->with('page','home')->with('topUsers', $topUsers)->with('newUsers', $newUsers);
-
+		return View::make('pages.home')
+			->with('page','home')
+			->with('topUsers', $topUsers)
+			->with('newUsers', $newUsers)
+			->with('newBadges', $newBadges);
 	}
 }

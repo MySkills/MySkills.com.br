@@ -25,4 +25,5 @@ return array(
 	'success_message' 	=> 'SUCESSO!!! Você conseguiu um novo badge. Continue subindo no ranking e faça checkins diários.',
 	'error_message' 	=> 'ERRO.',
 	'topactive'			=> 'Usuarios ativos ordenados por pontuação total',
+	'new_badges'		=> 'Novos Badges',
 	);
