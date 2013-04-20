@@ -142,7 +142,7 @@
 					<li class="active"><a data-toggle="tab" href="#checkins">Checkins ({{count($user->technologies)}})</a></li>
 					<li class><a data-toggle="tab" href="#badges">Badges Conquistados ({{count($user->badges)}})</a></li>
 					<li class><a data-toggle="tab" href="#followers">Seguidores ({{count($user->followers)}})</a></li>
-					<li class><a data-toggle="tab" href="#projects">Projetos ({{count($user->projects)}})</a></li>
+					<li class><a data-toggle="tab" href="#projects">Projetos (0)</a></li>
 				</ul>
 				<div id="BadgeTabContent" class="tab-content">
 					<div class="tab-pane fade in active" id="checkins">
@@ -231,15 +231,9 @@
 						</div>
 					</div>
 					<div class="tab-pane fade" id="projects">
-						<ul>
-							@foreach ($user->projects as $project)
-							<li>{{$project->name}} - {{$project->description}}</li>
-							@endforeach							
-						</ul>	
-						</div>
+					</div>
 				</div>
 			</div> <!-- /span4 -->
-
 			<div class="span2 pagination-centered">
 				<div class="sidebar pagination-centered">
 					@if(count($user->technologies) > 20)
