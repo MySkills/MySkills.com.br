@@ -54,6 +54,27 @@ Route::delete('badges',
 	)
 );
 
+Route::delete('checkin',
+	array(
+		'before' => 'auth', 'do' => function() {
+			try {
+				$user = User::find(Auth::user()->id);
+				$technology_id = Input::get('technology_id');
+				$technology_user = DB::table('technology_user')
+					->where('technology_id','=', $technology_id)
+					->where('user_id','=', $user->id)
+					->order_by('created_at', 'desc')
+					->first();
+				 DB::table('technology_user')->delete($technology_user->id);
+				return Redirect::to('users/'.$user->id)->with('status','SUCESS!!! You removed your last checkin.');
+			} catch (Exception $e) {
+				Log::exception($e);
+				return Redirect::to('users/'.$user_id)->with('status', 'ERROR');
+			}
+		}
+	)
+);
+
 /*
 Unfollow User
 */
