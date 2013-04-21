@@ -105,6 +105,14 @@ class User extends Eloquent
 		}
 	}
 
+	public function levellimit($level) {
+		return (20*(pow(2, $level)-1))-(20*(pow(2, $level-1)-1));
+	}
+
+	public function pglevel($level) {
+		return 20*(pow(2, $level)-1);
+	}
+
 	public function checkins_since($date) {
 		return $this
 				->technologies()

@@ -107,17 +107,9 @@
 					<div class="progress progress-danger span5">
 						<div class="bar" style="width: {{$user->life*3.33}}%;">{{$user->life}}/30 <i class="icon-heart"></i></div>
 					</div>
-					<div class="progress progress-info span5">
-					@if($user->level == 1)
-						<div class="bar" style="width: {{count($user->technologies)*5}}%;">{{count($user->technologies)}}/20 <i class="icon-fire"></i></div>
-					@endif
-					@if($user->level == 2)
-						<div class="bar" style="width: {{(count($user->technologies)-20)*2.5}}%;">{{count($user->technologies)-20}}/40 <i class="icon-fire"></i></div>
-					@endif
-					@if($user->level == 3)
-						<div class="bar" style="width: {{(count($user->technologies)-60)*1.25}}%;">{{count($user->technologies)-60}}/80 <i class="icon-fire"></i></div>
-					@endif
 
+					<div class="progress progress-info span5">
+						<div class="bar" style="width: {{($user->technologies()->count() - $user->pglevel($user->level-1))*100/$user->levellimit($user->level)}}%;">{{$user->technologies()->count() - $user->pglevel($user->level-1)}}/{{$user->levellimit($user->level)}} <i class="icon-fire"></i></div>
 					</div>
 				<div class="pagination-centered span5">
 				@if(Auth::check())
