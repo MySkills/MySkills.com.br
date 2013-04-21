@@ -22,5 +22,5 @@ return array(
 	'skills'				=> 'Habilidades',
 	'items'					=> 'Ítems do usuário',
 	'level'					=> 'Nível',
-	'limitedlevelmessage'	=> 'Para conquistar o nível :level, você precisa de pelo menos uma habilidade com nível :skilllevel',
+	'limitedlevelmessage'	=> 'Para conquistar o nível :level você precisa de pelo menos uma habilidade com nível :skilllevel',
 	);
