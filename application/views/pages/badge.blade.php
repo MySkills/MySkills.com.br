@@ -52,30 +52,30 @@
 
 					@foreach ($developers as $developer)
 					<?php 
-					$developer = User::find($developer->id); 
+					$dev = User::find($developer->id); 
 					?>
 					<tr>
 						<td>
 							<a href="{{URL::to('/users/'.$developer->id)}}">
-								{{HTML::image($developer->getImageUrl('square'), $developer->name, array('width' => 50, 'height'=>50, 'title' => $developer->name))}}
+								{{HTML::image($dev->getImageUrl('square'), $dev->name, array('width' => 50, 'height'=>50, 'title' => $dev->name))}}
 							</a>
 						</td>
 						<td>
-							{{HTML::link('users/'.$developer->id, $developer->name)}}
+							{{HTML::link('users/'.$dev->id, $dev->name)}}
 						</td>
 						<td>
-							{{$developer->limitedUser()->limitedlevel}}
+							{{$dev->limitedUser()->limitedlevel}}
 						</td>
 						<td>
-							{{$developer->points}}
+							{{$developer->rank}}
 						</td>						
 						<td>
-							@foreach ($developer->partial_badges(6) as $badge)
+							@foreach ($dev->partial_badges(6) as $badge)
 								<a href="{{URL::to('/badges/'.$badge->id)}}">
 									{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 50, 'height'=>50, 'title' => $badge->name))}}
 								</a>
 							@endforeach
-							@for ($i = 0; $i <= (5-count($developer->activebadges)); $i++)
+							@for ($i = 0; $i <= (5-count($dev->activebadges)); $i++)
 								{{HTML::image('img/badges/unlock100.png', 'Unlock', array('width' => 50, 'height'=>50, 'title' => 'Unlock'))}}
 							@endfor
 						</td>

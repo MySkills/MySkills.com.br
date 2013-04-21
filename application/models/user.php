@@ -65,16 +65,6 @@ class User extends Eloquent
 	  return $this->has_many_and_belongs_to('Friend');
 	}
 
-	public function get_points()
-	{
-		$total = 0;
-		foreach ($this->activebadges as $badge) {
-			$total = $total + $badge->points;
-		}
-
-		return $total*$this->level;
-	}
-
 	public function technologies()
 	{
 	  return $this->has_many_and_belongs_to('Technology')->with('checkin_at');
