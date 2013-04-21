@@ -77,6 +77,13 @@
 					<strong>{{Session::get('status')}}</strong>
 			</div>
 		@endif		
+		@if($user->limitedUser()->limitedlevel < $user->limitedUser()->level)
+			<div class="alert alert-error">
+				<button type="button" class="close" data-dismiss="alert">×</button>
+				<strong>{{__('user.limitedlevelmessage', array('level' => $user->limitedUser()->level, 'skilllevel' => $user->limitedUser()->level-1))}}</strong>
+			</div>
+		@endif
+
 		<div class="row">
 			<div class="span3 pagination-centered box">
 				{{HTML::image($user->getImageUrl('large'),  $user->name, array('title' => $user->name))}}
@@ -101,7 +108,7 @@
 					@if($user->level == 3)
 						{{HTML::image('img/browserquest/'.'level3.png',  __('user.level').' 3', array('width' => 75, 'height'=>75, 'title' => __('user.level').' 3'))}}
 					@endif
-					{{__('user.level')}} {{$user->level}}
+					{{__('user.level')}} {{$user->limitedUser()->limitedlevel}}
 
 					</div>
 					<div class="progress progress-danger span5">
@@ -111,6 +118,7 @@
 					<div class="progress progress-info span5">
 						<div class="bar" style="width: {{($user->technologies()->count() - $user->pglevel($user->level-1))*100/$user->levellimit($user->level)}}%;">{{$user->technologies()->count() - $user->pglevel($user->level-1)}}/{{$user->levellimit($user->level)}} <i class="icon-fire"></i></div>
 					</div>
+
 				<div class="pagination-centered span5">
 				@if(Auth::check())
 					@if($user->id == Auth::user()->id)
