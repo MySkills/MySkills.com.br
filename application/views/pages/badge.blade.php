@@ -70,12 +70,12 @@
 							{{$developer->points}}
 						</td>						
 						<td>
-							@foreach ($developer->partial_badges(7) as $badge)
+							@foreach ($developer->partial_badges(6) as $badge)
 								<a href="{{URL::to('/badges/'.$badge->id)}}">
 									{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 50, 'height'=>50, 'title' => $badge->name))}}
 								</a>
 							@endforeach
-							@for ($i = 0; $i <= (6-count($developer->activebadges)); $i++)
+							@for ($i = 0; $i <= (5-count($developer->activebadges)); $i++)
 								{{HTML::image('img/badges/unlock100.png', 'Unlock', array('width' => 50, 'height'=>50, 'title' => 'Unlock'))}}
 							@endfor
 						</td>

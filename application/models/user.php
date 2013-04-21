@@ -236,7 +236,7 @@ FROM
 			WHERE U.active = true
 			AND U.lastlogin > SUBDATE(NOW(), '29 day')
 			group by U.name
-			order by level desc, points desc, rank desc, U.lastlogin desc");
+			order by level desc, rank desc, U.lastlogin desc");
 		return $topusers;
 	}
 
@@ -278,7 +278,7 @@ FROM
 			AND BU.badge_id = ".$badge_id." 
 			AND B.id = ".$badge_id." 
 			group by U.name
-			order by level desc, points desc, rank desc, U.lastlogin desc");
+			order by level desc, rank desc, U.lastlogin desc");
 		return $topusers;
 	}
 
