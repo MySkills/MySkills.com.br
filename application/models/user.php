@@ -14,7 +14,7 @@ class User extends Eloquent
 			break;
 			case 'github' :
       			$github = json_decode(file_get_contents('https://api.github.com/users/'.$this->nickname));
-      			$this->image = $github->avatar_url;
+      			$this->image = $github->avatar_url.'&s=200';
 				$this->email = $user_data['info']['email'];
 				$this->social_url = $user_data['info']['urls']['github'];					
 			break;
@@ -82,16 +82,16 @@ class User extends Eloquent
 
 	public function get_level() {
 		$checkins = count($this->technologies);
-		if($checkins > 359) {
+		if($checkins > 1749) {
 			return 7;
 		}
-		if($checkins > 259) {
+		if($checkins > 1109) {
 			return 6;
 		}
-		if($checkins > 179) {
+		if($checkins > 469) {
 			return 5;
 		}
-		if($checkins > 119) {
+		if($checkins > 149) {
 			return 4;
 		}
 		if($checkins > 59) {
