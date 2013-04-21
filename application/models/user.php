@@ -201,78 +201,85 @@ FROM
 	}
 
 	public static function topUsers() {
-			$topusers = DB::query("SELECT
-		U.id, U.name name, COALESCE(UL.level, 1) lockedlevel, COALESCE(UL.limitedlevel, 1) level, SUM(B.points)*COALESCE(UL.limitedlevel,1) rank, SUM(B.points) points
-FROM
-		users U
-		right JOIN badge_user BU 	on 	U.id = BU.user_id
-		left JOIN badges B 		on 	B.id = BU.badge_id
-		left JOIN
-			(
-SELECT 
-	Q.user_id, 
-	Q.name, 
-	((SUM(Q.checkins) > 19 ) +1) +(SUM(Q.checkins) > 59) + (SUM(Q.checkins) > 149) level,
-	IF(((SUM(Q.checkins) > 19 ) +1) +(SUM(Q.checkins) > 59) + (SUM(Q.checkins) > 149) - 1 <= Q.maxtechnologylevel, ((SUM(Q.checkins) > 19 ) +1) +(SUM(Q.checkins) > 59) + (SUM(Q.checkins) > 149), Q.maxtechnologylevel+1 ) limitedlevel
-FROM 
-(SELECT
-	U.id user_id, 
-	U.name, 
-	((count(U.name) > 19 ) + 1)+(count(U.name) > 59)+(count(U.name) > 149)+(count(U.name) > 469)+(count(U.name) > 1109)+(count(U.name) > 1749) maxtechnologylevel, 
-	count(TU.technology_id) checkins,
-	(count(TU.technology_id) > 19) + (count(TU.technology_id) > 59) + (count(TU.technology_id) > 149) soma
-				FROM
-					technologies T,
-					technology_user TU,
+		$topusers = DB::query("SELECT
+					U.id, U.name name, COALESCE(UL.level, 1) lockedlevel, COALESCE(UL.limitedlevel, 1) level, SUM(B.points)*COALESCE(UL.limitedlevel,1) rank, SUM(B.points) points
+			FROM
 					users U
-				where
-					T.id = TU.technology_id AND
-					U.id = TU.user_id AND
-					U.lastlogin > SUBDATE(NOW(), '29 day')
-				group by U.name, TU.technology_id
-				order by U.name, checkins desc) Q
-group by Q.name) UL
-			on BU.user_id = UL.user_id
-
-WHERE U.active = true
-AND U.lastlogin > SUBDATE(NOW(), '29 day')
-group by U.name
-order by level desc, points desc, rank desc, U.lastlogin desc");
-			return $topusers;
+					right JOIN badge_user BU 	on 	U.id = BU.user_id
+					left JOIN badges B 		on 	B.id = BU.badge_id
+					left JOIN
+						(
+			SELECT 
+				Q.user_id, 
+				Q.name, 
+				((SUM(Q.checkins) > 19 ) +1) +(SUM(Q.checkins) > 59) + (SUM(Q.checkins) > 149) level,
+				IF(((SUM(Q.checkins) > 19 ) +1) +(SUM(Q.checkins) > 59) + (SUM(Q.checkins) > 149) - 1 <= Q.maxtechnologylevel, ((SUM(Q.checkins) > 19 ) +1) +(SUM(Q.checkins) > 59) + (SUM(Q.checkins) > 149), Q.maxtechnologylevel+1 ) limitedlevel
+			FROM 
+			(SELECT
+				U.id user_id, 
+				U.name, 
+				((count(U.name) > 19 ) + 1)+(count(U.name) > 59)+(count(U.name) > 149)+(count(U.name) > 469)+(count(U.name) > 1109)+(count(U.name) > 1749) maxtechnologylevel, 
+				count(TU.technology_id) checkins,
+				(count(TU.technology_id) > 19) + (count(TU.technology_id) > 59) + (count(TU.technology_id) > 149) soma
+							FROM
+								technologies T,
+								technology_user TU,
+								users U
+							where
+								T.id = TU.technology_id AND
+								U.id = TU.user_id AND
+								U.lastlogin > SUBDATE(NOW(), '29 day')
+							group by U.name, TU.technology_id
+							order by U.name, checkins desc) Q
+			group by Q.name) UL
+						on BU.user_id = UL.user_id
+			WHERE U.active = true
+			AND U.lastlogin > SUBDATE(NOW(), '29 day')
+			group by U.name
+			order by level desc, points desc, rank desc, U.lastlogin desc");
+		return $topusers;
 	}
 
 	public static function topUsersBy($badge_id) {
-			$topusers = DB::query("select Q.* from 
-(SELECT
-						U.id, U.name name, COALESCE(UL.level, 1) level, SUM(B.points)*COALESCE(UL.level,1) rank
-				FROM
-						users U
-						right JOIN badge_user BU 	on 	U.id = BU.user_id
-						left JOIN badges B 		on 	B.id = BU.badge_id
-						left JOIN
-							(
-								SELECT
-								   U.id user_id, U.name, ((count(U.name) > 19 ) + 1)+(count(U.name) > 59)+(count(U.name) > 119) level
-								FROM
-									technologies T,
-									technology_user TU,
-									users U
-								where
-									T.id = TU.technology_id AND
-									U.id = TU.user_id AND 
-									U.lastlogin > SUBDATE(NOW(), '29 day') AND
-									U.active = true
-								group by U.name
-							) UL
-							on BU.user_id = UL.user_id
-				and U.active = true
-				and U.lastlogin > SUBDATE(NOW(), '29 day')
-				group by U.name
-				order by rank desc, U.lastlogin desc) Q,
-				badge_user BU
-				where BU.user_id = Q.id and 
-					BU.badge_id = ".$badge_id);
-			return $topusers;
+		$topusers = DB::query("SELECT
+					U.id, U.name name, COALESCE(UL.level, 1) lockedlevel, COALESCE(UL.limitedlevel, 1) level, SUM(B.points)*COALESCE(UL.limitedlevel,1) rank, SUM(B.points) points
+			FROM
+					users U
+					right JOIN badge_user BU 	on 	U.id = BU.user_id
+					left JOIN badges B 		on 	B.id = BU.badge_id
+					left JOIN
+						(
+			SELECT 
+				Q.user_id, 
+				Q.name, 
+				((SUM(Q.checkins) > 19 ) +1) +(SUM(Q.checkins) > 59) + (SUM(Q.checkins) > 149) level,
+				IF(((SUM(Q.checkins) > 19 ) +1) +(SUM(Q.checkins) > 59) + (SUM(Q.checkins) > 149) - 1 <= Q.maxtechnologylevel, ((SUM(Q.checkins) > 19 ) +1) +(SUM(Q.checkins) > 59) + (SUM(Q.checkins) > 149), Q.maxtechnologylevel+1 ) limitedlevel
+			FROM 
+			(SELECT
+				U.id user_id, 
+				U.name, 
+				((count(U.name) > 19 ) + 1)+(count(U.name) > 59)+(count(U.name) > 149)+(count(U.name) > 469)+(count(U.name) > 1109)+(count(U.name) > 1749) maxtechnologylevel, 
+				count(TU.technology_id) checkins,
+				(count(TU.technology_id) > 19) + (count(TU.technology_id) > 59) + (count(TU.technology_id) > 149) soma
+							FROM
+								technologies T,
+								technology_user TU,
+								users U
+							where
+								T.id = TU.technology_id AND
+								U.id = TU.user_id AND
+								U.lastlogin > SUBDATE(NOW(), '29 day')
+							group by U.name, TU.technology_id
+							order by U.name, checkins desc) Q
+			group by Q.name) UL
+						on BU.user_id = UL.user_id
+			WHERE U.active = true
+			AND U.lastlogin > SUBDATE(NOW(), '29 day')
+			AND BU.badge_id = ".$badge_id." 
+			AND B.id = ".$badge_id." 
+			group by U.name
+			order by level desc, points desc, rank desc, U.lastlogin desc");
+		return $topusers;
 	}
 
 	public static function topUsersByTechnology($tech_id) {

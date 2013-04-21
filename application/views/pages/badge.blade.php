@@ -43,8 +43,9 @@
 						<tr>
 							<th width="10%">{{__('users.picture')}}</th>
 							<th width="20%">{{__('users.name')}}</th>
-							<th width="5%">{{__('users.points')}}</th>							
-							<th width="650%">{{__('users.badges')}}</th>							
+							<th width="5%">{{__('users.level')}}</th>
+							<th width="5%">{{__('users.points')}}</th>
+							<th width="650%">{{__('users.badges')}}</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -61,6 +62,9 @@
 						</td>
 						<td>
 							{{HTML::link('users/'.$developer->id, $developer->name)}}
+						</td>
+						<td>
+							{{$developer->limitedUser()->limitedlevel}}
 						</td>
 						<td>
 							{{$developer->points}}
