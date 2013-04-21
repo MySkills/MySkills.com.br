@@ -80,16 +80,9 @@
 					</div>
 
 					<div class="progress progress-info">
-						@if(count($user->technologies) < 20)
-							<div class="bar" style="width: {{count($user->technologies)*5}}%;"> <i class="icon-fire"></i> {{count($user->technologies)}}/20 {{__('home.nextlevel')}} </div>
-						@elseif(count($user->technologies) < 60)
-							<div class="bar" style="width: {{(count($user->technologies)-20)*2.5}}%;"> <i class="icon-fire"></i> {{count($user->technologies)-20}}/40 {{__('home.nextlevel')}}</div>
-						@elseif(count($user->technologies) < 120)
-							<div class="bar" style="width: {{(count($user->technologies)-60)*1.25}}%;"> <i class="icon-fire"></i> {{count($user->technologies)-20}}/80 {{__('home.nextlevel')}}</div>
-						@else
- 							<div class="bar" style="width: {{(count($user->technologies)-140)*0.625}}%;"> <i class="icon-fire"></i> {{count($user->technologies)-60}}/160 {{__('home.nextlevel')}}</div>
-						@endif
+						<div class="bar" style="width: {{($user->technologies()->count() - $user->pglevel($user->level-1))*100/$user->levellimit($user->level)}}%;">{{$user->technologies()->count() - $user->pglevel($user->level-1)}}/{{$user->levellimit($user->level)}} <i class="icon-fire"></i></div>
 					</div>
+
 					@foreach ($user->partial_badges(4) as $badge)
 						<a href="{{URL::to('/badges/'.$badge->id)}}">
 							{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 30, 'height'=>30, 'title' => $badge->name))}}
