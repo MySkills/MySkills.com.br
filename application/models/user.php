@@ -278,7 +278,7 @@ FROM
 			AND BU.badge_id = ".$badge_id." 
 			AND B.id = ".$badge_id." 
 			group by U.name
-			order by level desc, rank desc, U.lastlogin desc");
+			order by lockedlevel desc, rank desc, U.lastlogin desc");
 		return $topusers;
 	}
 
