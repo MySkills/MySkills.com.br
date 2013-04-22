@@ -429,10 +429,12 @@ Route::get('users/(:num)', function($user_id)
 {
 	$technology_list = Technology::order_by('name', 'asc')->lists('name', 'id');
 	$user = User::find($user_id);
+	$user_level = $user->limitedUser()->limitedlevel;
 	return View::make('pages.user')
 		->with('page','profile')
 		->with('technology_list', $technology_list)
 		->with('user', $user)
+		->with('user_level', $user_level)
 		->with('og_title', $user->name)
 		->with('og_image', $user->getImageUrl('large'));
 });

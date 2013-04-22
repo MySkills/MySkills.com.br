@@ -99,16 +99,16 @@
 			<div class="span7">
 				<div class="row">
 					<div class="span1 sidebar pagination-centered well">
-					@if($user->level == 1)
+					@if($user_level == 1)
 						{{HTML::image('img/browserquest/'.'level1.png',  __('user.level').' 1', array('width' => 75, 'height'=>75, 'title' => __('user.level').' 1'))}}							
 					@endif
-					@if($user->level == 2)
+					@if($user_level == 2)
 						{{HTML::image('img/browserquest/'.'level2.png',  __('user.level').' 2', array('width' => 75, 'height'=>75, 'title' => __('user.level').' 2'))}}
 					@endif
-					@if($user->level == 3)
+					@if($user_level == 3)
 						{{HTML::image('img/browserquest/'.'level3.png',  __('user.level').' 3', array('width' => 75, 'height'=>75, 'title' => __('user.level').' 3'))}}
 					@endif
-					{{__('user.level')}} {{$user->limitedUser()->limitedlevel}}
+					{{__('user.level')}} {{$user_level}}
 
 					</div>
 					<div class="progress progress-danger span5">
