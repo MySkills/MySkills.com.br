@@ -67,7 +67,7 @@
 							{{$dev->limitedUser()->limitedlevel}}
 						</td>
 						<td>
-							{{$developer->rank}}
+							{{$dev->points}}
 						</td>						
 						<td>
 							@foreach ($dev->partial_badges(6) as $badge)
