@@ -155,6 +155,20 @@ class User extends Eloquent
 	  return Message::where('recipient_id', '=', Auth::user()->id)->or_where('sender_id', '=', Auth::user()->id)->order_by('created_at', 'desc')->get();
 	}
 
+	public function privatemessages()
+	{
+	  /*return Message::where('recipient_id', '=', Auth::user()->id)
+	  	->where_not_null('recipient_id')
+	  	->or_where('sender_id', '=', Auth::user()->id)
+	  	->order_by('created_at', 'desc')->get();*/
+
+	 return DB::query("SELECT
+							*
+							from messages
+							where 
+							recipient_id = 2");
+	}
+
 	public static function mymessages()
 	{
 	  return Message::where('recipient_id', '=', Auth::user()->id)->order_by('created_at', 'desc')->get();

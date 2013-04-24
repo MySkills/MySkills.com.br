@@ -1,6 +1,5 @@
 @layout('templates.main')
 @section('content')
-<?php $messages = User::messages(); ?>
 <div id="subheader">	
 	<div class="inner">
 		<div class="container">
@@ -42,10 +41,6 @@
 					<?php
 						$sender 	= User::find($message->sender_id);
 						$recipient 	= User::find($message->recipient_id);
-						if ($message->recipient_id == Auth::user()->id) {
-							$message->unread = false;
-							$message->save();
-						}
 						?>
 					<tr>
 						<td>
@@ -56,8 +51,10 @@
 							{{HTML::link('users/'.$sender->id, $sender->name)}}
 						</td>
 						<td>
-							{{HTML::image($recipient->getImageUrl('square'), $recipient->name, array('width' => 50, 'height'=>50))}}
-							{{HTML::link('users/'.$recipient->id, $recipient->name)}}
+							@if(isset($recipient))
+								{{HTML::image($recipient->getImageUrl('square'), $recipient->name, array('width' => 50, 'height'=>50))}}
+								{{HTML::link('users/'.$recipient->id, $recipient->name)}}
+							@endif
 						</td>
 						<td>
 							{{nl2br(htmlspecialchars($message->text))}}

@@ -344,7 +344,10 @@ Route::get('marketplace', function()
 Route::get('messages', 
 	array(
 		'before' => 'auth', 'do' => function(){
-		 	return View::make('pages.messages')->with('page','messages');
+			$user = User::find(Auth::user()->id);
+		 	return View::make('pages.messages')
+		 		->with('messages', $user->privatemessages())
+		 		->with('page','messages');
 		}
 	)
 );
