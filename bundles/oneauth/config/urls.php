@@ -6,5 +6,5 @@ return array(
 	'callback'     => 'connect/callback',
 	
 	'registered'   => 'edit_user',
-	'logged_in'    => 'profile',
+	'logged_in'    => '/',
 );

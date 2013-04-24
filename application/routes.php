@@ -616,32 +616,41 @@ Route::put('jobs/(:num)/(:num)',
 Route::put('messages',
 	array(
 		'before' => 'auth', 'do' => function() {
-			try {
-				
+			try {				
 				$sender 	= User::find(Auth::user()->id);
 				$recipient 	= User::find(Input::get('recipient_id'));
-
-				$message = Message::create(
+				if (isset($recipient)) {					
+					$message = Message::create(
 					array(
 						'sender_id' 	=> $sender->id, 
 						'recipient_id' 	=> $recipient->id,
 						'text' 	=> Input::get('text')
-					)
-				);
-				$message->save();
-				Email::send(
-						'Eduardo Cruz',
-						'eduardo.cruz@myskills.com.br', 
-						$recipient->name, 
-						$recipient->email, 
-						'[myskills] Nova mensagem de '.$sender->name,
-						'Visite o MySkills.com.br para ver a sua nova mensagem.'
-				);
-
-			 	return Redirect::to('users/'.Input::get('recipient_id'))->with('status','SUCESS!!! Message Sent.');
+						)
+					);
+					$message->save();
+					Email::send(
+							'Eduardo Cruz',
+							'eduardo.cruz@myskills.com.br', 
+							$recipient->name, 
+							$recipient->email, 
+							'[myskills] Nova mensagem de '.$sender->name,
+							'Visite o MySkills.com.br para ver a sua nova mensagem.'
+					);
+					return Redirect::to('users/'.Input::get('recipient_id'))->with('status','SUCESS!!! Message Sent.')->with('page','user');
+				} else {
+					$message = Message::create(
+					array(
+						'sender_id' 	=> $sender->id, 
+						'text' 	=> Input::get('text')
+						)
+					);				
+					$message->save();							
+					return Redirect::to('home')->with('status','SUCESS!!! Message Sent.')->with('page','homeuser');
+				}				
+			 	
 			} catch (Exception $e) {
 
-				return Redirect::to('users/'.Input::get('recipient_id'))->with('status', 'ERROR');
+				return Redirect::to('users/'.Input::get('recipient_id'))->with('status', 'ERROR')>with('page','user');
 			}			
 		}
 	)
