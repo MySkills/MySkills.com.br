@@ -166,7 +166,8 @@ class User extends Eloquent
 							*
 							from messages
 							where 
-							recipient_id = 2");
+							recipient_id = 2 
+							order by created_at desc");
 	}
 
 	public static function mymessages()
