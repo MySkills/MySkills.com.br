@@ -49,7 +49,7 @@
             </a>
           </td>
           <?php $messagedate = Date::forge($wallmessage->created_at)->ago(); ?>
-          <td width="150">{{$messagedate}}</td>
+          <td width="90">{{$messagedate}}</td>
 
             <td>
               {{nl2br(htmlspecialchars($wallmessage->text))}}
