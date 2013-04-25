@@ -48,7 +48,15 @@
               {{HTML::image($user->getImageUrl('large'),  $user->name, array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => $user->name, 'class' => 'media-object'))}}
             </a>
           </td>
-          <td>{{$wallmessage->text}}</td>
+            <td>
+              {{nl2br(htmlspecialchars($wallmessage->text))}}
+            </td>          
+            <td>
+              {{Form::open('messages', 'DELETE')}}
+              {{Form::hidden('message_id', $wallmessage->id)}}
+              {{Form::submit(__('messages.delete'), array('class' => 'btn btn-danger btn-mini'))}}
+              {{Form::close()}}
+            </td>          
         </tr>
         @endforeach
         </table>
