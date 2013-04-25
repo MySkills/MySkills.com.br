@@ -41,5 +41,6 @@ return array(
 	'facebook-sdk' 	=> array('auto' 		=> true),
 	'mandrill' 		=> array('auto' 		=> true),	
 	'locate' 		=> array('auto' 		=> true),
-	'logviewer' 	=> array('location' 	=> 'logviewer',	'handles' => 'logviewer')
+	'logviewer' 	=> array('location' 	=> 'logviewer',	'handles' => 'logviewer'),
+	'date' => array('auto' => true),
 );

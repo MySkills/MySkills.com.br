@@ -48,6 +48,9 @@
               {{HTML::image($user->getImageUrl('large'),  $user->name, array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => $user->name, 'class' => 'media-object'))}}
             </a>
           </td>
+          <?php $messagedate = Date::forge($wallmessage->created_at)->ago(); ?>
+          <td width="150">{{$messagedate}}</td>
+
             <td>
               {{nl2br(htmlspecialchars($wallmessage->text))}}
             </td>          
