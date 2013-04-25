@@ -8,6 +8,7 @@ return array(
 	|--------------------------------------------------------------------------
 	*/
 	'ago'		=> 'ago',
+	'second'	=> 'second',
 	'minute'	=> 'minute',
 	'hour'		=> 'hour',	
 	'day'		=> 'day',
