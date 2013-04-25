@@ -35,7 +35,7 @@
     <div class="span8">
             <h1>Bem-vindo(a) ao MySkills</h1>
       {{Form::open('messages', 'PUT',array('class' =>'form-inline'))}}
-      {{Form::textarea('text', '',array('class' =>'span6', 'placeholder' => __('user.message'), 'rows' => '1' ))}}
+      {{Form::textarea('text', '',array('class' =>'span7', 'placeholder' => __('wall.sendyourmessage'), 'rows' => '1' ))}}
       {{Form::submit(__('jobs.submit'), array('class' => 'btn-primary'))}}
       {{Form::close()}}     
 
@@ -52,10 +52,12 @@
               {{nl2br(htmlspecialchars($wallmessage->text))}}
             </td>          
             <td>
+              @if($wallmessage->sender_id == Auth::user()->id)
               {{Form::open('messages', 'DELETE')}}
               {{Form::hidden('message_id', $wallmessage->id)}}
               {{Form::submit(__('messages.delete'), array('class' => 'btn btn-danger btn-mini'))}}
               {{Form::close()}}
+              @endif
             </td>          
         </tr>
         @endforeach
