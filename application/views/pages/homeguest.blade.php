@@ -1,13 +1,11 @@
 @layout('templates.main')
 @section('content')
-	<div class="row span12">
-			<div class="btn-group offset3">
-				{{HTML::link('/', __('home.listall'), array('class' => 'btn btn-success btn-large'))}}
-				{{HTML::link('home/index/1', __('home.certified_devs'), array('class' => 'btn btn-success btn-large'))}}
-				{{HTML::link('home/index/2', __('home.certified_managers'), array('class' => 'btn btn-success btn-large'))}}
-				{{HTML::link('home/index/3', __('home.mobile_devs'), array('class' => 'btn btn-success btn-large'))}}
-				{{HTML::link('home/index/4', __('home.scholars'), array('class' => 'btn btn-success btn-large'))}}
-			</div>
+	<div class="row span12 pagination-centered">
+						<div class="alert alert-error">
+						 <button type="button" class="close" data-dismiss="alert">×</button>
+						<strong>ATENÇÃO usuários do Github. Estamos corrigindo um erro de autenticação.</strong>
+					</div>
+
 	</div>
 
 	<div class="row boxback">
