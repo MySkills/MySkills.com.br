@@ -1,5 +1,10 @@
 @layout('templates.main')
 @section('content')
+<?php
+  if (Auth::check()) {
+    $user->logLastAccess();
+  }
+?>
 <div class="container">
 	<div class="row">
       <div class="span2">
