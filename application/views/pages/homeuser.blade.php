@@ -2,6 +2,7 @@
 @section('content')
 <?php
   if (Auth::check()) {
+    $user = User::find(Auth::user()->id);
     $user->logLastAccess();
   }
 ?>
