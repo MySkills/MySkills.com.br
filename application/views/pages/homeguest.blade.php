@@ -1,14 +1,6 @@
 @layout('templates.main')
 @section('content')
-	<div class="row span12 pagination-centered">
-						<div class="alert alert-error">
-						 <button type="button" class="close" data-dismiss="alert">×</button>
-						<strong>ATENÇÃO usuários do Github. Estamos corrigindo um erro de autenticação.</strong>
-					</div>
-
-	</div>
-
-	<div class="row boxback">
+<div class="row boxback">
 		<div class="span2">
 				<div class="sidebar">
 					<h3><span class="slash">{{__('users.join_us')}}</span></h3>
