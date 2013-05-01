@@ -162,12 +162,13 @@ class User extends Eloquent
 	  	->or_where('sender_id', '=', Auth::user()->id)
 	  	->order_by('created_at', 'desc')->get();*/
 
-	 return DB::query("SELECT
-							*
+	 return DB::query("SELECT *
 							from messages
 							where 
-							recipient_id = ". Auth::user()->id ".
+							recipient_id = ". Auth::user()->id ."
 							order by created_at desc");
+
+
 	}
 
 	public static function mymessages()
