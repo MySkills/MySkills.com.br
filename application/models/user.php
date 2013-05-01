@@ -166,7 +166,7 @@ class User extends Eloquent
 							*
 							from messages
 							where 
-							recipient_id = 2 
+							recipient_id = ". Auth::user()->id ".
 							order by created_at desc");
 	}
 
