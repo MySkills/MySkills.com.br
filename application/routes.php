@@ -146,9 +146,9 @@ Route::get('admin/mandrill/send',
 			$responses = array();
 			$users = User::where_not_null('email')->get();
 			//$users = User::find(2)->first();
-			$since = '15/04/2013';
+			$since = '22/04/2013';
 			foreach ($users as $user) {
-				$email_content = View::make('email.22042013')
+				$email_content = View::make('email.08052013')
 									->with('page','user_stats')
 									->with('user', $user)
 									->with('since', $since)
