@@ -43,7 +43,7 @@ if (Auth::check()) {
 					<div class="control-group">
 						 <label class="control-label" for="name">Nickname</label>
 						 <div class="controls">
-      						{{Form::text('nickname', $user->nickname, array('id' => 'inputName', 'class' => 'span3'))}}
+      						{{Form::text('nickname', $user->nickname, array('id' => 'inputNickname', 'class' => 'span3'))}}
     					</div>
 					</div>
 
@@ -53,6 +53,13 @@ if (Auth::check()) {
       						{{Form::text('video_url', $user->video_url, array('id' => 'inputVideo', 'class' => 'span3'))}}
     					</div>
 					</div>
+					<div class="control-group">
+						 <label class="control-label" for="name">Freelancer(?)</label>
+						 <div class="controls">
+      						{{Form::checkbox('freelancer', $user->freelancer, array('id' => 'inputFreelancer', 'class' => 'span3'))}}
+    					</div>
+					</div>
+
 					<div class="control-group">
 						<div class="controls">
 						{{Form::submit('Save', array('class' => 'btn btn-primary'))}}	
