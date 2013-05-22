@@ -56,7 +56,7 @@ if (Auth::check()) {
 					<div class="control-group">
 						 <label class="control-label" for="name">Freelancer(?)</label>
 						 <div class="controls">
-      						{{Form::checkbox('freelancer', $user->freelancer, $user->freelancer, array('id' => 'inputFreelancer', 'class' => 'span3'))}}
+      						{{Form::checkbox('freelancer', '1', $user->freelancer, array('id' => 'inputFreelancer', 'class' => 'span3'))}}
     					</div>
 					</div>
 
