@@ -10,7 +10,8 @@
 	<div class="row">
       <div class="span2">
         <div class="sidebar">
-          <h3><span class="slash">{{__('home.weare')}}.: {{User::count()}}</span></h3>          
+          <h3><span class="slash">{{__('home.weare')}}.: {{User::count()}}</span></h3>  
+          <h3><span class="slash">{{__('home.freelancers')}}.: {{User::where('freelancer', '=', 1)->count()}}</span></h3>                  
           <h4><span class="slash">{{__('users.new_users')}}</span></h4>
         <table>
           @foreach ($newUsers as $user)

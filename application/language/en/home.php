@@ -19,4 +19,5 @@ return array(
 	'alwayshere'			=> 'I´m always here',
 	'nextlevel'				=> 'Next level',
 	'weare'					=> 'We Are',
+	'freelancers'			=> 'Freelancers',
 );

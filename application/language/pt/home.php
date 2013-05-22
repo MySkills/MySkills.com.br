@@ -18,5 +18,6 @@ return array(
 	'scholars'				=> 'Acadêmicos',
 	'alwayshere'			=> 'Estou sempre aqui',
 	'nextlevel'				=> 'Próximo nível',
-	'weare'					=> 'Somos',	
+	'weare'					=> 'Somos',
+	'freelancers'			=> 'Freelancers',
 );

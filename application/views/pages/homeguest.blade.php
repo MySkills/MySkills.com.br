@@ -5,6 +5,7 @@
 				<div class="sidebar">
 					<h3><span class="slash">{{__('users.join_us')}}</span></h3>
 					<h3><span class="slash">{{__('home.weare')}}.: {{User::count()}}</span></h3>
+					<h3><span class="slash">{{__('home.freelancers')}}.: {{User::where('freelancer', '=', 1)->count()}}</span></h3>
 					@if ( Auth::guest() )
 						{{HTML::link('connect/session/facebook', __('home.sign-up').' (Facebook)', array('class' => 'btn btn-small btn-warning'))}}
 						{{HTML::link('connect/session/github', '&nbsp;'. __('home.sign-up').' (Github) &nbsp;&nbsp;', array('class' => 'btn btn-small btn-warning'))}}
