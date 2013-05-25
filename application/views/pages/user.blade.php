@@ -109,14 +109,15 @@
 						{{HTML::image('img/browserquest/'.'level3.png',  __('user.level').' 3', array('width' => 75, 'height'=>75, 'title' => __('user.level').' 3'))}}
 					@endif
 					{{__('user.level')}} {{$user_level}}
-
+<p>{{$user->pglevel($user_level)}}</p>
 					</div>
 					<div class="progress progress-danger span5">
 						<div class="bar" style="width: {{$user->life*3.33}}%;">{{$user->life}}/30 <i class="icon-heart"></i></div>
 					</div>
 
 					<div class="progress progress-info span5">
-						<div class="bar" style="width: {{($user->technologies()->count() - $user->pglevel($user->level-1))*100/$user->levellimit($user->level)}}%;">{{$user->technologies()->count() - $user->pglevel($user->level-1)}}/{{$user->levellimit($user->level)}} <i class="icon-fire"></i></div>
+						<div class="bar" style="width: {{($user->technologies()->count()*100)/$user->pglevel($user_level)}}%;">
+							{{$user->technologies()->count()}}/{{$user->pglevel($user_level)}} <i class="icon-fire"></i></div>
 					</div>
 
 				<div class="pagination-centered span5">
@@ -214,7 +215,7 @@
 									{{HTML::image('img/badges/'.$badge->image,  $badge->name, array('width' => 75, 'height'=>75, 'title' => $badge->name))}}
 								</a>
 							@endforeach
-							@for ($i = 0; $i <= (15-count($user->activebadges)); $i++)
+							@for ($i = 0; $i <= (23-count($user->activebadges)); $i++)
 								{{HTML::image('img/badges/unlock100.png', 'Unlock', array('width' => 75, 'height'=>75, 'title' => 'Unlock'))}}
 							@endfor
 						</div> <!-- /sidebar -->
@@ -251,10 +252,26 @@
 								{{Form::submit(__('user.unfollow'), array('class' => 'btn btn-mini btn-danger'))}}
 								{{Form::close()}}
 							@endif
+							<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+							<input type="hidden" name="cmd" value="_s-xclick">
+							<input type="hidden" name="hosted_button_id" value="WMQWR75EFGLXN">
+							<table>
+							<tr><td><input type="hidden" name="on0" value="Pomodoros">Pomodoros</td></tr><tr><td><select name="os0">
+								<option value="4 pomodoros - 2 horas">4 pomodoros - 2 horas R$150,00</option>
+								<option value="8 pomodoros - 4 horas">8 pomodoros - 4 horas R$290,00</option>
+							</select> </td></tr>
+							</table>
+							<input type="hidden" name="currency_code" value="BRL">
+							<input type="image" src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - A maneira mais fácil e segura de efetuar pagamentos online!">
+							<img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
+							</form>
 						@endif
 					@else
 					<a href="#unauthorizedModal" role="button" class="btn btn-warning" data-toggle="modal" data-target="#unauthorizedModal">{{__('user.follow')}}</a>
 					@endif
+
+
+
 				</div> <!-- /sidebar -->
 			</div> <!-- /span4 -->
 		</div> <!-- /row -->
