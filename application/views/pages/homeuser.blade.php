@@ -28,7 +28,7 @@
                   {{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 50, 'height'=>50, 'title' => $badge->name))}}
                 </a>
               @endforeach
-              @for ($i = 1; $i <= (1-count($user->activebadges)); $i++)
+              @for ($i = 1; $i <= (1-count($newuser->activebadges)); $i++)
                 {{HTML::image('img/badges/unlock100.png', 'Unlock', array('width' => 50, 'height'=>50, 'title' => 'Unlock'))}}
               @endfor
             </td>
