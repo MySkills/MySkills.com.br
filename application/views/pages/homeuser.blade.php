@@ -57,8 +57,8 @@
           </td>
           <?php $messagedate = Date::forge($wallmessage->created_at)->ago(); ?>
           <td width="90">{{$messagedate}}</td>
-
             <td>
+              {{HTML::link('users/'.$wallmessage->user_id, $wallmessage->user_name)}}
               {{nl2br(htmlspecialchars($wallmessage->text))}}
             </td>          
             <td>
