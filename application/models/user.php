@@ -71,7 +71,6 @@ class User extends Eloquent
 		foreach ($this->activebadges as $badge) {
 			$total = $total + $badge->points;
 		}
-
 		return $total*$this->limitedUser()->limitedlevel;
 	}
 
@@ -110,7 +109,12 @@ class User extends Eloquent
 	}
 
 	public function pglevel($level) {
-		return 20*(pow(2, $level)-1);
+		$retorno = 20*(pow(2, $level)-1);
+		if($retorno > 0) {
+			return $retorno;
+		} else {
+			return 1;
+		}
 	}
 
 	public function checkins_since($date) {
