@@ -42,8 +42,8 @@
     <div class="span7">
             <h1>Bem-vindo(a) ao MySkills</h1>
       {{Form::open('messages', 'PUT',array('class' =>'form-inline'))}}
-      {{Form::textarea('text', '',array('class' =>'span7', 'placeholder' => __('wall.sendyourmessage'), 'rows' => '1' ))}}
-      {{Form::submit(__('jobs.submit'), array('class' => 'btn-primary'))}}
+      {{Form::textarea('text', '',array('class' =>'span6', 'placeholder' => __('wall.sendyourmessage'), 'rows' => '1' ))}}
+      {{Form::submit(__('jobs.submit'), array('class' => 'btn-success '))}}
       {{Form::close()}}     
 
         <table class="table-striped table-hover">
