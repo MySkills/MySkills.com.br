@@ -34,11 +34,13 @@ class Home_Controller extends Base_Controller {
 	{
 		if (Auth::user()) {
 			$newUsers = User::order_by('created_at', 'desc')->take(10)->get();
+			$technology_list = Technology::order_by('name', 'asc')->lists('name', 'id');
 			//$wallmessages = DB::table('messages')->where_null('recipient_id')->order_by('created_at', 'desc')->get();
 			$wallmessages = Message::wallmessages(40);
 			return View::make('pages.homeuser')
 				->with('wallmessages', $wallmessages)
 				->with('newUsers', $newUsers)
+				->with('technology_list', $technology_list)
 				->with('page','homeuser');
 		} else {
 			switch ($badge_id) {

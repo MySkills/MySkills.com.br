@@ -14,16 +14,16 @@
           <h3><span class="slash">{{__('home.freelancers')}}.: {{User::where('freelancer', '=', 1)->count()}}</span></h3>                  
           <h4><span class="slash">{{__('users.new_users')}}</span></h4>
         <table>
-          @foreach ($newUsers as $user)
+          @foreach ($newUsers as $newuser)
           
           <tr>
             <td>
               <a href="{{URL::to('/users/'.$user->id)}}">
-                {{HTML::image($user->getImageUrl('square'), $user->name, array('width' => 50, 'height'=>50, 'title' => $user->name))}}
+                {{HTML::image($newuser->getImageUrl('square'), $newuser->name, array('width' => 50, 'height'=>50, 'title' => $newuser->name))}}
               </a>
             </td>
             <td>
-              @foreach ($user->partial_badges(1) as $badge)
+              @foreach ($newuser->partial_badges(1) as $badge)
                 <a href="{{URL::to('/badges/'.$badge->id)}}">
                   {{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 50, 'height'=>50, 'title' => $badge->name))}}
                 </a>
@@ -39,7 +39,7 @@
 
         </div> <!-- /sidebar -->
       </div> <!-- /span2 -->
-    <div class="span8">
+    <div class="span7">
             <h1>Bem-vindo(a) ao MySkills</h1>
       {{Form::open('messages', 'PUT',array('class' =>'form-inline'))}}
       {{Form::textarea('text', '',array('class' =>'span7', 'placeholder' => __('wall.sendyourmessage'), 'rows' => '1' ))}}
@@ -48,11 +48,11 @@
 
         <table class="table-striped table-hover">
         @foreach($wallmessages as $wallmessage)
-        <?php $user = User::find($wallmessage->sender_id) ?>
+        <?php $messageuser = User::find($wallmessage->sender_id) ?>
         <tr>
           <td>
             <a class="pull-left" href="{{URL::to('/users/'.$user->id)}}">
-              {{HTML::image($user->getImageUrl('large'),  $user->name, array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => $user->name, 'class' => 'media-object'))}}
+              {{HTML::image($messageuser->getImageUrl('large'),  $messageuser->name, array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => $user->name, 'class' => 'media-object'))}}
             </a>
           </td>
           <?php $messagedate = Date::forge($wallmessage->created_at)->ago(); ?>
@@ -73,12 +73,41 @@
         @endforeach
         </table>
     </div>
-      <div class="span2">
+      <div class="span3">
         <div class="sidebar">
-          <h3><span class="slash">Compartilhe</span></h3>
-          <p>Através desse mural você conseguirá compartilhar informações
-            com outros desenvolvedores. Nesse momento qualquer usuário pode ver as mensagens.
-            Em breve, o mural será segmentado por nível do usuário.</p>
+          <h3><span class="slash">Seus Skills</span></h3>
+              {{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
+              {{Form::submit("CHECKIN.: ".__('user.usedtoday').'.: ', array('class'=>'btn btn-success'))}}
+              {{Form::select('technology_id', $technology_list)}}
+              {{Form::close()}}
+              @foreach($user->checkins as $checkin)
+                @if(Auth::check())
+                @endif
+                <div class="row">
+                  <div class="progress progress-info span1">
+                    @if($checkin->level == 1)
+                      <div class="bar" style="width: {{$checkin->points*5}}%;">{{$checkin->points}}/20 </div>
+                    @endif
+                    @if($checkin->level == 2)
+                      <div class="bar" style="width: {{($checkin->points-19)*2.5}}%;">{{$checkin->points-20}}/40 </div>
+                    @endif
+                    @if($checkin->level == 3)
+                      <div class="bar" style="width: {{($checkin->points-59)*1.66}}%;">{{$checkin->points-60}}/60 </div>
+                    @endif
+                  </div>
+
+                      {{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
+                      {{Form::hidden('technology_id', $checkin->id)}}
+                      <div>
+                        <div class="row">
+                          <div><input type="image" src="/img/add.png"> {{HTML::link('technology/'.$checkin->id, $checkin->name)}}</div>
+                        </div>
+                      </div>
+                      {{Form::close()}}
+                </div>
+              @endforeach
+
+
         </div> <!-- /sidebar -->
       </div> <!-- /span2 -->
 
