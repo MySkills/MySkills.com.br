@@ -56,9 +56,9 @@
         <tr>
           <td>
             @if($wallmessage->message_type == 'badge')
-                <a href="{{URL::to('/badges/'.$userbadge->id)}}">
-                  {{HTML::image('img/badges/'.$userbadge->image, $userbadge->name, array('width' => 50, 'height'=>50, 'title' => $userbadge->name))}}
-                </a> 
+              <a class="pull-left" href="{{URL::to('/badges/'.$userbadge->id)}}">
+                {{HTML::image('img/badges/'.$userbadge->image, $userbadge->name, array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => $userbadge->name, 'class' => 'media-object'))}}
+              </a>
             @else
               <a class="pull-left" href="{{URL::to('/users/'.$user->id)}}">
                 {{HTML::image($messagesender->getImageUrl('large'),  $messagesender->name, array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => $user->name, 'class' => 'media-object'))}}
