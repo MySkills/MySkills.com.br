@@ -18,7 +18,7 @@
           
           <tr>
             <td>
-              <a href="{{URL::to('/users/'.$user->id)}}">
+              <a href="{{URL::to('/users/'.$newuser->id)}}">
                 {{HTML::image($newuser->getImageUrl('square'), $newuser->name, array('width' => 50, 'height'=>50, 'title' => $newuser->name))}}
               </a>
             </td>
