@@ -48,19 +48,28 @@
 
         <table class="table-striped table-hover">
         @foreach($wallmessages as $wallmessage)
-        <?php $messageuser = User::find($wallmessage->sender_id) ?>
+        <?php 
+            $messagesender = User::find($wallmessage->sender_id);
+            $messageuser = User::find($wallmessage->user_id);
+            ?>
         <tr>
           <td>
             <a class="pull-left" href="{{URL::to('/users/'.$user->id)}}">
-              {{HTML::image($messageuser->getImageUrl('large'),  $messageuser->name, array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => $user->name, 'class' => 'media-object'))}}
+              {{HTML::image($messagesender->getImageUrl('large'),  $messagesender->name, array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => $user->name, 'class' => 'media-object'))}}
             </a>
           </td>
           <?php $messagedate = Date::forge($wallmessage->created_at)->ago(); ?>
           <td width="90">{{$messagedate}}</td>
             <td>
               {{HTML::link('users/'.$wallmessage->user_id, $wallmessage->user_name)}}
-              {{nl2br(htmlspecialchars($wallmessage->text))}}
+               {{nl2br(htmlspecialchars($wallmessage->text))}}
             </td>          
+              @if($wallmessage->message_type == 'badge' || $wallmessage->message_type == 'checkin')
+                <td>{{HTML::image($messageuser->getImageUrl('large'),  $messageuser->name, array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => $user->name, 'class' => 'media-object'))}}</td>
+              @else
+                <td>&nbsp;</td>
+              @endif
+
             <td>
               @if($wallmessage->sender_id == Auth::user()->id)
               {{Form::open('messages', 'DELETE')}}

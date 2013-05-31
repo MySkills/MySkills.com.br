@@ -96,7 +96,7 @@
 					@endif
 				</div> <!-- /sidebar -->
 			</div> <!-- /span2 -->
-			<div class="span7">
+			<div class="span6">
 				<div class="row">
 					<div class="span1 sidebar pagination-centered well">
 					@if($user_level == 1)
@@ -111,29 +111,29 @@
 					{{__('user.level')}} {{$user_level}}
 <p>{{$user->pglevel($user_level)}}</p>
 					</div>
-					<div class="progress progress-danger span5">
+					<div class="progress progress-danger span4">
 						<div class="bar" style="width: {{$user->life*3.33}}%;">{{$user->life}}/30 <i class="icon-heart"></i></div>
 					</div>
 
-					<div class="progress progress-info span5">
+					<div class="progress progress-info span4">
 						<div class="bar" style="width: {{($user->technologies()->count()*100)/$user->pglevel($user_level)}}%;">
 							{{$user->technologies()->count()}}/{{$user->pglevel($user_level)}} <i class="icon-fire"></i></div>
 					</div>
 
-				<div class="pagination-centered span5">
-				@if(Auth::check())
-					@if($user->id == Auth::user()->id)
+				<div class="pagination-centered span4">
+					@if(Auth::check())
+						@if($user->id == Auth::user()->id)
+							{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
+							{{Form::submit("CHECKIN.: ".__('user.usedtoday').'.: ', array('class'=>'btn btn-success'))}}
+							{{Form::select('technology_id', $technology_list)}}
+							{{Form::close()}}
+						@endif
+					@else
 						{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
-						{{Form::submit("CHECKIN.: ".__('user.usedtoday').'.: ', array('class'=>'btn btn-success'))}}
+						<a href="#unauthorizedModal" role="button" class="btn btn-warning" data-toggle="modal" data-target="#unauthorizedModal">{{"CHECKIN.: ".__('user.usedtoday')}}.:</a>
 						{{Form::select('technology_id', $technology_list)}}
 						{{Form::close()}}
 					@endif
-				@else
-					{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
-					<a href="#unauthorizedModal" role="button" class="btn btn-warning" data-toggle="modal" data-target="#unauthorizedModal">{{"CHECKIN.: ".__('user.usedtoday')}}.:</a>
-					{{Form::select('technology_id', $technology_list)}}
-					{{Form::close()}}
-				@endif
 				</div>
 
 				</div>
@@ -164,7 +164,7 @@
 								@if(Auth::check())
 									@if($user->id == Auth::user()->id)
 										{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
-										<div class="span2">
+										<div class="span1">
 											<input type="image" src="/img/add.png"> {{HTML::link('technology/'.$checkin->id, $checkin->name)}} {{Form::hidden('technology_id', $checkin->id)}}
 										</div>
 										{{Form::close()}}
@@ -233,7 +233,7 @@
 					</div>
 				</div>
 			</div> <!-- /span4 -->
-			<div class="span2 pagination-centered">
+			<div class="span3 pagination-centered">
 				<div class="sidebar pagination-centered">
 					@if(count($user->technologies) > 20)
 						<h3><span class="slash">{{__('user.items')}}</span></h3>
