@@ -4,7 +4,7 @@ class Message extends Eloquent {
 	public static function wallmessages($limit)
 	{
 	 return DB::query("SELECT 
-		M.id id, M.text text, M.sender_id sender_id, M.created_at created_at, M.sender_id user_id, U.name user_name, 'message' message_type
+		M.id id, M.text text, M.sender_id sender_id, M.created_at created_at, M.sender_id user_id, U.name user_name, 'message' message_type, 1 badge_id
 	FROM 
 		messages M,
 		users U
@@ -13,7 +13,7 @@ class Message extends Eloquent {
 		U.id = M.sender_id
 
 	Union 
-	(select BU.id, concat(' conquistou o badge ' , B.name),  1, BU.created_at, U.id, U.name, 'badge'
+	(select BU.id, concat(' conquistou o badge ' , B.name),  1, BU.created_at, U.id, U.name, 'badge', B.id
 		from 
 			badge_user BU,
 			badges B,
@@ -22,7 +22,7 @@ class Message extends Eloquent {
 			B.id = BU.badge_id and 
 			U.id = BU.user_id)
 	Union 
-	(select TU.id, concat(' fez checkin em ', T.name) TU, 1, TU.created_at, U.id, U.name, 'checkin'
+	(select TU.id, concat(' fez checkin em ', T.name) TU, 1, TU.created_at, U.id, U.name, 'checkin', 1
 	from 
 		technology_user TU,
 		users U,

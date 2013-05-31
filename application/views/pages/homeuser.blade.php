@@ -51,12 +51,19 @@
         <?php 
             $messagesender = User::find($wallmessage->sender_id);
             $messageuser = User::find($wallmessage->user_id);
+            $userbadge = Badge::find($wallmessage->badge_id);
             ?>
         <tr>
           <td>
-            <a class="pull-left" href="{{URL::to('/users/'.$user->id)}}">
-              {{HTML::image($messagesender->getImageUrl('large'),  $messagesender->name, array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => $user->name, 'class' => 'media-object'))}}
-            </a>
+            @if($wallmessage->message_type == 'badge')
+                <a href="{{URL::to('/badges/'.$userbadge->id)}}">
+                  {{HTML::image('img/badges/'.$userbadge->image, $userbadge->name, array('width' => 50, 'height'=>50, 'title' => $userbadge->name))}}
+                </a> 
+            @else
+              <a class="pull-left" href="{{URL::to('/users/'.$user->id)}}">
+                {{HTML::image($messagesender->getImageUrl('large'),  $messagesender->name, array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => $user->name, 'class' => 'media-object'))}}
+              </a>
+            @endif
           </td>
           <?php $messagedate = Date::forge($wallmessage->created_at)->ago(); ?>
           <td width="90">{{$messagedate}}</td>
