@@ -70,10 +70,7 @@
                   {{HTML::image($messageuser->getImageUrl('large'),  $messageuser->name, array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => $user->name, 'class' => 'media-object'))}}
                 </a>
                 </td>
-              @else
-                <td>&nbsp;</td>
               @endif
-
             <td>
               @if($wallmessage->sender_id == Auth::user()->id)
               {{Form::open('messages', 'DELETE')}}
