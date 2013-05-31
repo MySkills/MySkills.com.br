@@ -65,7 +65,11 @@
                {{nl2br(htmlspecialchars($wallmessage->text))}}
             </td>          
               @if($wallmessage->message_type == 'badge' || $wallmessage->message_type == 'checkin')
-                <td>{{HTML::image($messageuser->getImageUrl('large'),  $messageuser->name, array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => $user->name, 'class' => 'media-object'))}}</td>
+                <td>
+                  <a href="{{URL::to('/users/'.$messageuser->id)}}">
+                  {{HTML::image($messageuser->getImageUrl('large'),  $messageuser->name, array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => $user->name, 'class' => 'media-object'))}}
+                </a>
+                </td>
               @else
                 <td>&nbsp;</td>
               @endif
