@@ -320,7 +320,7 @@ FROM
 	public function get_checkins() {
 			$user_technologies = DB::query(
 				"SELECT 
-					T.id id, T.name name, count(T.name) points, ((count(T.name) > 19 ) + 1)+(count(T.name) > 59)+(count(T.name) > 119) level
+					T.id id, T.name name, count(T.name) points, ((count(T.name) > 19 ) + 1)+(count(T.name) > 79)+(count(T.name) > 219)+(count(T.name) > 519)+(count(T.name) > 1139) level
 				FROM 
 					`technologies` T,
 					`users` U,
