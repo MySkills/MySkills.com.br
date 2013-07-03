@@ -84,8 +84,10 @@
 						{{HTML::image('img/browserquest/'.'level1-mini.png',  __('user.level').' 1', array('width' => 24, 'height'=>24, 'title' =>__('user.level').' 1'))}}
 					@elseif (count($user->technologies) <= 60)
 						{{HTML::image('img/browserquest/'.'level2-mini.png',  __('user.level').' 2', array('width' => 24, 'height'=>24, 'title' => __('user.level').' 2'))}}					
+					@elseif (count($user->technologies) <= 150)
+						{{HTML::image('img/browserquest/'.'level3-mini.png',  __('user.level').' 2', array('width' => 24, 'height'=>24, 'title' => __('user.level').' 2'))}}					
 					@else
-						{{HTML::image('img/browserquest/'.'level3-mini.png',  __('user.level').' 3', array('width' => 24, 'height'=>24, 'title' => __('user.level').' 3'))}}
+						{{HTML::image('img/browserquest/'.'level4-mini.png',  __('user.level').' 3', array('width' => 24, 'height'=>24, 'title' => __('user.level').' 3'))}}
 					@endif
 						{{count($user->technologies)}} {{HTML::image('img/coin16.png', 'Coin')}}
 					</div>

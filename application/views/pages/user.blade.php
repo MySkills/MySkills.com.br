@@ -112,7 +112,6 @@
 						{{HTML::image('img/browserquest/'.'level4.png',  __('user.level').' 4', array('width' => 75, 'height'=>75, 'title' => __('user.level').' 4'))}}
 					@endif
 					{{__('user.level')}} {{$user_level}}
-<p>{{$user->pglevel($user_level)}}</p>
 					</div>
 					<div class="progress progress-danger span4">
 						<div class="bar" style="width: {{$user->life*3.33}}%;">{{$user->life}}/30 <i class="icon-heart"></i></div>
