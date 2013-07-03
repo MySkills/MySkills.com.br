@@ -81,19 +81,16 @@ class User extends Eloquent
 
 	public function get_level() {
 		$checkins = count($this->technologies);
-		if($checkins > 1749) {
-			return 7;
-		}
-		if($checkins > 1109) {
+		if($checkins > 1139) {
 			return 6;
 		}
-		if($checkins > 469) {
+		if($checkins > 519) {
 			return 5;
 		}
-		if($checkins > 149) {
+		if($checkins > 219) {
 			return 4;
 		}
-		if($checkins > 59) {
+		if($checkins > 79) {
 			return 3;
 		}
 		if($checkins > 19) {
