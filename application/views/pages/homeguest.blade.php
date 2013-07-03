@@ -68,7 +68,8 @@
 					</div>
 
 					<div class="progress progress-info">
-						<div class="bar" style="width: {{($user->technologies()->count() - $user->pglevel($user->level-1))*100/$user->levellimit($user->level)}}%;">{{$user->technologies()->count() - $user->pglevel($user->level-1)}}/{{$user->levellimit($user->level)}} <i class="icon-fire"></i></div>
+						<div class="bar" style="width: {{($user->technologies()->count() - $user->pglevel($user->level-1))*100/$user->levellimit($user->level)}}%;">
+							{{$user->technologies()->count() - $user->pglevel($user->level-1)}}/{{$user->pglevel($user->limitedUser()->limitedlevel)}}<i class="icon-fire"></i></div>
 					</div>
 
 					@foreach ($user->partial_badges(4) as $badge)
