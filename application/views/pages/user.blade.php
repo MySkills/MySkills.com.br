@@ -118,7 +118,7 @@
 					</div>
 
 					<div class="progress progress-info span4">
-						<div class="bar" style="width: {{($user->technologies()->count() - $user->pglevel($user->level-1))*100/$user->levellimit($user->level)}}%;">
+						<div class="bar" style="width: {{($user->technologies()->count() - $user->pglevel($user->level-1))*100/$user->pglevel($user->level)}}%;">
 							{{$user->technologies()->count() - $user->pglevel($user->level-1)}}/{{$user->pglevel($user_level)}} <i class="icon-fire"></i></div>
 					</div>
 
