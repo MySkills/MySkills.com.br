@@ -195,15 +195,15 @@ class User extends Eloquent
 
 	public function limitedUser() {
 		$limitedUser = DB::query("SELECT 
-	((SUM(Q.checkins) > 19 ) +1) +(SUM(Q.checkins) > 59) + (SUM(Q.checkins) > 149) level,
-	IF(((SUM(Q.checkins) > 19 ) +1) +(SUM(Q.checkins) > 59) + (SUM(Q.checkins) > 149) - 1 <= Q.maxtechnologylevel, ((SUM(Q.checkins) > 19 ) +1) +(SUM(Q.checkins) > 59) + (SUM(Q.checkins) > 149), Q.maxtechnologylevel+1 ) limitedlevel
+	((SUM(Q.checkins) > 19 ) +1) +(SUM(Q.checkins) > 79) + (SUM(Q.checkins) > 219) level,
+	IF(((SUM(Q.checkins) > 19 ) +1) +(SUM(Q.checkins) > 79) + (SUM(Q.checkins) > 219) - 1 <= Q.maxtechnologylevel, ((SUM(Q.checkins) > 19 ) +1) +(SUM(Q.checkins) > 79) + (SUM(Q.checkins) > 219), Q.maxtechnologylevel+1 ) limitedlevel
 FROM 
 (SELECT
 	U.id user_id, 
 	U.name, 
-	((count(U.name) > 19 ) + 1)+(count(U.name) > 59)+(count(U.name) > 149)+(count(U.name) > 469)+(count(U.name) > 1109)+(count(U.name) > 1749) maxtechnologylevel, 
+	((count(U.name) > 19 ) + 1)+(count(U.name) > 79)+(count(U.name) > 219)+(count(U.name) > 519)+(count(U.name) > 1139) maxtechnologylevel, 
 	count(TU.technology_id) checkins,
-	(count(TU.technology_id) > 19) + (count(TU.technology_id) > 59) + (count(TU.technology_id) > 149) soma
+	(count(TU.technology_id) > 19) + (count(TU.technology_id) > 79) + (count(TU.technology_id) > 219) soma
 				FROM
 					technologies T,
 					technology_user TU,
