@@ -156,10 +156,16 @@
 										<div class="bar" style="width: {{$checkin->points*5}}%;">{{$checkin->points}}/20 </div>
 									@endif
 									@if($checkin->level == 2)
-										<div class="bar" style="width: {{($checkin->points-19)*2.5}}%;">{{$checkin->points-20}}/40 </div>
+										<div class="bar" style="width: {{($checkin->points-19)*1.66}}%;">{{$checkin->points-20}}/60 </div>
 									@endif
 									@if($checkin->level == 3)
-										<div class="bar" style="width: {{($checkin->points-59)*1.66}}%;">{{$checkin->points-60}}/60 </div>
+										<div class="bar" style="width: {{($checkin->points-79)*0.71}}%;">{{$checkin->points-80}}/140 </div>
+									@endif
+									@if($checkin->level == 4)
+										<div class="bar" style="width: {{($checkin->points-219)*0.33}}%;">{{$checkin->points-220}}/300 </div>
+									@endif
+									@if($checkin->level == 5)
+										<div class="bar" style="width: {{($checkin->points-519)*0.16}}%;">{{$checkin->points-520}}/620 </div>
 									@endif
 
 								</div>
