@@ -108,6 +108,9 @@
 					@if($user_level == 3)
 						{{HTML::image('img/browserquest/'.'level3.png',  __('user.level').' 3', array('width' => 75, 'height'=>75, 'title' => __('user.level').' 3'))}}
 					@endif
+					@if($user_level == 4)
+						{{HTML::image('img/browserquest/'.'level4.png',  __('user.level').' 4', array('width' => 75, 'height'=>75, 'title' => __('user.level').' 4'))}}
+					@endif
 					{{__('user.level')}} {{$user_level}}
 <p>{{$user->pglevel($user_level)}}</p>
 					</div>
