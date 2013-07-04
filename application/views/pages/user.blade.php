@@ -64,7 +64,6 @@
 @endif  
 </div>
 <!-- /end Modal --> 
-{{$user->limitedUser()->limitedlevel}} < {{$user->limitedUser()->level}}
 <div id="subpage">
 	<div class="container">
 		@if(Session::get('status'))

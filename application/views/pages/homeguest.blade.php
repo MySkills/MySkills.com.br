@@ -81,11 +81,11 @@
 						{{HTML::image('img/badges/unlock100.png', 'Unlock', array('width' => 30, 'height'=>30, 'title' => 'Unlock'))}}
 					@endfor				
 					<div class="pull-right">
-					@if (count($user->technologies) <= 20)
+					@if (count($user->technologies) <= 19)
 						{{HTML::image('img/browserquest/'.'level1-mini.png',  __('user.level').' 1', array('width' => 24, 'height'=>24, 'title' =>__('user.level').' 1'))}}
-					@elseif (count($user->technologies) <= 60)
+					@elseif (count($user->technologies) <= 79)
 						{{HTML::image('img/browserquest/'.'level2-mini.png',  __('user.level').' 2', array('width' => 24, 'height'=>24, 'title' => __('user.level').' 2'))}}					
-					@elseif (count($user->technologies) <= 150)
+					@elseif (count($user->technologies) <= 219)
 						{{HTML::image('img/browserquest/'.'level3-mini.png',  __('user.level').' 2', array('width' => 24, 'height'=>24, 'title' => __('user.level').' 2'))}}					
 					@else
 						{{HTML::image('img/browserquest/'.'level4-mini.png',  __('user.level').' 3', array('width' => 24, 'height'=>24, 'title' => __('user.level').' 3'))}}
