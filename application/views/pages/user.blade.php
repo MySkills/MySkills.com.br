@@ -159,7 +159,7 @@
 										<div class="bar" style="width: {{($checkin->points-19)*1.66}}%;">{{$checkin->points-20}}/60</div>
 									@endif
 									@if($checkin->level == 3)
-										<div class="progress progress-danger span3">
+										<div class="progress progress-info span3">
 										<div class="bar" style="width: {{($checkin->points-79)*0.71}}%;">{{$checkin->points-80}}/140</div>
 									@endif
 									@if($checkin->level == 4)
