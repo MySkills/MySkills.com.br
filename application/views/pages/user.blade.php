@@ -150,21 +150,25 @@
 							@if(Auth::check())
 							@endif
 							<div class="row">
-								<div class="progress progress-info span3">
 									@if($checkin->level == 1)
-										<div class="bar" style="width: {{$checkin->points*5}}%;">{{$checkin->points}}/20({{$checkin->points}}) </div>
+										<div class="progress progress-success span3">
+										<div class="bar" style="width: {{$checkin->points*5}}%;">{{$checkin->points}}/20</div>
 									@endif
 									@if($checkin->level == 2)
-										<div class="bar" style="width: {{($checkin->points-19)*1.66}}%;">{{$checkin->points-20}}/60({{$checkin->points}}) </div>
+										<div class="progress progress-warning span3">
+										<div class="bar" style="width: {{($checkin->points-19)*1.66}}%;">{{$checkin->points-20}}/60</div>
 									@endif
 									@if($checkin->level == 3)
-										<div class="bar" style="width: {{($checkin->points-79)*0.71}}%;">{{$checkin->points-80}}/140({{$checkin->points}}) </div>
+										<div class="progress progress-danger span3">
+										<div class="bar" style="width: {{($checkin->points-79)*0.71}}%;">{{$checkin->points-80}}/140</div>
 									@endif
 									@if($checkin->level == 4)
-										<div class="bar" style="width: {{($checkin->points-219)*0.33}}%;">{{$checkin->points-220}}/300({{$checkin->points}}) </div>
+										<div class="progress progress-danger span3">
+										<div class="bar" style="width: {{($checkin->points-219)*0.33}}%;">{{$checkin->points-220}}/300</div>
 									@endif
 									@if($checkin->level == 5)
-										<div class="bar" style="width: {{($checkin->points-519)*0.16}}%;">{{$checkin->points-520}}/620({{$checkin->points}}) </div>
+										<div class="progress progress-danger span3">
+										<div class="bar" style="width: {{($checkin->points-519)*0.16}}%;">{{$checkin->points-520}}/620</div>
 									@endif
 
 								</div>
