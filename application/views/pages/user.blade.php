@@ -118,8 +118,8 @@
 					</div>
 
 					<div class="progress progress-info span4">
-						<div class="bar" style="width: {{($user->technologies()->count() - $user->pglevel($user->level-1))*100/$user->pglevel($user->level)}}%;">
-							{{$user->technologies()->count() - $user->pglevel($user->level-1)}}/{{$user->pglevel($user_level)}} <i class="icon-fire"></i></div>
+						<div class="bar" style="width: {{($user->technologies()->count() - $user->levellimit($user_level))*100/$user->pglevel($user_level)}}%;">
+							{{$user->technologies()->count() - $user->levellimit($user_level)}}/{{$user->pglevel($user_level)}} <i class="icon-fire"></i></div>
 					</div>
 
 				<div class="pagination-centered span4">
