@@ -145,7 +145,7 @@ Route::get('admin/mandrill/send',
 			ini_set('max_execution_time', 3000);
 			$responses = array();
 			//$users = User::where_not_null('email')->get();
-			$users = User::where('id', '>', 509)->get();
+			$users = User::where('id', '>', 814)->get();
 			//$users = User::find(2)->first();
 			$since = '30/05/2013';
 			foreach ($users as $user) {
