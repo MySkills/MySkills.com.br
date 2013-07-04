@@ -146,9 +146,9 @@ Route::get('admin/mandrill/send',
 			$responses = array();
 			$users = User::where_not_null('email')->get();
 			//$users = User::find(2)->first();
-			$since = '21/05/2013';
+			$since = '30/05/2013';
 			foreach ($users as $user) {
-				$email_content = View::make('email.31052013')
+				$email_content = View::make('email.04072013')
 									->with('page','user_stats')
 									->with('user', $user)
 									->with('since', $since)
@@ -156,7 +156,7 @@ Route::get('admin/mandrill/send',
 				$response = Mandrill::request('messages/send', array(
 				    'message' => array(
 						'html' => $email_content,
-						'subject' => '[myskills] Os freelancers estão chegando.',
+						'subject' => '[myskills] Entenda o nível 4. E oportunidade PHP Zend',
 						'from_email' => 'eduardo.cruz@myskills.com.br',
 						'from_name' => 'Eduardo Cruz (MySkills)',
 						'to' => array(array('email'=>$user->email,
