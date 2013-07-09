@@ -98,7 +98,7 @@
 			<div class="span6">
 				<div class="row">
 					<div class="span1 sidebar pagination-centered well">
-					@if($user_level == 1)
+					@if($user_level < 2)
 						{{HTML::image('img/browserquest/'.'level1.png',  __('user.level').' 1', array('width' => 75, 'height'=>75, 'title' => __('user.level').' 1'))}}							
 					@endif
 					@if($user_level == 2)
