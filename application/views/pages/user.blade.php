@@ -117,10 +117,14 @@
 					</div>
 
 					<div class="progress progress-info span4">
-						<div class="bar" style="width: {{($user->technologies()->count() - $user->levellimit($user_level))*100/$user->pglevel($user_level)}}%;">
-							{{$user->technologies()->count() - $user->levellimit($user_level)}}/{{$user->pglevel($user_level)}} <i class="icon-fire"></i></div>
+						@if($user->technologies()->count() > $user->pglevel($user->level) )
+							<div class="bar" style="width: {{($user->technologies()->count() - $user->levellimit($user->level))*100/$user->pglevel($user->level)}}%;">
+							{{$user->technologies()->count() - $user->levellimit($user->level)}}/{{$user->pglevel($user->level)}}<i class="icon-fire"></i></div>
+						@else
+							<div class="bar" style="width: {{($user->technologies()->count())*100/$user->pglevel($user->level)}}%;">							
+							{{$user->technologies()->count()}}/{{$user->pglevel($user->level)}}<i class="icon-fire"></i></div>
+						@endif
 					</div>
-
 				<div class="pagination-centered span4">
 					@if(Auth::check())
 						@if($user->id == Auth::user()->id)
