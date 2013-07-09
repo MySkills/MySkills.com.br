@@ -66,9 +66,13 @@
 					<div class="progress progress-danger">
 						<div class="bar" style="width: {{$user->life*3.33}}%;"><i class="icon-heart"></i> {{__('home.alwayshere')}}</div>
 					</div>
-
+{{$user->technologies()->count()}} - {{$user->levellimit($user->level)}} - {{$user->pglevel($user->level)}}
 					<div class="progress progress-info">
-						<div class="bar" style="width: {{($user->technologies()->count() - $user->levellimit($user->level))*100/$user->pglevel($user->level)}}%;">
+							@if($user->technologies()->count() > $user->pglevel($user->level) )
+								<div class="bar" style="width: {{($user->technologies()->count() - $user->levellimit($user->level))*100/$user->pglevel($user->level)}}%;">
+							@else
+								<div class="bar" style="width: {{($user->technologies()->count())*100/$user->pglevel($user->level)}}%;">							
+							@endif
 							{{$user->technologies()->count() - $user->levellimit($user->level)}}/{{$user->pglevel($user->level)}}<i class="icon-fire"></i></div>
 					</div>
 
