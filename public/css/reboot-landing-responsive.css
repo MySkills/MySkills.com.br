@@ -26,7 +26,7 @@
 
 @media (min-width: 1200px) {
 	
-.boxback {background-color: #E8E8E8; padding-top: 55px}	
+.boxback {background-color: #E8E8E8}	
 
 .boxback > div:first-child {clear: left}
 
