@@ -159,6 +159,8 @@
               {{$wallmessage->user_name}}
               @if($wallmessage->message_type == 'link')
                   <strong>{{HTML::link($wallmessage->reference, $wallmessage->text, array('target' => '_blank'))}}</strong>
+              @elseif($wallmessage->message_type == 'checkin')
+                  {{HTML::link('/technology/'.$wallmessage->reference, $wallmessage->text)}}
               @else
                   {{nl2br(htmlspecialchars($wallmessage->text))}}
               @endif                 
@@ -170,7 +172,7 @@
                   {{HTML::image($messageuser->getImageUrl('large'),  $messageuser->name, array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => $user->name, 'class' => 'media-object'))}}
                 </a>                
                 </td>
-            @elseif($wallmessage->message_type == 'link')
+              @elseif($wallmessage->message_type == 'link')
                 <td>
                   {{HTML::image('img/50_link.jpg', 'Link icon', array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => 'Link icon', 'class' => 'media-object'))}}
                 </td>

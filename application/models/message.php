@@ -30,7 +30,7 @@ class Message extends Eloquent {
 			B.id = BU.badge_id and 
 			U.id = BU.user_id)
 	Union 
-	(select TU.id, concat(' fez checkin em ', T.name) TU, 1, TU.created_at, U.id, U.name, 'checkin', 1
+	(select TU.id, concat(' fez checkin em ', T.name) TU, 1, TU.created_at, U.id, U.name, 'checkin', T.id
 	from 
 		technology_user TU,
 		users U,
