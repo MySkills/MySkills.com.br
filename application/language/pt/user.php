@@ -23,4 +23,5 @@ return array(
 	'items'					=> 'Ítems do usuário',
 	'level'					=> 'Nível',
 	'limitedlevelmessage'	=> 'Para conquistar o nível :level você precisa de pelo menos uma habilidade com nível :skilllevel',
+	'links'					=> 'Links (Novo)',
 	);

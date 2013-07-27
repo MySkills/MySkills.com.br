@@ -50,10 +50,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
+    {{ HTML::style('http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600') }}  
     {{ HTML::style('css/bootstrap.css') }}
     {{ HTML::style('css/bootstrap-responsive.css') }}  
 
-    {{ HTML::style('http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600') }}  
     {{ HTML::style('css/font-awesome.css') }}
 
     {{ HTML::style('css/reboot-landing.css') }}
@@ -63,7 +63,6 @@
     {{ HTML::style('css/pages/homepage.css') }}
     {{ HTML::style('css/plans.css') }}
 
-    {{ HTML::style('js/lightbox/themes/default/jquery.lightbox.css') }}    
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -91,8 +90,6 @@
             mixpanel.track('{{$page}}');
         </script>
     @endif
-<script src="http://static.opentok.com/webrtc/v2.0/js/TB.min.js" ></script>
-
 </head>
 <body>
     <div class="navbar navbar-fixed-top">
@@ -264,13 +261,6 @@
         </script>
 
         {{HTML::script('js/bootstrap.js')}}
-        {{HTML::script('js/lightbox/jquery.lightbox.min.js')}}
-
-        <script>
-            $(function () {
-                $(".screenshot").lightbox();
-            });
-        </script>
 
         @if(Auth::check())
             <script type="text/javascript">

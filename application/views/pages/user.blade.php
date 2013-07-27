@@ -146,7 +146,7 @@
 					<li class="active"><a data-toggle="tab" href="#checkins">Checkins ({{count($user->technologies)}})</a></li>
 					<li class><a data-toggle="tab" href="#badges">Badges Conquistados ({{count($user->badges)}})</a></li>
 					<li class><a data-toggle="tab" href="#followers">Seguidores ({{count($user->followers)}})</a></li>
-					<li class><a data-toggle="tab" href="#projects">Projetos (0)</a></li>
+					<li class><a data-toggle="tab" href="#projects">{{__('user.links')}}</a></li>
 				</ul>
 				<div id="BadgeTabContent" class="tab-content">
 					<div class="tab-pane fade in active" id="checkins">

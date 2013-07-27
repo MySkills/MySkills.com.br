@@ -4,9 +4,10 @@ return array(
 
 	/*
 	|--------------------------------------------------------------------------
-	| /Wall Language Lines
+	| /jobs Language Lines
 	|--------------------------------------------------------------------------
 	*/
-	'sendyourmessage' 	=> 'Send your message',
-	'sharelink'			=> 'Share Link (New)',
+	'title'			=> 	'Título',
+	'url'			=> 	'URL',
+	'description'	=> 	'Descrição',
 	);

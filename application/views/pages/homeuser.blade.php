@@ -6,10 +6,62 @@
     $user->logLastAccess();
   }
 ?>
+
+
+<!-- Send Message Modal -->
+<div id="addMessageModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">{{__('wall.sharelink')}}</h3>
+</div>
+@if( Auth::check())
+  <div class="modal-body">
+
+    {{Form::open('links', 'PUT',array('class' =>'form-horizontal'))}}
+    <div class="control-group" >
+      <label class="control-label">{{__('links.title')}}</label>
+      <div class="controls">        
+        {{Form::text('title', '',array('class' =>'span3', 'placeholder' => __('links.title')))}}
+      </div>
+    </div>      
+
+    <div class="control-group" >
+      <label class="control-label">{{__('links.url')}}</label>
+      <div class="controls">        
+        {{Form::text('url', '',array('class' =>'span3', 'placeholder' => 'http://'))}}
+      </div>
+    </div>      
+    <div class="control-group" >
+      <label class="control-label">{{__('links.description')}}</label>
+      <div class="controls">        
+        {{Form::text('description', '',array('class' =>'span3', 'placeholder' => __('links.description')))}}
+      </div>
+    </div>      
+    <div class="control-group" >    
+      <div class="controls">        
+        {{Form::submit(__('jobs.submit'), array('class' => 'btn-primary'))}}
+        {{Form::close()}}     
+      </div>
+    </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">{{__('jobs.cancel')}}</button>
+    </div>
+@else
+  <div class="modal-body">
+      <p>You are not authenticated</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+@endif  
+</div>
+
+
 <div class="container">
 	<div class="row">
       <div class="span2">
-        <div class="sidebar">
+        <div class="sidebar">                 
           <h3><span class="slash">{{__('home.weare')}}.: {{User::count()}}</span></h3>  
           <h3><span class="slash">{{__('home.freelancers')}}.: {{User::where('freelancer', '=', 1)->count()}}</span></h3>                  
           <h4><span class="slash">{{__('users.new_users')}}</span></h4>
@@ -41,24 +93,58 @@
       </div> <!-- /span2 -->
     <div class="span7">
             <h1>Bem-vindo(a) ao MySkills</h1>
+
+ <div id="myPublisherDiv"></div>
+        <script type="text/javascript">
+          // Initialize API key, session, and token...
+          // Think of a session as a room, and a token as the key to get in to the room
+          // Sessions and tokens are generated on your server and passed down to the client
+          var apiKey = "31047142";
+          var sessionId = "1_MX4zMTA0NzE0Mn4xMjcuMC4wLjF-U3VuIEp1biAwMiAxMDoxMDoxOSBQRFQgMjAxM34wLjY5Mjk4MzE1fg";
+          var token = "T1==cGFydG5lcl9pZD0zMTA0NzE0MiZzZGtfdmVyc2lvbj10YnJ1YnktdGJyYi12MC45MS4yMDExLTAyLTE3JnNpZz1iZmRjMGNiMzZhMjU5Y2RhOGQ4NDc2ZmQ0MmQ3YjM4Y2QwYjc0NmQ4OnJvbGU9cHVibGlzaGVyJnNlc3Npb25faWQ9MV9NWDR6TVRBME56RTBNbjR4TWpjdU1DNHdMakYtVTNWdUlFcDFiaUF3TWlBeE1Eb3hNRG94T1NCUVJGUWdNakF4TTM0d0xqWTVNams0TXpFMWZnJmNyZWF0ZV90aW1lPTEzNzAxOTMwMjImbm9uY2U9MC44NzU5MTc0ODY5OTg1NTY0JmV4cGlyZV90aW1lPTEzNzA3OTc4MjgmY29ubmVjdGlvbl9kYXRhPQ==";
+
+          // Initialize session, set up event listeners, and connect
+          var session = TB.initSession(sessionId);
+          session.addEventListener('sessionConnected', sessionConnectedHandler);
+          session.connect(apiKey, token);
+          
+          function sessionConnectedHandler(event) {
+            var publisher = TB.initPublisher(apiKey, 'myPublisherDiv');
+            session.publish(publisher);
+          }
+        </script>
+        @if(Session::get('status'))
+          @if(Session::get('status')=='ERROR')
+            <div class="alert alert-error">
+          @else
+            <div class="alert alert-success">
+          @endif          
+             <button type="button" class="close" data-dismiss="alert">×</button>
+              <strong>{{Session::get('status')}}</strong>
+          </div>
+        @endif
+        
       {{Form::open('messages', 'PUT',array('class' =>'form-inline'))}}
       {{Form::textarea('text', '',array('class' =>'span6', 'placeholder' => __('wall.sendyourmessage'), 'rows' => '1' ))}}
       {{Form::submit(__('jobs.submit'), array('class' => 'btn-success '))}}
       {{Form::close()}}     
 
+      <a href="#addMessageModal" role="button" class="btn btn-success" data-toggle="modal"><i class="icon-share"></i> {{__('wall.sharelink')}}</a>
         <table class="table-striped table-hover">
         @foreach($wallmessages as $wallmessage)
-        <?php 
+          <?php 
             $messagesender = User::find($wallmessage->sender_id);
             $messageuser = User::find($wallmessage->user_id);
-            $userbadge = Badge::find($wallmessage->badge_id);
-            ?>
+            $userbadge = Badge::find($wallmessage->reference);
+          ?>
         <tr>
           <td>
             @if($wallmessage->message_type == 'badge')
               <a class="pull-left" href="{{URL::to('/badges/'.$userbadge->id)}}">
                 {{HTML::image('img/badges/'.$userbadge->image, $userbadge->name, array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => $userbadge->name, 'class' => 'media-object'))}}
               </a>
+            @elseif($wallmessage->message_type == 'link')
+                {{HTML::image('img/50_link.jpg', 'Link icon', array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => 'Link icon', 'class' => 'media-object'))}}
             @else
               <a class="pull-left" href="{{URL::to('/users/'.$user->id)}}">
                 {{HTML::image($messagesender->getImageUrl('large'),  $messagesender->name, array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => $user->name, 'class' => 'media-object'))}}
@@ -69,9 +155,14 @@
           <td width="90">{{$messagedate}}</td>
             <td>
               {{HTML::link('users/'.$wallmessage->user_id, $wallmessage->user_name)}}
-               {{nl2br(htmlspecialchars($wallmessage->text))}}
+              @if($wallmessage->message_type == 'link')
+                  <strong>{{HTML::link($wallmessage->reference, $wallmessage->text)}}</strong>
+              @else
+                  {{nl2br(htmlspecialchars($wallmessage->text))}}
+              @endif                 
+
             </td>          
-              @if($wallmessage->message_type == 'badge' || $wallmessage->message_type == 'checkin')
+              @if($wallmessage->message_type == 'badge' || $wallmessage->message_type == 'checkin' || $wallmessage->message_type == 'link')
                 <td>
                   <a href="{{URL::to('/users/'.$messageuser->id)}}">
                   {{HTML::image($messageuser->getImageUrl('large'),  $messageuser->name, array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => $user->name, 'class' => 'media-object'))}}

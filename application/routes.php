@@ -615,6 +615,36 @@ Route::put('jobs/(:num)/(:num)',
 );
 
 /*
+	Add new Links.
+*/
+Route::put('links',
+	array(
+		'before' => 'auth', 'do' => function() {
+			try {				
+				$title 			= Input::get('title');
+				$url 			= Input::get('url');
+				$description 	= Input::get('description');
+				if (isset($url)) {					
+					$link = Link::create(
+					array(
+						'title' 		=> $title,
+						'url' 			=> $url,
+						'description'	=> $description
+						)
+					);
+					$link->save();
+					$user = User::find(Auth::user()->id);
+					$user->links()->attach($link->id);
+					return Redirect::to('home')->with('status','SUCESS!!! Link Saved!!!')->with('page','home');
+				} 				
+			} catch (Exception $e) {
+				return Redirect::to('home')->with('status', 'ERROR')>with('page','home');
+			}			
+		}
+	)
+);
+
+/*
 	UPDATE user data.
 */
 Route::put('messages',

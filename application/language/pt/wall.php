@@ -7,5 +7,6 @@ return array(
 	| /Wall Language Lines
 	|--------------------------------------------------------------------------
 	*/
-	'sendyourmessage' 				=> 'Envie a sua mensagem',
+	'sendyourmessage' 	=> 'Envie a sua mensagem',
+	'sharelink'			=> 'Compartilhar Link (Novo)',	
 	);

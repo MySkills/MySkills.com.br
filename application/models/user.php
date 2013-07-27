@@ -42,6 +42,11 @@ class User extends Eloquent
 	  return $this->has_many_and_belongs_to('Badge');
 	}
 
+	public function links()
+	{
+	  return $this->has_many_and_belongs_to('Link');
+	}
+
 	public function projects()
 	{
 	  return $this->has_many_and_belongs_to('Project');

@@ -23,4 +23,5 @@ return array(
 	'items'					=> 'User Items',
 	'level'					=> 'Level',
 	'limitedlevelmessage'	=> 'To earn level :level you need at least one skill with level :skilllevel',
+	'links'					=> 'Links (New)',
 	);
