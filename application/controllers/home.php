@@ -33,7 +33,7 @@ class Home_Controller extends Base_Controller {
 	public function action_index($badge_id=-1)
 	{
 		if (Auth::user()) {
-			$newUsers = User::order_by('created_at', 'desc')->take(10)->get();
+			$newUsers = User::order_by('created_at', 'desc')->take(5)->get();
 			$technology_list = Technology::order_by('name', 'asc')->lists('name', 'id');
 			//$wallmessages = DB::table('messages')->where_null('recipient_id')->order_by('created_at', 'desc')->get();
 			$wallmessages = Message::wallmessages(40);
@@ -62,8 +62,8 @@ class Home_Controller extends Base_Controller {
 					break;
 				default:
 					$topUsers = User::topUsers();
-					$newUsers = User::order_by('created_at', 'desc')->take(10)->get();
-					$newBadges = Badge::order_by('id', 'desc')->take(10)->get();				
+					$newUsers = User::order_by('created_at', 'desc')->take(5)->get();
+					$newBadges = Badge::order_by('id', 'desc')->take(5)->get();				
 					return View::make('pages.homeguest')
 						->with('page','home')
 						->with('topUsers', $topUsers)
@@ -72,7 +72,7 @@ class Home_Controller extends Base_Controller {
 					break;
 			}
 			$topUsers = User::topUsersBy($badge_id);
-			$newUsers = User::order_by('created_at', 'desc')->take(10)->get();
+			$newUsers = User::order_by('created_at', 'desc')->take(5)->get();
 			return View::make('pages.homeguest')
 				->with('page','home')
 				->with('topUsers', $topUsers)

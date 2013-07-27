@@ -43,7 +43,7 @@
 					<tr>
 						<td>
 							<a href="{{URL::to('/badges/'.$badge->id)}}">
-								{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 75, 'height'=>75, 'title' => $badge->name))}}
+								{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 50, 'height'=>50, 'title' => $badge->name))}}
 							</a>
 						</td>
 					</tr>
