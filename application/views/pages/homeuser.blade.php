@@ -156,7 +156,7 @@
             <td>
               {{HTML::link('users/'.$wallmessage->user_id, $wallmessage->user_name)}}
               @if($wallmessage->message_type == 'link')
-                  <strong>{{HTML::link($wallmessage->reference, $wallmessage->text)}}</strong>
+                  <strong>{{HTML::link($wallmessage->reference, $wallmessage->text, array('target' => '_blank'))}}</strong>
               @else
                   {{nl2br(htmlspecialchars($wallmessage->text))}}
               @endif                 
