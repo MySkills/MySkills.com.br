@@ -144,7 +144,9 @@
                 {{HTML::image('img/badges/'.$userbadge->image, $userbadge->name, array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => $userbadge->name, 'class' => 'media-object'))}}
               </a>
             @elseif($wallmessage->message_type == 'link')
-                {{HTML::image('img/50_link.jpg', 'Link icon', array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => 'Link icon', 'class' => 'media-object'))}}
+                  <a href="{{URL::to('/users/'.$messageuser->id)}}">
+                  {{HTML::image($messageuser->getImageUrl('large'),  $messageuser->name, array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => $user->name, 'class' => 'media-object'))}}
+                </a>
             @else
               <a class="pull-left" href="{{URL::to('/users/'.$user->id)}}">
                 {{HTML::image($messagesender->getImageUrl('large'),  $messagesender->name, array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => $user->name, 'class' => 'media-object'))}}
@@ -154,7 +156,7 @@
           <?php $messagedate = Date::forge($wallmessage->created_at)->ago(); ?>
           <td width="90">{{$messagedate}}</td>
             <td>
-              {{HTML::link('users/'.$wallmessage->user_id, $wallmessage->user_name)}}
+              {{$wallmessage->user_name}}
               @if($wallmessage->message_type == 'link')
                   <strong>{{HTML::link($wallmessage->reference, $wallmessage->text, array('target' => '_blank'))}}</strong>
               @else
@@ -162,11 +164,15 @@
               @endif                 
 
             </td>          
-              @if($wallmessage->message_type == 'badge' || $wallmessage->message_type == 'checkin' || $wallmessage->message_type == 'link')
+              @if($wallmessage->message_type == 'badge' || $wallmessage->message_type == 'checkin')
                 <td>
                   <a href="{{URL::to('/users/'.$messageuser->id)}}">
                   {{HTML::image($messageuser->getImageUrl('large'),  $messageuser->name, array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => $user->name, 'class' => 'media-object'))}}
-                </a>
+                </a>                
+                </td>
+            @elseif($wallmessage->message_type == 'link')
+                <td>
+                  {{HTML::image('img/50_link.jpg', 'Link icon', array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => 'Link icon', 'class' => 'media-object'))}}
                 </td>
               @endif
             <td>

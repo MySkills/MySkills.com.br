@@ -12,7 +12,7 @@ class Message extends Eloquent {
 		M.recipient_id is null and
 		U.id = M.sender_id
 	Union
-	(SELECT L.id, concat(' compartilhou o link.: ', L.title), 1, L.created_at, U.id, U.name, 'link', L.url
+	(SELECT L.id, concat(' compartilhou o link.: ', L.title, ' - ' ,L.description), 1, L.created_at, U.id, U.name, 'link', L.url
 	FROM 
 		links L,
 	    link_user LU,
