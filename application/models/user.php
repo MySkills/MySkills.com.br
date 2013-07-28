@@ -250,13 +250,13 @@ FROM
 							where
 								T.id = TU.technology_id AND
 								U.id = TU.user_id AND
-								U.lastlogin > SUBDATE(NOW(), '29 day')
+								U.lastlogin > SUBDATE(NOW(), '7 day')
 							group by U.name, TU.technology_id
 							order by U.name, checkins desc) Q
 			group by Q.name) UL
 						on BU.user_id = UL.user_id
 			WHERE U.active = true
-			AND U.lastlogin > SUBDATE(NOW(), '29 day')
+			AND U.lastlogin > SUBDATE(NOW(), '7 day')
 			group by U.name
 			order by level desc, rank desc, U.lastlogin desc");
 		return $topusers;
@@ -290,13 +290,13 @@ FROM
 							where
 								T.id = TU.technology_id AND
 								U.id = TU.user_id AND
-								U.lastlogin > SUBDATE(NOW(), '29 day')
+								U.lastlogin > SUBDATE(NOW(), '7 day')
 							group by U.name, TU.technology_id
 							order by U.name, checkins desc) Q
 			group by Q.name) UL
 						on BU.user_id = UL.user_id
 			WHERE U.active = true
-			AND U.lastlogin > SUBDATE(NOW(), '29 day')
+			AND U.lastlogin > SUBDATE(NOW(), '7 day')
 			AND BU.badge_id = ".$badge_id." 
 			AND B.id = ".$badge_id." 
 			group by U.name
