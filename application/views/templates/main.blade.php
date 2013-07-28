@@ -257,6 +257,7 @@
                 gutterWidth: 1
               });
             });
+            $container.masonry();
         });
         </script>
 
