@@ -445,6 +445,16 @@ Route::get('users/(:num)', function($user_id)
 		->with('og_image', $user->getImageUrl('large'));
 });
 
+Route::get('users/(:num)/checkins.json', function($user_id)
+{
+	$checkins = DB::query('select UNIX_TIMESTAMP(created_at) date, 1 value from technology_user where user_id ='.$user_id);
+	dd(json_encode($checkins));
+	//dd(json_encode($checkins, JSON_FORCE_OBJECT));
+	//dd(array_pluck($checkins, 'checkin'));
+	//return Response::json($checkins);
+	//return Response::eloquent(User::find(1));
+});
+
 
 /*
 	USERPROFILE
@@ -655,12 +665,21 @@ Route::put('messages',
 			try {				
 				$sender 	= User::find(Auth::user()->id);
 				$recipient 	= User::find(Input::get('recipient_id'));
+				$message 	= Input::get('text');
+				$input 	= Input::get();
+				$rules 		= array('text' => 'required|min:2');
+				$validation = Validator::make($input, $rules);
+				if ($validation->fails())
+				{
+    				return Redirect::to('/')->with('status','ERROR')->with('page','homeuser');
+				}
+
 				if (isset($recipient)) {					
 					$message = Message::create(
 					array(
 						'sender_id' 	=> $sender->id, 
 						'recipient_id' 	=> $recipient->id,
-						'text' 	=> Input::get('text')
+						'text' 	=> $message
 						)
 					);
 					$message->save();
@@ -677,7 +696,7 @@ Route::put('messages',
 					$message = Message::create(
 					array(
 						'sender_id' 	=> $sender->id, 
-						'text' 	=> Input::get('text')
+						'text' 	=> $message
 						)
 					);				
 					$message->save();							
