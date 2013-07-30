@@ -148,7 +148,7 @@
                   {{HTML::image($messageuser->getImageUrl('large'),  $messageuser->name, array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => $user->name, 'class' => 'media-object'))}}
                 </a>
             @else
-              <a class="pull-left" href="{{URL::to('/users/'.$user->id)}}">
+              <a class="pull-left" href="{{URL::to('/users/'.$messagesender->id)}}">
                 {{HTML::image($messagesender->getImageUrl('large'),  $messagesender->name, array('width' => 50, 'height'=>50, 'hspace' => '15', 'title' => $user->name, 'class' => 'media-object'))}}
               </a>
             @endif
