@@ -264,12 +264,6 @@
         {{HTML::script('js/bootstrap.js')}}
 
         @if(Auth::check())
-            <script type="text/javascript">
-                olark('api.chat.updateVisitorNickname', {
-                snippet: "{{$user->name}}",
-                hidesDefault: false
-                });
-            </script>
             @if($user->provider == 'facebook')
                 <!-- Facebook Request -->
                 <script src="http://connect.facebook.net/en_US/all.js"></script>

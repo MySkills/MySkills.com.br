@@ -5,6 +5,7 @@
 		$user->logLastAccess();
 	}
 ?>
+
 <!-- Unauthorized Modal -->
 <div id="unauthorizedModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
@@ -50,6 +51,7 @@
 				{{Form::close()}}			
 			</div>
 		</div>
+
   	</div>
   	<div class="modal-footer">
     	<button class="btn" data-dismiss="modal" aria-hidden="true">{{__('jobs.cancel')}}</button>
@@ -92,8 +94,12 @@
 						<a href="#addMessageModal" role="button" class="btn btn-success" data-toggle="modal"><i class="icon-envelope"></i> {{__('user.sendmessage')}}</a>
 					@else
 						<a href="#unauthorizedModal" role="button" class="btn btn-warning" data-toggle="modal" data-target="#unauthorizedModal"><i class="icon-envelope"></i>{{__('user.sendmessage')}}</a>
-					@endif
+					@endif				
 				</div> <!-- /sidebar -->
+				<center>
+					<h2>Coding Activity</h2>
+					<div id="cal-heatmap"></div>
+				</center>
 			</div> <!-- /span2 -->
 			<div class="span6">
 				<div class="row">
@@ -284,12 +290,28 @@
 					@else
 					<a href="#unauthorizedModal" role="button" class="btn btn-warning" data-toggle="modal" data-target="#unauthorizedModal">{{__('user.follow')}}</a>
 					@endif
-
-
-
 				</div> <!-- /sidebar -->
 			</div> <!-- /span4 -->
 		</div> <!-- /row -->
 	</div> <!-- /container -->	
-</div> <!-- /subpage -->   
+</div> <!-- /subpage -->  
+
+<script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
+{{ HTML::style('css/cal-heatmap.css') }}
+{{HTML::script('js/cal-heatmap.min.js')}}
+
+<script type="text/javascript">
+	var cal = new CalHeatMap();
+cal.init({
+	itemSelector: "#cal-heatmap",
+	domain: "month",
+	subDomain: "x_day",
+	cellSize: 26,
+	subDomainTextFormat: "%d",
+	range: 1,
+	weekStartOnMonday: false,
+	displayLegend: true
+});
+</script>
+
 @endsection
