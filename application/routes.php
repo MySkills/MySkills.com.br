@@ -144,20 +144,22 @@ Route::get('admin/mandrill/send',
 		'before' => 'auth', 'do' => function(){
 			ini_set('max_execution_time', 3000);
 			$responses = array();
-			//$users = User::where_not_null('email')->get();
-			$users = User::where('id', '>', 814)->get();
-			//$users = User::find(2)->first();
-			$since = '30/05/2013';
+			$users = User::where_not_null('email')->get();
+			//$users = User::where('id', '>', 814)->get();
+			//$users = User::find(2)->get();	
+			$since = '04/07/2013';
+			$links = Link::since($since);
 			foreach ($users as $user) {
-				$email_content = View::make('email.04072013')
+				$email_content = View::make('email.29072013')
 									->with('page','user_stats')
 									->with('user', $user)
 									->with('since', $since)
+									->with('links', $links)
 									->render();
 				$response = Mandrill::request('messages/send', array(
 				    'message' => array(
 						'html' => $email_content,
-						'subject' => '[myskills] Entenda o nível 4. E oportunidade PHP Zend',
+						'subject' => '[myskills] Novos links de Front-End',
 						'from_email' => 'eduardo.cruz@myskills.com.br',
 						'from_name' => 'Eduardo Cruz (MySkills)',
 						'to' => array(array('email'=>$user->email,
