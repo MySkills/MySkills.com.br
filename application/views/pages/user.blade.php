@@ -301,6 +301,11 @@
 {{HTML::script('js/cal-heatmap.min.js')}}
 
 <script type="text/javascript">
+	var my_data = {
+		@foreach ($checkins as $checkin)
+			"{{$checkin->date}}":{{$checkin->value}},
+		@endforeach
+	}
 	var cal 	= new CalHeatMap();
 	
 	var parser = function(data) {
@@ -312,7 +317,8 @@
 	};
 
 	cal.init({
-		data: "{{URL::current()}}/checkins.json",
+		//data: "{{URL::current()}}/checkins.json",
+		data: my_data,
 		itemSelector: "#cal-heatmap",
 		domain: "month",
 		subDomain: "x_day",
@@ -321,7 +327,6 @@
 		range: 1,
 		weekStartOnMonday: false,
 		displayLegend: true,
-		highlight: ["now"],
 		legend: [2, 4],
 		legendVerticalPosition: "top",
 		legendMargin: [5, 5, 5, 5],
