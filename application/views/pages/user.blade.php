@@ -161,23 +161,23 @@
 							@endif
 							<div class="row">
 									@if($checkin->level == 1)
-										<div class="progress progress-success span3">
+										<div class="progress progress-success span2">
 										<div class="bar" style="width: {{$checkin->points*5}}%;">{{$checkin->points}}/20</div>
 									@endif
 									@if($checkin->level == 2)
-										<div class="progress progress-warning span3">
+										<div class="progress progress-warning span2">
 										<div class="bar" style="width: {{($checkin->points-19)*1.66}}%;">{{$checkin->points-20}}/60</div>
 									@endif
 									@if($checkin->level == 3)
-										<div class="progress progress-info span3">
+										<div class="progress progress-info span2">
 										<div class="bar" style="width: {{($checkin->points-79)*0.71}}%;">{{$checkin->points-80}}/140</div>
 									@endif
 									@if($checkin->level == 4)
-										<div class="progress progress-danger span3">
+										<div class="progress progress-danger span2">
 										<div class="bar" style="width: {{($checkin->points-219)*0.33}}%;">{{$checkin->points-220}}/300</div>
 									@endif
 									@if($checkin->level == 5)
-										<div class="progress progress-danger span3">
+										<div class="progress progress-danger span2">
 										<div class="bar" style="width: {{($checkin->points-519)*0.16}}%;">{{$checkin->points-520}}/620</div>
 									@endif
 
@@ -185,7 +185,7 @@
 								@if(Auth::check())
 									@if($user->id == Auth::user()->id)
 										{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
-										<div class="span1">
+										<div class="span2">
 											<input type="image" src="/img/add.png"> {{HTML::link('technology/'.$checkin->id, $checkin->name)}} {{Form::hidden('technology_id', $checkin->id)}}
 										</div>
 										{{Form::close()}}
