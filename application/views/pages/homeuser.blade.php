@@ -197,8 +197,6 @@
               {{Form::select('technology_id', $technology_list)}}
               {{Form::close()}}
               @foreach($user->checkins as $checkin)
-                {{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
-                {{Form::hidden('technology_id', $checkin->id)}}
                 <div class="row">
                   <div class="progress progress-info span1">
                       @if($checkin->level == 1)
@@ -210,12 +208,14 @@
                       @if($checkin->level == 3)
                         <div class="bar" style="width: {{($checkin->points-59)*1.66}}%;">{{$checkin->points-60}}/60 </div>
                       @endif
-                      <div>                          
-                          <input type="image" src="/img/add.png"> {{HTML::link('technology/'.$checkin->id, $checkin->name)}}
-                      </div>
+                  </div>
+                  <div>                          
+                      {{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
+                      {{Form::hidden('technology_id', $checkin->id)}}
+                      <input type="image" src="/img/add.png"> {{HTML::link('technology/'.$checkin->id, $checkin->name)}}
+                      {{Form::close()}}                
                   </div>
                 </div>
-                {{Form::close()}}                
               @endforeach
 
 
