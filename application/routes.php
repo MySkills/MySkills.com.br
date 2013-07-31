@@ -448,10 +448,10 @@ Route::get('users/(:num)', function($user_id)
 Route::get('users/(:num)/checkins.json', function($user_id)
 {
 	$checkins = DB::query('select UNIX_TIMESTAMP(created_at) date, 1 value from technology_user where user_id ='.$user_id);
-	dd(json_encode($checkins));
+	//dd(json_encode($checkins));
 	//dd(json_encode($checkins, JSON_FORCE_OBJECT));
 	//dd(array_pluck($checkins, 'checkin'));
-	//return Response::json($checkins);
+	return Response::json($checkins);
 	//return Response::eloquent(User::find(1));
 });
 

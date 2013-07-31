@@ -301,17 +301,36 @@
 {{HTML::script('js/cal-heatmap.min.js')}}
 
 <script type="text/javascript">
-	var cal = new CalHeatMap();
-cal.init({
-	itemSelector: "#cal-heatmap",
-	domain: "month",
-	subDomain: "x_day",
-	cellSize: 26,
-	subDomainTextFormat: "%d",
-	range: 1,
-	weekStartOnMonday: false,
-	displayLegend: true
-});
+	var cal 	= new CalHeatMap();
+	
+	var parser = function(data) {
+		var stats = {};
+		for (var d in data) {
+			stats[data[d].date] = data[d].value;
+		}
+		return stats;
+	};
+
+	cal.init({
+		data: "{{URL::current()}}/checkins.json",
+		itemSelector: "#cal-heatmap",
+		domain: "month",
+		subDomain: "x_day",
+		cellSize: 26,
+		subDomainTextFormat: "%d",
+		range: 1,
+		weekStartOnMonday: false,
+		displayLegend: true,
+		highlight: ["now"],
+		legend: [2, 4],
+		legendVerticalPosition: "top",
+		legendMargin: [5, 5, 5, 5],
+		itemName: ["checkin", "checkins"],
+		label: {
+			width: 46,
+			offset: {x: -10, y: -40}
+		}		
+	});
 </script>
 
 @endsection
