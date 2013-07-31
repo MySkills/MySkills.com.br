@@ -184,11 +184,12 @@
 								</div>
 								@if(Auth::check())
 									@if($user->id == Auth::user()->id)
-										{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
+
 										<div class="span2">
+											{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
 											<input type="image" src="/img/add.png"> {{HTML::link('technology/'.$checkin->id, $checkin->name)}} {{Form::hidden('technology_id', $checkin->id)}}
+											{{Form::close()}}
 										</div>
-										{{Form::close()}}
 									@else 
 									<div class="span2">
 										{{HTML::link('technology/'.$checkin->id, $checkin->name)}}
