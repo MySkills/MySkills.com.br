@@ -98,7 +98,7 @@
 				</div> <!-- /sidebar -->
 				<center>
 					<h2>Coding Activity</h2>
-					<div id="cal-heatmap"></div>
+					<div id="cal-heatmap" style="height: 200px;"></div>
 				</center>
 			</div> <!-- /span2 -->
 			<div class="span6">
