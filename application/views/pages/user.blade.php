@@ -201,17 +201,18 @@
 											{{HTML::image('img/add.png')}}
 										</a>
 										{{HTML::link('technology/'.$checkin->id, $checkin->name)}}
-
 									</div>
 								@endif
 								<div class="span1">{{__('user.level')}}.: {{$checkin->level}}</div>
 								@if(Auth::check())	
 									@if($user->id == Auth::user()->id)
-										{{Form::open('checkin', 'DELETE', array('class' => 'form-inline'))}}
-											<div class="span1">$ {{$checkin->points}} {{HTML::image('img/coin16.png')}}
-											<input type="image" src="/img/minus.png">{{Form::hidden('technology_id', $checkin->id)}}
-											</div>
-										{{Form::close()}}
+										<div class="span1">
+											{{Form::open('checkin', 'DELETE', array('class' => 'form-inline'))}}
+											$ {{$checkin->points}} {{HTML::image('img/coin16.png')}}
+											<input type="image" src="/img/minus.png">
+											{{Form::hidden('technology_id', $checkin->id)}}
+											{{Form::close()}}
+										</div>
 									@endif
 								@else 
 								<div class="span1">$ {{$checkin->points}} {{HTML::image('img/coin16.png')}}
