@@ -156,10 +156,16 @@
 				</ul>
 				<div id="BadgeTabContent" class="tab-content">
 					<div class="tab-pane fade in active" id="checkins">
+					<table class="table table-condensed table-striped">
+						<thead>
+							<tr>
+								<th>Progresso</th><th>Skill</th><th>Nível</th><th>Saldo</th>
+							</tr>
+						</thead>
+						<tbody>
 						@foreach($user->checkins as $checkin)
-							@if(Auth::check())
-							@endif
-							<div class="row">
+							<tr>
+								<td>
 									@if($checkin->level == 1)
 										<div class="progress progress-success span2">
 										<div class="bar" style="width: {{$checkin->points*5}}%;">{{$checkin->points}}/20</div>
@@ -181,55 +187,49 @@
 										<div class="bar" style="width: {{($checkin->points-519)*0.16}}%;">{{$checkin->points-520}}/620</div>
 									@endif
 
-								</div>
+								</td>
 								@if(Auth::check())
 									@if($user->id == Auth::user()->id)
-
-										<div class="span2">
-											{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
+										<td>
+											{{Form::open('checkin', 'PUT')}}
 											<input type="image" src="/img/add.png"> {{HTML::link('technology/'.$checkin->id, $checkin->name)}} {{Form::hidden('technology_id', $checkin->id)}}
 											{{Form::close()}}
-										</div>
+										</td>
 									@else 
-									<div class="span2">
+									<td>
 										{{HTML::link('technology/'.$checkin->id, $checkin->name)}}
-									</div>
+									</td>
 									@endif
 								@else
-									<div class="span2">
+									<td>
 										<a href="#unauthorizedModal" role="button" data-toggle="modal" data-target="#unauthorizedModal">
 											{{HTML::image('img/add.png')}}
 										</a>
 										{{HTML::link('technology/'.$checkin->id, $checkin->name)}}
-									</div>
+									</td>
 								@endif
-								<div class="span1">{{__('user.level')}}.: {{$checkin->level}}</div>
+								<td>{{__('user.level')}}.: {{$checkin->level}}</td>
 								@if(Auth::check())	
 									@if($user->id == Auth::user()->id)
-										<div class="span1">
+										<td>
 											{{Form::open('checkin', 'DELETE', array('class' => 'form-inline'))}}
 											$ {{$checkin->points}} {{HTML::image('img/coin16.png')}}
 											<input type="image" src="/img/minus.png">
 											{{Form::hidden('technology_id', $checkin->id)}}
 											{{Form::close()}}
-										</div>
+										</td>
 									@endif
 								@else 
-								<div class="span1">$ {{$checkin->points}} {{HTML::image('img/coin16.png')}}
+								<td>$ {{$checkin->points}} {{HTML::image('img/coin16.png')}}
 									<a href="#unauthorizedModal" role="button" data-toggle="modal" data-target="#unauthorizedModal">
 										{{HTML::image('img/minus.png')}}
 									</a>									
-								</div>
+								</td>
 								@endif
-								
-							</div>
-							@if(Auth::check())
-								@if($user->id == Auth::user()->id)
-									
-								@endif
-							@endif
-
+							</tr>
 						@endforeach
+						</tbody>
+						</table>
 					</div>
 					<div class="tab-pane fade" id="badges">
 						<div class="sidebar pagination-centered">

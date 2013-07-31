@@ -197,30 +197,25 @@
               {{Form::select('technology_id', $technology_list)}}
               {{Form::close()}}
               @foreach($user->checkins as $checkin)
-                @if(Auth::check())
-                @endif
+                {{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
+                {{Form::hidden('technology_id', $checkin->id)}}
                 <div class="row">
                   <div class="progress progress-info span1">
-                    @if($checkin->level == 1)
-                      <div class="bar" style="width: {{$checkin->points*5}}%;">{{$checkin->points}}/20 </div>
-                    @endif
-                    @if($checkin->level == 2)
-                      <div class="bar" style="width: {{($checkin->points-19)*2.5}}%;">{{$checkin->points-20}}/40 </div>
-                    @endif
-                    @if($checkin->level == 3)
-                      <div class="bar" style="width: {{($checkin->points-59)*1.66}}%;">{{$checkin->points-60}}/60 </div>
-                    @endif
-                  </div>
-
-                      {{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
-                      {{Form::hidden('technology_id', $checkin->id)}}
-                      <div>
-                        <div class="row">
-                          <div><input type="image" src="/img/add.png"> {{HTML::link('technology/'.$checkin->id, $checkin->name)}}</div>
-                        </div>
+                      @if($checkin->level == 1)
+                        <div class="bar" style="width: {{$checkin->points*5}}%;">{{$checkin->points}}/20 </div>
+                      @endif
+                      @if($checkin->level == 2)
+                        <div class="bar" style="width: {{($checkin->points-19)*2.5}}%;">{{$checkin->points-20}}/40 </div>
+                      @endif
+                      @if($checkin->level == 3)
+                        <div class="bar" style="width: {{($checkin->points-59)*1.66}}%;">{{$checkin->points-60}}/60 </div>
+                      @endif
+                      <div>                          
+                          <input type="image" src="/img/add.png"> {{HTML::link('technology/'.$checkin->id, $checkin->name)}}
                       </div>
-                      {{Form::close()}}
+                  </div>
                 </div>
+                {{Form::close()}}                
               @endforeach
 
 

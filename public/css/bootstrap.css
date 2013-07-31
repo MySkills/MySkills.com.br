@@ -571,7 +571,7 @@ pre code {
   overflow-y: scroll;
 }
 form {
-  margin: 0 0 18px;
+  margin: 0 0 0px;
 }
 fieldset {
   padding: 0;
@@ -2473,7 +2473,7 @@ input[type="submit"].btn.btn-mini {
 }
 .nav {
   margin-left: 0;
-  margin-bottom: 18px;
+  margin-bottom: 7px;
   list-style: none;
 }
 .nav > li > a {
