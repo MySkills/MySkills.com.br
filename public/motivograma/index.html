@@ -28,11 +28,11 @@
                                 <th colspan="2">O que mais incentiva e estimula o seu desempenho é:</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="A1" id="V" value="1" class="V"></td>
+                            <tr><td><input type="radio" name="A1" id="V" value="1" class="VAnswer"></td>
                                 <td>V</td>
                                 <td>Um salário compatível com as minhas necessidades básicas e as de minha família</td>
                             </tr>
-                            <tr><td><input type="radio" name="A1" id="Z" value="1" class="Z"></td>
+                            <tr><td><input type="radio" name="A1" id="Z" value="1" class="ZAnswer"></td>
                                 <td>Z</td>
                                 <td>A oportunidade de testar a minha própria capacidade e ter acesso aos meus resultados</td>
                             </tr>
@@ -45,34 +45,34 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="A2" id="W" value="1"></td>
+                            <tr><td><input type="radio" name="A2" id="W" value="1" class="WAnswer"></td>
                                 <td>W</td>
                                 <td>Me oferece normas de trabalho claramente definidas, salário garantias de estabilidade, e assegurar-me privilégios mais amplos de assistência médica.</td>
                             </tr>
-                            <tr><td><input type="radio" name="A2" id="Z" value="1"></td>
+                            <tr><td><input type="radio" name="A2" id="Z" value="1" class="ZAnswer"></td>
                                 <td>Z</td>
                                 <td>Me proporciona autonomia para criar, liberdade para experimentar e autoridade para inovar.</td>
                             </tr>
                         </tbody>
                     </table>
-                    <p><button class="btn btn-large btn-primary" type="button">Ver Resultado</button></p>
+                    <p><button class="btn btn-large btn-primary" type="button" id="SubmitForm">Ver Resultado</button></p>
                 </div>
             </div>
             <div class="row">
                 <div class="span2">
-                    <input type="text" class="input-mini" placeholder="X">
+                    V - <input type="text" class="input-mini VTotal" placeholder="V">
                 </div>
                 <div class="span2">
-                    <input type="text" class="input-mini" placeholder="V">
+                    W - <input type="text" class="input-mini WTotal" placeholder="W">
                 </div>
                 <div class="span2">
-                    <input type="text" class="input-mini" placeholder="W">
+                    X  <input type="text" class="input-mini XTotal" placeholder="X">
                 </div>
                 <div class="span2">
-                    <input type="text" class="input-mini" placeholder="Y">
+                    Y - <input type="text" class="input-mini YTotal" placeholder="Y">
                 </div>
                 <div class="span2">
-                    <input type="text" class="input-mini" placeholder="Z">
+                    Z - <input type="text" class="input-mini ZTotal" placeholder="Z">
                 </div>
             </div>
         </div>
@@ -81,6 +81,7 @@
         <![endif]-->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<!--
         <script type="text/javascript">
           var _gaq = _gaq || [];
           _gaq.push(['_setAccount', 'UA-XXXXX-X']);
@@ -92,10 +93,7 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
           })();
         </script>
-
-        <script data-main="scripts/349a65db.main" src="bower_components/requirejs/require.js"></script>
-        <script type="text/javascript">
-        alert("oi");
-        </script>
+-->
+        <script data-main="scripts/42b45873.main" src="bower_components/requirejs/require.js"></script>
     </body>
 </html>
