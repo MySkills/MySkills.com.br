@@ -254,7 +254,7 @@
 					<div class="tab-pane fade" id="links">
 						<ul>
 							@foreach($links as $link)
-								<li>{{HTML::link($link->url, $link->title, array('target' => '_blank'))}}</li>
+								<li>{{HTML::link($link->url, $link->title.' - '. $link->description, array('target' => '_blank'))}}</li>
 							@endforeach
 						</ul>
 					</div>

@@ -44,7 +44,7 @@ class User extends Eloquent
 
 	public function links()
 	{
-	  return $this->has_many_and_belongs_to('Link');
+	  return $this->has_many_and_belongs_to('Link')->order_by('created_at', 'desc');
 	}
 
 	public function projects()
