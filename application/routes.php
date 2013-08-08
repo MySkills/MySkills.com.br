@@ -147,10 +147,10 @@ Route::get('admin/mandrill/send',
 			$users = User::where_not_null('email')->get();
 			//$users = User::where('id', '>', 814)->get();
 			//$users = User::find(2)->get();	
-			$since = '04/07/2013';
+			$since = '29/07/2013';
 			$links = Link::since($since);
 			foreach ($users as $user) {
-				$email_content = View::make('email.29072013')
+				$email_content = View::make('email.08082013')
 									->with('page','user_stats')
 									->with('user', $user)
 									->with('since', $since)
@@ -159,7 +159,7 @@ Route::get('admin/mandrill/send',
 				$response = Mandrill::request('messages/send', array(
 				    'message' => array(
 						'html' => $email_content,
-						'subject' => '[myskills] Novos links de Front-End',
+						'subject' => '[myskills] Novidade - Link Front-End e Coding Activity',
 						'from_email' => 'eduardo.cruz@myskills.com.br',
 						'from_name' => 'Eduardo Cruz (MySkills)',
 						'to' => array(array('email'=>$user->email,
@@ -439,6 +439,24 @@ Route::get('users/(:num)', function($user_id)
 	$checkins = DB::query('select UNIX_TIMESTAMP(created_at) date, 1 value from technology_user where user_id ='.$user_id);	
 	$links = $user->links()->get();
 	return View::make('pages.user')
+		->with('page','profile')
+		->with('technology_list', $technology_list)
+		->with('user', $user)
+		->with('user_level', $user_level)
+		->with('og_title', $user->name)
+		->with('checkins', $checkins)
+		->with('links', $links)
+		->with('og_image', $user->getImageUrl('large'));
+});
+
+Route::get('users/(:num)/links', function($user_id)
+{
+	$technology_list = Technology::order_by('name', 'asc')->lists('name', 'id');
+	$user = User::find($user_id);
+	$user_level = $user->limitedUser()->limitedlevel;
+	$checkins = DB::query('select UNIX_TIMESTAMP(created_at) date, 1 value from technology_user where user_id ='.$user_id);	
+	$links = $user->links()->get();
+	return View::make('pages.user_links')
 		->with('page','profile')
 		->with('technology_list', $technology_list)
 		->with('user', $user)
