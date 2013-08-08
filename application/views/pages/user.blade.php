@@ -252,11 +252,24 @@
 						</div>
 					</div>
 					<div class="tab-pane fade" id="links">
-						<ul>
+						<table class="table table-bordered table-striped table-condensed">
+							<thead>
+								<tr>
+									<th>Title</th><th>Description</th>
+								</tr>
+							</thead>
 							@foreach($links as $link)
-								<li>{{HTML::link($link->url, $link->title.' - '. $link->description, array('target' => '_blank'))}}</li>
+							<tr>
+								<td>
+									{{HTML::link($link->url, $link->title, array('target' => '_blank'))}}	
+								</td>
+								<td>
+									{{$link->description}}
+								</td>
+							</tr>
+								
 							@endforeach
-						</ul>
+						</table>
 					</div>
 				</div>
 			</div> <!-- /span4 -->
