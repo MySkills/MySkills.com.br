@@ -437,6 +437,7 @@ Route::get('users/(:num)', function($user_id)
 	$user = User::find($user_id);
 	$user_level = $user->limitedUser()->limitedlevel;
 	$checkins = DB::query('select UNIX_TIMESTAMP(created_at) date, 1 value from technology_user where user_id ='.$user_id);	
+	$links = $user->links()->get();
 	return View::make('pages.user')
 		->with('page','profile')
 		->with('technology_list', $technology_list)
@@ -444,6 +445,7 @@ Route::get('users/(:num)', function($user_id)
 		->with('user_level', $user_level)
 		->with('og_title', $user->name)
 		->with('checkins', $checkins)
+		->with('links', $links)
 		->with('og_image', $user->getImageUrl('large'));
 });
 

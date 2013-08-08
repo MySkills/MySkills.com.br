@@ -51,7 +51,6 @@
 				{{Form::close()}}			
 			</div>
 		</div>
-
   	</div>
   	<div class="modal-footer">
     	<button class="btn" data-dismiss="modal" aria-hidden="true">{{__('jobs.cancel')}}</button>
@@ -152,7 +151,7 @@
 					<li class="active"><a data-toggle="tab" href="#checkins">Checkins ({{count($user->technologies)}})</a></li>
 					<li class><a data-toggle="tab" href="#badges">Badges Conquistados ({{count($user->badges)}})</a></li>
 					<li class><a data-toggle="tab" href="#followers">Seguidores ({{count($user->followers)}})</a></li>
-					<li class><a data-toggle="tab" href="#projects">{{__('user.links')}}</a></li>
+					<li class><a data-toggle="tab" href="#links">{{__('user.links')}} ({{count($links)}})</a></li>
 				</ul>
 				<div id="BadgeTabContent" class="tab-content">
 					<div class="tab-pane fade in active" id="checkins">
@@ -252,7 +251,12 @@
 							@endforeach
 						</div>
 					</div>
-					<div class="tab-pane fade" id="projects">
+					<div class="tab-pane fade" id="links">
+						<ul>
+							@foreach($links as $link)
+								<li>{{HTML::link($link->url, $link->title, array('target' => '_blank'))}}</li>
+							@endforeach
+						</ul>
 					</div>
 				</div>
 			</div> <!-- /span4 -->
