@@ -120,7 +120,6 @@
 					<div class="progress progress-danger span4">
 						<div class="bar" style="width: {{$user->life*3.33}}%;">{{$user->life}}/30 <i class="icon-heart"></i></div>
 					</div>
-
 					<div class="progress progress-info span4">
 						@if($user->technologies()->count() > $user->pglevel($user->level) )
 							<div class="bar" style="width: {{($user->technologies()->count() - $user->levellimit($user->level))*100/$user->pglevel($user->level)}}%;">
