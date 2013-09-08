@@ -48,6 +48,13 @@ if (Auth::check()) {
 					</div>
 
 					<div class="control-group">
+						 <label class="control-label" for="name">Codeivate Username</label>
+						 <div class="controls">
+      						{{Form::text('codeivate_user', $user->codeivate_user, array('id' => 'inputCodeivate', 'class' => 'span3'))}}
+    					</div>
+					</div>
+
+					<div class="control-group">
 						 <label class="control-label" for="name">Video</label>
 						 <div class="controls">
       						{{Form::text('video_url', $user->video_url, array('id' => 'inputVideo', 'class' => 'span3'))}}

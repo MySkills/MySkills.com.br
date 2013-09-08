@@ -308,6 +308,32 @@
 					@else
 					<a href="#unauthorizedModal" role="button" class="btn btn-warning" data-toggle="modal" data-target="#unauthorizedModal">{{__('user.follow')}}</a>
 					@endif
+
+					@if($user->codeivate_user)
+						<span class="programming label"></span>
+						<script>
+						$(document).ready(function(){ 
+						  $.getJSON('http://codeivate.com/users/{{$user->codeivate_user}}.json?callback=?',
+						  function data(data) {
+						    var programming_now_message;
+						    console.dir(data);//check your browser console
+						    $('#name').html(data.name);
+
+						    if(data.programming_now) {
+						      programming_now_message = "Está programando agora em ";
+						      programming_now_message += data.current_language + ".";
+						      if(data.streaking_now) {
+						        programming_now_message += " Concentração total!"
+						      }
+						    } else {
+						      programming_now_message = "Não esta programando :(";
+						    }
+						    $('.programming').html(programming_now_message);    
+						  });
+						});
+						</script>
+					@endif
+
 				</div> <!-- /sidebar -->
 			</div> <!-- /span4 -->
 		</div> <!-- /row -->

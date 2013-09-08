@@ -753,6 +753,7 @@ Route::put('users',
 				$user->email = Input::get('email');
 				$user->video_url = Input::get('video_url');	
 				$user->freelancer = Input::get('freelancer');
+				$user->codeivate_user = Input::get('codeivate_user');
 				$user->save();
 			 	return Redirect::to('edit_user')->with('status','SUCESS!!! You successfully .');
 			} catch (Exception $e) {

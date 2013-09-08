@@ -18,6 +18,7 @@
                     a[f]=[]:f="mixpanel";g.people=g.people||[];h="disable track track_pageview track_links track_forms register register_once unregister identify name_tag set_config people.set people.increment".split(" ");for(e=0;e<h.length;e++)d(g,h[e]);a._i.push([b,c,f])};a.__SV=1.1;window.mixpanel=a})(document,window.mixpanel||[]);
         mixpanel.init("7f870774942301f4f0b1e8a1dd1f3e68");
     </script><!-- end Mixpanel --> 
+    {{HTML::script('js/jquery-1.7.2.min.js')}}
 <head>
     <meta charset="utf-8">
     <title>{{__('main.title')}}</title>
@@ -245,7 +246,7 @@
     
 </div> <!-- /footer -->
 
-        {{HTML::script('js/jquery-1.7.2.min.js')}}
+
         {{HTML::script('js/jquery.masonry.min.js')}}
         <script>
 
