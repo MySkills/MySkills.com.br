@@ -485,12 +485,19 @@ Route::get('users/(:any)', function($nickname)
 {
 	$technology_list = Technology::order_by('name', 'asc')->lists('name', 'id');
 	$user = User::where('nickname', '=', $nickname)->first();
+	$user_level = $user->limitedUser()->limitedlevel;
+	$checkins = DB::query('select UNIX_TIMESTAMP(created_at) date, 1 value from technology_user where user_id ='.$user->id);	
+	$links = $user->links()->get();
 	return View::make('pages.user')
 		->with('page','profile')
 		->with('technology_list', $technology_list)
 		->with('user', $user)
+		->with('user_level', $user_level)
 		->with('og_title', $user->name)
+		->with('checkins', $checkins)
+		->with('links', $links)
 		->with('og_image', $user->getImageUrl('large'));
+
 });
 
 
