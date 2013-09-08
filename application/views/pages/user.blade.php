@@ -320,13 +320,13 @@
 						    $('#name').html(data.name);
 
 						    if(data.programming_now) {
-						      programming_now_message = "Está programando agora em ";
+						      programming_now_message = "Está programando nesse momento em ";
 						      programming_now_message += data.current_language + ".";
 						      if(data.streaking_now) {
 						        programming_now_message += " Concentração total!"
 						      }
 						    } else {
-						      programming_now_message = "Não esta programando :(";
+						      programming_now_message = "Não está programando nesse momento :(";
 						    }
 						    $('.programming').html(programming_now_message);    
 						  });
