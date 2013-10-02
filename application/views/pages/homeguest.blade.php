@@ -3,6 +3,7 @@
 <div class="row boxback">
 		<div class="span2">
 				<div class="sidebar">
+					{{HTML::image('img/pinkribbon.png', 'Pink Ribbon. October is Breast Cancer Awareness Month')}}
 					<h3><span class="slash">{{__('users.join_us')}}</span></h3>
 					<h3><span class="slash">{{__('home.weare')}}.: {{User::count()}}</span></h3>
 					<h3><span class="slash">{{__('home.freelancers')}}.: {{User::where('freelancer', '=', 1)->count()}}</span></h3>
