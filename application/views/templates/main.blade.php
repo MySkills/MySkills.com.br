@@ -96,7 +96,7 @@
                 trak.io.identify({
                     name: "{{$user->name}}",
                     email: "{{$user->email}}"
-                    avatar_url: "{{$user->getImageUrl('square')}}"
+                    avatar_url: "{{$user->getImageUrl('large')}}"
                     account_id: "{{$user->id}}"
                 });
                 trak.io.track('{{$page}}');
