@@ -13,11 +13,19 @@
 </script>
     <!-- start Mixpanel -->
     <script type="text/javascript">
-        /** Novo Mix panel **/
         (function(c,a){var b,d,h,e;b=c.createElement("script");b.type="text/javascript";b.async=!0;b.src=("https:"===c.location.protocol?"https:":"http:")+'//api.mixpanel.com/site_media/js/api/mixpanel.2.js';d=c.getElementsByTagName("script")[0];d.parentNode.insertBefore(b,d);a._i=[];a.init=function(b,c,f){function d(a,b){var c=b.split(".");2==c.length&&(a=a[c[0]],b=c[1]);a[b]=function(){a.push([b].concat(Array.prototype.slice.call(arguments,0)))}}var g=a;"undefined"!==typeof f?g=
                     a[f]=[]:f="mixpanel";g.people=g.people||[];h="disable track track_pageview track_links track_forms register register_once unregister identify name_tag set_config people.set people.increment".split(" ");for(e=0;e<h.length;e++)d(g,h[e]);a._i.push([b,c,f])};a.__SV=1.1;window.mixpanel=a})(document,window.mixpanel||[]);
         mixpanel.init("7f870774942301f4f0b1e8a1dd1f3e68");
-    </script><!-- end Mixpanel --> 
+    </script>
+    <!-- end Mixpanel --> 
+    <!-- start trak.io -->
+
+    <script type="text/javascript">
+    var trak=trak||[];trak.io=trak.io||{};trak.io.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d29p64779x43zo.cloudfront.net/v1/trak.io.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);var r=function(e){return function(){trak.push([e].concat(Array.prototype.slice.call(arguments,0)))}},i=["initialize","identify","track","alias","channel","source","host","protocol","page_view"];for(var s=0;s<i.length;s++) trak.io[i[s]]=r(i[s]);trak.io.initialize.apply(trak.io,arguments)};
+    trak.io.load('0a7cc89fab378af388fb08d4af81138266014b73');
+    </script>
+    <!-- end trak.io --> 
+
     {{HTML::script('js/jquery-1.7.2.min.js')}}
 <head>
     <meta charset="utf-8">
@@ -84,11 +92,19 @@
                 });
                 mixpanel.name_tag('{{$user->name}}');
                 mixpanel.track('{{$page}}');
+
+                trak.io.identify({
+                    name: '{{$user->name}}',
+                    email: '{{$user->email}}'
+                    user_id: {{$user->id}}
+                });
+                trak.io.track('{{$page}}');
             </script>
         @endif
     @else
         <script>
             mixpanel.track('{{$page}}');
+            trak.io.track('{{$page}}');            
         </script>
     @endif
 </head>
