@@ -94,10 +94,10 @@
                 mixpanel.track('{{$page}}');
 
                 trak.io.identify({
-                    name: "{{$user->name}}",
-                    email: "{{$user->email}}"
-                    avatar_url: "{{$user->getImageUrl('large')}}"
-                    account_id: "{{$user->id}}"
+                    name: '{{$user->name}}',
+                    email: '{{$user->email}}',
+                    avatar_url: '{{$user->getImageUrl("large")}}',
+                    account_id: '{{$user->id}}'
                 });
                 trak.io.track('{{$page}}');
             </script>
