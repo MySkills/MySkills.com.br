@@ -281,6 +281,17 @@ Route::get('developers/active', function()
 		->with('users', $users);
 });
 
+/*
+	List all active users
+*/
+Route::get('developers/freelancers', function()
+{
+	$users = User::where('freelancer', '=', 'true')->order_by('lastlogin', 'desc')->get();
+	return View::make('pages.users_inactive')
+		->with('page','inactive')
+		->with('users', $users);
+});
+
 
 Route::get('edit_user', function()
 {
