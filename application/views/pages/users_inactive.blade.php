@@ -38,12 +38,6 @@
 							{{HTML::link('users/'.$user->id, $user->name)}}
 						</td>
 						<td>
-							{{$user->email}}
-						</td>
-						<td>
-							{{$user->lastlogin}}
-						</td>
-						<td>
 							@foreach ($user->partial_badges(8) as $badge)
 								{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 50, 'height'=>50, 'title' => $badge->name))}}
 							@endforeach
