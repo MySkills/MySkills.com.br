@@ -21,9 +21,7 @@
 					<thead>
 						<tr>
 							<th width="10%">{{__('users.picture')}}</th>
-							<th width="10%">{{__('users.name')}}</th>
-							<th width="10%">{{__('users.email')}}</th>
-							<th width="10%">last login</th>							
+							<th width="10%">{{__('users.name')}}</th>				
 							<th width="40%">{{__('users.badges')}}</th>
 							<th width="10%">{{__('users.level')}}</th>
 							<th width="10%">{{__('users.Points')}}</th>
@@ -46,10 +44,10 @@
 							{{$user->lastlogin}}
 						</td>
 						<td>
-							@foreach ($user->partial_badges(3) as $badge)
+							@foreach ($user->partial_badges(8) as $badge)
 								{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 50, 'height'=>50, 'title' => $badge->name))}}
 							@endforeach
-							@for ($i = 0; $i <= (2-count($user->activebadges)); $i++)
+							@for ($i = 0; $i <= (7-count($user->activebadges)); $i++)
 								{{HTML::image('img/badges/unlock100.png', 'Unlock', array('width' => 50, 'height'=>50, 'title' => 'Unlock'))}}
 							@endfor
 						</td>

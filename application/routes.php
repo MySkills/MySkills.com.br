@@ -147,10 +147,10 @@ Route::get('admin/mandrill/send',
 			$users = User::where_not_null('email')->get();
 			//$users = User::where('id', '>', 814)->get();
 			//$users = User::find(2)->get();	
-			$since = '30/09/2013';
+			$since = '06/10/2013';
 			$links = Link::since($since);
 			foreach ($users as $user) {
-				$email_content = View::make('email.07102013')
+				$email_content = View::make('email.14102013')
 									->with('page','user_stats')
 									->with('user', $user)
 									->with('since', $since)
@@ -159,7 +159,7 @@ Route::get('admin/mandrill/send',
 				$response = Mandrill::request('messages/send', array(
 				    'message' => array(
 						'html' => $email_content,
-						'subject' => '[myskills] Talita Pagani e Teresa Maciel',
+						'subject' => '[myskills] Flat Design e Freelancers',
 						'from_email' => 'eduardo.cruz@myskills.com.br',
 						'from_name' => 'Eduardo Cruz (MySkills)',
 						'to' => array(array('email'=>$user->email,
