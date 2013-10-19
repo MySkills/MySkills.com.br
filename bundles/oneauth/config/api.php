@@ -20,8 +20,8 @@ return array(
 		),
 
 		'facebook' => array(
-			'id'     => '380703318658533',
-			'secret' => 'd3abe4dd8c19336241a6a8a18626dd04',
+			'id'     => getenv('MYSKILLS_FACEBOOK_ID_LOCAL'),
+			'secret' => getenv('MYSKILLS_FACEBOOK_SECRET_LOCAL'),
 			'scope'  => 'email,offline_access,publish_actions',
 		),
 
@@ -36,8 +36,8 @@ return array(
 		),
 
 		'github' => array(
-			'id'     => '216d5fa0146c563baae2',
-			'secret' => 'cf9d11b64560427f8a83dbe07f920950b1640d4f',
+			'id'     => getenv('MYSKILLS_GITHUB_ID_LOCAL'),
+			'secret' => getenv('MYSKILLS_GITHUB_SECRET_LOCAL'),
 		),
 
 		'google' => array(
@@ -51,8 +51,8 @@ return array(
 		),
 
 		'linkedin' => array(
-			'key'    => 'x992lkqssxqq',
-			'secret' => 'h4fgvNZanzkTqHM5',
+			'key'     => getenv('MYSKILLS_LINKEDIN_KEY_LOCAL'),
+			'secret' => getenv('MYSKILLS_LINKEDIN_SECRET_LOCAL'),
 		),
 
 		'paypal' => array(
