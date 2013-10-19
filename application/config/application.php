@@ -53,7 +53,7 @@ return array(
 	|
 	*/
 
-	'key' => 'YourSecretKeyGoesHere!',
+	'key' => getenv('MYSKILLS_SECRETKEY'),
 
 	/*
 	|--------------------------------------------------------------------------
