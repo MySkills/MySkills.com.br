@@ -23,7 +23,7 @@
 
 $environments = array(
 
-	'local' => array('http://pagodabox*', '*.local'),
+	'local' => array('http://myskills*', '*.local'),
 
 );
 
