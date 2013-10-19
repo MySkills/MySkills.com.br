@@ -142,31 +142,32 @@ Route::delete('messages',
 Route::get('admin/mandrill/send', 
 	array(
 		'before' => 'auth', 'do' => function(){
-			ini_set('max_execution_time', 3000);
-			$responses = array();
-			$users = User::where_not_null('email')->get();
-			//$users = User::where('id', '>', 814)->get();
-			//$users = User::find(2)->get();	
-			$since = '06/10/2013';
-			$links = Link::since($since);
-			foreach ($users as $user) {
-				$email_content = View::make('email.14102013')
-									->with('page','user_stats')
-									->with('user', $user)
-									->with('since', $since)
-									->with('links', $links)
-									->render();
-				$response = Mandrill::request('messages/send', array(
-				    'message' => array(
-						'html' => $email_content,
-						'subject' => '[myskills] Flat Design e Freelancers',
-						'from_email' => 'eduardo.cruz@myskills.com.br',
-						'from_name' => 'Eduardo Cruz (MySkills)',
-						'to' => array(array('email'=>$user->email,
-											'name'=>$user->name)),
-					),
-				));
-				array_push($responses, $response);
+			if(Auth::user()->id < 3) {
+				ini_set('max_execution_time', 3000);
+				$responses = array();
+				$users = User::where_not_null('email')->get();
+				$since = '13/10/2013';
+				$links = Link::since($since);
+
+				foreach ($users as $user) {
+					$email_content = View::make('email.19102013')
+										->with('page','user_stats')
+										->with('user', $user)
+										->with('since', $since)
+										->with('links', $links)
+										->render();
+					$response = Mandrill::request('messages/send', array(
+					    'message' => array(
+							'html' => $email_content,
+							'subject' => '[myskills] Flat Design e Freelancers',
+							'from_email' => 'eduardo.cruz@myskills.com.br',
+							'from_name' => 'Eduardo Cruz (MySkills)',
+							'to' => array(array('email'=>$user->email,
+												'name'=>$user->name)),
+						),
+					));
+					array_push($responses, $response);
+				}
 			}
 			return View::make('email.sent')
 				->with('page','sendmail')
