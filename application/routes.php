@@ -159,7 +159,7 @@ Route::get('admin/mandrill/send',
 					$response = Mandrill::request('messages/send', array(
 					    'message' => array(
 							'html' => $email_content,
-							'subject' => '[myskills] Flat Design e Freelancers',
+							'subject' => '[myskills] MySkills Open Source sua vez de participar',
 							'from_email' => 'eduardo.cruz@myskills.com.br',
 							'from_name' => 'Eduardo Cruz (MySkills)',
 							'to' => array(array('email'=>$user->email,
