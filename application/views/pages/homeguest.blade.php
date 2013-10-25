@@ -64,8 +64,17 @@
 						{{HTML::image($user->getImageUrl('large'), $user->name, array('width'=>'200', 'class'=>'dev', 'title' => $user->name, 'id' => 'profilepicture'))}}
 					</a>
 					<p>{{HTML::link('/users/'.$user->id, $user->name)}}<p>
-					<div class="progress progress-danger">
-						<div class="bar" style="width: {{$user->life*3.33}}%;"><i class="icon-heart"></i> {{__('home.alwayshere')}}</div>
+					<div class="progress">
+					  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{$user->life*3.33}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$user->life*3.33}}%">
+					    {{__('home.alwayshere')}} <span class="glyphicon glyphicon-heart"></span>
+					    <span class="sr-only">60% Complete (warning)</span>
+					  </div>
+					</div>						
+					<div class="progressbar">
+						<div class="progress-bar progress-bar-danger" role="progressbar"  aria-valuenow="{{$user->life*3.33}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$user->life*3.33}}%">
+							<div class="bar" style="width: {{$user->life*3.33}}%;"><i class="icon-heart"></i> {{__('home.alwayshere')}}</div>
+							  <span class="sr-only">60% Complete (warning)</span>
+						</div>
 					</div>
 					<div class="progress progress-info">
 							@if($user->technologies()->count() > $user->pglevel($user->level) )
