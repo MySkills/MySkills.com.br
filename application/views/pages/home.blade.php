@@ -1,6 +1,6 @@
 @layout('templates.main')
 @section('content')
-<div class="row span12">
+<div class="row col-md-12">
 		<div class="btn-group offset3">
 			{{HTML::link('/', __('home.listall'), array('class' => 'btn btn-success btn-large'))}}
 			{{HTML::link('home/index/1', __('home.certified_devs'), array('class' => 'btn btn-success btn-large'))}}
@@ -11,7 +11,7 @@
 </div>
 
 	<div class="row boxback">
-		<div class="span2">
+		<div class="col-md-2">
 				<div class="sidebar">
 					<h3><span class="slash">{{__('users.join_us')}}</span></h3>
 					<h3><span class="slash">{{__('home.weare')}}.: {{User::count()}}</span></h3>
@@ -61,7 +61,7 @@
 
 				</div> <!-- /sidebar -->
 		</div>
-		<div class="span10" id="container">
+		<div class="col-md-10" id="container">
 			@foreach ($topUsers as $topUser)
 			<?php
 				$user = User::find($topUser->id);
