@@ -67,26 +67,8 @@
 					<div class="progress">
 					  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{$user->life*3.33}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$user->life*3.33}}%">
 					    {{__('home.alwayshere')}} <span class="glyphicon glyphicon-heart"></span>
-					    <span class="sr-only">60% Complete (warning)</span>
 					  </div>
-					</div>						
-					<div class="progressbar">
-						<div class="progress-bar progress-bar-danger" role="progressbar"  aria-valuenow="{{$user->life*3.33}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$user->life*3.33}}%">
-							<div class="bar" style="width: {{$user->life*3.33}}%;"><i class="icon-heart"></i> {{__('home.alwayshere')}}</div>
-							  <span class="sr-only">60% Complete (warning)</span>
-						</div>
 					</div>
-					<div class="progress progress-info">
-							@if($user->technologies()->count() > $user->pglevel($user->level) )
-								<div class="bar" style="width: {{($user->technologies()->count() - $user->levellimit($user->level))*100/$user->pglevel($user->level)}}%;">
-								{{$user->technologies()->count() - $user->levellimit($user->level)}}/{{$user->pglevel($user->level)}}<i class="icon-fire"></i></div>
-							@else
-								<div class="bar" style="width: {{($user->technologies()->count())*100/$user->pglevel($user->level)}}%;">							
-								{{$user->technologies()->count()}}/{{$user->pglevel($user->level)}}<i class="icon-fire"></i></div>
-							@endif
-
-					</div>
-
 					@foreach ($user->partial_badges(4) as $badge)
 						<a href="{{URL::to('/badges/'.$badge->id)}}">
 							{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 30, 'height'=>30, 'title' => $badge->name))}}
