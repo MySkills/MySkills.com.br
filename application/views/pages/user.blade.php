@@ -85,7 +85,7 @@
 		@endif
 
 		<div class="row">
-			<div class="span3 pagination-centered box">
+			<div class="col-md-3 pagination-centered box">
 				{{HTML::image($user->getImageUrl('large'),  $user->name, array('title' => $user->name))}}
 				<h1>{{$user->name}}</h1>
 				<div class="sidebar">
@@ -100,7 +100,7 @@
 					<div id="cal-heatmap" style="height: 200px;"></div>
 				</center>
 			</div> <!-- /span2 -->
-			<div class="span6">
+			<div class="col-md-6">
 				<div class="row">
 					<div class="span1 sidebar pagination-centered well">
 					@if($user_level < 2)
@@ -272,7 +272,7 @@
 					</div>
 				</div>
 			</div> <!-- /span4 -->
-			<div class="span3 pagination-centered">
+			<div class="col-md-3 pagination-centered">
 				<div class="sidebar pagination-centered">
 					@if(count($user->technologies) > 20)
 						<h3><span class="slash">{{__('user.items')}}</span></h3>

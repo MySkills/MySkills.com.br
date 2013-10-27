@@ -10,7 +10,7 @@
 <div id="subpage">	
 	<div class="container">
 		<div class="row">
-			<div class="span3">
+			<div class="col-md-3">
 				<ul class="nav nav-pills nav-stacked">
 					@foreach($technologies as $tech)
 						@if($tech->id == $technology->id)
@@ -21,7 +21,7 @@
 					@endforeach
 				</ul>
 			</div> <!-- /span10 -->
-			<div class="span7">
+			<div class="col-md-7">
 				<table class="table table-striped table-bordered table-condensed">
 					<caption><h2>{{$technology->name}}</h2>
 						<span class="label label-info">{{__('technology.topactive')}}</span>.
@@ -67,12 +67,12 @@
 				</table>
 
 			</div> <!-- /span10 -->
-			<div class="span2">
+			<div class="col-md-2">
 				<div class="sidebar">
 					<h3>{{__('technology.about')}}</h3>
 					<p>{{__('technology.about1')}}</p>
 				</div> <!-- /sidebar -->
-			</div> <!-- /span2 -->
+			</div> <!-- /col-md-2 -->
 		</div> <!-- /row -->
 	</div> <!-- /container -->	
 </div> <!-- /subpage -->   

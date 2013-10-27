@@ -31,7 +31,7 @@
 <div id="subpage">
 	<div class="container">
 		<div class="row">		
-			<div class="span10">
+			<div class="col-md-10">
 				@if(Session::get('status'))
 					@if(Session::get('status')=='ERROR')
 						<div class="alert alert-error">
@@ -162,14 +162,14 @@
 						    </div>
 					@endforeach
 				</div>
-			</div> <!-- /span10 -->
-			<div class="span2">
+			</div> <!-- /col-md-10 -->
+			<div class="col-md-2">
 				<div class="sidebar">
 					<h3><span class="slash">{{__('badges.about')}}</span></h3>
 					<p>{{__('badges.about1')}}</p>
 					<p>{{__('badges.about2')}}</p>
 				</div> <!-- /sidebar -->
-			</div> <!-- /span2 -->
+			</div> <!-- /col-md-2 -->
 		</div> <!-- /row -->
 	</div> <!-- /container -->	
 </div> <!-- /subpage -->   

@@ -12,7 +12,7 @@
 <div id="subpage">
 	<div class="container">
 		<div class="row">		
-			<div class="span5">
+			<div class="col-md-5">
 
 				<!-- NEW USERS -->
 				<table class="table table-striped table-bordered table-condensed">
@@ -51,7 +51,7 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="span5">
+			<div class="col-md-5">
 				<!-- TOP USERS -->
 				<table class="table table-striped table-bordered table-condensed">
 					<caption>
@@ -95,7 +95,7 @@
 				</table>
 
 			</div> <!-- /span8 -->
-			<div class="span2">
+			<div class="col-md-2">
 				<div class="sidebar">
 					<h3><span class="slash">{{__('users.join_us')}}</span></h3>
   					@if ( Auth::guest() )
