@@ -118,7 +118,7 @@
 					{{__('user.level')}} {{$user_level}}
 					</div>
 					<div class="progress progress-danger span4">
-						<div class="bar" style="width: {{$user->life*3.33}}%;">{{$user->life}}/30 <i class="icon-heart"></i></div>
+						<div class="bar" style="width: {{$user->life*14.28}}%;">{{$user->life}}/7 <i class="icon-heart"></i></div>
 					</div>
 					<div class="progress progress-info span4">
 						@if($user->technologies()->count() > $user->pglevel($user->level) )
