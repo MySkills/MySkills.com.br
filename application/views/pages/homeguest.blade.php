@@ -65,7 +65,7 @@
 					</a>
 					<p>{{HTML::link('/users/'.$user->id, $user->name)}}<p>
 					<div class="progress progress-danger">
-						<div class="bar" style="width: {{$user->life*3.33}}%;"><i class="icon-heart"></i> {{__('home.alwayshere')}}</div>
+						<div class="bar" style="width: {{$user->life*14.28}}%;"><i class="icon-heart"></i> {{__('home.alwayshere')}}</div>
 					</div>
 					<div class="progress progress-info">
 							@if($user->technologies()->count() > $user->pglevel($user->level) )

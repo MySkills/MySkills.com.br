@@ -343,7 +343,7 @@ FROM
 		$now = date("Y-m-d 00:00:00");
      	$dbdate = strtotime($this->lastlogin);
      	$lastlogin = date("Y-m-d 00:00:00", $dbdate);
-     	$diff = (30 - (strtotime($now) - strtotime($lastlogin)) /24 /60  /60);
+		$diff = (7 - (strtotime($now) - strtotime($lastlogin)) /24 /60  /60);
      	if ( $diff > 0) {
      		return $diff;
 		} else {
