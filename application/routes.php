@@ -408,7 +408,7 @@ Route::get('technologies', function()
 	$topTechnology = Technology::topFirstTechnology();
 	$developers = User::topUsersByTechnology($topTechnology[0]->id);
 	return View::make('pages.technology')
-		->with('page','technology')	
+		->with('page','technologies')	
 		->with('developers', $developers)
 		->with('technologies', $technologies)
 		->with('technology',$topTechnology[0]);

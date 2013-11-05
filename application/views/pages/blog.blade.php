@@ -11,12 +11,12 @@
 <div id="subpage">	
 	<div class="container">
 		<div class="row">
-			<div class="span10 pagination-centered">
+			<div class="col-md-10 pagination-centered">
 
 				<iframe width="640" height="360" src="http://www.youtube.com/embed/7pU5zuS25Gs?rel=0" frameborder="0" allowfullscreen></iframe>
 
 			</div> <!-- /span10 -->
-			<div class="span2">
+			<div class="col-md-2">
 				<div class="sidebar">
 					<h3><span class="slash">{{__('blog.about')}}</span></h3>
 					<p>{{__('blog.about1')}}</p>

@@ -20,10 +20,10 @@ if (Auth::check()) {
 <div id="subpage">
 	<div class="container">
 		<div class="row">		
-			<div class="span2">
+			<div class="col-md-2">
 			{{HTML::image($user->getImageUrl('large'),  $user->name)}}
 			</div> <!-- /span2 -->
-			<div class="span8">
+			<div class="col-md-8">
 
 				<iframe width="640" height="360" src="http://www.youtube.com/embed/7pU5zuS25Gs?rel=0" frameborder="0" allowfullscreen></iframe>
 
@@ -77,7 +77,7 @@ if (Auth::check()) {
 				{{Form::close()}}
 			</div> <!-- /span8 -->
 
-			<div class="span2">
+			<div class="col-md-2">
 				<div class="sidebar">
 					<h3><span class="slash">{{$user->active()}} User</span></h3>
 					<p>{{__('user.badges_earned')}}</p>

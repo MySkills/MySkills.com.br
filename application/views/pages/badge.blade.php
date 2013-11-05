@@ -26,15 +26,15 @@
 <div id="subpage">
 	<div class="container">
 		<div class="row">		
-			<div class="span1">
+			<div class="col-md-1">
 				{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => '100', 'height' => '100'))}}
 
-			</div> <!-- /span2 -->
-			<div class="span2">
+			</div> <!-- /col-md-2 -->
+			<div class="col-md-2">
 				<p>{{$badge->name}} - {{$badge->issuer->name}} </p>
 				<p>{{$badge->description}}</p>
 			</div> <!-- /span4 -->
-			<div class="span7">
+			<div class="col-md-7">
 				<table class="table table-striped table-bordered table-condensed">
 					<caption>
 						<span class="label label-info">{{count($badge->users)." ". __('badges.topactive')}}</span>.
@@ -86,7 +86,7 @@
 
 
 			</div> <!-- /span5 -->
-			<div class="span2">
+			<div class="col-md-2">
 				<div class="sidebar">
 					<h3><span class="slash">Badge</span></h3>									
 	                    @if( Auth::check())

@@ -7,23 +7,29 @@
 ?>
 
 <!-- Unauthorized Modal -->
-<div id="unauthorizedModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div id="unauthorizedModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+ <div class="modal-dialog">
+    <div class="modal-content">  
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h3 id="myModalLabel"> {{__('security.unauthorized')}} </h3>
   </div>
   <div class="modal-body">
     <p>{{__('security.needsign')}}</p>
-		{{HTML::link('connect/session/facebook', __('security.subscribe').'(Facebook)', array('class' => 'btn'))}}
-		{{HTML::link('connect/session/github', __('security.subscribe').'(Github)', array('class' => 'btn btn-primary'))}}
-		{{HTML::link('connect/session/linkedin', __('security.subscribe').'(Linkedin)', array('class' => 'btn'))}}
+		{{HTML::link('connect/session/linkedin', __('security.subscribe').'(Linkedin)', array('class' => 'btn btn-info'))}}
+		{{HTML::link('connect/session/facebook', __('security.subscribe').'(Facebook)', array('class' => 'btn btn-primary'))}}
+		{{HTML::link('connect/session/github', __('security.subscribe').'(Github)', array('class' => 'btn btn-info'))}}				
   </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">{{__('security.close')}}</button>
   </div>
 </div>
+</div>
+</div>
 <!-- Send Message Modal -->
-<div id="addMessageModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div id="addMessageModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+ <div class="modal-dialog">
+    <div class="modal-content">  
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h3 id="myModalLabel">{{__('user.sendmessage')}}</h3>
@@ -63,7 +69,10 @@
     	<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
   	</div>
 @endif  
+  </div>
 </div>
+</div>
+
 <!-- /end Modal --> 
 <div id="subpage">
 	<div class="container">
@@ -85,7 +94,7 @@
 		@endif
 
 		<div class="row">
-			<div class="span3 pagination-centered box">
+			<div class="col-md-3 pagination-centered box">
 				{{HTML::image($user->getImageUrl('large'),  $user->name, array('title' => $user->name))}}
 				<h1>{{$user->name}}</h1>
 				<div class="sidebar">
@@ -100,9 +109,9 @@
 					<div id="cal-heatmap" style="height: 200px;"></div>
 				</center>
 			</div> <!-- /span2 -->
-			<div class="span6">
+			<div class="col-md-6">
 				<div class="row">
-					<div class="span1 sidebar pagination-centered well">
+					<div class="col-md-2 sidebar pagination-centered">
 					@if($user_level < 2)
 						{{HTML::image('img/browserquest/'.'level1.png',  __('user.level').' 1', array('width' => 75, 'height'=>75, 'title' => __('user.level').' 1'))}}							
 					@endif
@@ -117,19 +126,26 @@
 					@endif
 					{{__('user.level')}} {{$user_level}}
 					</div>
-					<div class="progress progress-danger span4">
-						<div class="bar" style="width: {{$user->life*14.28}}%;">{{$user->life}}/7 <i class="icon-heart"></i></div>
+
+					<div class="progress">
+  						<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{$user->life*3.33}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$user->life*3.33}}%;">
+    						{{$user->life}}/30
+  						</div>
 					</div>
-					<div class="progress progress-info span4">
-						@if($user->technologies()->count() > $user->pglevel($user->level) )
-							<div class="bar" style="width: {{($user->technologies()->count() - $user->levellimit($user->level))*100/$user->pglevel($user->level)}}%;">
-							{{$user->technologies()->count() - $user->levellimit($user->level)}}/{{$user->pglevel($user->level)}}<i class="icon-fire"></i></div>
-						@else
-							<div class="bar" style="width: {{($user->technologies()->count())*100/$user->pglevel($user->level)}}%;">							
-							{{$user->technologies()->count()}}/{{$user->pglevel($user->level)}}<i class="icon-fire"></i></div>
-						@endif
+					<div class="col-md-10 progress progress-info">
+						<div class="progress">
+							@if($user->technologies()->count() > $user->pglevel($user->level) )								
+		  						<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{($user->technologies()->count() - $user->levellimit($user->level))*100/$user->pglevel($user->level)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{($user->technologies()->count() - $user->levellimit($user->level))*100/$user->pglevel($user->level)}}%;">
+		    						{{$user->technologies()->count() - $user->levellimit($user->level)}}/{{$user->pglevel($user->level)}}
+		  						</div>
+							@else
+		  						<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{($user->technologies()->count())*100/$user->pglevel($user->level)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{($user->technologies()->count())*100/$user->pglevel($user->level)}}%;">
+		    						{{$user->technologies()->count()}}/{{$user->pglevel($user->level)}}
+		  						</div>								
+							@endif
+						</div>
 					</div>
-				<div class="pagination-centered span4">
+				<div class="col-md-10 center-block">
 					@if(Auth::check())
 						@if($user->id == Auth::user()->id)
 							{{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
@@ -164,27 +180,33 @@
 						@foreach($user->checkins as $checkin)
 							<tr>
 								<td>
-									@if($checkin->level == 1)
-										<div class="progress progress-success span2">
-										<div class="bar" style="width: {{$checkin->points*5}}%;">{{$checkin->points}}/20</div>
-									@endif
-									@if($checkin->level == 2)
-										<div class="progress progress-warning span2">
-										<div class="bar" style="width: {{($checkin->points-19)*1.66}}%;">{{$checkin->points-20}}/60</div>
-									@endif
-									@if($checkin->level == 3)
-										<div class="progress progress-info span2">
-										<div class="bar" style="width: {{($checkin->points-79)*0.71}}%;">{{$checkin->points-80}}/140</div>
-									@endif
-									@if($checkin->level == 4)
-										<div class="progress progress-danger span2">
-										<div class="bar" style="width: {{($checkin->points-219)*0.33}}%;">{{$checkin->points-220}}/300</div>
-									@endif
-									@if($checkin->level == 5)
-										<div class="progress progress-danger span2">
-										<div class="bar" style="width: {{($checkin->points-519)*0.16}}%;">{{$checkin->points-520}}/620</div>
-									@endif
-
+									<div class="progress">
+										@if($checkin->level == 1)
+											  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{$checkin->points*5}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$checkin->points*5}}%;">
+											    {{$checkin->points}}/20
+											  </div>
+										@endif
+										@if($checkin->level == 2)
+											  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{($checkin->points-19)*1.66}}" aria-valuemin="0" aria-valuemax="100" style="width: {{($checkin->points-19)*1.66}}%;">
+											    {{$checkin->points-20}}/60
+											  </div>
+										@endif
+										@if($checkin->level == 3)
+											  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{($checkin->points-79)*0.71}}" aria-valuemin="0" aria-valuemax="100" style="width: {{($checkin->points-19)*0.71}}%;">
+											    {{$checkin->points-80}}/140
+											  </div>
+										@endif
+										@if($checkin->level == 4)
+											  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{($checkin->points-219)*0.33}}" aria-valuemin="0" aria-valuemax="100" style="width: {{($checkin->points-219)*0.33}}%;">
+											    {{$checkin->points-220}}/300
+											  </div>
+										@endif
+										@if($checkin->level == 5)
+											  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{($checkin->points-519)*0.16}}" aria-valuemin="0" aria-valuemax="100" style="width: {{($checkin->points-519)*0.16}}%;">
+											    {{$checkin->points-510}}/620
+											  </div>
+										@endif
+									</div>
 								</td>
 								@if(Auth::check())
 									@if($user->id == Auth::user()->id)
@@ -272,7 +294,7 @@
 					</div>
 				</div>
 			</div> <!-- /span4 -->
-			<div class="span3 pagination-centered">
+			<div class="col-md-3 pagination-centered">
 				<div class="sidebar pagination-centered">
 					@if(count($user->technologies) > 20)
 						<h3><span class="slash">{{__('user.items')}}</span></h3>

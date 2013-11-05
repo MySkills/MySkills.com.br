@@ -10,7 +10,7 @@
 <div id="subpage">	
 	<div class="container">
 		<div class="row">
-			<div class="span7">
+			<div class="col-md-7">
 				@if ( Auth::guest() )
 					{{HTML::link('connect/session/facebook', __('home.sign-up').' (Facebook)', array('class' => 'btn btn-small btn-warning'))}}
 					{{HTML::link('connect/session/github', '&nbsp;'. __('home.sign-up').' (Github) &nbsp;&nbsp;', array('class' => 'btn btn-small btn-warning'))}}
@@ -153,7 +153,7 @@
 									@endif
 					</ol>
 			</div> <!-- /span10 -->
-			<div class="span5">
+			<div class="col-md-5">
 				{{HTML::image('img/openbadges.jpg', __('upgrade.openbadges'))}}
 			</div> <!-- /span2 -->
 		</div> <!-- /row -->

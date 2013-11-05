@@ -1,16 +1,15 @@
 @layout('templates.main')
 @section('content')
 <div class="row boxback">
-		<div class="span2">
+		<div class="col-md-2">
 				<div class="sidebar">
-					{{HTML::image('img/pinkribbon.png', 'Pink Ribbon. October is Breast Cancer Awareness Month')}}
-					<h3><span class="slash">{{__('users.join_us')}}</span></h3>
-					<h3><span class="slash">{{__('home.weare')}}.: {{User::count()}}</span></h3>
-					<h3><span class="slash">{{__('home.freelancers')}}.: {{User::where('freelancer', '=', 1)->count()}}</span></h3>
+					<h4>{{__('home.weare')}}.: {{User::count()}}</h4>  
+					<h4>{{__('home.freelancers')}}.: {{User::where('freelancer', '=', 1)->count()}}</h4>
+					<h4>{{__('users.new_users')}}</h4>
 					@if ( Auth::guest() )
-						{{HTML::link('connect/session/facebook', __('home.sign-up').' (Facebook)', array('class' => 'btn btn-small btn-warning'))}}
-						{{HTML::link('connect/session/github', '&nbsp;'. __('home.sign-up').' (Github) &nbsp;&nbsp;', array('class' => 'btn btn-small btn-warning'))}}
-						{{HTML::link('connect/session/linkedin', __('home.sign-up').' (Linkedin)', array('class' => 'btn btn-small btn-warning'))}}
+						{{HTML::link('connect/session/facebook', __('home.sign-up').' (Facebook)', array('class' => 'btn btn-sm btn-warning'))}}
+						{{HTML::link('connect/session/github', '&nbsp;'. __('home.sign-up').' (Github) &nbsp;&nbsp;', array('class' => 'btn btn-sm btn-warning'))}}
+						{{HTML::link('connect/session/linkedin', __('home.sign-up').' (Linkedin)', array('class' => 'btn btn-sm btn-warning'))}}
 					@endif
 					<p>{{__('users.about1')}}</p>
 					<h4><span class="slash">{{__('users.new_users')}}</span></h4>
@@ -53,7 +52,7 @@
 
 				</div> <!-- /sidebar -->
 		</div>
-		<div class="span10" id="container">
+		<div class="col-md-10" id="container">
 			@foreach ($topUsers as $topUser)
 			<?php
 				$user = User::find($topUser->id);
@@ -64,20 +63,13 @@
 						{{HTML::image($user->getImageUrl('large'), $user->name, array('width'=>'200', 'class'=>'dev', 'title' => $user->name, 'id' => 'profilepicture'))}}
 					</a>
 					<p>{{HTML::link('/users/'.$user->id, $user->name)}}<p>
-					<div class="progress progress-danger">
-						<div class="bar" style="width: {{$user->life*14.28}}%;"><i class="icon-heart"></i> {{__('home.alwayshere')}}</div>
-					</div>
-					<div class="progress progress-info">
-							@if($user->technologies()->count() > $user->pglevel($user->level) )
-								<div class="bar" style="width: {{($user->technologies()->count() - $user->levellimit($user->level))*100/$user->pglevel($user->level)}}%;">
-								{{$user->technologies()->count() - $user->levellimit($user->level)}}/{{$user->pglevel($user->level)}}<i class="icon-fire"></i></div>
-							@else
-								<div class="bar" style="width: {{($user->technologies()->count())*100/$user->pglevel($user->level)}}%;">							
-								{{$user->technologies()->count()}}/{{$user->pglevel($user->level)}}<i class="icon-fire"></i></div>
-							@endif
 
+					<div class="progress">
+					  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{$user->life*3.33}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$user->life*3.33}}%">
+					    {{__('home.alwayshere')}} <span class="glyphicon glyphicon-heart"></span>
+					  </div>
 					</div>
-
+					
 					@foreach ($user->partial_badges(4) as $badge)
 						<a href="{{URL::to('/badges/'.$badge->id)}}">
 							{{HTML::image('img/badges/'.$badge->image, $badge->name, array('width' => 30, 'height'=>30, 'title' => $badge->name))}}

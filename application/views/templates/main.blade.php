@@ -61,9 +61,7 @@
 
     {{ HTML::style('http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600') }}  
     {{ HTML::style('css/bootstrap.css') }}
-    {{ HTML::style('css/bootstrap-responsive.css') }}  
-
-    {{ HTML::style('css/font-awesome.css') }}
+    {{ HTML::style('css/bootstrap-theme.css') }}  
 
     {{ HTML::style('css/reboot-landing.css') }}
     {{ HTML::style('css/reboot-landing-responsive.css') }}
@@ -110,100 +108,104 @@
     @endif
 </head>
 <body>
+
+    <nav class="navbar navbar-default" role="navigation">
     <a href="https://github.com/MySkills/MySkills.com.br" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
-    <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+            {{HTML::link('/','', array('class' => 'navbar-brand'))}}
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+            @if ($page == 'home')
+                <li class="active"> {{HTML::link('/', __('main.home'))}} </li>
+            @else
+                <li> {{HTML::link('/', __('main.home'))}} </li>
+            @endif
+            @if(Auth::check())
+                @if($user->provider == 'facebook')
+                    <li><a href='#' onclick="FacebookInviteFriends();">{{__('main.invite')}}</a></li>
+                @endif
+            @endif
+            @if ($page=='badges')
+                <li class="active">{{HTML::link('badges',__('main.badges'))}}</li>
+            @else
+                <li>{{HTML::link('badges',__('main.badges'))}} </li>
+            @endif
+            @if($page=='technologies')
+                <li class="active">{{HTML::link('technologies',__('main.technologies'))}}</li>
+            @else
+                <li>{{HTML::link('technologies',__('main.technologies'))}}</li>
+            @endif
+            @if ( Auth::check())
+                <?php $count_messages = count(User::unreadmessages()); ?>
+                <li>
+                    <a href="/messages"><i class="icon-envelope"></i>
+                        @if($count_messages > 0)
+                        <span class="badge badge-warning">{{$count_messages}}</span>
+                        @endif
+                    </a>
+                </li>
+                @if ($page=='profile')
+                    <li class="dropdown active">
+                @else
+                    <li class="dropdown">
+                @endif
+                        <a id="profile" href="#" class="dropdown-toggle" data-toggle="dropdown">{{$user->name}}
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="profile">
+                            <li class="presentation">{{HTML::link('profile',__('main.view'), array('role' => 'menuitem', 'tabindex' =>'-1'))}}</li>
+                            <li class="presentation">{{HTML::link('edit_user',__('main.edit'), array('role' => 'menuitem', 'tabindex' =>'-1'))}}</li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation">{{HTML::link('logout',__('main.logout'), array('role' => 'menuitem', 'tabindex' =>'-1'))}}</li>
+                        </ul>
+                    </li>
+            @else
+                    <li class="dropdown">
+                        <a id="profile" href="#" class="dropdown-toggle" data-toggle="dropdown">{{__('main.signin')}}
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="profile">
+                            <li class="presentation">{{HTML::link('connect/session/facebook', 'Facebook', array('role' => 'menuitem', 'tabindex' =>'-1'))}}</li>
+                            <li class="presentation">{{HTML::link('connect/session/github', 'Github', array('role' => 'menuitem', 'tabindex' =>'-1'))}}</li>
+                            <li class="presentation">{{HTML::link('connect/session/linkedin', 'Linkedin', array('role' => 'menuitem', 'tabindex' =>'-1'))}}</li>
+                        </ul>
+                    </li>
+
+            @endif
+            <li class="dropdown">
+                <a id="profile" href="#" class="dropdown-toggle" data-toggle="dropdown">{{__('main.language')}}
+                    <b class="caret"></b>
                 </a>
-                {{HTML::link('/','MySkills Logo', array('class' => 'brand'))}}
-                <div class="nav-collapse">
-                    <ul class="nav pull-right">
-                        @if ($page == 'home')
-                            <li class="active"> {{HTML::link('/', __('main.home'))}} </li>
-                        @else
-                            <li> {{HTML::link('/', __('main.home'))}} </li>
-                        @endif
-                        @if(Auth::check())
-                            @if($user->provider == 'facebook')
-                                <li><a href='#' onclick="FacebookInviteFriends();">{{__('main.invite')}}</a></li>
-                            @endif
-                        @endif
-                        @if ($page=='badges')
-                            <li class="active">{{HTML::link('badges',__('main.badges'))}}</li>
-                        @else
-                            <li>{{HTML::link('badges',__('main.badges'))}} </li>
-                        @endif
-                        @if($page=='technologies')
-                            <li class="active">{{HTML::link('technologies',__('main.technologies'))}}</li>
-                        @else
-                            <li>{{HTML::link('technologies',__('main.technologies'))}}</li>
-                        @endif
-                        @if ( Auth::check())
-                            <?php $count_messages = count(User::unreadmessages()); ?>
-                            <li>
-                                <a href="/messages"><i class="icon-envelope"></i>
-                                    @if($count_messages > 0)
-                                    <span class="badge badge-warning">{{$count_messages}}</span>
-                                    @endif
-                                </a>
-                            </li>
-                            @if ($page=='profile')
-                                <li class="dropdown active">
-                            @else
-                                <li class="dropdown">
-                            @endif
-                                    <a id="profile" href="#" class="dropdown-toggle" data-toggle="dropdown">{{$user->name}}
-                                        <b class="caret"></b>
-                                    </a>
-                                    <ul class="dropdown-menu" role="menu" aria-labelledby="profile">
-                                        <li class="presentation">{{HTML::link('profile',__('main.view'), array('role' => 'menuitem', 'tabindex' =>'-1'))}}</li>
-                                        <li class="presentation">{{HTML::link('edit_user',__('main.edit'), array('role' => 'menuitem', 'tabindex' =>'-1'))}}</li>
-                                        <li role="presentation" class="divider"></li>
-                                        <li role="presentation">{{HTML::link('logout',__('main.logout'), array('role' => 'menuitem', 'tabindex' =>'-1'))}}</li>
-                                    </ul>
-                                </li>
-                        @else
-                                <li class="dropdown">
-                                    <a id="profile" href="#" class="dropdown-toggle" data-toggle="dropdown">{{__('main.signin')}}
-                                        <b class="caret"></b>
-                                    </a>
-                                    <ul class="dropdown-menu" role="menu" aria-labelledby="profile">
-                                        <li class="presentation">{{HTML::link('connect/session/facebook', 'Facebook', array('role' => 'menuitem', 'tabindex' =>'-1'))}}</li>
-                                        <li class="presentation">{{HTML::link('connect/session/github', 'Github', array('role' => 'menuitem', 'tabindex' =>'-1'))}}</li>
-                                        <li class="presentation">{{HTML::link('connect/session/linkedin', 'Linkedin', array('role' => 'menuitem', 'tabindex' =>'-1'))}}</li>
-                                    </ul>
-                                </li>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="profile">
+                    <li class="presentation"><a  href="/en" role="menuitem" tabindex="-1">English</a></li>
+                    <li class="presentation"><a  href="/pt" role="menuitem" tabindex="-1">Português</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a id="profile" href="#" class="dropdown-toggle" data-toggle="dropdown">{{__('main.help')}}
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="profile">
+                    <li>{{HTML::link('upgrade',__('main.about'))}} </li>
+                    <li>{{HTML::link('blog', __('main.blog'))}}</li>
+                    <li>{{HTML::link('channel', __('main.channel'))}}</li>
+                </ul>
+            </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav>
 
-                        @endif
-                        <li class="dropdown">
-                            <a id="profile" href="#" class="dropdown-toggle" data-toggle="dropdown">{{__('main.language')}}
-                                <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="profile">
-                                <li class="presentation"><a  href="/en" role="menuitem" tabindex="-1">English</a></li>
-                                <li class="presentation"><a  href="/pt" role="menuitem" tabindex="-1">Português</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a id="profile" href="#" class="dropdown-toggle" data-toggle="dropdown">{{__('main.help')}}
-                                <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="profile">
-                                <li>{{HTML::link('upgrade',__('main.about'))}} </li>
-                                <li>{{HTML::link('blog', __('main.blog'))}}</li>
-                                <li>{{HTML::link('channel', __('main.channel'))}}</li>
-                            </ul>
-                        </li>
 
-                    </ul>
-                </div><!--/.nav-collapse -->
-            </div> <!-- /container -->
-        </div> <!-- /navbar-inner -->
-    </div> <!-- /navbar -->
     @yield('content')
     <div id="extra">
 
@@ -213,10 +215,10 @@
 
             <div class="row">
                 
-                <div class="span4">
-<a href="http://smallactsmanifesto.org" title="Small Acts Manifesto"><img src="/img/smallacts-badge-88x31-blue.png" style="border: none;" alt="Small Acts Manifesto" /></a>                </div> <!-- /span4 -->
+                <div class="col-md-4">
+<a href="http://smallactsmanifesto.org" title="Small Acts Manifesto"><img src="/img/smallacts-badge-88x31-blue.png" style="border: none;" alt="Small Acts Manifesto" /></a>                </div> <!-- /col-md-4 -->
 
-                <div class="span4">
+                <div class="col-md-4">
                     <h3><span class="slash">//</span>{{__('main.subscribe_update')}}</h3>
                         <script type="text/javascript" language="JavaScript" src="http://myskills.us5.list-manage1.com/subscriber-count?b=28&u=00d2e3de-199f-4c91-ae5a-5433b3ea5e9f&id=30cd3f42fe"></script>
                         <div id="mc_embed_signup1">
@@ -226,11 +228,11 @@
                         </div>
                         </form>
                     </div>
-                </div> <!-- /span4 -->
+                </div> <!-- /col-md-4 -->
 
-                <div class="span4">
+                <div class="col-md-4">
                     <a href="http://mixpanel.com/f/partner"><img src="http://mixpanel.com/site_media/images/partner/badge_blue.png" alt="Real Time Web Analytics" /></a>                
-                </div> <!-- /span4 -->
+                </div> <!-- /col-md-4 -->
 
             </div> <!-- /row -->
         </div> <!-- /container -->
@@ -244,18 +246,18 @@
         <div class="container">
         
             <div class="row">
-                <div id="footer-copyright" class="span4">
+                <div id="footer-copyright" class="col-md-4">
                     &copy; 2012 MySkills.com.br
-                </div> <!-- /span4 -->
+                </div> <!-- /col-md-4 -->
                 
-                <div id="footer-terms" class="span8">
+                <div id="footer-terms" class="col-md-8">
                     <ul class="footer-links clearfix">
                         <li>{{HTML::link('termsofuse', 'Terms of Service')}}</li>
                     </ul>
                     <ul class="footer-links clearfix">
                         <li>{{HTML::link('privacypolicy', 'Privacy Policy')}}</li>
                     </ul>
-                </div> <!-- /span8 -->
+                </div> <!-- /col-md-8 -->
             </div> <!-- /row -->
             
         </div> <!-- /container -->

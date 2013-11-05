@@ -9,62 +9,66 @@
 
 
 <!-- Send Message Modal -->
-<div id="addMessageModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-<div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">{{__('wall.sharelink')}}</h3>
+<div id="addMessageModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+ <div class="modal-dialog">
+    <div class="modal-content">  
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">{{__('wall.sharelink')}}</h3>
+    </div>
+    @if( Auth::check())
+      <div class="modal-body">
+
+        {{Form::open('links', 'PUT',array('class' =>'form-horizontal'))}}
+        <div class="control-group" >
+          <label class="control-label">{{__('links.title')}}</label>
+          <div class="controls">        
+            {{Form::text('title', '',array('class' =>'span3', 'placeholder' => __('links.title')))}}
+          </div>
+        </div>      
+
+        <div class="control-group" >
+          <label class="control-label">{{__('links.url')}}</label>
+          <div class="controls">        
+            {{Form::text('url', '',array('class' =>'span3', 'placeholder' => 'http://'))}}
+          </div>
+        </div>      
+        <div class="control-group" >
+          <label class="control-label">{{__('links.description')}}</label>
+          <div class="controls">        
+            {{Form::text('description', '',array('class' =>'span3', 'placeholder' => __('links.description')))}}
+          </div>
+        </div>      
+        <div class="control-group" >    
+          <div class="controls">        
+            {{Form::submit(__('jobs.submit'), array('class' => 'btn-primary'))}}
+            {{Form::close()}}     
+          </div>
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">{{__('jobs.cancel')}}</button>
+        </div>
+    @else
+      <div class="modal-body">
+          <p>You are not authenticated</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+    @endif  
+  </div>
 </div>
-@if( Auth::check())
-  <div class="modal-body">
-
-    {{Form::open('links', 'PUT',array('class' =>'form-horizontal'))}}
-    <div class="control-group" >
-      <label class="control-label">{{__('links.title')}}</label>
-      <div class="controls">        
-        {{Form::text('title', '',array('class' =>'span3', 'placeholder' => __('links.title')))}}
-      </div>
-    </div>      
-
-    <div class="control-group" >
-      <label class="control-label">{{__('links.url')}}</label>
-      <div class="controls">        
-        {{Form::text('url', '',array('class' =>'span3', 'placeholder' => 'http://'))}}
-      </div>
-    </div>      
-    <div class="control-group" >
-      <label class="control-label">{{__('links.description')}}</label>
-      <div class="controls">        
-        {{Form::text('description', '',array('class' =>'span3', 'placeholder' => __('links.description')))}}
-      </div>
-    </div>      
-    <div class="control-group" >    
-      <div class="controls">        
-        {{Form::submit(__('jobs.submit'), array('class' => 'btn-primary'))}}
-        {{Form::close()}}     
-      </div>
-    </div>
-    </div>
-    <div class="modal-footer">
-      <button class="btn" data-dismiss="modal" aria-hidden="true">{{__('jobs.cancel')}}</button>
-    </div>
-@else
-  <div class="modal-body">
-      <p>You are not authenticated</p>
-    </div>
-    <div class="modal-footer">
-      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    </div>
-@endif  
 </div>
 
 
 <div class="container">
 	<div class="row">
-      <div class="span2">
+      <div class="col-md-2">
         <div class="sidebar">                 
-          <h3><span class="slash">{{__('home.weare')}}.: {{User::count()}}</span></h3>  
-          <h3><span class="slash">{{__('home.freelancers')}}.: {{User::where('freelancer', '=', 1)->count()}}</span></h3>                  
-          <h4><span class="slash">{{__('users.new_users')}}</span></h4>
+          <h4>{{__('home.weare')}}.: {{User::count()}}</h4>  
+          <h4>{{__('home.freelancers')}}.: {{User::where('freelancer', '=', 1)->count()}}</h4>
+          <h4>{{__('users.new_users')}}</h4>
         <table>
           @foreach ($newUsers as $newuser)
           
@@ -90,29 +94,10 @@
 
 
         </div> <!-- /sidebar -->
-      </div> <!-- /span2 -->
-    <div class="span7">
+      </div> <!-- /col-md-2 -->
+    <div class="col-md-7">
             <h1>Bem-vindo(a) ao MySkills</h1>
 
- <div id="myPublisherDiv"></div>
-        <script type="text/javascript">
-          // Initialize API key, session, and token...
-          // Think of a session as a room, and a token as the key to get in to the room
-          // Sessions and tokens are generated on your server and passed down to the client
-          var apiKey = "31047142";
-          var sessionId = "1_MX4zMTA0NzE0Mn4xMjcuMC4wLjF-U3VuIEp1biAwMiAxMDoxMDoxOSBQRFQgMjAxM34wLjY5Mjk4MzE1fg";
-          var token = "T1==cGFydG5lcl9pZD0zMTA0NzE0MiZzZGtfdmVyc2lvbj10YnJ1YnktdGJyYi12MC45MS4yMDExLTAyLTE3JnNpZz1iZmRjMGNiMzZhMjU5Y2RhOGQ4NDc2ZmQ0MmQ3YjM4Y2QwYjc0NmQ4OnJvbGU9cHVibGlzaGVyJnNlc3Npb25faWQ9MV9NWDR6TVRBME56RTBNbjR4TWpjdU1DNHdMakYtVTNWdUlFcDFiaUF3TWlBeE1Eb3hNRG94T1NCUVJGUWdNakF4TTM0d0xqWTVNams0TXpFMWZnJmNyZWF0ZV90aW1lPTEzNzAxOTMwMjImbm9uY2U9MC44NzU5MTc0ODY5OTg1NTY0JmV4cGlyZV90aW1lPTEzNzA3OTc4MjgmY29ubmVjdGlvbl9kYXRhPQ==";
-
-          // Initialize session, set up event listeners, and connect
-          var session = TB.initSession(sessionId);
-          session.addEventListener('sessionConnected', sessionConnectedHandler);
-          session.connect(apiKey, token);
-          
-          function sessionConnectedHandler(event) {
-            var publisher = TB.initPublisher(apiKey, 'myPublisherDiv');
-            session.publish(publisher);
-          }
-        </script>
         @if(Session::get('status'))
           @if(Session::get('status')=='ERROR')
             <div class="alert alert-error">
@@ -189,7 +174,7 @@
         @endforeach
         </table>
     </div>
-      <div class="span3">
+      <div class="col-md-3">
         <div class="sidebar">
           <h3><span class="slash">Seus Skills</span></h3>
               {{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
@@ -197,30 +182,48 @@
               {{Form::select('technology_id', $technology_list)}}
               {{Form::close()}}
               @foreach($user->checkins as $checkin)
-                <div class="row">
-                  <div class="progress progress-info span1">
-                      @if($checkin->level == 1)
-                        <div class="bar" style="width: {{$checkin->points*5}}%;">{{$checkin->points}}/20 </div>
-                      @endif
-                      @if($checkin->level == 2)
-                        <div class="bar" style="width: {{($checkin->points-19)*2.5}}%;">{{$checkin->points-20}}/40 </div>
-                      @endif
-                      @if($checkin->level == 3)
-                        <div class="bar" style="width: {{($checkin->points-59)*1.66}}%;">{{$checkin->points-60}}/60 </div>
-                      @endif
+              <div class="row">
+                <div class="col-md-5">
+                  <div class="progressbar">                    
+                    @if($checkin->level == 1)
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{$checkin->points*5}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$checkin->points*5}}%;">
+                          {{$checkin->points}}/20
+                        </div>
+                    @endif
+                    @if($checkin->level == 2)
+                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{($checkin->points-19)*1.66}}" aria-valuemin="0" aria-valuemax="100" style="width: {{($checkin->points-19)*1.66}}%;">
+                          {{$checkin->points-20}}/60
+                        </div>
+                    @endif
+                    @if($checkin->level == 3)
+                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{($checkin->points-79)*0.71}}" aria-valuemin="0" aria-valuemax="100" style="width: {{($checkin->points-19)*0.71}}%;">
+                          {{$checkin->points-80}}/140
+                        </div>
+                    @endif
+                    @if($checkin->level == 4)
+                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{($checkin->points-219)*0.33}}" aria-valuemin="0" aria-valuemax="100" style="width: {{($checkin->points-219)*0.33}}%;">
+                          {{$checkin->points-220}}/300
+                        </div>
+                    @endif
+                    @if($checkin->level == 5)
+                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{($checkin->points-519)*0.16}}" aria-valuemin="0" aria-valuemax="100" style="width: {{($checkin->points-519)*0.16}}%;">
+                          {{$checkin->points-510}}/620
+                        </div>
+                    @endif
                   </div>
-                  <div>                          
+                </div>
+                <div class="col-md-7">         
                       {{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
                       {{Form::hidden('technology_id', $checkin->id)}}
                       <input type="image" src="/img/add.png"> {{HTML::link('technology/'.$checkin->id, $checkin->name)}}
                       {{Form::close()}}                
-                  </div>
                 </div>
+              </div>
               @endforeach
 
 
         </div> <!-- /sidebar -->
-      </div> <!-- /span2 -->
+      </div> <!-- /col-md-2 -->
 
 	</div>	
 </div>

@@ -41,14 +41,14 @@
 	border-bottom: 1px solid #111;	
 }
 
-.navbar .brand {
+ .navbar-brand {
 	
-	/* 	
+
 	width: 180px;
 	height: 34px;
 	
-	background: url(../img/logo.png) no-repeat 0 0; 
-	*/
+	background: url(../../../img/logo.png) no-repeat 0 0; 
+
 }
 
 
