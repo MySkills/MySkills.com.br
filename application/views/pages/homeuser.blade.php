@@ -94,25 +94,6 @@
     <div class="col-md-7">
             <h1>Bem-vindo(a) ao MySkills</h1>
 
- <div id="myPublisherDiv"></div>
-        <script type="text/javascript">
-          // Initialize API key, session, and token...
-          // Think of a session as a room, and a token as the key to get in to the room
-          // Sessions and tokens are generated on your server and passed down to the client
-          var apiKey = "31047142";
-          var sessionId = "1_MX4zMTA0NzE0Mn4xMjcuMC4wLjF-U3VuIEp1biAwMiAxMDoxMDoxOSBQRFQgMjAxM34wLjY5Mjk4MzE1fg";
-          var token = "T1==cGFydG5lcl9pZD0zMTA0NzE0MiZzZGtfdmVyc2lvbj10YnJ1YnktdGJyYi12MC45MS4yMDExLTAyLTE3JnNpZz1iZmRjMGNiMzZhMjU5Y2RhOGQ4NDc2ZmQ0MmQ3YjM4Y2QwYjc0NmQ4OnJvbGU9cHVibGlzaGVyJnNlc3Npb25faWQ9MV9NWDR6TVRBME56RTBNbjR4TWpjdU1DNHdMakYtVTNWdUlFcDFiaUF3TWlBeE1Eb3hNRG94T1NCUVJGUWdNakF4TTM0d0xqWTVNams0TXpFMWZnJmNyZWF0ZV90aW1lPTEzNzAxOTMwMjImbm9uY2U9MC44NzU5MTc0ODY5OTg1NTY0JmV4cGlyZV90aW1lPTEzNzA3OTc4MjgmY29ubmVjdGlvbl9kYXRhPQ==";
-
-          // Initialize session, set up event listeners, and connect
-          var session = TB.initSession(sessionId);
-          session.addEventListener('sessionConnected', sessionConnectedHandler);
-          session.connect(apiKey, token);
-          
-          function sessionConnectedHandler(event) {
-            var publisher = TB.initPublisher(apiKey, 'myPublisherDiv');
-            session.publish(publisher);
-          }
-        </script>
         @if(Session::get('status'))
           @if(Session::get('status')=='ERROR')
             <div class="alert alert-error">
