@@ -123,7 +123,7 @@
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <div class="collapse navbar-inverse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav navbar-right">
             @if ($page == 'home')
                 <li class="active"> {{HTML::link('/', __('main.home'))}} </li>
