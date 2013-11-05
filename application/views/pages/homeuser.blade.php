@@ -62,9 +62,9 @@
 	<div class="row">
       <div class="col-md-2">
         <div class="sidebar">                 
-          <h3><span class="slash">{{__('home.weare')}}.: {{User::count()}}</span></h3>  
-          <h3><span class="slash">{{__('home.freelancers')}}.: {{User::where('freelancer', '=', 1)->count()}}</span></h3>                  
-          <h4><span class="slash">{{__('users.new_users')}}</span></h4>
+          <h4>{{__('home.weare')}}.: {{User::count()}}</h4>  
+          <h4>{{__('home.freelancers')}}.: {{User::where('freelancer', '=', 1)->count()}}</h4>
+          <h4>{{__('users.new_users')}}</h4>
         <table>
           @foreach ($newUsers as $newuser)
           
@@ -197,31 +197,43 @@
               {{Form::select('technology_id', $technology_list)}}
               {{Form::close()}}
               @foreach($user->checkins as $checkin)
-                <div class="row">
+              <div class="row">
+                <div class="col-md-5">
                   <div class="progressbar">                    
-                      @if($checkin->level == 1)
-                        <div class="progress-bar progress-info" role="progressbar" aria-valuenow="{{$checkin->points*5}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$checkin->points*5}}%">
+                    @if($checkin->level == 1)
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{$checkin->points*5}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$checkin->points*5}}%;">
                           {{$checkin->points}}/20
                         </div>
-                      @endif
-                      @if($checkin->level == 2)
-                        <div class="progress-bar progress-info" role="progressbar" aria-valuenow="{{($checkin->points-19)*2.5}}" aria-valuemin="0" aria-valuemax="100" style="width: {{($checkin->points-19)*2.5}}%">
-                          {{($checkin->points-19)*2.5}}/40
+                    @endif
+                    @if($checkin->level == 2)
+                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{($checkin->points-19)*1.66}}" aria-valuemin="0" aria-valuemax="100" style="width: {{($checkin->points-19)*1.66}}%;">
+                          {{$checkin->points-20}}/60
                         </div>
-                      @endif
-                      @if($checkin->level == 3)
-                        <div class="progress-bar progress-info" role="progressbar" aria-valuenow="{{($checkin->points-59)*1.66}}" aria-valuemin="0" aria-valuemax="100" style="width: {{($checkin->points-59)*1.66}}%">
-                          {{$checkin->points-60}}/60
+                    @endif
+                    @if($checkin->level == 3)
+                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{($checkin->points-79)*0.71}}" aria-valuemin="0" aria-valuemax="100" style="width: {{($checkin->points-19)*0.71}}%;">
+                          {{$checkin->points-80}}/140
                         </div>
-                      @endif
+                    @endif
+                    @if($checkin->level == 4)
+                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{($checkin->points-219)*0.33}}" aria-valuemin="0" aria-valuemax="100" style="width: {{($checkin->points-219)*0.33}}%;">
+                          {{$checkin->points-220}}/300
+                        </div>
+                    @endif
+                    @if($checkin->level == 5)
+                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{($checkin->points-519)*0.16}}" aria-valuemin="0" aria-valuemax="100" style="width: {{($checkin->points-519)*0.16}}%;">
+                          {{$checkin->points-510}}/620
+                        </div>
+                    @endif
                   </div>
-                <div>                          
+                </div>
+                <div class="col-md-7">         
                       {{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
                       {{Form::hidden('technology_id', $checkin->id)}}
                       <input type="image" src="/img/add.png"> {{HTML::link('technology/'.$checkin->id, $checkin->name)}}
                       {{Form::close()}}                
-                  </div>
                 </div>
+              </div>
               @endforeach
 
 
