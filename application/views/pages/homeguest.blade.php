@@ -3,10 +3,9 @@
 <div class="row boxback">
 		<div class="col-md-2">
 				<div class="sidebar">
-					{{HTML::image('img/pinkribbon.png', 'Pink Ribbon. October is Breast Cancer Awareness Month')}}
-					<h3><span class="slash">{{__('users.join_us')}}</span></h3>
-					<h3><span class="slash">{{__('home.weare')}}.: {{User::count()}}</span></h3>
-					<h3><span class="slash">{{__('home.freelancers')}}.: {{User::where('freelancer', '=', 1)->count()}}</span></h3>
+					<h4>{{__('home.weare')}}.: {{User::count()}}</h4>  
+					<h4>{{__('home.freelancers')}}.: {{User::where('freelancer', '=', 1)->count()}}</h4>
+					<h4>{{__('users.new_users')}}</h4>
 					@if ( Auth::guest() )
 						{{HTML::link('connect/session/facebook', __('home.sign-up').' (Facebook)', array('class' => 'btn btn-sm btn-warning'))}}
 						{{HTML::link('connect/session/github', '&nbsp;'. __('home.sign-up').' (Github) &nbsp;&nbsp;', array('class' => 'btn btn-sm btn-warning'))}}
