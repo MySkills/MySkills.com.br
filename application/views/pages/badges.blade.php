@@ -61,7 +61,7 @@
 							<div class="tab-pane fade" id="{{$badgetype->name}}">
 						@endif
 								<div class="row">
-									<div class="span5">
+									<div class="col-md-6">
 										<table class="table table-striped table-condensed">
 											<caption>
 												<span class="label label-info">Os mais novos</span>.
@@ -109,7 +109,7 @@
 										</tr>
 									</table>
 									</div>	
-									<div class="span5">
+									<div class="col-md-6">
 										<table class="table table-striped table-condensed">
 											<caption>
 												<span class="label label-info">Os mais usados</span>.
