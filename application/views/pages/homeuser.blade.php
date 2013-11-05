@@ -9,52 +9,56 @@
 
 
 <!-- Send Message Modal -->
-<div id="addMessageModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-<div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">{{__('wall.sharelink')}}</h3>
+<div id="addMessageModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+ <div class="modal-dialog">
+    <div class="modal-content">  
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">{{__('wall.sharelink')}}</h3>
+    </div>
+    @if( Auth::check())
+      <div class="modal-body">
+
+        {{Form::open('links', 'PUT',array('class' =>'form-horizontal'))}}
+        <div class="control-group" >
+          <label class="control-label">{{__('links.title')}}</label>
+          <div class="controls">        
+            {{Form::text('title', '',array('class' =>'span3', 'placeholder' => __('links.title')))}}
+          </div>
+        </div>      
+
+        <div class="control-group" >
+          <label class="control-label">{{__('links.url')}}</label>
+          <div class="controls">        
+            {{Form::text('url', '',array('class' =>'span3', 'placeholder' => 'http://'))}}
+          </div>
+        </div>      
+        <div class="control-group" >
+          <label class="control-label">{{__('links.description')}}</label>
+          <div class="controls">        
+            {{Form::text('description', '',array('class' =>'span3', 'placeholder' => __('links.description')))}}
+          </div>
+        </div>      
+        <div class="control-group" >    
+          <div class="controls">        
+            {{Form::submit(__('jobs.submit'), array('class' => 'btn-primary'))}}
+            {{Form::close()}}     
+          </div>
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">{{__('jobs.cancel')}}</button>
+        </div>
+    @else
+      <div class="modal-body">
+          <p>You are not authenticated</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+    @endif  
+  </div>
 </div>
-@if( Auth::check())
-  <div class="modal-body">
-
-    {{Form::open('links', 'PUT',array('class' =>'form-horizontal'))}}
-    <div class="control-group" >
-      <label class="control-label">{{__('links.title')}}</label>
-      <div class="controls">        
-        {{Form::text('title', '',array('class' =>'span3', 'placeholder' => __('links.title')))}}
-      </div>
-    </div>      
-
-    <div class="control-group" >
-      <label class="control-label">{{__('links.url')}}</label>
-      <div class="controls">        
-        {{Form::text('url', '',array('class' =>'span3', 'placeholder' => 'http://'))}}
-      </div>
-    </div>      
-    <div class="control-group" >
-      <label class="control-label">{{__('links.description')}}</label>
-      <div class="controls">        
-        {{Form::text('description', '',array('class' =>'span3', 'placeholder' => __('links.description')))}}
-      </div>
-    </div>      
-    <div class="control-group" >    
-      <div class="controls">        
-        {{Form::submit(__('jobs.submit'), array('class' => 'btn-primary'))}}
-        {{Form::close()}}     
-      </div>
-    </div>
-    </div>
-    <div class="modal-footer">
-      <button class="btn" data-dismiss="modal" aria-hidden="true">{{__('jobs.cancel')}}</button>
-    </div>
-@else
-  <div class="modal-body">
-      <p>You are not authenticated</p>
-    </div>
-    <div class="modal-footer">
-      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    </div>
-@endif  
 </div>
 
 
