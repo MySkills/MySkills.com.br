@@ -10,7 +10,7 @@
 <div id="subpage">
 	<div class="container">
 		<div class="row">
-			<div class="span10">
+			<div class="col-md-10">
 				@if(Session::get('status'))
 					@if(Session::get('status')=='ERROR')
 						<div class="alert alert-error">
@@ -72,7 +72,7 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="span2">
+			<div class="col-md-2">
 				<div class="sidebar">
 					<h3><span class="slash">{{__('messages.about')}}</span></h3>
 					<p>{{__('messages.about1')}}</p>
