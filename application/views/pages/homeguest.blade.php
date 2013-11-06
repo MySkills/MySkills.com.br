@@ -15,7 +15,6 @@
 					<h4><span class="slash">{{__('users.new_users')}}</span></h4>
 				<table>
 					@foreach ($newUsers as $user)
-					
 					<tr>
 						<td>
 							<a href="{{URL::to('/users/'.$user->id)}}">
@@ -65,7 +64,7 @@
 					<p>{{HTML::link('/users/'.$user->id, $user->name)}}<p>
 
 					<div class="progress">
-					  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{$user->life*3.33}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$user->life*3.33}}%">
+					  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{$user->life*14.28}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$user->life*14.28}}%">
 					    {{__('home.alwayshere')}} <span class="glyphicon glyphicon-heart"></span>
 					  </div>
 					</div>
