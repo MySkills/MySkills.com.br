@@ -128,22 +128,20 @@
 					</div>
 
 					<div class="progress">
-  						<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{$user->life*3.33}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$user->life*3.33}}%;">
-    						{{$user->life}}/30
-  						</div>
-					</div>
-					<div class="col-md-10 progress progress-info">
-						<div class="progress">
-							@if($user->technologies()->count() > $user->pglevel($user->level) )								
-		  						<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{($user->technologies()->count() - $user->levellimit($user->level))*100/$user->pglevel($user->level)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{($user->technologies()->count() - $user->levellimit($user->level))*100/$user->pglevel($user->level)}}%;">
-		    						{{$user->technologies()->count() - $user->levellimit($user->level)}}/{{$user->pglevel($user->level)}}
-		  						</div>
-							@else
-		  						<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{($user->technologies()->count())*100/$user->pglevel($user->level)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{($user->technologies()->count())*100/$user->pglevel($user->level)}}%;">
-		    						{{$user->technologies()->count()}}/{{$user->pglevel($user->level)}}
-		  						</div>								
-							@endif
+						<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{$user->life*14.28}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$user->life*14.28}}%;">
+							{{$user->life}}/7
 						</div>
+					</div>
+					<div class="progress">
+						@if($user->technologies()->count() > $user->pglevel($user->level) )
+							<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{($user->technologies()->count() - $user->levellimit($user->level))*100/$user->pglevel($user->level)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{($user->technologies()->count() - $user->levellimit($user->level))*100/$user->pglevel($user->level)}}%;">
+								{{$user->technologies()->count() - $user->levellimit($user->level)}}/{{$user->pglevel($user->level)}}
+							</div>
+						@else
+							<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{($user->technologies()->count())*100/$user->pglevel($user->level)}}" aria-valuemin="0" aria-valuemax="100" style="width: {{($user->technologies()->count())*100/$user->pglevel($user->level)}}%;">
+								{{$user->technologies()->count()}}/{{$user->pglevel($user->level)}}
+							</div>
+						@endif
 					</div>
 				<div class="col-md-10 center-block">
 					@if(Auth::check())
