@@ -111,10 +111,10 @@
         
       {{Form::open('messages', 'PUT',array('class' =>'form-inline'))}}
       {{Form::textarea('text', '',array('class' =>'span6', 'placeholder' => __('wall.sendyourmessage'), 'rows' => '1' ))}}
-      {{Form::submit(__('jobs.submit'), array('class' => 'btn-success '))}}
+      {{Form::submit(__('jobs.submit'), array('class' => 'btn btn-success btn-sm'))}}
       {{Form::close()}}     
 
-      <a href="#addMessageModal" role="button" class="btn btn-success" data-toggle="modal"><i class="icon-share"></i> {{__('wall.sharelink')}}</a>
+      <a href="#addMessageModal" role="button" class="btn btn-success btn-sm" data-toggle="modal"><i class="icon-share"></i> {{__('wall.sharelink')}}</a>
         <table class="table-striped table-hover">
         @foreach($wallmessages as $wallmessage)
           <?php 
@@ -166,7 +166,7 @@
               @if($wallmessage->sender_id == Auth::user()->id)
               {{Form::open('messages', 'DELETE')}}
               {{Form::hidden('message_id', $wallmessage->id)}}
-              {{Form::submit(__('messages.delete'), array('class' => 'btn btn-danger btn-mini'))}}
+              {{Form::submit(__('messages.delete'), array('class' => 'btn btn-danger btn-sm'))}}
               {{Form::close()}}
               @endif
             </td>          
@@ -178,7 +178,7 @@
         <div class="sidebar">
           <h3><span class="slash">Seus Skills</span></h3>
               {{Form::open('checkin', 'PUT', array('class' => 'form-inline'))}}
-              {{Form::submit("CHECKIN.: ".__('user.usedtoday').'.: ', array('class'=>'btn btn-success'))}}
+              {{Form::submit("CHECKIN.: ".__('user.usedtoday').'.: ', array('class'=>'btn btn-success btn-sm'))}}
               {{Form::select('technology_id', $technology_list)}}
               {{Form::close()}}
               @foreach($user->checkins as $checkin)
