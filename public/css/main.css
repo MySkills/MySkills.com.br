@@ -4,8 +4,15 @@
    Author's custom styles
    ========================================================================== */
 
+  .navbar-brand {
+    font-family: 'Alfa Slab One', cursive;
+  }
 
-
+  .jumbotron h1 {
+    font-family: 'Alfa Slab One', cursive;
+    color: #fff;
+    text-shadow: 2px 2px 3px #000;
+  }
 
 
 
