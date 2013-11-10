@@ -1,3 +1,9 @@
+# MySkills
+
+You will need the following  environment variables:
+
+* MYSKILLS_LOCALHOST
+
 # Laravel 4 Pagoda Box Quickstart
 
 Provides a Quickstart installation of Laravel 4 including a preconfigured MySQL database, automatic [Composer](http://getcomposer.org) package installation, and Laravel database migrations.
