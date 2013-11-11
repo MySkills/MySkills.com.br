@@ -10,29 +10,26 @@
 
   .jumbotron h1 {
     font-family: 'Alfa Slab One', cursive;
+
+  }
+
+  .jumbotron h4 {
+  
   }
 
   .jumbotron p {
     font-size: 12px;
   }
 
-.jumbotron {
-	color: #fff;
-	text-shadow: 2px 2px 3px #000;
-	background-image: url('../img/programmers.png');
-	background-position: -200px -1px;
-}
+  .jumbotron {
+    color: #fff;
+  	background-image: url('../img/programmers.png');
+  	background-position: -200px -1px;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+  .footer {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    background-color: #000;
+  }
