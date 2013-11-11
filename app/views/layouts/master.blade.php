@@ -44,9 +44,9 @@
         <div class="navbar-collapse collapse navbar-right">
           <ul class="nav navbar-nav">
             <li class="active"><a href="/">Home</a></li>
-            <li><a href="/">$ 4.741,00 </a></li>
-            <li><a href="/">784 usuári@s</a></li>
-            <li><a href="/">75 badges</a></li>
+            <li><a href="/">$ {{$coins}} </a></li>
+            <li><a href="/">{{$users}} Usuári@s</a></li>
+            <li><a href="/">{{$skills}} Skills</a></li>
         </div><!--/.navbar-collapse -->
       </div>
     </div>

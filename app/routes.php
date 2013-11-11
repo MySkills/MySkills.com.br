@@ -13,7 +13,13 @@
 
 Route::get('/', function()
 {
-	return View::make('home');
+
+	$json 	= file_get_contents('http://myskills.com.br/json/homeStats');
+	$stats 	= json_decode($json);
+	return View::make('home')
+	->with('coins', number_format($stats->checkins, 2, ',', '.'))
+	->with('users', $stats->users)
+	->with('skills', $stats->badges+$stats->technologies);
 });
 
 Route::get('/totalCoins', function()

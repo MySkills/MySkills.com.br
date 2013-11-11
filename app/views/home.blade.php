@@ -9,7 +9,7 @@
         </div>
           <div class="col-lg-1">
             <img src="img/coins-pile.png" alt="Pilha de Moedas" height="75" align="left">
-            <p class="text-center text-muted">$ 4.741,00</p>
+            <p class="text-center text-muted">$ {{$coins}}</p>
           </div>
 
           <div class="col-lg-1">
