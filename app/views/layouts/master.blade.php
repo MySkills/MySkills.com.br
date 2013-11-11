@@ -10,13 +10,14 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/main.css">
+        {{HTML::style('css/bootstrap.min.css')}}
+        {{HTML::style('css/bootstrap-theme.min.css')}}
+        {{HTML::style('css/main.css')}}
         
         <link href='http://fonts.googleapis.com/css?family=Alfa+Slab+One' rel='stylesheet' type='text/css'>
 
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+       {{HTML::script('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js')}}
+
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -58,19 +59,18 @@
 
 
           <hr>
-    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    </div> <!-- /container -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
       <footer class="footer">
         <div class="container">
-          <p>&copy;MySkills 2012</p>              
+          <p>&copy;MySkills 2012</p>
         </div>
       </footer>
 
       <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
 
-      <script src="js/vendor/bootstrap.min.js"></script>
-
-      <script src="js/main.js"></script>
-
+      {{HTML::script('js/vendor/bootstrap.min.js')}}
+      {{HTML::script('js/main.js')}}
       <script>
           var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
           (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
