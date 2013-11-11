@@ -320,6 +320,24 @@ Route::get('jobs', function()
 
 });
 
+Route::get('json/homeStats', function() {
+
+	$countBadges 		= Badge::count();
+	$countUsers 		= User::count();
+	$countTechnologies  = Technology::count();
+	$countCheckins		= DB::table('technology_user')->count();
+
+	return Response::json(array(
+		'badges' 			=> $countBadges,
+		'checkins'		=> $countCheckins,
+		'technologies' => $countTechnologies,
+		'users' 		=> $countUsers
+
+    ));
+});
+
+
+
 Route::get('login', function() {
     return View::make('checkin.login')->with('page','checkin.login');
 });
