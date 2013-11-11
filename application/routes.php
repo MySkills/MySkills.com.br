@@ -146,11 +146,11 @@ Route::get('admin/mandrill/send',
 				ini_set('max_execution_time', 3000);
 				$responses = array();
 				$users = User::where_not_null('email')->get();
-				$since = '28/10/2013';
+				$since = '03/11/2013';
 				$links = Link::since($since);
 
 				foreach ($users as $user) {
-					$email_content = View::make('email.04112013')
+					$email_content = View::make('email.11112013')
 										->with('page','user_stats')
 										->with('user', $user)
 										->with('since', $since)
@@ -159,7 +159,7 @@ Route::get('admin/mandrill/send',
 					$response = Mandrill::request('messages/send', array(
 					    'message' => array(
 							'html' => $email_content,
-							'subject' => '[myskills] RJ: Curso CoDev esse Sábado',
+							'subject' => '[myskills] MySkills 2.0 preview',
 							'from_email' => 'eduardo.cruz@myskills.com.br',
 							'from_name' => 'Eduardo Cruz (MySkills)',
 							'to' => array(array('email'=>$user->email,
