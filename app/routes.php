@@ -15,3 +15,17 @@ Route::get('/', function()
 {
 	return View::make('home');
 });
+
+Route::get('/totalCoins', function()
+{
+	return Response::json(array('totalCoins' => 5000));
+});
+
+
+Route::get('/total', function()
+{
+	$json = file_get_contents('http://'.getenv('MYSKILLS_LOCALHOST').'/totalCoins');
+	$obj = json_decode($json);
+	return $obj->totalCoins;
+});
+
