@@ -4,6 +4,9 @@
    Author's custom styles
    ========================================================================== */
 
+  .navbar {
+    border-radius: 0px;
+  }
   .navbar-brand {
     font-family: 'Alfa Slab One', cursive;
   }
