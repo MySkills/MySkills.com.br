@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>MySkill - Evolua suas habilidades.</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        
+        <link href='http://fonts.googleapis.com/css?family=Alfa+Slab+One' rel='stylesheet' type='text/css'>
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->        
+    <div class="navbar navbar-inverse">
+
+      <div class="container">
+
+        <div class="navbar-header">
+
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">MySkills</a>
+        </div>
+        <div class="navbar-collapse collapse navbar-left">
+          <ul class="nav navbar-nav">
+          <a href="https://github.com/MySkills/MySkills.com.br" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+        </div><!--/.navbar-collapse -->
+
+        <div class="navbar-collapse collapse navbar-right">
+          <ul class="nav navbar-nav" ng-controller="homeController">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/">$ {{homeStats.checkins}} </a></li>
+            <li><a href="/">{{homeStats.users}} usuári@s</a></li>
+            <li><a href="/">{{homeStats.badges}} badges</a></li>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
+    <a href="https://github.com/MySkills/MySkills.com.br" target="_blank">
+      <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
+    </a>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <div class="col-lg-4">
+          <h1>MySkills</h1>  
+          <h4 class="text-muted">Evolua suas habilidades.</h4>
+        </div>
+          <div class="col-lg-1" ng-controller="homeController">
+            <img src="img/coins-pile.png" alt="Pilha de Moedas" height="75" align="left">
+            <p class="text-center text-muted">$ {{homeStats.checkins}}</p>
+          </div>
+
+          <div class="col-lg-1">
+            <img src="img/browserquest/level4.png" alt="Guerreiro nível 4" align="left">
+            <p class="text-center text-muted">4</p>
+          </div>
+          <div class="col-lg-1">
+            <img src="img/browserquest/level3.png" alt="Guerreiro nível 3" align="left">
+            <p class="text-center text-muted">12</p>
+          </div>
+          <div class="col-lg-1">
+            <img src="img/browserquest/level2.png" alt="Guerreiro nível 2" align="left">
+            <p class="text-center text-muted">23</p>
+          </div>
+          <div class="col-lg-1">
+            <img src="img/browserquest/level1.png" alt="Guerreiro nível 1" align="left">
+            <p class="text-center text-muted">745</p>
+          </div>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+
+        <div class="col-lg-3">
+          <h2>Poder de decisão</h2>
+          <img src="img/coins-pile.png" alt="Pilha de Moedas" height="75" align="left">
+          <p>Somos uma comunidade de desenvolvedores experimentando novos modelos de decisão  e remuneração.  Utilize o sistema diariamente
+            e ganhe moedas virtuais que aumentam a sua influência na comunidade.</p>
+        </div>
+
+        <div class="col-lg-3">
+          <h2>Múltiplos perfis</h2>
+          <img src="img/browserquest/level4.png" alt="Guerreiro nível 4" align="left">
+          <p>O sistema busca refletir o seu perfil. Quanto mais você utiliza, melhor ele reflete o seu perfil.</p>
+          <ul>
+            <li>Front-end</li>
+            <li>Back-end</li>
+            <li>Mobile</li>
+            <li>Full-stack</li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3">
+          <h2>Tecnologias</h2>
+          <img src="img/badges/github.png" alt="Github" align="left" width="70">
+          <p>Adquira badges e faça checkin nas tecnologias que você utiliza. Suba de nível em cada uma delas. Compare o seu perfil, descubra
+          novas tecnologias e dê visibilidade aos seus conhecimentos.</p>
+        </div>
+        <div class="col-lg-3">
+          <h2>Links</h2>
+          <img src="img/badges/npmbundle.png" alt="Badge NPM" align="left" width="70">
+          <p>Compartilhe links para frameworks, biliotecas e componentes que você utiliza no seu dia-a-dia. Receba semanalmente os links
+            compartilhados por outros.</p>
+        </div>
+      </div>
+
+      <hr>
+    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+      <footer class="footer">
+        <div class="container">
+          <p>&copy;MySkills 2012</p>              
+        </div>
+      </footer>
+
+      <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+      <script src="js/vendor/bootstrap.min.js"></script>
+
+      <script src="js/main.js"></script>
+
+      <script>
+          var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+          (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+          g.src='//www.google-analytics.com/ga.js';
+          s.parentNode.insertBefore(g,s)}(document,'script'));
+      </script>
+    </body>
+</html>
