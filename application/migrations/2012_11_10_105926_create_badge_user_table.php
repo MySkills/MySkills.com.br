@@ -18,69 +18,96 @@ class Create_Badge_User_Table {
 		    $table->foreign('badge_id')->references('id')->on('badges');
 		    $table->timestamps();
 		    $table->boolean('active')->default(false);
-			$table->integer('order');
+			$table->integer('order')->nullable();
 		});	
 
+		/*
 		DB::table('badge_user')->insert(array(
 			'user_id' => 2, 
 			'badge_id' => 2, 
 			'active' => true,
+			'created_at' => date('Y-m-d H:i:s'),
+			'updated_at' => date('Y-m-d H:i:s')
 		));		
 		DB::table('badge_user')->insert(array(
 			'user_id' => 2, 
 			'badge_id' => 3, 
-			'active' => true,			
+			'active' => true,
+			'created_at' => date('Y-m-d H:i:s'),
+			'updated_at' => date('Y-m-d H:i:s')
 		));		
 		DB::table('badge_user')->insert(array(
 			'user_id' => 2, 
 			'badge_id' => 10,
-			'active' => true,			 
+			'active' => true,
+			'created_at' => date('Y-m-d H:i:s'),
+			'updated_at' => date('Y-m-d H:i:s')
 		));		
 		DB::table('badge_user')->insert(array(
 			'user_id' => 7, //habner
 			'badge_id' => 9, 
 			'active' => true,
+			'created_at' => date('Y-m-d H:i:s'),
+			'updated_at' => date('Y-m-d H:i:s')
 		));		
 		DB::table('badge_user')->insert(array(
 			'user_id' => 6, //shyju
 			'badge_id' => 8, 
-			'active' => true,			
+			'active' => true,
+			'created_at' => date('Y-m-d H:i:s'),
+			'updated_at' => date('Y-m-d H:i:s')
 		));		
 		DB::table('badge_user')->insert(array(
 			'user_id' => 45, //tiagoperrelli
 			'badge_id' => 5, 
-			'active' => true,			
+			'active' => true,
+			'created_at' => date('Y-m-d H:i:s'),
+			'updated_at' => date('Y-m-d H:i:s')
 		));				
 		DB::table('badge_user')->insert(array(
 			'user_id' => 40, //Rafael
 			'badge_id' => 5, 
-			'active' => true,			
-		));				
+			'active' => true,
+			'created_at' => date('Y-m-d H:i:s'),
+			'updated_at' => date('Y-m-d H:i:s')
+		));
 		DB::table('badge_user')->insert(array(
 			'user_id' => 20, //juliana Lima
 			'badge_id' => 5, 
-			'active' => true,			
+			'active' => true,
+			'created_at' => date('Y-m-d H:i:s'),
+			'updated_at' => date('Y-m-d H:i:s')
 		));				
 		DB::table('badge_user')->insert(array(
 			'user_id' => 4, //Marcilio
 			'badge_id' => 5, 
-			'active' => true,			
+			'active' => true,
+			'created_at' => date('Y-m-d H:i:s'),
+			'updated_at' => date('Y-m-d H:i:s')
+
 		));				
 		DB::table('badge_user')->insert(array(
 			'user_id' => 112, //Anderson Mattjie
 			'badge_id' => 7, 
-			'active' => true,			
+			'active' => true,
+			'created_at' => date('Y-m-d H:i:s'),
+			'updated_at' => date('Y-m-d H:i:s')
 		));				
 		DB::table('badge_user')->insert(array(
 			'user_id' => 108, //Anderson Mattjie
 			'badge_id' => 7, 
-			'active' => true,			
+			'active' => true,
+			'created_at' => date('Y-m-d H:i:s'),
+			'updated_at' => date('Y-m-d H:i:s')
 		));						
 		DB::table('badge_user')->insert(array(
 			'user_id' => 113, //Anderson Mattjie
 			'badge_id' => 7, 
-			'active' => true,			
-		));						
+			'active' => true,
+			'created_at' => date('Y-m-d H:i:s'),
+			'updated_at' => date('Y-m-d H:i:s')
+		));
+		*/
 	}
 
 	/**

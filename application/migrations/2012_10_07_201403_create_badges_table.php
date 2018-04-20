@@ -20,7 +20,7 @@ class Create_Badges_Table {
 		    $table->foreign('issuer_id')->references('id')->on('issuers');
 		    $table->timestamps();
 		    $table->boolean('active')->default(true);
-			$table->integer('order');
+			$table->integer('order')->nullable();
 		});
 		DB::table('badges')->insert(array(
 		    'name'  => 'Locked',
@@ -28,6 +28,8 @@ class Create_Badges_Table {
 		    'image'  => 'unlock100.png',
 		    'points'  => '0',
 			'issuer_id'  => '1',
+		    'created_at' => date('Y-m-d H:i:s'),
+		    'updated_at' => date('Y-m-d H:i:s')
 		));
 
 		DB::table('badges')->insert(array(
@@ -36,7 +38,9 @@ class Create_Badges_Table {
 		    	of Git version control.',
 		    'image'  => 'trygit-badge.png',
 		    'points'  => '5',
-			'issuer_id'  => '5',		
+			'issuer_id'  => '5',
+		    'created_at' => date('Y-m-d H:i:s'),
+		    'updated_at' => date('Y-m-d H:i:s')
 		));		
 
 		DB::table('badges')->insert(array(
@@ -45,7 +49,9 @@ class Create_Badges_Table {
 		    	Ruby, all in the browser.',
 		    'image'  => 'tryruby-badge.png',
 		    'points'  => '5',
-			'issuer_id'  => '5',		
+			'issuer_id'  => '5',
+		    'created_at' => date('Y-m-d H:i:s'),
+		    'updated_at' => date('Y-m-d H:i:s')
 		));		
 
 
@@ -56,6 +62,8 @@ class Create_Badges_Table {
 		    'image'  => 'tryios-badge.png',
 		    'points'  => '5',
 			'issuer_id'  => '5',
+		    'created_at' => date('Y-m-d H:i:s'),
+		    'updated_at' => date('Y-m-d H:i:s')
 		));		
 
 		DB::table('badges')->insert(array(
@@ -65,6 +73,8 @@ class Create_Badges_Table {
 		    'image'  => 'iOSBadge100.png',
 		    'points'  => '50',
 			'issuer_id'  => '6',
+		    'created_at' => date('Y-m-d H:i:s'),
+		    'updated_at' => date('Y-m-d H:i:s')
 		));		
 
 		DB::table('badges')->insert(array(
@@ -74,7 +84,9 @@ class Create_Badges_Table {
 		    	this badge and join other Python developers',
 		    'image'  => 'pycursos-djangobadge.png',
 		    'points'  => '50',
-			'issuer_id'  => '2',		
+			'issuer_id'  => '2',
+		    'created_at' => date('Y-m-d H:i:s'),
+		    'updated_at' => date('Y-m-d H:i:s')
 		));
 
 		DB::table('badges')->insert(array(
@@ -84,7 +96,9 @@ class Create_Badges_Table {
 		    	this badge and join other Python developers',
 		    'image'  => 'pycursos-djangobadge.png',
 		    'points'  => '50',
-			'issuer_id'  => '2',		
+			'issuer_id'  => '2',
+		    'created_at' => date('Y-m-d H:i:s'),
+		    'updated_at' => date('Y-m-d H:i:s')
 		));
 
 		DB::table('badges')->insert(array(
@@ -94,7 +108,9 @@ class Create_Badges_Table {
 		    	other PHP developers',
 		    'image'  => 'php53-badge.png',
 		    'points'  => '100',
-			'issuer_id'  => '3',		
+			'issuer_id'  => '3',
+		    'created_at' => date('Y-m-d H:i:s'),
+		    'updated_at' => date('Y-m-d H:i:s')
 		));		
 
 		DB::table('badges')->insert(array(
@@ -104,7 +120,9 @@ class Create_Badges_Table {
 		    	PHP developers',
 		    'image'  => 'php5-badge.png',
 		    'points'  => '100',
-			'issuer_id'  => '3',		
+			'issuer_id'  => '3',
+		    'created_at' => date('Y-m-d H:i:s'),
+		    'updated_at' => date('Y-m-d H:i:s')
 		));
 
 		DB::table('badges')->insert(array(
@@ -114,7 +132,9 @@ class Create_Badges_Table {
 		    	Java developers',
 		    'image'  => 'java-badge.png',
 		    'points'  => '100',
-			'issuer_id'  => '4',		
+			'issuer_id'  => '4',
+		    'created_at' => date('Y-m-d H:i:s'),
+		    'updated_at' => date('Y-m-d H:i:s')
 		));		
 
 	}

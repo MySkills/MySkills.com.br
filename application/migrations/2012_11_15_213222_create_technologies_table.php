@@ -18,13 +18,15 @@ class Create_Technologies_Table {
 		    $table->integer('points');
 		    $table->timestamps();
 		    $table->boolean('active')->default(true);
-			$table->integer('order');
+			$table->integer('order')->nullable();
 		});
 		DB::table('technologies')->insert(array(
 		    'name'  => 'Laravel',
 		    'description'  => 'A PHP Framework for Web Artisans.',
 		    'image'  => 'laravel.png',
 		    'points'  => '1',
+		    'created_at' => date('Y-m-d H:i:s'),
+		    'updated_at' => date('Y-m-d H:i:s')
 		));
 	}
 

@@ -21,6 +21,7 @@ class Create_Job_User_Table {
 		    $table->timestamps();
 		});	
 
+		/*
 		DB::table('job_user')->insert(array(
 			'user_id' => 11, 
 			'job_id' => 1, 
@@ -269,6 +270,7 @@ class Create_Job_User_Table {
 			'user_id' => 99, 
 			'job_id' => 8, 
 		));
+		*/
 	}
 
 	/**

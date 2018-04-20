@@ -19,8 +19,9 @@ class Create_Jobs_Table {
 		    $table->date('ends_at');		    
 		    $table->timestamps();
 		    $table->boolean('active')->default(false);
-			$table->integer('order');
-		});		
+			$table->integer('order')->nullable();
+		});
+		/*
 		DB::table('jobs')->insert(array(
 			'title' => 'PHP Developer', 
 			'description' => 'Master degree in computer science - 20 hours/week - R$ 2.500,00 (Recife - PE/Brasil)"', 
@@ -61,7 +62,8 @@ class Create_Jobs_Table {
 			'title' => 'Remote Node.JS developer', 
 			'description' => 'We need a Node.JS software developer to port a RESTFUL API system with a mySQL backend from PHP to node.js.  Build it for performance and scale using cluster and benchmark it appropriately to compare with the previous PHP app.  (Company in the United States)', 
 			'recruiter_id' => 2			
-		));								
+		));
+		*/
 	}
 
 	/**
