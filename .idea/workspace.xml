@@ -2,1013 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e35feceb-fac2-4939-94ba-b13f4acf3b48" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Boxfile" afterPath="$PROJECT_DIR$/v1/Boxfile" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/bundles.php" afterPath="$PROJECT_DIR$/v1/application/bundles.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/config/.gitignore" afterPath="$PROJECT_DIR$/v1/application/config/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/config/application.php" afterPath="$PROJECT_DIR$/v1/application/config/application.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/config/auth.php" afterPath="$PROJECT_DIR$/v1/application/config/auth.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/config/cache.php" afterPath="$PROJECT_DIR$/v1/application/config/cache.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/config/database.php" afterPath="$PROJECT_DIR$/v1/application/config/database.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/config/error.php" afterPath="$PROJECT_DIR$/v1/application/config/error.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/config/facebook.php" afterPath="$PROJECT_DIR$/v1/application/config/facebook.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/config/mandrill.php" afterPath="$PROJECT_DIR$/v1/application/config/mandrill.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/config/mimes.php" afterPath="$PROJECT_DIR$/v1/application/config/mimes.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/config/session.php" afterPath="$PROJECT_DIR$/v1/application/config/session.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/config/strings.php" afterPath="$PROJECT_DIR$/v1/application/config/strings.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/base.php" afterPath="$PROJECT_DIR$/v1/application/controllers/base.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/connect.php" afterPath="$PROJECT_DIR$/v1/application/controllers/connect.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/home.php" afterPath="$PROJECT_DIR$/v1/application/controllers/home.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/en/badges.php" afterPath="$PROJECT_DIR$/v1/application/language/en/badges.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/en/blog.php" afterPath="$PROJECT_DIR$/v1/application/language/en/blog.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/en/channel.php" afterPath="$PROJECT_DIR$/v1/application/language/en/channel.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/en/developers.php" afterPath="$PROJECT_DIR$/v1/application/language/en/developers.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/en/home.php" afterPath="$PROJECT_DIR$/v1/application/language/en/home.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/en/jobs.php" afterPath="$PROJECT_DIR$/v1/application/language/en/jobs.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/en/links.php" afterPath="$PROJECT_DIR$/v1/application/language/en/links.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/en/main.php" afterPath="$PROJECT_DIR$/v1/application/language/en/main.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/en/manguezal.php" afterPath="$PROJECT_DIR$/v1/application/language/en/manguezal.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/en/messages.php" afterPath="$PROJECT_DIR$/v1/application/language/en/messages.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/en/pagination.php" afterPath="$PROJECT_DIR$/v1/application/language/en/pagination.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/en/security.php" afterPath="$PROJECT_DIR$/v1/application/language/en/security.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/en/technology.php" afterPath="$PROJECT_DIR$/v1/application/language/en/technology.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/en/upgrade.php" afterPath="$PROJECT_DIR$/v1/application/language/en/upgrade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/en/user.php" afterPath="$PROJECT_DIR$/v1/application/language/en/user.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/en/users.php" afterPath="$PROJECT_DIR$/v1/application/language/en/users.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/en/validation.php" afterPath="$PROJECT_DIR$/v1/application/language/en/validation.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/en/wall.php" afterPath="$PROJECT_DIR$/v1/application/language/en/wall.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/pt/badges.php" afterPath="$PROJECT_DIR$/v1/application/language/pt/badges.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/pt/blog.php" afterPath="$PROJECT_DIR$/v1/application/language/pt/blog.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/pt/channel.php" afterPath="$PROJECT_DIR$/v1/application/language/pt/channel.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/pt/developers.php" afterPath="$PROJECT_DIR$/v1/application/language/pt/developers.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/pt/home.php" afterPath="$PROJECT_DIR$/v1/application/language/pt/home.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/pt/homeuser.php" afterPath="$PROJECT_DIR$/v1/application/language/pt/homeuser.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/pt/jobs.php" afterPath="$PROJECT_DIR$/v1/application/language/pt/jobs.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/pt/links.php" afterPath="$PROJECT_DIR$/v1/application/language/pt/links.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/pt/main.php" afterPath="$PROJECT_DIR$/v1/application/language/pt/main.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/pt/messages.php" afterPath="$PROJECT_DIR$/v1/application/language/pt/messages.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/pt/security.php" afterPath="$PROJECT_DIR$/v1/application/language/pt/security.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/pt/technology.php" afterPath="$PROJECT_DIR$/v1/application/language/pt/technology.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/pt/upgrade.php" afterPath="$PROJECT_DIR$/v1/application/language/pt/upgrade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/pt/user.php" afterPath="$PROJECT_DIR$/v1/application/language/pt/user.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/pt/users.php" afterPath="$PROJECT_DIR$/v1/application/language/pt/users.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/pt/wall.php" afterPath="$PROJECT_DIR$/v1/application/language/pt/wall.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/ru/pagination.php" afterPath="$PROJECT_DIR$/v1/application/language/ru/pagination.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/language/ru/validation.php" afterPath="$PROJECT_DIR$/v1/application/language/ru/validation.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/libraries/.gitignore" afterPath="$PROJECT_DIR$/v1/application/libraries/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/libraries/Email.php" afterPath="$PROJECT_DIR$/v1/application/libraries/Email.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/libraries/Fbk.php" afterPath="$PROJECT_DIR$/v1/application/libraries/Fbk.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/libraries/Youtube.php" afterPath="$PROJECT_DIR$/v1/application/libraries/Youtube.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/migrations/.gitignore" afterPath="$PROJECT_DIR$/v1/application/migrations/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/migrations/2012_10_02_023352_create_users.php" afterPath="$PROJECT_DIR$/v1/application/migrations/2012_10_02_023352_create_users.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/migrations/2012_10_07_201357_create_issuers_table.php" afterPath="$PROJECT_DIR$/v1/application/migrations/2012_10_07_201357_create_issuers_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/migrations/2012_10_07_201403_create_badges_table.php" afterPath="$PROJECT_DIR$/v1/application/migrations/2012_10_07_201403_create_badges_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/migrations/2012_11_10_105926_create_badge_user_table.php" afterPath="$PROJECT_DIR$/v1/application/migrations/2012_11_10_105926_create_badge_user_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/migrations/2012_11_10_122642_create_jobs_table.php" afterPath="$PROJECT_DIR$/v1/application/migrations/2012_11_10_122642_create_jobs_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/migrations/2012_11_10_205842_create_job_user_table.php" afterPath="$PROJECT_DIR$/v1/application/migrations/2012_11_10_205842_create_job_user_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/migrations/2012_11_11_002236_create_job_user_message_table.php" afterPath="$PROJECT_DIR$/v1/application/migrations/2012_11_11_002236_create_job_user_message_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/migrations/2012_11_14_065819_create_messages_table.php" afterPath="$PROJECT_DIR$/v1/application/migrations/2012_11_14_065819_create_messages_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/migrations/2012_11_15_213222_create_technologies_table.php" afterPath="$PROJECT_DIR$/v1/application/migrations/2012_11_15_213222_create_technologies_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/migrations/2012_11_15_214516_create_technology_user_table.php" afterPath="$PROJECT_DIR$/v1/application/migrations/2012_11_15_214516_create_technology_user_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/migrations/2012_11_25_084443_add_badge_user_unique.php" afterPath="$PROJECT_DIR$/v1/application/migrations/2012_11_25_084443_add_badge_user_unique.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/migrations/2013_01_19_233253_add_job_profile.php" afterPath="$PROJECT_DIR$/v1/application/migrations/2013_01_19_233253_add_job_profile.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/migrations/2013_02_03_205944_create_follower_user_table.php" afterPath="$PROJECT_DIR$/v1/application/migrations/2013_02_03_205944_create_follower_user_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/migrations/2013_02_05_233218_create_user_lastlogin.php" afterPath="$PROJECT_DIR$/v1/application/migrations/2013_02_05_233218_create_user_lastlogin.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/migrations/2013_02_09_134138_create_badgetypes_table.php" afterPath="$PROJECT_DIR$/v1/application/migrations/2013_02_09_134138_create_badgetypes_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/migrations/2013_02_09_155748_add_badgetype_badge_column.php" afterPath="$PROJECT_DIR$/v1/application/migrations/2013_02_09_155748_add_badgetype_badge_column.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/migrations/2013_03_15_191412_create_friend_user_table.php" afterPath="$PROJECT_DIR$/v1/application/migrations/2013_03_15_191412_create_friend_user_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/migrations/2013_05_21_081341_add_freelancer_column.php" afterPath="$PROJECT_DIR$/v1/application/migrations/2013_05_21_081341_add_freelancer_column.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/migrations/2013_07_26_225631_create_links_table.php" afterPath="$PROJECT_DIR$/v1/application/migrations/2013_07_26_225631_create_links_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/migrations/2013_07_26_225920_create_link_user_table.php" afterPath="$PROJECT_DIR$/v1/application/migrations/2013_07_26_225920_create_link_user_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/migrations/2013_09_08_145849_add_codeivate_column.php" afterPath="$PROJECT_DIR$/v1/application/migrations/2013_09_08_145849_add_codeivate_column.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/models/.gitignore" afterPath="$PROJECT_DIR$/v1/application/models/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/models/badge.php" afterPath="$PROJECT_DIR$/v1/application/models/badge.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/models/badgetype.php" afterPath="$PROJECT_DIR$/v1/application/models/badgetype.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/models/follower.php" afterPath="$PROJECT_DIR$/v1/application/models/follower.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/models/friend.php" afterPath="$PROJECT_DIR$/v1/application/models/friend.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/models/issuer.php" afterPath="$PROJECT_DIR$/v1/application/models/issuer.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/models/job.php" afterPath="$PROJECT_DIR$/v1/application/models/job.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/models/link.php" afterPath="$PROJECT_DIR$/v1/application/models/link.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/models/message.php" afterPath="$PROJECT_DIR$/v1/application/models/message.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/models/oneauth_client.php" afterPath="$PROJECT_DIR$/v1/application/models/oneauth_client.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/models/technology.php" afterPath="$PROJECT_DIR$/v1/application/models/technology.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/models/user.php" afterPath="$PROJECT_DIR$/v1/application/models/user.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/routes.php" afterPath="$PROJECT_DIR$/v1/application/routes.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/start.php" afterPath="$PROJECT_DIR$/v1/application/start.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/tasks/.gitignore" afterPath="$PROJECT_DIR$/v1/application/tasks/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/tests/example.test.php" afterPath="$PROJECT_DIR$/v1/application/tests/example.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/bolsas/usuarios.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/bolsas/usuarios.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/checkin/login.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/checkin/login.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/checkin/success.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/checkin/success.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/email/01102013.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/email/01102013.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/email/02042013.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/email/02042013.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/email/04032013.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/email/04032013.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/email/04072013.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/email/04072013.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/email/04112013.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/email/04112013.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/email/07102013.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/email/07102013.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/email/08042013.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/email/08042013.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/email/08052013.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/email/08052013.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/email/08082013.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/email/08082013.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/email/09092013.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/email/09092013.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/email/11032013.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/email/11032013.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/email/11112013.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/email/11112013.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/email/14102013.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/email/14102013.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/email/16042013.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/email/16042013.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/email/18032013.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/email/18032013.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/email/21052013.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/email/21052013.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/email/21102013.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/email/21102013.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/email/22042013.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/email/22042013.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/email/25032013.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/email/25032013.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/email/28102013.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/email/28102013.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/email/29072013.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/email/29072013.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/email/31052013.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/email/31052013.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/email/sent.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/email/sent.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/error/404.php" afterPath="$PROJECT_DIR$/v1/application/views/error/404.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/error/500.php" afterPath="$PROJECT_DIR$/v1/application/views/error/500.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/home/bolsas.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/home/bolsas.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/home/index.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/home/index.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/manguezal/jobs.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/manguezal/jobs.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/onboarding/welcome.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/onboarding/welcome.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/badge.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/badge.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/badges.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/badges.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/blog.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/blog.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/channel.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/channel.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/dashboard.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/dashboard.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/edit_user.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/edit_user.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/faq.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/faq.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/features.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/features.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/home.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/home.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/homeguest.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/homeguest.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/homeuser.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/homeuser.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/jobs.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/jobs.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/messages.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/messages.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/motivograma.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/motivograma.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/pricing.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/pricing.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/privacypolicy.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/privacypolicy.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/recruiterjobs.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/recruiterjobs.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/skills.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/skills.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/technologies.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/technologies.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/technology.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/technology.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/termsofuse.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/termsofuse.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/upgrade.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/upgrade.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/user.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/user.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/user_links.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/user_links.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/users.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/users.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/users_inactive.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/users_inactive.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/pages/usuarios.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/pages/usuarios.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/templates/bolsas.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/templates/bolsas.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/templates/main.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/templates/main.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/templates/manguezal_main.blade.php" afterPath="$PROJECT_DIR$/v1/application/views/templates/manguezal_main.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/artisan" afterPath="$PROJECT_DIR$/v1/artisan" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/.gitignore" afterPath="$PROJECT_DIR$/v1/bundles/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/bundocs/LICENSE" afterPath="$PROJECT_DIR$/v1/bundles/bundocs/LICENSE" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/bundocs/README.md" afterPath="$PROJECT_DIR$/v1/bundles/bundocs/README.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/bundocs/docs/contents.md" afterPath="$PROJECT_DIR$/v1/bundles/bundocs/docs/contents.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/bundocs/docs/home.md" afterPath="$PROJECT_DIR$/v1/bundles/bundocs/docs/home.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/bundocs/libraries/markdown.php" afterPath="$PROJECT_DIR$/v1/bundles/bundocs/libraries/markdown.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/bundocs/routes.php" afterPath="$PROJECT_DIR$/v1/bundles/bundocs/routes.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/bundocs/start.php" afterPath="$PROJECT_DIR$/v1/bundles/bundocs/start.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/bundocs/views/list.blade.php" afterPath="$PROJECT_DIR$/v1/bundles/bundocs/views/list.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/bundocs/views/page.blade.php" afterPath="$PROJECT_DIR$/v1/bundles/bundocs/views/page.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/bundocs/views/template.blade.php" afterPath="$PROJECT_DIR$/v1/bundles/bundocs/views/template.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/date/language/en/date.php" afterPath="$PROJECT_DIR$/v1/bundles/date/language/en/date.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/date/language/pt/date.php" afterPath="$PROJECT_DIR$/v1/bundles/date/language/pt/date.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/date/libraries/date.php" afterPath="$PROJECT_DIR$/v1/bundles/date/libraries/date.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/date/readme.md" afterPath="$PROJECT_DIR$/v1/bundles/date/readme.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/date/start.php" afterPath="$PROJECT_DIR$/v1/bundles/date/start.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/docs/libraries/markdown.php" afterPath="$PROJECT_DIR$/v1/bundles/docs/libraries/markdown.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/docs/routes.php" afterPath="$PROJECT_DIR$/v1/bundles/docs/routes.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/docs/views/page.blade.php" afterPath="$PROJECT_DIR$/v1/bundles/docs/views/page.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/docs/views/template.blade.php" afterPath="$PROJECT_DIR$/v1/bundles/docs/views/template.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/facebook-sdk/config/facebook.php" afterPath="$PROJECT_DIR$/v1/bundles/facebook-sdk/config/facebook.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/facebook-sdk/facebook/base_facebook.php" afterPath="$PROJECT_DIR$/v1/bundles/facebook-sdk/facebook/base_facebook.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/facebook-sdk/facebook/facebook.php" afterPath="$PROJECT_DIR$/v1/bundles/facebook-sdk/facebook/facebook.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/facebook-sdk/facebook/fb_ca_chain_bundle.crt" afterPath="$PROJECT_DIR$/v1/bundles/facebook-sdk/facebook/fb_ca_chain_bundle.crt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/facebook-sdk/readme.md" afterPath="$PROJECT_DIR$/v1/bundles/facebook-sdk/readme.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/facebook-sdk/start.php" afterPath="$PROJECT_DIR$/v1/bundles/facebook-sdk/start.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/locate/README.md" afterPath="$PROJECT_DIR$/v1/bundles/locate/README.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/locate/config/abbrevs.php" afterPath="$PROJECT_DIR$/v1/bundles/locate/config/abbrevs.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/locate/config/options.php" afterPath="$PROJECT_DIR$/v1/bundles/locate/config/options.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/locate/locate.php" afterPath="$PROJECT_DIR$/v1/bundles/locate/locate.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/locate/services/freegeoip.php" afterPath="$PROJECT_DIR$/v1/bundles/locate/services/freegeoip.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/locate/services/ipinfodb.php" afterPath="$PROJECT_DIR$/v1/bundles/locate/services/ipinfodb.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/locate/services/maxmind.php" afterPath="$PROJECT_DIR$/v1/bundles/locate/services/maxmind.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/locate/start.php" afterPath="$PROJECT_DIR$/v1/bundles/locate/start.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/bundle.php" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/bundle.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/accordion.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/accordion.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/alerts.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/alerts.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/breadcrumbs.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/breadcrumbs.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/button-groups.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/button-groups.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/buttons.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/buttons.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/carousel.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/carousel.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/close.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/close.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/code.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/code.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/component-animations.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/component-animations.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/dropdowns.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/dropdowns.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/forms.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/forms.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/grid.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/grid.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/hero-unit.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/hero-unit.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/labels.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/labels.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/layouts.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/layouts.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/logviewer.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/logviewer.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/mixins.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/mixins.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/modals.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/modals.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/navbar.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/navbar.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/navs.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/navs.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/pager.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/pager.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/pagination.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/pagination.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/popovers.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/popovers.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/progress-bars.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/progress-bars.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/reset.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/reset.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/responsive.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/responsive.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/scaffolding.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/scaffolding.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/sprites.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/sprites.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/style.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/style.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/tables.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/tables.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/thumbnails.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/thumbnails.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/tooltip.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/tooltip.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/type.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/type.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/utilities.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/utilities.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/variables.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/variables.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/less/wells.less" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/less/wells.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/libraries/dir.php" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/libraries/dir.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/public/style.css" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/public/style.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/readme.md" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/readme.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/routes.php" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/routes.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/start.php" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/start.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/logviewer/views/viewer.php" afterPath="$PROJECT_DIR$/v1/bundles/logviewer/views/viewer.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/mandrill/config/mandrill-sample.php" afterPath="$PROJECT_DIR$/v1/bundles/mandrill/config/mandrill-sample.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/mandrill/libraries/mandrill.php" afterPath="$PROJECT_DIR$/v1/bundles/mandrill/libraries/mandrill.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/mandrill/readme.md" afterPath="$PROJECT_DIR$/v1/bundles/mandrill/readme.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/mandrill/start.php" afterPath="$PROJECT_DIR$/v1/bundles/mandrill/start.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/LICENSE" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/LICENSE" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/README.md" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/README.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/config/api.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/config/api.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/config/local/api.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/config/local/api.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/config/urls.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/config/urls.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/controllers/connect.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/controllers/connect.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/docs/README.md" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/docs/README.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/docs/changes.md" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/docs/changes.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/docs/contents.md" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/docs/contents.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/docs/general/events.md" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/docs/general/events.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/docs/general/overwriting-auth-driver.md" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/docs/general/overwriting-auth-driver.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/docs/general/providers.md" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/docs/general/providers.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/docs/general/quick-installation.md" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/docs/general/quick-installation.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/docs/home.md" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/docs/home.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/auth/client.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/auth/client.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/auth/controller.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/auth/controller.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/auth/core.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/auth/core.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/auth/strategy.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/auth/strategy.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/auth/strategy/exception.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/auth/strategy/exception.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/auth/strategy/oauth.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/auth/strategy/oauth.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/auth/strategy/oauth2.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/auth/strategy/oauth2.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth/consumer.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth/consumer.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth/core.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth/core.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth/exception.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth/exception.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth/provider.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth/provider.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth/provider/dropbox.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth/provider/dropbox.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth/provider/flickr.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth/provider/flickr.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth/provider/linkedin.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth/provider/linkedin.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth/provider/tumblr.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth/provider/tumblr.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth/provider/twitter.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth/provider/twitter.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth/provider/vimeo.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth/provider/vimeo.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth/request.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth/request.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth/request/access.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth/request/access.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth/request/authorize.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth/request/authorize.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth/request/credentials.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth/request/credentials.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth/request/resource.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth/request/resource.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth/request/token.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth/request/token.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth/response.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth/response.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth/signature.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth/signature.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth/signature/hmac/sha1.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth/signature/hmac/sha1.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth/signature/plaintext.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth/signature/plaintext.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth/token.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth/token.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth/token/access.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth/token/access.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth/token/request.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth/token/request.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth2/core.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth2/core.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth2/exception.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth2/exception.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth2/provider.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth2/provider.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth2/provider/basecamp.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth2/provider/basecamp.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth2/provider/facebook.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth2/provider/facebook.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth2/provider/foursquare.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth2/provider/foursquare.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth2/provider/github.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth2/provider/github.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth2/provider/google.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth2/provider/google.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth2/provider/instagram.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth2/provider/instagram.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth2/provider/paypal.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth2/provider/paypal.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth2/provider/soundcloud.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth2/provider/soundcloud.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth2/provider/windowlive.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth2/provider/windowlive.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth2/request.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth2/request.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth2/request/access.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth2/request/access.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth2/request/resource.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth2/request/resource.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth2/response.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth2/response.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth2/token.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth2/token.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth2/token/access.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth2/token/access.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/libraries/oauth2/token/authorize.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/libraries/oauth2/token/authorize.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/migrations/2012_05_26_151608_create_clients.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/migrations/2012_05_26_151608_create_clients.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/orchestra.json" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/orchestra.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/orchestra.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/orchestra.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/orchestra/configure.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/orchestra/configure.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/start.php" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/start.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bundles/oneauth/vendor/ca_chain_bundle.crt" afterPath="$PROJECT_DIR$/v1/bundles/oneauth/vendor/ca_chain_bundle.crt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/asset.php" afterPath="$PROJECT_DIR$/v1/laravel/asset.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/auth.php" afterPath="$PROJECT_DIR$/v1/laravel/auth.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/auth/drivers/driver.php" afterPath="$PROJECT_DIR$/v1/laravel/auth/drivers/driver.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/auth/drivers/eloquent.php" afterPath="$PROJECT_DIR$/v1/laravel/auth/drivers/eloquent.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/auth/drivers/fluent.php" afterPath="$PROJECT_DIR$/v1/laravel/auth/drivers/fluent.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/autoloader.php" afterPath="$PROJECT_DIR$/v1/laravel/autoloader.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/blade.php" afterPath="$PROJECT_DIR$/v1/laravel/blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/bundle.php" afterPath="$PROJECT_DIR$/v1/laravel/bundle.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cache.php" afterPath="$PROJECT_DIR$/v1/laravel/cache.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cache/drivers/apc.php" afterPath="$PROJECT_DIR$/v1/laravel/cache/drivers/apc.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cache/drivers/database.php" afterPath="$PROJECT_DIR$/v1/laravel/cache/drivers/database.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cache/drivers/driver.php" afterPath="$PROJECT_DIR$/v1/laravel/cache/drivers/driver.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cache/drivers/file.php" afterPath="$PROJECT_DIR$/v1/laravel/cache/drivers/file.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cache/drivers/memcached.php" afterPath="$PROJECT_DIR$/v1/laravel/cache/drivers/memcached.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cache/drivers/memory.php" afterPath="$PROJECT_DIR$/v1/laravel/cache/drivers/memory.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cache/drivers/redis.php" afterPath="$PROJECT_DIR$/v1/laravel/cache/drivers/redis.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cache/drivers/sectionable.php" afterPath="$PROJECT_DIR$/v1/laravel/cache/drivers/sectionable.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cache/drivers/wincache.php" afterPath="$PROJECT_DIR$/v1/laravel/cache/drivers/wincache.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cli/artisan.php" afterPath="$PROJECT_DIR$/v1/laravel/cli/artisan.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cli/command.php" afterPath="$PROJECT_DIR$/v1/laravel/cli/command.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cli/dependencies.php" afterPath="$PROJECT_DIR$/v1/laravel/cli/dependencies.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cli/tasks/bundle/bundler.php" afterPath="$PROJECT_DIR$/v1/laravel/cli/tasks/bundle/bundler.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cli/tasks/bundle/providers/github.php" afterPath="$PROJECT_DIR$/v1/laravel/cli/tasks/bundle/providers/github.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cli/tasks/bundle/providers/provider.php" afterPath="$PROJECT_DIR$/v1/laravel/cli/tasks/bundle/providers/provider.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cli/tasks/bundle/publisher.php" afterPath="$PROJECT_DIR$/v1/laravel/cli/tasks/bundle/publisher.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cli/tasks/bundle/repository.php" afterPath="$PROJECT_DIR$/v1/laravel/cli/tasks/bundle/repository.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cli/tasks/help.json" afterPath="$PROJECT_DIR$/v1/laravel/cli/tasks/help.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cli/tasks/help.php" afterPath="$PROJECT_DIR$/v1/laravel/cli/tasks/help.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cli/tasks/key.php" afterPath="$PROJECT_DIR$/v1/laravel/cli/tasks/key.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cli/tasks/migrate/database.php" afterPath="$PROJECT_DIR$/v1/laravel/cli/tasks/migrate/database.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cli/tasks/migrate/migrator.php" afterPath="$PROJECT_DIR$/v1/laravel/cli/tasks/migrate/migrator.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cli/tasks/migrate/resolver.php" afterPath="$PROJECT_DIR$/v1/laravel/cli/tasks/migrate/resolver.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cli/tasks/migrate/stub.php" afterPath="$PROJECT_DIR$/v1/laravel/cli/tasks/migrate/stub.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cli/tasks/route.php" afterPath="$PROJECT_DIR$/v1/laravel/cli/tasks/route.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cli/tasks/session/manager.php" afterPath="$PROJECT_DIR$/v1/laravel/cli/tasks/session/manager.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cli/tasks/session/migration.php" afterPath="$PROJECT_DIR$/v1/laravel/cli/tasks/session/migration.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cli/tasks/task.php" afterPath="$PROJECT_DIR$/v1/laravel/cli/tasks/task.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cli/tasks/test/phpunit.php" afterPath="$PROJECT_DIR$/v1/laravel/cli/tasks/test/phpunit.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cli/tasks/test/runner.php" afterPath="$PROJECT_DIR$/v1/laravel/cli/tasks/test/runner.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cli/tasks/test/stub.xml" afterPath="$PROJECT_DIR$/v1/laravel/cli/tasks/test/stub.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/config.php" afterPath="$PROJECT_DIR$/v1/laravel/config.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/cookie.php" afterPath="$PROJECT_DIR$/v1/laravel/cookie.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/core.php" afterPath="$PROJECT_DIR$/v1/laravel/core.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/crypter.php" afterPath="$PROJECT_DIR$/v1/laravel/crypter.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database.php" afterPath="$PROJECT_DIR$/v1/laravel/database.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/connection.php" afterPath="$PROJECT_DIR$/v1/laravel/database/connection.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/connectors/connector.php" afterPath="$PROJECT_DIR$/v1/laravel/database/connectors/connector.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/connectors/mysql.php" afterPath="$PROJECT_DIR$/v1/laravel/database/connectors/mysql.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/connectors/postgres.php" afterPath="$PROJECT_DIR$/v1/laravel/database/connectors/postgres.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/connectors/sqlite.php" afterPath="$PROJECT_DIR$/v1/laravel/database/connectors/sqlite.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/connectors/sqlserver.php" afterPath="$PROJECT_DIR$/v1/laravel/database/connectors/sqlserver.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/eloquent/model.php" afterPath="$PROJECT_DIR$/v1/laravel/database/eloquent/model.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/eloquent/pivot.php" afterPath="$PROJECT_DIR$/v1/laravel/database/eloquent/pivot.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/eloquent/query.php" afterPath="$PROJECT_DIR$/v1/laravel/database/eloquent/query.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/eloquent/relationships/belongs_to.php" afterPath="$PROJECT_DIR$/v1/laravel/database/eloquent/relationships/belongs_to.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/eloquent/relationships/has_many.php" afterPath="$PROJECT_DIR$/v1/laravel/database/eloquent/relationships/has_many.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/eloquent/relationships/has_many_and_belongs_to.php" afterPath="$PROJECT_DIR$/v1/laravel/database/eloquent/relationships/has_many_and_belongs_to.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/eloquent/relationships/has_one.php" afterPath="$PROJECT_DIR$/v1/laravel/database/eloquent/relationships/has_one.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/eloquent/relationships/has_one_or_many.php" afterPath="$PROJECT_DIR$/v1/laravel/database/eloquent/relationships/has_one_or_many.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/eloquent/relationships/relationship.php" afterPath="$PROJECT_DIR$/v1/laravel/database/eloquent/relationships/relationship.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/exception.php" afterPath="$PROJECT_DIR$/v1/laravel/database/exception.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/expression.php" afterPath="$PROJECT_DIR$/v1/laravel/database/expression.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/grammar.php" afterPath="$PROJECT_DIR$/v1/laravel/database/grammar.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/query.php" afterPath="$PROJECT_DIR$/v1/laravel/database/query.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/query/grammars/grammar.php" afterPath="$PROJECT_DIR$/v1/laravel/database/query/grammars/grammar.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/query/grammars/mysql.php" afterPath="$PROJECT_DIR$/v1/laravel/database/query/grammars/mysql.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/query/grammars/postgres.php" afterPath="$PROJECT_DIR$/v1/laravel/database/query/grammars/postgres.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/query/grammars/sqlite.php" afterPath="$PROJECT_DIR$/v1/laravel/database/query/grammars/sqlite.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/query/grammars/sqlserver.php" afterPath="$PROJECT_DIR$/v1/laravel/database/query/grammars/sqlserver.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/query/join.php" afterPath="$PROJECT_DIR$/v1/laravel/database/query/join.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/schema.php" afterPath="$PROJECT_DIR$/v1/laravel/database/schema.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/schema/grammars/grammar.php" afterPath="$PROJECT_DIR$/v1/laravel/database/schema/grammars/grammar.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/schema/grammars/mysql.php" afterPath="$PROJECT_DIR$/v1/laravel/database/schema/grammars/mysql.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/schema/grammars/postgres.php" afterPath="$PROJECT_DIR$/v1/laravel/database/schema/grammars/postgres.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/schema/grammars/sqlite.php" afterPath="$PROJECT_DIR$/v1/laravel/database/schema/grammars/sqlite.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/schema/grammars/sqlserver.php" afterPath="$PROJECT_DIR$/v1/laravel/database/schema/grammars/sqlserver.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/database/schema/table.php" afterPath="$PROJECT_DIR$/v1/laravel/database/schema/table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/artisan/commands.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/artisan/commands.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/artisan/tasks.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/artisan/tasks.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/auth/config.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/auth/config.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/auth/usage.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/auth/usage.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/bundles.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/bundles.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/cache/config.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/cache/config.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/cache/usage.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/cache/usage.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/changes.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/changes.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/config.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/config.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/contents.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/contents.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/contrib/command-line.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/contrib/command-line.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/contrib/github.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/contrib/github.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/contrib/tortoisegit.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/contrib/tortoisegit.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/controllers.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/controllers.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/database/config.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/database/config.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/database/eloquent.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/database/eloquent.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/database/fluent.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/database/fluent.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/database/migrations.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/database/migrations.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/database/raw.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/database/raw.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/database/redis.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/database/redis.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/database/schema.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/database/schema.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/encryption.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/encryption.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/events.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/events.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/files.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/files.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/home.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/home.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/input.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/input.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/install.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/install.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/ioc.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/ioc.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/loading.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/loading.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/localization.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/localization.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/logging.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/logging.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/models.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/models.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/profiler.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/profiler.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/requests.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/requests.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/routing.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/routing.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/session/config.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/session/config.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/session/usage.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/session/usage.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/strings.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/strings.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/testing.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/testing.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/urls.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/urls.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/validation.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/validation.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/views/assets.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/views/assets.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/views/forms.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/views/forms.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/views/home.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/views/home.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/views/html.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/views/html.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/views/pagination.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/views/pagination.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/documentation/views/templating.md" afterPath="$PROJECT_DIR$/v1/laravel/documentation/views/templating.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/error.php" afterPath="$PROJECT_DIR$/v1/laravel/error.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/event.php" afterPath="$PROJECT_DIR$/v1/laravel/event.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/file.php" afterPath="$PROJECT_DIR$/v1/laravel/file.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/fluent.php" afterPath="$PROJECT_DIR$/v1/laravel/fluent.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/form.php" afterPath="$PROJECT_DIR$/v1/laravel/form.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/hash.php" afterPath="$PROJECT_DIR$/v1/laravel/hash.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/helpers.php" afterPath="$PROJECT_DIR$/v1/laravel/helpers.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/html.php" afterPath="$PROJECT_DIR$/v1/laravel/html.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/input.php" afterPath="$PROJECT_DIR$/v1/laravel/input.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/ioc.php" afterPath="$PROJECT_DIR$/v1/laravel/ioc.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/lang.php" afterPath="$PROJECT_DIR$/v1/laravel/lang.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/laravel.php" afterPath="$PROJECT_DIR$/v1/laravel/laravel.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/log.php" afterPath="$PROJECT_DIR$/v1/laravel/log.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/memcached.php" afterPath="$PROJECT_DIR$/v1/laravel/memcached.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/messages.php" afterPath="$PROJECT_DIR$/v1/laravel/messages.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/paginator.php" afterPath="$PROJECT_DIR$/v1/laravel/paginator.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/pluralizer.php" afterPath="$PROJECT_DIR$/v1/laravel/pluralizer.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/profiling/profiler.css" afterPath="$PROJECT_DIR$/v1/laravel/profiling/profiler.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/profiling/profiler.js" afterPath="$PROJECT_DIR$/v1/laravel/profiling/profiler.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/profiling/profiler.php" afterPath="$PROJECT_DIR$/v1/laravel/profiling/profiler.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/profiling/template.blade.php" afterPath="$PROJECT_DIR$/v1/laravel/profiling/template.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/redirect.php" afterPath="$PROJECT_DIR$/v1/laravel/redirect.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/redis.php" afterPath="$PROJECT_DIR$/v1/laravel/redis.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/request.php" afterPath="$PROJECT_DIR$/v1/laravel/request.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/response.php" afterPath="$PROJECT_DIR$/v1/laravel/response.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/routing/controller.php" afterPath="$PROJECT_DIR$/v1/laravel/routing/controller.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/routing/filter.php" afterPath="$PROJECT_DIR$/v1/laravel/routing/filter.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/routing/route.php" afterPath="$PROJECT_DIR$/v1/laravel/routing/route.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/routing/router.php" afterPath="$PROJECT_DIR$/v1/laravel/routing/router.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/section.php" afterPath="$PROJECT_DIR$/v1/laravel/section.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/session.php" afterPath="$PROJECT_DIR$/v1/laravel/session.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/session/drivers/apc.php" afterPath="$PROJECT_DIR$/v1/laravel/session/drivers/apc.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/session/drivers/cookie.php" afterPath="$PROJECT_DIR$/v1/laravel/session/drivers/cookie.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/session/drivers/database.php" afterPath="$PROJECT_DIR$/v1/laravel/session/drivers/database.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/session/drivers/driver.php" afterPath="$PROJECT_DIR$/v1/laravel/session/drivers/driver.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/session/drivers/file.php" afterPath="$PROJECT_DIR$/v1/laravel/session/drivers/file.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/session/drivers/memcached.php" afterPath="$PROJECT_DIR$/v1/laravel/session/drivers/memcached.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/session/drivers/memory.php" afterPath="$PROJECT_DIR$/v1/laravel/session/drivers/memory.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/session/drivers/redis.php" afterPath="$PROJECT_DIR$/v1/laravel/session/drivers/redis.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/session/drivers/sweeper.php" afterPath="$PROJECT_DIR$/v1/laravel/session/drivers/sweeper.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/session/payload.php" afterPath="$PROJECT_DIR$/v1/laravel/session/payload.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/str.php" afterPath="$PROJECT_DIR$/v1/laravel/str.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/bundles.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/bundles.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/config/application.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/config/application.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/config/auth.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/config/auth.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/config/cache.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/config/cache.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/config/database.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/config/database.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/config/error.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/config/error.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/config/local/database.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/config/local/database.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/config/mimes.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/config/mimes.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/config/session.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/config/session.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/config/strings.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/config/strings.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/controllers/admin/panel.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/controllers/admin/panel.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/controllers/auth.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/controllers/auth.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/controllers/filter.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/controllers/filter.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/controllers/home.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/controllers/home.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/controllers/restful.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/controllers/restful.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/controllers/template/basic.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/controllers/template/basic.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/controllers/template/named.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/controllers/template/named.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/controllers/template/override.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/controllers/template/override.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/dashboard/repository.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/dashboard/repository.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/language/en/pagination.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/language/en/pagination.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/language/en/validation.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/language/en/validation.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/language/sp/validation.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/language/sp/validation.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/libraries/.gitignore" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/libraries/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/migrations/.gitignore" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/migrations/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/models/.gitignore" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/models/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/models/autoloader.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/models/autoloader.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/models/model.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/models/model.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/models/repositories/user.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/models/repositories/user.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/models/user.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/models/user.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/routes.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/routes.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/start.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/start.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/tasks/.gitignore" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/tasks/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/views/error/404.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/views/error/404.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/views/error/500.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/views/error/500.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/views/home/index.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/views/home/index.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/views/tests/basic.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/views/tests/basic.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/application/views/tests/nested.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/application/views/tests/nested.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/bundles/.gitignore" afterPath="$PROJECT_DIR$/v1/laravel/tests/bundles/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/bundles/dashboard/config/meta.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/bundles/dashboard/config/meta.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/bundles/dashboard/controllers/panel.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/bundles/dashboard/controllers/panel.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/bundles/dashboard/models/repository.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/bundles/dashboard/models/repository.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/bundles/dashboard/routes.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/bundles/dashboard/routes.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/bundles/dummy/routes.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/bundles/dummy/routes.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/bundles/dummy/start.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/bundles/dummy/start.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/asset.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/asset.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/auth.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/auth.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/autoloader.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/autoloader.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/blade.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/blade.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/bundle.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/bundle.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/config.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/config.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/controller.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/controller.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/cookie.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/cookie.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/database.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/database.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/eloquent.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/eloquent.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/event.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/event.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/fluent.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/fluent.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/form.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/form.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/hash.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/hash.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/html.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/html.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/input.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/input.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/ioc.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/ioc.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/lang.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/lang.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/messages.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/messages.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/query.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/query.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/redirect.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/redirect.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/request.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/request.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/response.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/response.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/route.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/route.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/routing.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/routing.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/session.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/session.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/str.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/str.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/uri.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/uri.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/url.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/url.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/validator.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/validator.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/cases/view.test.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/cases/view.test.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/phpunit.php" afterPath="$PROJECT_DIR$/v1/laravel/tests/phpunit.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/storage/cache/.gitignore" afterPath="$PROJECT_DIR$/v1/laravel/tests/storage/cache/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/storage/database/application.sqlite" afterPath="$PROJECT_DIR$/v1/laravel/tests/storage/database/application.sqlite" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/storage/files/desert.jpg" afterPath="$PROJECT_DIR$/v1/laravel/tests/storage/files/desert.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/storage/logs/.gitignore" afterPath="$PROJECT_DIR$/v1/laravel/tests/storage/logs/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/storage/sessions/.gitignore" afterPath="$PROJECT_DIR$/v1/laravel/tests/storage/sessions/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/tests/storage/views/.gitignore" afterPath="$PROJECT_DIR$/v1/laravel/tests/storage/views/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/uri.php" afterPath="$PROJECT_DIR$/v1/laravel/uri.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/url.php" afterPath="$PROJECT_DIR$/v1/laravel/url.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/validator.php" afterPath="$PROJECT_DIR$/v1/laravel/validator.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Application.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Application.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Command/Command.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Command/Command.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Command/HelpCommand.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Command/HelpCommand.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Command/ListCommand.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Command/ListCommand.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Formatter/OutputFormatter.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Formatter/OutputFormatter.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Formatter/OutputFormatterInterface.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Formatter/OutputFormatterInterface.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Formatter/OutputFormatterStyle.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Formatter/OutputFormatterStyle.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Formatter/OutputFormatterStyleInterface.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Formatter/OutputFormatterStyleInterface.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Helper/DialogHelper.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Helper/DialogHelper.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Helper/FormatterHelper.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Helper/FormatterHelper.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Helper/Helper.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Helper/Helper.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Helper/HelperInterface.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Helper/HelperInterface.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Helper/HelperSet.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Helper/HelperSet.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Input/ArgvInput.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Input/ArgvInput.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Input/ArrayInput.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Input/ArrayInput.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Input/Input.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Input/Input.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Input/InputArgument.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Input/InputArgument.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Input/InputDefinition.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Input/InputDefinition.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Input/InputInterface.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Input/InputInterface.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Input/InputOption.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Input/InputOption.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Input/StringInput.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Input/StringInput.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/LICENSE" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/LICENSE" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Output/ConsoleOutput.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Output/ConsoleOutput.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Output/ConsoleOutputInterface.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Output/ConsoleOutputInterface.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Output/NullOutput.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Output/NullOutput.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Output/Output.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Output/Output.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Output/OutputInterface.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Output/OutputInterface.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Output/StreamOutput.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Output/StreamOutput.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/README.md" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/README.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Shell.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Shell.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Tester/ApplicationTester.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Tester/ApplicationTester.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/Tester/CommandTester.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/Tester/CommandTester.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/Console/composer.json" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/Console/composer.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/ApacheRequest.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/ApacheRequest.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/CHANGELOG.md" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/CHANGELOG.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Cookie.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Cookie.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/File/Exception/AccessDeniedException.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/File/Exception/AccessDeniedException.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/File/Exception/FileException.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/File/Exception/FileException.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/File/Exception/FileNotFoundException.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/File/Exception/FileNotFoundException.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/File/Exception/UnexpectedTypeException.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/File/Exception/UnexpectedTypeException.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/File/Exception/UploadException.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/File/Exception/UploadException.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/File/File.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/File/File.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/File/MimeType/ExtensionGuesser.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/File/MimeType/ExtensionGuesser.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/File/MimeType/ExtensionGuesserInterface.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/File/MimeType/ExtensionGuesserInterface.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/File/MimeType/FileBinaryMimeTypeGuesser.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/File/MimeType/FileBinaryMimeTypeGuesser.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/File/MimeType/FileinfoMimeTypeGuesser.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/File/MimeType/FileinfoMimeTypeGuesser.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/File/MimeType/MimeTypeExtensionGuesser.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/File/MimeType/MimeTypeExtensionGuesser.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/File/MimeType/MimeTypeGuesser.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/File/MimeType/MimeTypeGuesser.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/File/MimeType/MimeTypeGuesserInterface.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/File/MimeType/MimeTypeGuesserInterface.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/File/UploadedFile.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/File/UploadedFile.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/FileBag.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/FileBag.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/HeaderBag.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/HeaderBag.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/JsonResponse.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/JsonResponse.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/LICENSE" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/LICENSE" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/LaravelRequest.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/LaravelRequest.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/LaravelResponse.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/LaravelResponse.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/ParameterBag.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/ParameterBag.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/README.md" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/README.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/RedirectResponse.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/RedirectResponse.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Request.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Request.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/RequestMatcher.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/RequestMatcher.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/RequestMatcherInterface.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/RequestMatcherInterface.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Response.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Response.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/ResponseHeaderBag.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/ResponseHeaderBag.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/ServerBag.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/ServerBag.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Session/Attribute/AttributeBag.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Session/Attribute/AttributeBag.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Session/Attribute/AttributeBagInterface.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Session/Attribute/AttributeBagInterface.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Session/Attribute/NamespacedAttributeBag.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Session/Attribute/NamespacedAttributeBag.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Session/Flash/AutoExpireFlashBag.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Session/Flash/AutoExpireFlashBag.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Session/Flash/FlashBag.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Session/Flash/FlashBag.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Session/Flash/FlashBagInterface.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Session/Flash/FlashBagInterface.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Session/Session.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Session/Session.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Session/SessionBagInterface.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Session/SessionBagInterface.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Session/SessionInterface.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Session/SessionInterface.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/Handler/MemcacheSessionHandler.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/Handler/MemcacheSessionHandler.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/Handler/MemcachedSessionHandler.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/Handler/MemcachedSessionHandler.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/Handler/MongoDbSessionHandler.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/Handler/MongoDbSessionHandler.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/Handler/NativeFileSessionHandler.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/Handler/NativeFileSessionHandler.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/Handler/NativeSessionHandler.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/Handler/NativeSessionHandler.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/Handler/NullSessionHandler.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/Handler/NullSessionHandler.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/Handler/PdoSessionHandler.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/Handler/PdoSessionHandler.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/MetadataBag.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/MetadataBag.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/MockArraySessionStorage.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/MockArraySessionStorage.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/MockFileSessionStorage.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/MockFileSessionStorage.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/NativeSessionStorage.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/NativeSessionStorage.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/Proxy/AbstractProxy.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/Proxy/AbstractProxy.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/Proxy/NativeProxy.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/Proxy/NativeProxy.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/Proxy/SessionHandlerProxy.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/Proxy/SessionHandlerProxy.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/SessionStorageInterface.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/Session/Storage/SessionStorageInterface.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/StreamedResponse.php" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/StreamedResponse.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/vendor/Symfony/Component/HttpFoundation/composer.json" afterPath="$PROJECT_DIR$/v1/laravel/vendor/Symfony/Component/HttpFoundation/composer.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/laravel/view.php" afterPath="$PROJECT_DIR$/v1/laravel/view.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/license.txt" afterPath="$PROJECT_DIR$/v1/license.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/paths.php" afterPath="$PROJECT_DIR$/v1/paths.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/.htaccess" afterPath="$PROJECT_DIR$/v1/public/.htaccess" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/assets/images/MySkills-64.png" afterPath="$PROJECT_DIR$/v1/public/assets/images/MySkills-64.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/bundles/.gitignore" afterPath="$PROJECT_DIR$/v1/public/bundles/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/certificates/220_14.pdf" afterPath="$PROJECT_DIR$/v1/public/certificates/220_14.pdf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/.gitignore" afterPath="$PROJECT_DIR$/v1/public/css/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/bootstrap-theme.css" afterPath="$PROJECT_DIR$/v1/public/css/bootstrap-theme.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/v1/public/css/bootstrap-theme.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/bootstrap.css" afterPath="$PROJECT_DIR$/v1/public/css/bootstrap.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/v1/public/css/bootstrap.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/cal-heatmap.css" afterPath="$PROJECT_DIR$/v1/public/css/cal-heatmap.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/manguezal.css" afterPath="$PROJECT_DIR$/v1/public/css/manguezal.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/old/bootstrap-responsive.css" afterPath="$PROJECT_DIR$/v1/public/css/old/bootstrap-responsive.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/old/bootstrap-responsive.min.css" afterPath="$PROJECT_DIR$/v1/public/css/old/bootstrap-responsive.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/old/bootstrap.css" afterPath="$PROJECT_DIR$/v1/public/css/old/bootstrap.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/old/bootstrap.min.css" afterPath="$PROJECT_DIR$/v1/public/css/old/bootstrap.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/pages/about.css" afterPath="$PROJECT_DIR$/v1/public/css/pages/about.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/pages/faq.css" afterPath="$PROJECT_DIR$/v1/public/css/pages/faq.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/pages/features.css" afterPath="$PROJECT_DIR$/v1/public/css/pages/features.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/pages/homepage.css" afterPath="$PROJECT_DIR$/v1/public/css/pages/homepage.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/plans.css" afterPath="$PROJECT_DIR$/v1/public/css/plans.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/reboot-landing-responsive.css" afterPath="$PROJECT_DIR$/v1/public/css/reboot-landing-responsive.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/reboot-landing.css" afterPath="$PROJECT_DIR$/v1/public/css/reboot-landing.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/themes/green/img/header-bg.png" afterPath="$PROJECT_DIR$/v1/public/css/themes/green/img/header-bg.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/themes/green/theme.css" afterPath="$PROJECT_DIR$/v1/public/css/themes/green/theme.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/devday/CNAME" afterPath="$PROJECT_DIR$/v1/public/devday/CNAME" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/devday/css/base.css" afterPath="$PROJECT_DIR$/v1/public/devday/css/base.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/devday/css/reset.css" afterPath="$PROJECT_DIR$/v1/public/devday/css/reset.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/devday/css/theme.css" afterPath="$PROJECT_DIR$/v1/public/devday/css/theme.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/devday/img/andrezzabarros.jpg" afterPath="$PROJECT_DIR$/v1/public/devday/img/andrezzabarros.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/devday/img/apple-touch-icon.png" afterPath="$PROJECT_DIR$/v1/public/devday/img/apple-touch-icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/devday/img/conecta.png" afterPath="$PROJECT_DIR$/v1/public/devday/img/conecta.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/devday/img/eduardocruz.jpg" afterPath="$PROJECT_DIR$/v1/public/devday/img/eduardocruz.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/devday/img/favicon.ico" afterPath="$PROJECT_DIR$/v1/public/devday/img/favicon.ico" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/devday/img/marker-default.png" afterPath="$PROJECT_DIR$/v1/public/devday/img/marker-default.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/devday/img/myskills.png" afterPath="$PROJECT_DIR$/v1/public/devday/img/myskills.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/devday/img/recife.png" afterPath="$PROJECT_DIR$/v1/public/devday/img/recife.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/devday/img/robolivre.png" afterPath="$PROJECT_DIR$/v1/public/devday/img/robolivre.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/devday/img/sociacao.png" afterPath="$PROJECT_DIR$/v1/public/devday/img/sociacao.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/devday/img/thoughtworks.jpg" afterPath="$PROJECT_DIR$/v1/public/devday/img/thoughtworks.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/devday/img/your-logo.jpg" afterPath="$PROJECT_DIR$/v1/public/devday/img/your-logo.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/devday/img/zitomonteiro.jpg" afterPath="$PROJECT_DIR$/v1/public/devday/img/zitomonteiro.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/devday/index.html" afterPath="$PROJECT_DIR$/v1/public/devday/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/devday/js/jquery.js" afterPath="$PROJECT_DIR$/v1/public/devday/js/jquery.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/devday/js/map.js" afterPath="$PROJECT_DIR$/v1/public/devday/js/map.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/dist/css/bootstrap-theme.css" afterPath="$PROJECT_DIR$/v1/public/dist/css/bootstrap-theme.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/dist/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/v1/public/dist/css/bootstrap-theme.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/dist/css/bootstrap.css" afterPath="$PROJECT_DIR$/v1/public/dist/css/bootstrap.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/dist/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/v1/public/dist/css/bootstrap.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/dist/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/v1/public/dist/fonts/glyphicons-halflings-regular.eot" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/dist/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/v1/public/dist/fonts/glyphicons-halflings-regular.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/dist/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/v1/public/dist/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/dist/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/v1/public/dist/fonts/glyphicons-halflings-regular.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/dist/js/bootstrap.js" afterPath="$PROJECT_DIR$/v1/public/dist/js/bootstrap.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/dist/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/v1/public/dist/js/bootstrap.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/favicon.ico" afterPath="$PROJECT_DIR$/v1/public/favicon.ico" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/v1/public/fonts/glyphicons-halflings-regular.eot" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/v1/public/fonts/glyphicons-halflings-regular.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/v1/public/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/v1/public/fonts/glyphicons-halflings-regular.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/fonts/old/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/v1/public/fonts/old/fontawesome-webfont.eot" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/fonts/old/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/v1/public/fonts/old/fontawesome-webfont.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/fonts/old/fontawesome-webfont.svgz" afterPath="$PROJECT_DIR$/v1/public/fonts/old/fontawesome-webfont.svgz" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/fonts/old/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/v1/public/fonts/old/fontawesome-webfont.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/fonts/old/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/v1/public/fonts/old/fontawesome-webfont.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/.gitignore" afterPath="$PROJECT_DIR$/v1/public/img/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/404.png" afterPath="$PROJECT_DIR$/v1/public/img/404.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/500.png" afterPath="$PROJECT_DIR$/v1/public/img/500.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/50_link.jpg" afterPath="$PROJECT_DIR$/v1/public/img/50_link.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/MySkills-155-100.png" afterPath="$PROJECT_DIR$/v1/public/img/MySkills-155-100.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/MySkills-64.png" afterPath="$PROJECT_DIR$/v1/public/img/MySkills-64.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/add.png" afterPath="$PROJECT_DIR$/v1/public/img/add.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/01 - highschool-male.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/01 - highschool-male.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/02-undergrad-male.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/02-undergrad-male.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/03-grad-male.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/03-grad-male.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/04-phd-male.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/04-phd-male.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/CoW.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/CoW.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/adobecamp.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/adobecamp.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/android.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/android.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/androidbadges.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/androidbadges.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/apijs.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/apijs.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/appengine.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/appengine.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/appfog.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/appfog.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/aws.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/aws.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/b2s.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/b2s.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/bemean.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/bemean.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/bitbucket.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/bitbucket.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/blackberry.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/blackberry.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/caelum-badge.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/caelum-badge.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/campus-badge.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/campus-badge.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/cloudfoundry.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/cloudfoundry.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/codesquad.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/codesquad.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/codesquadzend2.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/codesquadzend2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/codev.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/codev.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/codility.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/codility.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/cprecife2.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/cprecife2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/csm.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/csm.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/devtools.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/devtools.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/especializa-badge.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/especializa-badge.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/estuarioti.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/estuarioti.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/fazinova.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/fazinova.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/fisl14.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/fisl14.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/frontsampa.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/frontsampa.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/github.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/github.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/globalcode.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/globalcode.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/heroku.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/heroku.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/html5.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/html5.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/iOSBadge100.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/iOSBadge100.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/idl.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/idl.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/ids-badge.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/ids-badge.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/ios.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/ios.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/java-badge.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/java-badge.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/jquery-firstflight.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/jquery-firstflight.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/js-roadtrip.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/js-roadtrip.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/laracon.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/laracon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/laravelbundle.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/laravelbundle.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/mcp.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/mcp.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/npmbundle.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/npmbundle.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/openshift.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/openshift.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/opensource.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/opensource.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/packagist.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/packagist.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/pagodabox.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/pagodabox.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/parse.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/parse.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/php.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/php.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/php5-badge.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/php5-badge.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/php53-badge.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/php53-badge.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/pmi-acp.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/pmi-acp.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/pycursos-djangobadge.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/pycursos-djangobadge.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/pycursos-pythonbadge.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/pycursos-pythonbadge.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/pycursos.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/pycursos.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/pypi.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/pypi.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/pythonnordeste.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/pythonnordeste.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/qualiti.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/qualiti.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/rackspace.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/rackspace.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/rfz2.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/rfz2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/rhok2012.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/rhok2012.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/riojs.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/riojs.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/rubygems.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/rubygems.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/s2b.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/s2b.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/sampajs.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/sampajs.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/startupweekend.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/startupweekend.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/thedevelopersconference.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/thedevelopersconference.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/trygit-badge.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/trygit-badge.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/tryios-badge.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/tryios-badge.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/tryjquery.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/tryjquery.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/tryobjectivec.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/tryobjectivec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/tryr.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/tryr.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/tryruby-badge.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/tryruby-badge.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/unlock100.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/unlock100.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/windowsazure.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/windowsazure.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/windowsphone.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/windowsphone.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/zend-badge.gif" afterPath="$PROJECT_DIR$/v1/public/img/badges/zend-badge.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/badges/zombiesredux.png" afterPath="$PROJECT_DIR$/v1/public/img/badges/zombiesredux.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/browserquest/chest.png" afterPath="$PROJECT_DIR$/v1/public/img/browserquest/chest.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/browserquest/level1-mini.png" afterPath="$PROJECT_DIR$/v1/public/img/browserquest/level1-mini.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/browserquest/level1.png" afterPath="$PROJECT_DIR$/v1/public/img/browserquest/level1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/browserquest/level2-mini.png" afterPath="$PROJECT_DIR$/v1/public/img/browserquest/level2-mini.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/browserquest/level2.png" afterPath="$PROJECT_DIR$/v1/public/img/browserquest/level2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/browserquest/level3-mini.png" afterPath="$PROJECT_DIR$/v1/public/img/browserquest/level3-mini.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/browserquest/level3.png" afterPath="$PROJECT_DIR$/v1/public/img/browserquest/level3.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/browserquest/level4-mini.png" afterPath="$PROJECT_DIR$/v1/public/img/browserquest/level4-mini.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/browserquest/level4.png" afterPath="$PROJECT_DIR$/v1/public/img/browserquest/level4.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/coin16.png" afterPath="$PROJECT_DIR$/v1/public/img/coin16.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/coin32.png" afterPath="$PROJECT_DIR$/v1/public/img/coin32.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/companies/ufpe.png" afterPath="$PROJECT_DIR$/v1/public/img/companies/ufpe.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/companies/unasus.png" afterPath="$PROJECT_DIR$/v1/public/img/companies/unasus.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/feature-check.png" afterPath="$PROJECT_DIR$/v1/public/img/feature-check.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/features-claim.png" afterPath="$PROJECT_DIR$/v1/public/img/features-claim.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/features-job.png" afterPath="$PROJECT_DIR$/v1/public/img/features-job.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/features-profile.png" afterPath="$PROJECT_DIR$/v1/public/img/features-profile.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/github-80-120.png" afterPath="$PROJECT_DIR$/v1/public/img/github-80-120.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/glyphicons-halflings-white.png" afterPath="$PROJECT_DIR$/v1/public/img/glyphicons-halflings-white.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/glyphicons-halflings.png" afterPath="$PROJECT_DIR$/v1/public/img/glyphicons-halflings.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/header-bg.jpg" afterPath="$PROJECT_DIR$/v1/public/img/header-bg.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/laravel.png" afterPath="$PROJECT_DIR$/v1/public/img/laravel.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/logo.png" afterPath="$PROJECT_DIR$/v1/public/img/logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/magnifier.png" afterPath="$PROJECT_DIR$/v1/public/img/magnifier.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/30ideas.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/30ideas.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/agoracompre.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/agoracompre.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/azklepio.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/azklepio.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/beagletech.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/beagletech.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/bidcorp.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/bidcorp.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/bluwhee.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/bluwhee.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/brechoh.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/brechoh.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/coeus.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/coeus.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/conecta.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/conecta.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/criticallab.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/criticallab.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/drbusca.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/drbusca.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/economize.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/economize.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/estuario.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/estuario.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/eventick.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/eventick.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/eztiva.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/eztiva.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/favoritoz.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/favoritoz.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/guaraling.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/guaraling.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/guava.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/guava.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/icaregames.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/icaregames.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/idealizza.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/idealizza.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/landscape.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/landscape.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/likemedia.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/likemedia.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/logo.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/lookmobile.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/lookmobile.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/mobiclub.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/mobiclub.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/mobipass.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/mobipass.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/myskills.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/myskills.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/naips.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/naips.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/opara.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/opara.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/partner-sendgrid.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/partner-sendgrid.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/pingmind.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/pingmind.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/plingideas.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/plingideas.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/pocketstore.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/pocketstore.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/prodeaf.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/prodeaf.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/propost.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/propost.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/publie.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/publie.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/pycursos.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/pycursos.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/qualitasupply.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/qualitasupply.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/redu.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/redu.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/robolivre.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/robolivre.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/say2me.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/say2me.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/seboslivres.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/seboslivres.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/sequaz.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/sequaz.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/sponsor-icb.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/sponsor-icb.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/surfguru.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/surfguru.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/ubee.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/ubee.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/via0800.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/via0800.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/manguezal/yetidev.png" afterPath="$PROJECT_DIR$/v1/public/img/manguezal/yetidev.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/minus.png" afterPath="$PROJECT_DIR$/v1/public/img/minus.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/myskills-395-150.png" afterPath="$PROJECT_DIR$/v1/public/img/myskills-395-150.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/openbadges.jpg" afterPath="$PROJECT_DIR$/v1/public/img/openbadges.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/pinkribbon.png" afterPath="$PROJECT_DIR$/v1/public/img/pinkribbon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/profile/abolsista.png" afterPath="$PROJECT_DIR$/v1/public/img/profile/abolsista.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/profile/coordenador.png" afterPath="$PROJECT_DIR$/v1/public/img/profile/coordenador.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/profile/noavatar.png" afterPath="$PROJECT_DIR$/v1/public/img/profile/noavatar.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/profile/obolsista.png" afterPath="$PROJECT_DIR$/v1/public/img/profile/obolsista.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/profile/professional-female.png" afterPath="$PROJECT_DIR$/v1/public/img/profile/professional-female.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/profile/professional-male.png" afterPath="$PROJECT_DIR$/v1/public/img/profile/professional-male.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/profile/senior-female.png" afterPath="$PROJECT_DIR$/v1/public/img/profile/senior-female.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/profile/senior-male.png" afterPath="$PROJECT_DIR$/v1/public/img/profile/senior-male.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/profile/trainee-female.png" afterPath="$PROJECT_DIR$/v1/public/img/profile/trainee-female.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/profile/trainee-male.png" afterPath="$PROJECT_DIR$/v1/public/img/profile/trainee-male.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/screenshots/placeholder.gif" afterPath="$PROJECT_DIR$/v1/public/img/screenshots/placeholder.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/smallacts-badge-88x31-blue.png" afterPath="$PROJECT_DIR$/v1/public/img/smallacts-badge-88x31-blue.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/social/social-sprite-30.png" afterPath="$PROJECT_DIR$/v1/public/img/social/social-sprite-30.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/social/social-sprite.png" afterPath="$PROJECT_DIR$/v1/public/img/social/social-sprite.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/index.php" afterPath="$PROJECT_DIR$/v1/public/index.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/.gitignore" afterPath="$PROJECT_DIR$/v1/public/js/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/bootstrap.js" afterPath="$PROJECT_DIR$/v1/public/js/bootstrap.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/v1/public/js/bootstrap.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/cal-heatmap.min.js" afterPath="$PROJECT_DIR$/v1/public/js/cal-heatmap.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/d3.v3.min.js" afterPath="$PROJECT_DIR$/v1/public/js/d3.v3.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/faq.js" afterPath="$PROJECT_DIR$/v1/public/js/faq.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/jquery-1.7.2.min.js" afterPath="$PROJECT_DIR$/v1/public/js/jquery-1.7.2.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/jquery.masonry.min.js" afterPath="$PROJECT_DIR$/v1/public/js/jquery.masonry.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/jquery.lightbox.min.js" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/jquery.lightbox.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/carbono/images/jquery-lightbox-theme.gif" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/carbono/images/jquery-lightbox-theme.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/carbono/images/jquery-lightbox-theme.png" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/carbono/images/jquery-lightbox-theme.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/carbono/images/loading.gif" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/carbono/images/loading.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/carbono/jquery.lightbox.css" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/carbono/jquery.lightbox.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/carbono/jquery.lightbox.ie6.css" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/carbono/jquery.lightbox.ie6.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/classic-dark/images/jquery-lightbox-theme.gif" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/classic-dark/images/jquery-lightbox-theme.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/classic-dark/images/loading.gif" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/classic-dark/images/loading.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/classic-dark/jquery.lightbox.css" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/classic-dark/jquery.lightbox.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/classic-dark/jquery.lightbox.ie6.css" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/classic-dark/jquery.lightbox.ie6.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/classic/images/jquery-lightbox-theme.gif" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/classic/images/jquery-lightbox-theme.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/classic/images/loading.gif" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/classic/images/loading.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/classic/jquery.lightbox.css" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/classic/jquery.lightbox.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/classic/jquery.lightbox.ie6.css" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/classic/jquery.lightbox.ie6.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/default/images/jquery-lightbox-theme.gif" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/default/images/jquery-lightbox-theme.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/default/images/jquery-lightbox-theme.png" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/default/images/jquery-lightbox-theme.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/default/images/loading.gif" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/default/images/loading.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/default/jquery.lightbox.css" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/default/jquery.lightbox.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/default/jquery.lightbox.ie6.css" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/default/jquery.lightbox.ie6.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/evolution-dark/images/jquery-lightbox-theme.gif" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/evolution-dark/images/jquery-lightbox-theme.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/evolution-dark/images/jquery-lightbox-theme.png" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/evolution-dark/images/jquery-lightbox-theme.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/evolution-dark/images/loading.gif" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/evolution-dark/images/loading.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/evolution-dark/jquery.lightbox.css" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/evolution-dark/jquery.lightbox.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/evolution-dark/jquery.lightbox.ie6.css" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/evolution-dark/jquery.lightbox.ie6.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/evolution/images/jquery-lightbox-theme.gif" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/evolution/images/jquery-lightbox-theme.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/evolution/images/jquery-lightbox-theme.png" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/evolution/images/jquery-lightbox-theme.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/evolution/images/loading.gif" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/evolution/images/loading.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/evolution/jquery.lightbox.css" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/evolution/jquery.lightbox.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/evolution/jquery.lightbox.ie6.css" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/evolution/jquery.lightbox.ie6.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/facebook/images/jquery-lightbox-theme.gif" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/facebook/images/jquery-lightbox-theme.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/facebook/images/jquery-lightbox-theme.png" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/facebook/images/jquery-lightbox-theme.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/facebook/images/loading.gif" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/facebook/images/loading.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/facebook/jquery.lightbox.css" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/facebook/jquery.lightbox.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/facebook/jquery.lightbox.ie6.css" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/facebook/jquery.lightbox.ie6.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/minimalist-dark/images/jquery-lightbox-theme.gif" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/minimalist-dark/images/jquery-lightbox-theme.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/minimalist-dark/images/loading.gif" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/minimalist-dark/images/loading.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/minimalist-dark/jquery.lightbox.css" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/minimalist-dark/jquery.lightbox.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/minimalist-dark/jquery.lightbox.ie6.css" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/minimalist-dark/jquery.lightbox.ie6.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/minimalist/images/jquery-lightbox-theme.gif" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/minimalist/images/jquery-lightbox-theme.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/minimalist/images/loading.gif" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/minimalist/images/loading.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/minimalist/jquery.lightbox.css" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/minimalist/jquery.lightbox.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/minimalist/jquery.lightbox.ie6.css" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/minimalist/jquery.lightbox.ie6.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/white-green/images/jquery-lightbox-theme.gif" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/white-green/images/jquery-lightbox-theme.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/white-green/images/jquery-lightbox-theme.png" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/white-green/images/jquery-lightbox-theme.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/white-green/images/loading.gif" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/white-green/images/loading.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/white-green/jquery.lightbox.css" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/white-green/jquery.lightbox.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/lightbox/themes/white-green/jquery.lightbox.ie6.css" afterPath="$PROJECT_DIR$/v1/public/js/lightbox/themes/white-green/jquery.lightbox.ie6.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/old/bootstrap.js" afterPath="$PROJECT_DIR$/v1/public/js/old/bootstrap.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/old/bootstrap.min.js" afterPath="$PROJECT_DIR$/v1/public/js/old/bootstrap.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/laravel/css/style.css" afterPath="$PROJECT_DIR$/v1/public/laravel/css/style.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/laravel/img/logoback.png" afterPath="$PROJECT_DIR$/v1/public/laravel/img/logoback.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/laravel/js/modernizr-2.5.3.min.js" afterPath="$PROJECT_DIR$/v1/public/laravel/js/modernizr-2.5.3.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/laravel/js/prettify.js" afterPath="$PROJECT_DIR$/v1/public/laravel/js/prettify.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/laravel/js/scroll.js" afterPath="$PROJECT_DIR$/v1/public/laravel/js/scroll.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/motivograma/.htaccess" afterPath="$PROJECT_DIR$/v1/public/motivograma/.htaccess" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/motivograma/404.html" afterPath="$PROJECT_DIR$/v1/public/motivograma/404.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/motivograma/bower_components/requirejs/require.js" afterPath="$PROJECT_DIR$/v1/public/motivograma/bower_components/requirejs/require.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/motivograma/favicon.ico" afterPath="$PROJECT_DIR$/v1/public/motivograma/favicon.ico" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/motivograma/images/5d462625.glyphicons-halflings-white.png" afterPath="$PROJECT_DIR$/v1/public/motivograma/images/5d462625.glyphicons-halflings-white.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/motivograma/images/9cc6609b.glyphicons-halflings.png" afterPath="$PROJECT_DIR$/v1/public/motivograma/images/9cc6609b.glyphicons-halflings.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/motivograma/images/b71056e8.background.jpg" afterPath="$PROJECT_DIR$/v1/public/motivograma/images/b71056e8.background.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/motivograma/images/cde4ab14.briefcase.png" afterPath="$PROJECT_DIR$/v1/public/motivograma/images/cde4ab14.briefcase.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/motivograma/images/dd4a50f1.Thumbs_Up.png" afterPath="$PROJECT_DIR$/v1/public/motivograma/images/dd4a50f1.Thumbs_Up.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/motivograma/index.html" afterPath="$PROJECT_DIR$/v1/public/motivograma/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/motivograma/robots.txt" afterPath="$PROJECT_DIR$/v1/public/motivograma/robots.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/motivograma/scripts/349a65db.main.js" afterPath="$PROJECT_DIR$/v1/public/motivograma/scripts/349a65db.main.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/motivograma/scripts/42b45873.main.js" afterPath="$PROJECT_DIR$/v1/public/motivograma/scripts/42b45873.main.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/motivograma/scripts/94026840.main.js" afterPath="$PROJECT_DIR$/v1/public/motivograma/scripts/94026840.main.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/motivograma/scripts/e30023d0.main.js" afterPath="$PROJECT_DIR$/v1/public/motivograma/scripts/e30023d0.main.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/motivograma/scripts/vendor/f7f27360.modernizr.js" afterPath="$PROJECT_DIR$/v1/public/motivograma/scripts/vendor/f7f27360.modernizr.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/motivograma/styles/041abeb9.main.css" afterPath="$PROJECT_DIR$/v1/public/motivograma/styles/041abeb9.main.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/motivograma/styles/6eace7be.main.css" afterPath="$PROJECT_DIR$/v1/public/motivograma/styles/6eace7be.main.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/motivograma/styles/fd211a56.main.css" afterPath="$PROJECT_DIR$/v1/public/motivograma/styles/fd211a56.main.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/pinterest-5cb5e.html" afterPath="$PROJECT_DIR$/v1/public/pinterest-5cb5e.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/rhok-recife/css/base.css" afterPath="$PROJECT_DIR$/v1/public/rhok-recife/css/base.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/rhok-recife/css/reset.css" afterPath="$PROJECT_DIR$/v1/public/rhok-recife/css/reset.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/rhok-recife/css/theme.css" afterPath="$PROJECT_DIR$/v1/public/rhok-recife/css/theme.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/rhok-recife/img/Thumbs.db" afterPath="$PROJECT_DIR$/v1/public/rhok-recife/img/Thumbs.db" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/rhok-recife/img/andrezzabarros.jpg" afterPath="$PROJECT_DIR$/v1/public/rhok-recife/img/andrezzabarros.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/rhok-recife/img/andrezzabarros.jpg.crdownload" afterPath="$PROJECT_DIR$/v1/public/rhok-recife/img/andrezzabarros.jpg.crdownload" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/rhok-recife/img/apple-touch-icon.png" afterPath="$PROJECT_DIR$/v1/public/rhok-recife/img/apple-touch-icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/rhok-recife/img/conecta.png" afterPath="$PROJECT_DIR$/v1/public/rhok-recife/img/conecta.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/rhok-recife/img/eduardocruz.jpg" afterPath="$PROJECT_DIR$/v1/public/rhok-recife/img/eduardocruz.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/rhok-recife/img/favicon.ico" afterPath="$PROJECT_DIR$/v1/public/rhok-recife/img/favicon.ico" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/rhok-recife/img/marker-default.png" afterPath="$PROJECT_DIR$/v1/public/rhok-recife/img/marker-default.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/rhok-recife/img/myskills.png" afterPath="$PROJECT_DIR$/v1/public/rhok-recife/img/myskills.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/rhok-recife/img/recife.png" afterPath="$PROJECT_DIR$/v1/public/rhok-recife/img/recife.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/rhok-recife/img/robolivre.png" afterPath="$PROJECT_DIR$/v1/public/rhok-recife/img/robolivre.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/rhok-recife/img/sociacao.png" afterPath="$PROJECT_DIR$/v1/public/rhok-recife/img/sociacao.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/rhok-recife/img/thoughtworks.jpg" afterPath="$PROJECT_DIR$/v1/public/rhok-recife/img/thoughtworks.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/rhok-recife/img/your-logo.jpg" afterPath="$PROJECT_DIR$/v1/public/rhok-recife/img/your-logo.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/rhok-recife/img/zitomonteiro.jpg" afterPath="$PROJECT_DIR$/v1/public/rhok-recife/img/zitomonteiro.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/rhok-recife/index.html" afterPath="$PROJECT_DIR$/v1/public/rhok-recife/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/rhok-recife/js/jquery.js" afterPath="$PROJECT_DIR$/v1/public/rhok-recife/js/jquery.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/rhok-recife/js/map.js" afterPath="$PROJECT_DIR$/v1/public/rhok-recife/js/map.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/readme.md" afterPath="$PROJECT_DIR$/v1/readme.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storage/cache/.gitignore" afterPath="$PROJECT_DIR$/v1/storage/cache/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storage/database/.gitignore" afterPath="$PROJECT_DIR$/v1/storage/database/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storage/logs/.gitignore" afterPath="$PROJECT_DIR$/v1/storage/logs/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storage/sessions/.gitignore" afterPath="$PROJECT_DIR$/v1/storage/sessions/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storage/views/.gitignore" afterPath="$PROJECT_DIR$/v1/storage/views/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storage/work/.gitignore" afterPath="$PROJECT_DIR$/v1/storage/work/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tunnel.bat" afterPath="$PROJECT_DIR$/v1/tunnel.bat" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/yarn.lock" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/myskills.iml" afterPath="$PROJECT_DIR$/.idea/myskills.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css" afterPath="$PROJECT_DIR$/public/css/app.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app.js" afterPath="$PROJECT_DIR$/public/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/components/ExampleComponent.vue" afterPath="$PROJECT_DIR$/resources/assets/js/components/ExampleComponent.vue" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -1018,106 +18,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="user.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/v1/application/models/user.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="464">
-                  <caret line="223" column="0" lean-forward="false" selection-start-line="223" selection-start-column="0" selection-end-line="223" selection-end-column="0" />
-                  <folding>
-                    <marker date="1524270309163" expanded="true" signature="4321:4441" ph="SELECT * fro... messages" />
-                    <marker date="1524270309163" expanded="true" signature="4839:5045" ph="SELECT count... oneauth_clients" />
-                    <marker date="1524270309163" expanded="true" signature="5114:6034" ph="SELECT ((SUM... id" />
-                    <marker date="1524270309163" expanded="true" signature="5446:6031" ph="SELECT U.id technologies" />
-                    <marker date="1524270309163" expanded="true" signature="6152:7676" ph="SELECT U.id,... users" />
-                    <marker date="1524270309163" expanded="true" signature="6472:7498" ph="SELECT Q.use... id" />
-                    <marker date="1524270309163" expanded="true" signature="6845:7476" ph="SELECT U.id technologies" />
-                    <marker date="1524270309163" expanded="true" signature="7780:9375" ph="SELECT U.id,... users" />
-                    <marker date="1524270309163" expanded="true" signature="8100:9126" ph="SELECT Q.use... id" />
-                    <marker date="1524270309163" expanded="true" signature="8473:9104" ph="SELECT U.id technologies" />
-                    <marker date="1524270309163" expanded="true" signature="9488:9807" ph="SELECT DISTI... technology_user" />
-                    <marker date="1524270309163" expanded="true" signature="9913:10310" ph="SELECT T.id technologies" />
-                    <marker date="1524270309163" expanded="true" signature="10768:10870" ph="SELECT OC.ac... oneauth_clients" />
-                    <marker date="1524270309163" expanded="true" signature="11086:11269" ph="SELECT uid F... user" />
-                    <marker date="1524270309163" expanded="true" signature="11227:11268" ph="SELECT uid2 friend" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="homeguest.blade.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/v1/application/views/pages/homeguest.blade.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="216">
-                  <caret line="54" column="31" lean-forward="false" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="31" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/v1/application/routes.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="214">
-                  <caret line="254" column="25" lean-forward="false" selection-start-line="254" selection-start-column="25" selection-end-line="254" selection-end-column="25" />
-                  <folding>
-                    <marker date="1524270153521" expanded="true" signature="11935:12019" ph="select UNIX_... " />
-                    <marker date="1524270153521" expanded="true" signature="12618:12702" ph="select UNIX_... " />
-                    <marker date="1524270153521" expanded="true" signature="13155:13239" ph="select UNIX_... " />
-                    <marker date="1524270153521" expanded="true" signature="13741:13825" ph="select UNIX_... " />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/v1/application/config/database.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="429">
-                  <caret line="74" column="33" lean-forward="false" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Boxfile" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/v1/Boxfile">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="2018-04-20.log" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/v1/storage/logs/2018-04-20.log">
-              <provider selected="true" editor-type-id="LogFileEditorProvider">
-                <state relative-caret-position="543">
-                  <caret line="86" column="71" lean-forward="false" selection-start-line="86" selection-start-column="28" selection-end-line="86" selection-end-column="71" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="application.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/v1/application/config/application.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="345">
-                  <caret line="23" column="19" lean-forward="false" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -1137,8 +49,8 @@
       <find>Usuári@s</find>
       <find>COALESCE</find>
       <find>topUsers</find>
-      <find>topuser</find>
       <find>::topUsers</find>
+      <find>topuser</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -1185,6 +97,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="2" />
@@ -1214,6 +129,28 @@
               <item name="myskills" type="b2602c69:ProjectViewProjectNode" />
               <item name="myskills" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="myskills" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myskills" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="myskills" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myskills" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="myskills" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myskills" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="myskills" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myskills" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -1226,6 +163,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -1254,17 +192,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1524172730260</updated>
-      <workItem from="1524172731567" duration="9341000" />
+      <workItem from="1524172731567" duration="10274000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9341000" />
+    <option name="totallyTimeSpent" value="10274000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2" y="24" width="1440" height="768" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15879828" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15879828" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -1436,14 +375,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/v1/Boxfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/session.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1532,19 +463,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/v1/application/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="74" column="33" lean-forward="false" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/v1/app/storage/views/d67ea914439d9d25e06cfee033aa8a0a">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="34" lean-forward="false" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/v1/application/config/application.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="10" lean-forward="false" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/v1/storage/logs/2018-04-20.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="183">
+          <caret line="62" column="34" lean-forward="false" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/v1/application/models/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="203" column="55" lean-forward="false" selection-start-line="203" selection-start-column="55" selection-end-line="203" selection-end-column="55" />
+          <folding>
+            <marker date="1524270309163" expanded="true" signature="4321:4441" ph="SELECT * fro... messages" />
+            <marker date="1524270309163" expanded="true" signature="4839:5045" ph="SELECT count... oneauth_clients" />
+            <marker date="1524270309163" expanded="true" signature="5114:6034" ph="SELECT ((SUM... id" />
+            <marker date="1524270309163" expanded="true" signature="5446:6031" ph="SELECT U.id technologies" />
+            <marker date="1524270309163" expanded="true" signature="6152:7676" ph="SELECT U.id,... users" />
+            <marker date="1524270309163" expanded="true" signature="6472:7498" ph="SELECT Q.use... id" />
+            <marker date="1524270309163" expanded="true" signature="6845:7476" ph="SELECT U.id technologies" />
+            <marker date="1524270309163" expanded="true" signature="7780:9375" ph="SELECT U.id,... users" />
+            <marker date="1524270309163" expanded="true" signature="8100:9126" ph="SELECT Q.use... id" />
+            <marker date="1524270309163" expanded="true" signature="8473:9104" ph="SELECT U.id technologies" />
+            <marker date="1524270309163" expanded="true" signature="9488:9807" ph="SELECT DISTI... technology_user" />
+            <marker date="1524270309163" expanded="true" signature="9913:10310" ph="SELECT T.id technologies" />
+            <marker date="1524270309163" expanded="true" signature="10768:10870" ph="SELECT OC.ac... oneauth_clients" />
+            <marker date="1524270309163" expanded="true" signature="11086:11269" ph="SELECT uid F... user" />
+            <marker date="1524270309163" expanded="true" signature="11227:11268" ph="SELECT uid2 friend" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1569,41 +531,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/v1/application/models/user.php">
+    <entry file="file://$PROJECT_DIR$/v1/application/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="223" column="0" lean-forward="false" selection-start-line="223" selection-start-column="0" selection-end-line="223" selection-end-column="0" />
+        <state relative-caret-position="429">
+          <caret line="74" column="33" lean-forward="false" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/v1/Boxfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-38083">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1524270309163" expanded="true" signature="4321:4441" ph="SELECT * fro... messages" />
-            <marker date="1524270309163" expanded="true" signature="4839:5045" ph="SELECT count... oneauth_clients" />
-            <marker date="1524270309163" expanded="true" signature="5114:6034" ph="SELECT ((SUM... id" />
-            <marker date="1524270309163" expanded="true" signature="5446:6031" ph="SELECT U.id technologies" />
-            <marker date="1524270309163" expanded="true" signature="6152:7676" ph="SELECT U.id,... users" />
-            <marker date="1524270309163" expanded="true" signature="6472:7498" ph="SELECT Q.use... id" />
-            <marker date="1524270309163" expanded="true" signature="6845:7476" ph="SELECT U.id technologies" />
-            <marker date="1524270309163" expanded="true" signature="7780:9375" ph="SELECT U.id,... users" />
-            <marker date="1524270309163" expanded="true" signature="8100:9126" ph="SELECT Q.use... id" />
-            <marker date="1524270309163" expanded="true" signature="8473:9104" ph="SELECT U.id technologies" />
-            <marker date="1524270309163" expanded="true" signature="9488:9807" ph="SELECT DISTI... technology_user" />
-            <marker date="1524270309163" expanded="true" signature="9913:10310" ph="SELECT T.id technologies" />
-            <marker date="1524270309163" expanded="true" signature="10768:10870" ph="SELECT OC.ac... oneauth_clients" />
-            <marker date="1524270309163" expanded="true" signature="11086:11269" ph="SELECT uid F... user" />
-            <marker date="1524270309163" expanded="true" signature="11227:11268" ph="SELECT uid2 friend" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/v1/storage/logs/2018-04-20.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="543">
-          <caret line="86" column="71" lean-forward="false" selection-start-line="86" selection-start-column="28" selection-end-line="86" selection-end-column="71" />
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="79" column="15" lean-forward="false" selection-start-line="79" selection-start-column="15" selection-end-line="79" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/v1/application/config/application.php">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="19" lean-forward="false" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+        <state relative-caret-position="330">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
