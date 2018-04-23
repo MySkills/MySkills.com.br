@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e35feceb-fac2-4939-94ba-b13f4acf3b48" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/yarn.lock" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.MD" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,12 +23,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".env" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.MD" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.MD">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="30">
+                <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -93,6 +105,7 @@
         <option value="$PROJECT_DIR$/application/config/database.php" />
         <option value="$PROJECT_DIR$/application/routes.php" />
         <option value="$PROJECT_DIR$/application/models/user.php" />
+        <option value="$PROJECT_DIR$/README.MD" />
       </list>
     </option>
   </component>
@@ -133,28 +146,6 @@
             <path>
               <item name="myskills" type="b2602c69:ProjectViewProjectNode" />
               <item name="myskills" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="myskills" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myskills" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="myskills" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myskills" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="myskills" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myskills" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="myskills" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myskills" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -197,12 +188,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1524172730260</updated>
-      <workItem from="1524172731567" duration="10386000" />
+      <workItem from="1524172731567" duration="11268000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10386000" />
+    <option name="totallyTimeSpent" value="11268000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2" y="24" width="1440" height="768" extended-state="0" />
@@ -496,21 +487,21 @@
         <state relative-caret-position="164">
           <caret line="203" column="55" lean-forward="false" selection-start-line="203" selection-start-column="55" selection-end-line="203" selection-end-column="55" />
           <folding>
-            <marker date="1524270309163" expanded="true" signature="4321:4441" ph="SELECT * fro... messages" />
-            <marker date="1524270309163" expanded="true" signature="4839:5045" ph="SELECT count... oneauth_clients" />
-            <marker date="1524270309163" expanded="true" signature="5114:6034" ph="SELECT ((SUM... id" />
-            <marker date="1524270309163" expanded="true" signature="5446:6031" ph="SELECT U.id technologies" />
-            <marker date="1524270309163" expanded="true" signature="6152:7676" ph="SELECT U.id,... users" />
-            <marker date="1524270309163" expanded="true" signature="6472:7498" ph="SELECT Q.use... id" />
-            <marker date="1524270309163" expanded="true" signature="6845:7476" ph="SELECT U.id technologies" />
-            <marker date="1524270309163" expanded="true" signature="7780:9375" ph="SELECT U.id,... users" />
-            <marker date="1524270309163" expanded="true" signature="8100:9126" ph="SELECT Q.use... id" />
-            <marker date="1524270309163" expanded="true" signature="8473:9104" ph="SELECT U.id technologies" />
-            <marker date="1524270309163" expanded="true" signature="9488:9807" ph="SELECT DISTI... technology_user" />
-            <marker date="1524270309163" expanded="true" signature="9913:10310" ph="SELECT T.id technologies" />
-            <marker date="1524270309163" expanded="true" signature="10768:10870" ph="SELECT OC.ac... oneauth_clients" />
-            <marker date="1524270309163" expanded="true" signature="11086:11269" ph="SELECT uid F... user" />
-            <marker date="1524270309163" expanded="true" signature="11227:11268" ph="SELECT uid2 friend" />
+            <marker date="1524442992116" expanded="true" signature="4321:4441" ph="SELECT * fro... messages" />
+            <marker date="1524442992116" expanded="true" signature="4839:5045" ph="SELECT count... oneauth_clients" />
+            <marker date="1524442992116" expanded="true" signature="5114:6034" ph="SELECT ((SUM... id" />
+            <marker date="1524442992116" expanded="true" signature="5446:6031" ph="SELECT U.id technologies" />
+            <marker date="1524442992116" expanded="true" signature="6152:7676" ph="SELECT U.id,... users" />
+            <marker date="1524442992116" expanded="true" signature="6472:7498" ph="SELECT Q.use... id" />
+            <marker date="1524442992116" expanded="true" signature="6845:7476" ph="SELECT U.id technologies" />
+            <marker date="1524442992116" expanded="true" signature="7780:9375" ph="SELECT U.id,... users" />
+            <marker date="1524442992116" expanded="true" signature="8100:9126" ph="SELECT Q.use... id" />
+            <marker date="1524442992116" expanded="true" signature="8473:9104" ph="SELECT U.id technologies" />
+            <marker date="1524442992116" expanded="true" signature="9488:9807" ph="SELECT DISTI... technology_user" />
+            <marker date="1524442992116" expanded="true" signature="9913:10310" ph="SELECT T.id technologies" />
+            <marker date="1524442992116" expanded="true" signature="10768:10870" ph="SELECT OC.ac... oneauth_clients" />
+            <marker date="1524442992116" expanded="true" signature="11086:11269" ph="SELECT uid F... user" />
+            <marker date="1524442992116" expanded="true" signature="11227:11268" ph="SELECT uid2 friend" />
           </folding>
         </state>
       </provider>
@@ -528,10 +519,10 @@
         <state relative-caret-position="214">
           <caret line="254" column="25" lean-forward="false" selection-start-line="254" selection-start-column="25" selection-end-line="254" selection-end-column="25" />
           <folding>
-            <marker date="1524270153521" expanded="true" signature="11935:12019" ph="select UNIX_... " />
-            <marker date="1524270153521" expanded="true" signature="12618:12702" ph="select UNIX_... " />
-            <marker date="1524270153521" expanded="true" signature="13155:13239" ph="select UNIX_... " />
-            <marker date="1524270153521" expanded="true" signature="13741:13825" ph="select UNIX_... " />
+            <marker date="1524442992117" expanded="true" signature="11935:12019" ph="select UNIX_... " />
+            <marker date="1524442992117" expanded="true" signature="12618:12702" ph="select UNIX_... " />
+            <marker date="1524442992117" expanded="true" signature="13155:13239" ph="select UNIX_... " />
+            <marker date="1524442992117" expanded="true" signature="13741:13825" ph="select UNIX_... " />
           </folding>
         </state>
       </provider>
@@ -583,6 +574,17 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.MD">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="30">
+            <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
